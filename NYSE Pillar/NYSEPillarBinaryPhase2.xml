@@ -1,9 +1,10 @@
-<fixr:repository xmlns:fixr="http://fixprotocol.io/2016/fixrepository" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://fixprotocol.io/2016/fixrepository file:///C:/Users/donme.DESKTOP-KUJCNKS/GitHub/fix-orchestra/repository2016/src/main/resources/xsd/FixRepository2016.xsd">
+<fixr:repository xmlns:fixr="http://fixprotocol.io/2016/fixrepository" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://fixprotocol.io/2016/fixrepository file:///C:/Users/donme.DESKTOP-KUJCNKS/GitHub/fix-orchestra/repository2016/src/main/resources/xsd/FixRepository2016.xsd">
 	<fixr:metadata>
 		<dc:subject>Orchestra representation of NYSE Pillar Phase II API</dc:subject>
 		<dc:format>Orchestra RC2 schema</dc:format>
 		<dc:creator>Don Mendelson, Silver Flash LLC</dc:creator>
-		<dc:date>2017-05-01</dc:date>
+		<dc:date>2017-05-03</dc:date>
+		<dcterms:conformsTo>https://www.nyse.com/publicdocs/NYSE_Pillar_Gateway_Binary_Protocol_Specification.pdf</dcterms:conformsTo>
 	</fixr:metadata>
 	<fixr:codeSets>
 		<fixr:codeSet id="107" name="TestSymbolIndicatorCodeset" type="u8">
@@ -216,6 +217,19 @@
 			<fixr:code id="17815" name="BillableCancelSubdollarAddingLiquidity" value="15"/>
 			<fixr:code id="17816" name="BillableCancelSubdollarRemovingLiquidity" value="16"/>
 		</fixr:codeSet>
+		<fixr:codeSet id="186" name="ParticipantTypeCodeset" type="u8">
+			<fixr:code id="18601" name="Customer" value="1"/>
+			<fixr:code id="18602" name="MarketMakerLMM" value="2"/>
+			<fixr:code id="18603" name="DMM" value="3"/>
+			<fixr:code id="18604" name="SLP" value="4"/>
+			<fixr:code id="18605" name="Broker" value="5"/>
+		</fixr:codeSet>
+		<fixr:codeSet id="187" name="RejectType" type="u8">
+			<fixr:code id="18701" name="OrderCancelReplaceReject" value="1"/>
+			<fixr:code id="18702" name="ModifyRequestReject" value="2"/>
+			<fixr:code id="18703" name="CancelRequestReject" value="3"/>
+			<fixr:code id="18704" name="BulkCancelRequestReject" value="4"/>
+		</fixr:codeSet>
 	</fixr:codeSets>
 	<fixr:datatypes>
 		<fixr:datatype name="u8">
@@ -356,8 +370,19 @@
 		<fixr:field id="176" name="PreLiquidityIndicator" type="PreLiquidityIndicatorCodeset" implLength="4"/>
 		<fixr:field id="177" name="ReasonCode" type="u16"/>
 		<fixr:field id="178" name="AckType" type="AckTypeCodeset"/>
+		<fixr:field id="179" name="RefClOrdID" type="u64"/>
+		<fixr:field id="180" name="DealID" type="u64"/>
+		<fixr:field id="181" name="LastPx" type="Price"/>
+		<fixr:field id="182" name="CumQty" type="u32"/>
+		<fixr:field id="183" name="LastQty" type="u32"/>
+		<fixr:field id="184" name="LiquidityIndicator" type="zcharArray" implLength="4"/>
+		<fixr:field id="185" name="DisplayedLiquidityIndicator" type="zcharArray" implLength="4"/>
+		<fixr:field id="186" name="ParticipantType" type="ParticipantTypeCodeset"/>
+		<fixr:field id="187" name="RejectType" type="RejectTypeCodeset"/>
+		<fixr:field id="188" name="ReservedOrderReject" type="charArray" implLength="4"/>
 	</fixr:fields>
 	<fixr:protocol name="String" version="0.0" hasComponents="true">
+		<!-- issue: the spec isn't explicit about required fields so they are left as optional by default -->
 		<fixr:components>
 			<fixr:component id="1000" name="MsgHeader">
 				<fixr:fieldRef id="1" name="type"/>
@@ -383,12 +408,12 @@
 			<fixr:component id="1005" name="SeqMsg">
 				<fixr:componentRef id="1000" name="MsgHeader" instanceName="msgheader"/>
 				<fixr:componentRef id="1004" name="SeqMsgId"/>
-				<fixr:fieldRef id="9" name="reserved"/>
+				<fixr:fieldRef id="9" name="reserved" presence="ignored"/>
 				<fixr:fieldRef id="10" name="timestamp"/>
 				<fixr:componentRef id="1000" name="MsgHeader" instanceName="payload"/>
 			</fixr:component>
 			<fixr:component id="1006" name="BitfieldOrderInstructions">
-				<fixr:field id="139" name="reservedBitfieldOrderInstructions" type="bitfield" implLength="17"/>
+				<fixr:field id="139" name="reservedBitfieldOrderInstructions" type="bitfield" implLength="17" presence="ignored"/>
 				<fixr:field id="140" name="LocateReqd" type="LocateReqdCodeset" implLength="1"/>
 				<fixr:field id="141" name="RetailIndicator" type="RetailIndicatorCodeset" implLength="1"/>
 				<fixr:field id="142" name="AttributedQuote" type="AttributedQuoteCodeset" implLength="3"/>
@@ -410,7 +435,7 @@
 			</fixr:component>
 			<fixr:component id="1007" name="BitfieldFlowIndicator">
 				<fixr:field id="158" name="Throttled" type="ThrottledCodeset" implLength="1"/>
-				<fixr:field id="159" name="ReservedBitfieldFlowIndicator" type="bitfield" implLength="7"/>
+				<fixr:field id="159" name="ReservedBitfieldFlowIndicator" type="bitfield" implLength="7" presence="ignored"/>
 				<fixr:annotation>
 					<fixr:documentation>The overall size of the component is 8 bits.</fixr:documentation>
 				</fixr:annotation>
@@ -469,8 +494,17 @@
 			</fixr:group>
 		</fixr:components>
 		<fixr:actors>
-			<fixr:actor name="trader"/>
-			<fixr:actor name="gateway"/>
+			<fixr:actor name="trader">
+				<fixr:group id="5000" name="Users" numInGroupId="5000" numInGroupName="NoUsers">
+					<fixr:fieldRef id="117" name="Username"/>
+				</fixr:group>
+				<fixr:group id="5001" name="MarketMakers" numInGroupId="5001" numInGroupName="NoMarketMakers">
+					<fixr:fieldRef id="120" name="MMID"/>
+				</fixr:group>
+			</fixr:actor>
+			<fixr:actor name="gateway">
+				<fixr:fieldRef id="124" name="MIC"/>
+			</fixr:actor>
 			<fixr:flow name="TG" source="trader" destination="gateway">
 				<fixr:annotation>
 					<fixr:documentation>Trader to Gateway</fixr:documentation>
@@ -545,7 +579,7 @@
 					<fixr:fieldRef id="115" name="MPIDStatus"/>
 					<fixr:fieldRef id="116" name="MPID"/>
 					<fixr:fieldRef id="117" name="Username"/>
-					<fixr:fieldRef id="118" name="ReservedMPIDConfiguration"/>
+					<fixr:fieldRef id="118" name="ReservedMPIDConfiguration" presence="ignored"/>
 				</fixr:structure>
 			</fixr:message>
 			<fixr:message id="2004" name="MMIDConfiguration" flow="GT">
@@ -560,7 +594,7 @@
 					<fixr:fieldRef id="119" name="MarketMaker"/>
 					<fixr:fieldRef id="120" name="MMID"/>
 					<fixr:fieldRef id="117" name="Username"/>
-					<fixr:fieldRef id="121" name="ReservedMMIDConfiguration"/>
+					<fixr:fieldRef id="121" name="ReservedMMIDConfiguration" presence="ignored"/>
 				</fixr:structure>
 			</fixr:message>
 			<fixr:message id="2005" name="SessionConfigurationAcknowledgement" flow="GT">
@@ -584,7 +618,7 @@
 					<fixr:fieldRef id="131" name="SelfTradePrevention"/>
 					<fixr:fieldRef id="132" name="OrderPriorityUpdateAckSubscription"/>
 					<fixr:fieldRef id="133" name="AckStatus"/>
-					<fixr:fieldRef id="134" name="ReservedSessionConfigurationAcknowledgement"/>
+					<fixr:fieldRef id="134" name="ReservedSessionConfigurationAcknowledgement" presence="ignored"/>
 				</fixr:structure>
 			</fixr:message>
 			<fixr:message id="2006" name="SessionConfigurationRequest" flow="TG">
@@ -600,8 +634,13 @@
 					<fixr:fieldRef id="126" name="ThrottlePreference"/>
 					<fixr:fieldRef id="131" name="SelfTradePrevention"/>
 					<fixr:fieldRef id="132" name="OrderPriorityUpdateAckSubscription"/>
-					<fixr:fieldRef id="135" name="ReservedSessionConfigurationRequest"/>
+					<fixr:fieldRef id="135" name="ReservedSessionConfigurationRequest" presence="ignored"/>
 				</fixr:structure>
+				<fixr:responses>
+					<fixr:response>
+						<fixr:messageRef name="SessionConfigurationAcknowledgement"/>
+					</fixr:response>
+				</fixr:responses>
 			</fixr:message>
 			<fixr:message id="2007" name="SequencedFillerMessage" flow="TG">
 				<fixr:structure>
@@ -625,17 +664,40 @@
 					<fixr:fieldRef id="116" name="MPID"/>
 					<fixr:fieldRef id="120" name="MMID"/>
 					<fixr:fieldRef id="136" name="MPSubID"/>
-					<fixr:fieldRef id="137" name="ClOrdID"/>
-					<fixr:fieldRef id="138" name="OrigClOrdID"/>
+					<fixr:fieldRef id="137" name="ClOrdID">
+						<fixr:rule>
+							<fixr:unique>
+								<fixr:fieldRef id="116" name="MPID"/>
+								<!-- issue: the syntax currently doesn't allow refering to an actor state variable -->
+								<fixr:fieldRef id="117" name="Username"/>
+							</fixr:unique>
+						</fixr:rule>
+						<fixr:annotation>
+							<fixr:documentation>Pillar will validate that the ClOrdID is unique for the combination of Username + MPID that entered the order,
+							 among open orders only. 
+							 </fixr:documentation>
+						</fixr:annotation>
+					</fixr:fieldRef>
+					<fixr:fieldRef id="138" name="OrigClOrdID">
+						<fixr:annotation>
+							<!-- I don't see any other field to test. This special value IS the indicator of new order message apparently -->
+							<fixr:documentation>New Order – Set the field ‘OrigClOrdID’ to zero (0).</fixr:documentation>
+						</fixr:annotation>
+					</fixr:fieldRef>
 					<fixr:componentRef id="1006" name="BitfieldOrderInstructions"/>
 					<fixr:fieldRef id="112" name="Price"/>
 					<fixr:fieldRef id="155" name="OrderQty"/>
 					<fixr:fieldRef id="156" name="MinQty"/>
 					<fixr:fieldRef id="157" name="UserData"/>
 				</fixr:structure>
-				<fixr:annotation>
-					<fixr:documentation>New Order Single and Cancel/Replace Request</fixr:documentation>
-				</fixr:annotation>
+				<fixr:responses>
+					<fixr:response name="ack">
+						<fixr:messageRef name="OrderAcknowledgement"/>
+					</fixr:response>
+					<fixr:response name="nack">
+						<fixr:messageRef name="OrderReject"/>
+					</fixr:response>
+				</fixr:responses>
 			</fixr:message>
 			<fixr:message id="2009" name="OrderCancelRequest" flow="TG">
 				<fixr:structure>
@@ -650,6 +712,14 @@
 					<fixr:fieldRef id="137" name="ClOrdID"/>
 					<fixr:fieldRef id="138" name="OrigClOrdID"/>
 				</fixr:structure>
+				<fixr:responses>
+					<fixr:response name="ack">
+						<fixr:messageRef name="OrderModifyAcknowledgement"/>
+					</fixr:response>
+					<fixr:response name="nack">
+						<fixr:messageRef name="OrderReject"/>
+					</fixr:response>
+				</fixr:responses>
 			</fixr:message>
 			<fixr:message id="2010" name="OrderModifyRequest" flow="TG">
 				<fixr:structure>
@@ -667,6 +737,14 @@
 					<fixr:fieldRef id="154" name="Side"/>
 					<fixr:fieldRef id="140" name="LocateReqd"/>
 				</fixr:structure>
+				<fixr:responses>
+					<fixr:response name="ack">
+						<fixr:messageRef name="OrderModifyAcknowledgement"/>
+					</fixr:response>
+					<fixr:response name="nack">
+						<fixr:messageRef name="OrderReject"/>
+					</fixr:response>
+				</fixr:responses>
 			</fixr:message>
 			<fixr:message id="2011" name="BulkCancelRequest" flow="TG">
 				<fixr:structure>
@@ -713,13 +791,155 @@
 					<fixr:fieldRef id="178" name="AckType"/>
 					<fixr:componentRef id="1007" name="BitfieldFlowIndicator"/>
 					<fixr:fieldRef id="157" name="UserData"/>
-					<!-- Need syntax to indicate constraint that the two following components are optional and mutually exclusive -->
-					<fixr:componentRef id="1008" name="OptionalOrderAddOnEquitiesCustomer"/>
-					<fixr:componentRef id="1009" name="OptionalOrderAddOnNYSEFloorBroker"/>
+				</fixr:structure>
+			</fixr:message>
+			<fixr:message id="2013" name="OrderAcknowledgement" scenario="EquitiesCustomer" extends="base" flow="GT">
+				<fixr:structure>
+					<fixr:componentRef id="1008" name="OptionalOrderAddOnEquitiesCustomer" presence="optional"/>
+				</fixr:structure>
+			</fixr:message>
+			<fixr:message id="2014" name="OrderAcknowledgement" scenario="NYSEFloorBroker" extends="base" flow="GT">
+				<fixr:structure>
+					<fixr:componentRef id="1009" name="OptionalOrderAddOnNYSEFloorBroker" presence="optional"/>
+				</fixr:structure>
+			</fixr:message>
+			<fixr:message id="2015" name="OrderModifyAcknowledgement" flow="GT">
+				<fixr:structure>
+					<fixr:componentRef id="1000" name="MsgHeader">
+						<fixr:blockAssignment>
+							<fixr:fieldRef id="1" name="type" presence="constant" value="0x0271"/>
+							<fixr:fieldRef id="2" name="length" presence="constant" value="74"/>
+						</fixr:blockAssignment>
+					</fixr:componentRef>
+					<fixr:fieldRef id="100" name="TransactTime"/>
+					<fixr:fieldRef id="101" name="SymbolID"/>
+					<fixr:fieldRef id="116" name="MPID"/>
+					<fixr:fieldRef id="172" name="OrderID"/>
+					<fixr:fieldRef id="179" name="RefClOrdID"/>
+					<fixr:fieldRef id="138" name="OrigClOrdID"/>
+					<fixr:fieldRef id="112" name="Price"/>
+					<fixr:fieldRef id="155" name="OrderQty"/>
+					<fixr:fieldRef id="173" name="LeavesQty"/>
+					<fixr:fieldRef id="154" name="Side"/>
+					<fixr:fieldRef id="140" name="LocateReqd"/>
+					<fixr:fieldRef id="177" name="ReasonCode"/>
+					<fixr:fieldRef id="178" name="AckType"/>
+					<fixr:componentRef id="1007" name="BitfieldFlowIndicator"/>
+					<fixr:fieldRef id="157" name="UserData"/>
 				</fixr:structure>
 				<fixr:annotation>
 					<fixr:documentation>Acknowledges Order and Cancel/Replace Request</fixr:documentation>
 				</fixr:annotation>
+			</fixr:message>
+			<fixr:message id="2016" name="OrderModifyAcknowledgement" scenario="EquitiesCustomer" extends="base" flow="GT">
+				<fixr:structure>
+					<fixr:componentRef id="1008" name="OptionalOrderAddOnEquitiesCustomer" presence="optional"/>
+				</fixr:structure>
+			</fixr:message>
+			<fixr:message id="2017" name="OrderModifyAcknowledgement" scenario="NYSEFloorBroker" extends="base" flow="GT">
+				<fixr:structure>
+					<fixr:componentRef id="1009" name="OptionalOrderAddOnNYSEFloorBroker" presence="optional"/>
+				</fixr:structure>
+			</fixr:message>
+			<fixr:message id="2018" name="OrderPriorityUpdateAcknowledgment" flow="GT">
+				<fixr:structure>
+					<fixr:componentRef id="1000" name="MsgHeader">
+						<fixr:blockAssignment>
+							<fixr:fieldRef id="1" name="type" presence="constant" value="0x0262"/>
+							<fixr:fieldRef id="2" name="length" presence="constant" value="62"/>
+						</fixr:blockAssignment>
+					</fixr:componentRef>
+					<fixr:fieldRef id="100" name="TransactTime"/>
+					<fixr:fieldRef id="101" name="SymbolID"/>
+					<fixr:fieldRef id="116" name="MPID"/>
+					<fixr:fieldRef id="172" name="OrderID"/>
+					<fixr:fieldRef id="137" name="ClOrdID"/>
+					<fixr:fieldRef id="138" name="OrigClOrdID"/>
+					<fixr:fieldRef id="174" name="WorkingPrice"/>
+					<fixr:fieldRef id="155" name="OrderQty"/>
+					<fixr:fieldRef id="175" name="WorkingAwayFromDisplay"/>
+					<fixr:fieldRef id="176" name="PreLiquidityIndicator"/>
+					<fixr:fieldRef id="178" name="AckType"/>
+					<fixr:fieldRef id="157" name="UserData"/>
+				</fixr:structure>
+			</fixr:message>
+			<fixr:message id="2019" name="ExecutionReport" flow="GT">
+				<fixr:structure>
+					<fixr:componentRef id="1000" name="MsgHeader">
+						<fixr:blockAssignment>
+							<fixr:fieldRef id="1" name="type" presence="constant" value="0x0290"/>
+							<fixr:fieldRef id="2" name="length" presence="constant" value="84"/>
+						</fixr:blockAssignment>
+					</fixr:componentRef>
+					<fixr:fieldRef id="100" name="TransactTime"/>
+					<fixr:fieldRef id="101" name="SymbolID"/>
+					<fixr:fieldRef id="116" name="MPID"/>
+					<fixr:fieldRef id="172" name="OrderID"/>
+					<fixr:fieldRef id="137" name="ClOrdID"/>
+					<fixr:fieldRef id="138" name="OrigClOrdID"/>
+					<fixr:fieldRef id="180" name="DealID"/>
+					<fixr:fieldRef id="181" name="LastPx"/>
+					<fixr:fieldRef id="173" name="LeavesQty"/>
+					<fixr:fieldRef id="182" name="CumQty"/>
+					<fixr:fieldRef id="183" name="LastQty"/>
+					<fixr:fieldRef id="184" name="LiquidityIndicator"/>
+					<fixr:fieldRef id="185" name="DisplayedLiquidityIndicator"/>
+					<fixr:fieldRef id="140" name="LocateReqd"/>
+					<fixr:fieldRef id="186" name="ParticipantType"/>
+					<fixr:fieldRef id="177" name="ReasonCode"/>
+					<fixr:fieldRef id="157" name="UserData"/>
+				</fixr:structure>
+			</fixr:message>
+			<fixr:message id="2020" name="ExecutionReport" scenario="EquitiesCustomer" extends="base" flow="GT">
+				<fixr:structure>
+					<fixr:componentRef id="1008" name="OptionalOrderAddOnEquitiesCustomer" presence="optional"/>
+				</fixr:structure>
+			</fixr:message>
+			<fixr:message id="2021" name="ExecutionReport" scenario="NYSEFloorBroker" extends="base" flow="GT">
+				<fixr:structure>
+					<fixr:componentRef id="1009" name="OptionalOrderAddOnNYSEFloorBroker" presence="optional"/>
+				</fixr:structure>
+			</fixr:message>
+			<fixr:message id="2022" name="TradeBustCorrect" flow="GT">
+				<fixr:structure>
+					<fixr:componentRef id="1000" name="MsgHeader">
+						<fixr:blockAssignment>
+							<fixr:fieldRef id="1" name="type" presence="constant" value="0x0292"/>
+							<fixr:fieldRef id="2" name="length" presence="constant" value="82"/>
+						</fixr:blockAssignment>
+					</fixr:componentRef>
+					<fixr:fieldRef id="100" name="TransactTime"/>
+					<fixr:fieldRef id="101" name="SymbolID"/>
+					<fixr:fieldRef id="116" name="MPID"/>
+					<fixr:fieldRef id="172" name="OrderID"/>
+					<fixr:fieldRef id="137" name="ClOrdID"/>
+					<fixr:componentRef id="1004" name="SeqMsgID" instanceName="RefSeqMsgID"/>
+					<fixr:fieldRef id="180" name="DealID"/>
+					<fixr:fieldRef id="181" name="LastPx"/>
+					<fixr:fieldRef id="173" name="LeavesQty"/>
+					<fixr:fieldRef id="182" name="CumQty"/>
+					<fixr:fieldRef id="183" name="LastQty"/>
+					<fixr:fieldRef id="177" name="ReasonCode"/>
+					<fixr:fieldRef id="157" name="UserData"/>
+				</fixr:structure>
+			</fixr:message>
+			<fixr:message id="2023" name="OrderReject" flow="GT">
+				<fixr:structure>
+					<fixr:componentRef id="1000" name="MsgHeader">
+						<fixr:blockAssignment>
+							<fixr:fieldRef id="1" name="type" presence="constant" value="0x0263"/>
+							<fixr:fieldRef id="2" name="length" presence="constant" value="43"/>
+						</fixr:blockAssignment>
+					</fixr:componentRef>
+					<fixr:fieldRef id="100" name="TransactTime"/>
+					<fixr:fieldRef id="101" name="SymbolID"/>
+					<fixr:fieldRef id="116" name="MPID"/>
+					<fixr:fieldRef id="137" name="ClOrdID"/>
+					<fixr:fieldRef id="187" name="RejectType"/>
+					<fixr:fieldRef id="177" name="ReasonCode"/>
+					<fixr:fieldRef id="157" name="UserData"/>
+					<fixr:fieldRef id="188" name="ReservedOrderReject" presence="ignored"/>
+				</fixr:structure>
 			</fixr:message>
 		</fixr:messages>
 	</fixr:protocol>
