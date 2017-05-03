@@ -333,7 +333,16 @@
 		<fixr:field id="121" name="ReservedMMIDConfiguration" type="charArray" implLength="100"/>
 		<fixr:field id="122" name="UserSessionType" type="UserSessionTypeCodeset"/>
 		<fixr:field id="123" name="UserSessionStatus" type="UserSessionStatusCodeset"/>
-		<fixr:field id="124" name="MIC" type="charArray" implLength="4"/>
+		<fixr:field id="124" name="MIC" type="charArray" implLength="4">
+		<fixr:annotation>
+			<fixr:documentation>This has an external code set.</fixr:documentation>
+			<fixr:appinfo purpose="ELABORATION" specUrl="https://www.iso20022.org/10383/iso-10383-market-identifier-codes">ISO 10383</fixr:appinfo>
+			<!-- verify that this conforms to spec -->
+			<fixr:appinfo purpose="EXAMPLE">NYSE ARCA Equities=ARCX</fixr:appinfo>
+			<fixr:appinfo purpose="EXAMPLE">NYSE AMEX Equities=XASE</fixr:appinfo>
+			<fixr:appinfo purpose="EXAMPLE">NYSE Equities=XNYS</fixr:appinfo>
+		</fixr:annotation>
+		</fixr:field> 
 		<fixr:field id="125" name="CancelOnDisconnect" type="CancelOnDisconnectCodeset"/>
 		<fixr:field id="126" name="ThrottlePreference" type="ThrottlePreferenceCodeset"/>
 		<fixr:field id="127" name="ThrottleWindow" type="u16"/>
@@ -381,7 +390,7 @@
 		<fixr:field id="187" name="RejectType" type="RejectTypeCodeset"/>
 		<fixr:field id="188" name="ReservedOrderReject" type="charArray" implLength="4"/>
 	</fixr:fields>
-	<fixr:protocol name="String" version="0.0" hasComponents="true">
+	<fixr:protocol name="NYSEPillar" version="1.1" hasComponents="true">
 		<!-- issue: the spec isn't explicit about required fields so they are left as optional by default -->
 		<fixr:components>
 			<fixr:component id="1000" name="MsgHeader">
