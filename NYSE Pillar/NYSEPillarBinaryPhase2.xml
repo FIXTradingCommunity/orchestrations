@@ -1,10 +1,13 @@
 <fixr:repository xmlns:fixr="http://fixprotocol.io/2016/fixrepository" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://fixprotocol.io/2016/fixrepository file:///C:/Users/donme.DESKTOP-KUJCNKS/GitHub/fix-orchestra/repository2016/src/main/resources/xsd/FixRepository2016.xsd">
 	<fixr:metadata>
-		<dc:subject>Orchestra representation of NYSE Pillar Phase II API</dc:subject>
+		<dc:subject>Orchestra representation of NYSE Pillar Phase II Application Layer</dc:subject>
 		<dc:format>Orchestra RC2 schema</dc:format>
-		<dc:creator>Don Mendelson, Silver Flash LLC</dc:creator>
-		<dc:date>2017-05-03</dc:date>
+		<dc:contributor>Don Mendelson, Silver Flash LLC</dc:contributor>
+		<dc:date>2017-05-04</dc:date>
 		<dcterms:conformsTo>https://www.nyse.com/publicdocs/NYSE_Pillar_Gateway_Binary_Protocol_Specification.pdf</dcterms:conformsTo>
+		<dcterms:rights>© Copyright 2017 FIX Protocol Limited</dcterms:rights>
+		<dcterms:publisher>FIX Trading Community</dcterms:publisher>
+		<dcterms:license>Apache License, Version 2.0</dcterms:license>
 	</fixr:metadata>
 	<fixr:codeSets>
 		<fixr:codeSet id="107" name="TestSymbolIndicatorCodeset" type="u8">
@@ -334,15 +337,15 @@
 		<fixr:field id="122" name="UserSessionType" type="UserSessionTypeCodeset"/>
 		<fixr:field id="123" name="UserSessionStatus" type="UserSessionStatusCodeset"/>
 		<fixr:field id="124" name="MIC" type="charArray" implLength="4">
-		<fixr:annotation>
-			<fixr:documentation>This has an external code set.</fixr:documentation>
-			<fixr:appinfo purpose="ELABORATION" specUrl="https://www.iso20022.org/10383/iso-10383-market-identifier-codes">ISO 10383</fixr:appinfo>
-			<!-- verify that this conforms to spec -->
-			<fixr:appinfo purpose="EXAMPLE">NYSE ARCA Equities=ARCX</fixr:appinfo>
-			<fixr:appinfo purpose="EXAMPLE">NYSE AMEX Equities=XASE</fixr:appinfo>
-			<fixr:appinfo purpose="EXAMPLE">NYSE Equities=XNYS</fixr:appinfo>
-		</fixr:annotation>
-		</fixr:field> 
+			<fixr:annotation>
+				<fixr:documentation>This has an external code set.</fixr:documentation>
+				<fixr:appinfo purpose="ELABORATION" specUrl="https://www.iso20022.org/10383/iso-10383-market-identifier-codes">ISO 10383</fixr:appinfo>
+				<!-- verify that this conforms to spec -->
+				<fixr:appinfo purpose="EXAMPLE">NYSE ARCA Equities=ARCX</fixr:appinfo>
+				<fixr:appinfo purpose="EXAMPLE">NYSE AMEX Equities=XASE</fixr:appinfo>
+				<fixr:appinfo purpose="EXAMPLE">NYSE Equities=XNYS</fixr:appinfo>
+			</fixr:annotation>
+		</fixr:field>
 		<fixr:field id="125" name="CancelOnDisconnect" type="CancelOnDisconnectCodeset"/>
 		<fixr:field id="126" name="ThrottlePreference" type="ThrottlePreferenceCodeset"/>
 		<fixr:field id="127" name="ThrottleWindow" type="u16"/>
@@ -647,6 +650,7 @@
 				</fixr:structure>
 				<fixr:responses>
 					<fixr:response>
+						<!-- synchronicity not specified -->
 						<fixr:messageRef name="SessionConfigurationAcknowledgement"/>
 					</fixr:response>
 				</fixr:responses>
@@ -701,6 +705,8 @@
 				</fixr:structure>
 				<fixr:responses>
 					<fixr:response name="ack">
+						<!-- This should refer to the "EquitiesCustomer" or "NYSEFloorBroker" scenarios, but not clear from the input
+						message how to select that. Is it by MIC? -->
 						<fixr:messageRef name="OrderAcknowledgement"/>
 					</fixr:response>
 					<fixr:response name="nack">
