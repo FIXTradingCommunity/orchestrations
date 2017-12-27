@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>io.fixprotocol.orchestrations</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.2.0-RC3-SNAPSHOT</version>
+	</parent>
+	<artifactId>nyse-pillar</artifactId>
+	<description>Generates humanly readable documentation of NYSE Pillar API</description>
+	<name>${project.groupId}:${project.artifactId}</name>
+	<dependencies>
+		<dependency>
+			<groupId>io.fixprotocol.orchestra</groupId>
+			<artifactId>docgen</artifactId>
+			<version>${docgen.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
+					<arguments>
+						<argument>${project.basedir}/NYSEPillarBinaryPhase2.xml</argument>
+						<argument>${project.build.directory}/doc</argument>
+					</arguments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<executions>
+					<execution>
+						<id>default-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<classesDirectory>${project.build.directory}/doc</classesDirectory>
+				</configuration>
+
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.fixprotocol.orchestrations</groupId>
+	<artifactId>parent</artifactId>
+	<version>1.2.0-RC3-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>Parent project for a catalog of Orchestra implementations</description>
+	<inceptionYear>2017</inceptionYear>
+	<prerequisites>
+		<maven>3.3.1</maven>
+	</prerequisites>
+
+	<organization>
+		<name>FIX Trading Community</name>
+		<url>http://https://www.fixtrading.org/</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Don Mendelson</name>
+			<email>donmendelson@silverflash.net</email>
+			<organization>FIX Trading Community</organization>
+			<organizationUrl>https://www.fixtrading.org/</organizationUrl>
+		</developer>
+	</developers>
+	<scm>
+		<developerConnection>scm:git:ssh://git@github.com/FIXTradingCommunity/orchestrations.git</developerConnection>
+		<url>https://github.com/FIXTradingCommunity/orchestrations</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>http://github.com/FIXTradingCommunity/orchestrations/issues</url>
+	</issueManagement>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
+	<modules>
+		<module>FIX Standard</module>
+		<module>NYSE Pillar</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<docgen.version>1.2.0-RC3-SNAPSHOT</docgen.version>
+	</properties>
+	
+</project>

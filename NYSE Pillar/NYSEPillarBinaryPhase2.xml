@@ -1,9 +1,13 @@
-<fixr:repository xmlns:fixr="http://fixprotocol.io/2016/fixrepository" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://fixprotocol.io/2016/fixrepository file:///C:/Users/donme.DESKTOP-KUJCNKS/GitHub/fix-orchestra/repository2016/src/main/resources/xsd/FixRepository2016.xsd">
+<fixr:repository xmlns:fixr="http://fixprotocol.io/2016/fixrepository" 
+xmlns:dc="http://purl.org/dc/elements/1.1/" 
+xmlns:dcterms="http://purl.org/dc/terms/" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+name="NYSEPillar" version="1.1" hasComponents="true">
 	<fixr:metadata>
 		<dc:subject>Orchestra representation of NYSE Pillar Phase II Application Layer</dc:subject>
-		<dc:format>Orchestra RC2 schema</dc:format>
+		<dc:format>Orchestra RC3 schema</dc:format>
 		<dc:contributor>Don Mendelson, Silver Flash LLC</dc:contributor>
-		<dc:date>2017-05-04</dc:date>
+		<dc:date>2017-12-26</dc:date>
 		<dcterms:conformsTo>https://www.nyse.com/publicdocs/NYSE_Pillar_Gateway_Binary_Protocol_Specification.pdf</dcterms:conformsTo>
 		<dcterms:rights>© Copyright 2017 FIX Protocol Limited</dcterms:rights>
 		<dcterms:publisher>FIX Trading Community</dcterms:publisher>
@@ -393,147 +397,146 @@
 		<fixr:field id="187" name="RejectType" type="RejectTypeCodeset"/>
 		<fixr:field id="188" name="ReservedOrderReject" type="charArray" implLength="4"/>
 	</fixr:fields>
-	<fixr:protocol name="NYSEPillar" version="1.1" hasComponents="true">
-		<!-- issue: the spec isn't explicit about required fields so they are left as optional by default -->
-		<fixr:components>
-			<fixr:component id="1000" name="MsgHeader">
-				<fixr:fieldRef id="1" name="type"/>
-				<fixr:fieldRef id="2" name="length"/>
-			</fixr:component>
-			<fixr:component id="1001" name="sess">
-				<fixr:fieldRef id="3" name="sess_num"/>
-				<fixr:fieldRef id="4" name="env_id"/>
-			</fixr:component>
-			<fixr:component id="1002" name="value">
-				<fixr:fieldRef id="5" name="sub_id"/>
-				<fixr:fieldRef id="6" name="user_id"/>
-				<fixr:fieldRef id="7" name="stream_type"/>
-			</fixr:component>
-			<fixr:component id="1003" name="StreamId">
-				<fixr:componentRef id="1001" name="sess"/>
-				<fixr:componentRef id="1002" name="value"/>
-			</fixr:component>
-			<fixr:component id="1004" name="SeqMsgId">
-				<fixr:componentRef id="1003" name="StreamId"/>
-				<fixr:fieldRef id="8" name="seq"/>
-			</fixr:component>
-			<fixr:component id="1005" name="SeqMsg">
-				<fixr:componentRef id="1000" name="MsgHeader" instanceName="msgheader"/>
-				<fixr:componentRef id="1004" name="SeqMsgId"/>
-				<fixr:fieldRef id="9" name="reserved" presence="ignored"/>
-				<fixr:fieldRef id="10" name="timestamp"/>
-				<fixr:componentRef id="1000" name="MsgHeader" instanceName="payload"/>
-			</fixr:component>
-			<fixr:component id="1006" name="BitfieldOrderInstructions">
-				<fixr:field id="139" name="reservedBitfieldOrderInstructions" type="bitfield" implLength="17" presence="ignored"/>
-				<fixr:field id="140" name="LocateReqd" type="LocateReqdCodeset" implLength="1"/>
-				<fixr:field id="141" name="RetailIndicator" type="RetailIndicatorCodeset" implLength="1"/>
-				<fixr:field id="142" name="AttributedQuote" type="AttributedQuoteCodeset" implLength="3"/>
-				<fixr:field id="143" name="OrderCapacity" type="OrderCapacityCodset" implLength="3"/>
-				<fixr:field id="144" name="QuoteType" type="QuoteTypeCodeset" implLength="3"/>
-				<fixr:field id="145" name="TradingSessionID" type="TradingSessionIDCodeset" implLength="3"/>
-				<fixr:field id="146" name="TimeInForce" type="TimeInForceCodeset" implLength="3"/>
-				<fixr:field id="147" name="ProactiveIfLocked" type="ProactiveIfLockedCodeset" implLength="3"/>
-				<fixr:field id="148" name="SelfTradeType" type="SelfTradeTypeCodeset" implLength="3"/>
-				<fixr:field id="149" name="CancelInsteadOfReprice" type="CancelInsteadOfRepriceCodeset" implLength="4"/>
-				<fixr:field id="150" name="RoutingInst" type="RoutingInstCodeset" implLength="4"/>
-				<fixr:field id="151" name="ExtendedExecInst" type="ExtendedExecInstCodeset" implLength="4"/>
-				<fixr:field id="152" name="ExecInst" type="ExecInstCodeset" implLength="4"/>
-				<fixr:field id="153" name="OrdType" type="OrdTypeCodeset" implLength="4"/>
-				<fixr:field id="154" name="Side" type="SideCodeset" implLength="4"/>
-				<fixr:annotation>
-					<fixr:documentation>The overall size of the component is 64 bits.</fixr:documentation>
-				</fixr:annotation>
-			</fixr:component>
-			<fixr:component id="1007" name="BitfieldFlowIndicator">
-				<fixr:field id="158" name="Throttled" type="ThrottledCodeset" implLength="1"/>
-				<fixr:field id="159" name="ReservedBitfieldFlowIndicator" type="bitfield" implLength="7" presence="ignored"/>
-				<fixr:annotation>
-					<fixr:documentation>The overall size of the component is 8 bits.</fixr:documentation>
-				</fixr:annotation>
-			</fixr:component>
-			<fixr:component id="1008" name="OptionalOrderAddOnEquitiesCustomer">
-				<fixr:componentRef id="1000" name="MsgHeader">
-					<fixr:blockAssignment>
-						<fixr:fieldRef id="1" name="type" presence="constant" value="0x0241"/>
-						<fixr:fieldRef id="2" name="length" presence="constant" value="41"/>
-					</fixr:blockAssignment>
-				</fixr:componentRef>
-				<fixr:fieldRef id="160" name="DeliverToCompID"/>
-				<fixr:fieldRef id="161" name="MaxFloor"/>
-				<fixr:fieldRef id="162" name="MinPegQty"/>
-				<fixr:fieldRef id="163" name="DiscPriceRng"/>
-				<fixr:fieldRef id="164" name="OffsetPrice"/>
-				<fixr:fieldRef id="165" name="EffectiveTime"/>
-			</fixr:component>
-			<fixr:component id="1009" name="OptionalOrderAddOnNYSEFloorBroker">
-				<fixr:componentRef id="1000" name="MsgHeader">
-					<fixr:blockAssignment>
-						<fixr:fieldRef id="1" name="type" presence="constant" value="0x0242"/>
-						<fixr:fieldRef id="2" name="length" presence="constant" value="50"/>
-					</fixr:blockAssignment>
-				</fixr:componentRef>
-				<fixr:fieldRef id="166" name="ParentFirmMPID"/>
-				<fixr:fieldRef id="167" name="ParentFirmClOrdID"/>
-				<fixr:fieldRef id="168" name="IntroducingBadgeID"/>
-				<fixr:fieldRef id="169" name="BillTo"/>
-				<fixr:fieldRef id="161" name="MaxFloor"/>
-				<fixr:fieldRef id="162" name="MinPegQty"/>
-				<fixr:fieldRef id="163" name="DiscPriceRng"/>
-				<fixr:fieldRef id="164" name="OffsetPrice"/>
-				<fixr:fieldRef id="170" name="DisplayInd"/>
-			</fixr:component>
-			<fixr:component id="1010" name="OptionalReportAddOnNYSEFloorBroker">
-				<fixr:componentRef id="1000" name="MsgHeader">
-					<fixr:blockAssignment>
-						<fixr:fieldRef id="1" name="type" presence="constant" value="0x0291"/>
-						<fixr:fieldRef id="2" name="length" presence="constant" value="21"/>
-					</fixr:blockAssignment>
-				</fixr:componentRef>
-				<fixr:fieldRef id="166" name="ParentFirmMPID"/>
-				<fixr:fieldRef id="167" name="ParentFirmClOrdID"/>
-				<fixr:fieldRef id="169" name="BillTo"/>
-			</fixr:component>
-			<fixr:group id="1100" name="MPVLevelDefinition" numInGroupId="1100" numInGroupName="NoMPVLevelDefinition">
-				<fixr:fieldRef id="111" name="MPVLevelName"/>
-				<fixr:fieldRef id="112" name="Price"/>
-				<fixr:fieldRef id="113" name="QuotingMPV"/>
-				<fixr:fieldRef id="114" name="TradingMPV"/>
-				<fixr:fieldRef id="106" name="MPVClassID"/>
-				<fixr:annotation>
-					<fixr:documentation>Variable number of entries; NumInGroup is implicit.</fixr:documentation>
-				</fixr:annotation>
+	<!-- issue: the spec isn't explicit about required fields so they are left as optional by default -->
+	<fixr:components>
+		<fixr:component id="1000" name="MsgHeader">
+			<fixr:fieldRef id="1" name="type"/>
+			<fixr:fieldRef id="2" name="length"/>
+		</fixr:component>
+		<fixr:component id="1001" name="sess">
+			<fixr:fieldRef id="3" name="sess_num"/>
+			<fixr:fieldRef id="4" name="env_id"/>
+		</fixr:component>
+		<fixr:component id="1002" name="value">
+			<fixr:fieldRef id="5" name="sub_id"/>
+			<fixr:fieldRef id="6" name="user_id"/>
+			<fixr:fieldRef id="7" name="stream_type"/>
+		</fixr:component>
+		<fixr:component id="1003" name="StreamId">
+			<fixr:componentRef id="1001" name="sess"/>
+			<fixr:componentRef id="1002" name="value"/>
+		</fixr:component>
+		<fixr:component id="1004" name="SeqMsgId">
+			<fixr:componentRef id="1003" name="StreamId"/>
+			<fixr:fieldRef id="8" name="seq"/>
+		</fixr:component>
+		<fixr:component id="1005" name="SeqMsg">
+			<fixr:componentRef id="1000" name="MsgHeader" instanceName="msgheader"/>
+			<fixr:componentRef id="1004" name="SeqMsgId"/>
+			<fixr:fieldRef id="9" name="reserved" presence="ignored"/>
+			<fixr:fieldRef id="10" name="timestamp"/>
+			<fixr:componentRef id="1000" name="MsgHeader" instanceName="payload"/>
+		</fixr:component>
+		<fixr:component id="1006" name="BitfieldOrderInstructions">
+			<fixr:field id="139" name="reservedBitfieldOrderInstructions" type="bitfield" implLength="17" presence="ignored"/>
+			<fixr:field id="140" name="LocateReqd" type="LocateReqdCodeset" implLength="1"/>
+			<fixr:field id="141" name="RetailIndicator" type="RetailIndicatorCodeset" implLength="1"/>
+			<fixr:field id="142" name="AttributedQuote" type="AttributedQuoteCodeset" implLength="3"/>
+			<fixr:field id="143" name="OrderCapacity" type="OrderCapacityCodset" implLength="3"/>
+			<fixr:field id="144" name="QuoteType" type="QuoteTypeCodeset" implLength="3"/>
+			<fixr:field id="145" name="TradingSessionID" type="TradingSessionIDCodeset" implLength="3"/>
+			<fixr:field id="146" name="TimeInForce" type="TimeInForceCodeset" implLength="3"/>
+			<fixr:field id="147" name="ProactiveIfLocked" type="ProactiveIfLockedCodeset" implLength="3"/>
+			<fixr:field id="148" name="SelfTradeType" type="SelfTradeTypeCodeset" implLength="3"/>
+			<fixr:field id="149" name="CancelInsteadOfReprice" type="CancelInsteadOfRepriceCodeset" implLength="4"/>
+			<fixr:field id="150" name="RoutingInst" type="RoutingInstCodeset" implLength="4"/>
+			<fixr:field id="151" name="ExtendedExecInst" type="ExtendedExecInstCodeset" implLength="4"/>
+			<fixr:field id="152" name="ExecInst" type="ExecInstCodeset" implLength="4"/>
+			<fixr:field id="153" name="OrdType" type="OrdTypeCodeset" implLength="4"/>
+			<fixr:field id="154" name="Side" type="SideCodeset" implLength="4"/>
+			<fixr:annotation>
+				<fixr:documentation>The overall size of the component is 64 bits.</fixr:documentation>
+			</fixr:annotation>
+		</fixr:component>
+		<fixr:component id="1007" name="BitfieldFlowIndicator">
+			<fixr:field id="158" name="Throttled" type="ThrottledCodeset" implLength="1"/>
+			<fixr:field id="159" name="ReservedBitfieldFlowIndicator" type="bitfield" implLength="7" presence="ignored"/>
+			<fixr:annotation>
+				<fixr:documentation>The overall size of the component is 8 bits.</fixr:documentation>
+			</fixr:annotation>
+		</fixr:component>
+		<fixr:component id="1008" name="OptionalOrderAddOnEquitiesCustomer">
+			<fixr:componentRef id="1000" name="MsgHeader">
+				<fixr:blockAssignment>
+					<fixr:fieldRef id="1" name="type" presence="constant" value="0x0241"/>
+					<fixr:fieldRef id="2" name="length" presence="constant" value="41"/>
+				</fixr:blockAssignment>
+			</fixr:componentRef>
+			<fixr:fieldRef id="160" name="DeliverToCompID"/>
+			<fixr:fieldRef id="161" name="MaxFloor"/>
+			<fixr:fieldRef id="162" name="MinPegQty"/>
+			<fixr:fieldRef id="163" name="DiscPriceRng"/>
+			<fixr:fieldRef id="164" name="OffsetPrice"/>
+			<fixr:fieldRef id="165" name="EffectiveTime"/>
+		</fixr:component>
+		<fixr:component id="1009" name="OptionalOrderAddOnNYSEFloorBroker">
+			<fixr:componentRef id="1000" name="MsgHeader">
+				<fixr:blockAssignment>
+					<fixr:fieldRef id="1" name="type" presence="constant" value="0x0242"/>
+					<fixr:fieldRef id="2" name="length" presence="constant" value="50"/>
+				</fixr:blockAssignment>
+			</fixr:componentRef>
+			<fixr:fieldRef id="166" name="ParentFirmMPID"/>
+			<fixr:fieldRef id="167" name="ParentFirmClOrdID"/>
+			<fixr:fieldRef id="168" name="IntroducingBadgeID"/>
+			<fixr:fieldRef id="169" name="BillTo"/>
+			<fixr:fieldRef id="161" name="MaxFloor"/>
+			<fixr:fieldRef id="162" name="MinPegQty"/>
+			<fixr:fieldRef id="163" name="DiscPriceRng"/>
+			<fixr:fieldRef id="164" name="OffsetPrice"/>
+			<fixr:fieldRef id="170" name="DisplayInd"/>
+		</fixr:component>
+		<fixr:component id="1010" name="OptionalReportAddOnNYSEFloorBroker">
+			<fixr:componentRef id="1000" name="MsgHeader">
+				<fixr:blockAssignment>
+					<fixr:fieldRef id="1" name="type" presence="constant" value="0x0291"/>
+					<fixr:fieldRef id="2" name="length" presence="constant" value="21"/>
+				</fixr:blockAssignment>
+			</fixr:componentRef>
+			<fixr:fieldRef id="166" name="ParentFirmMPID"/>
+			<fixr:fieldRef id="167" name="ParentFirmClOrdID"/>
+			<fixr:fieldRef id="169" name="BillTo"/>
+		</fixr:component>
+		<fixr:group id="1100" name="MPVLevelDefinition" numInGroupId="1100" numInGroupName="NoMPVLevelDefinition">
+			<fixr:fieldRef id="111" name="MPVLevelName"/>
+			<fixr:fieldRef id="112" name="Price"/>
+			<fixr:fieldRef id="113" name="QuotingMPV"/>
+			<fixr:fieldRef id="114" name="TradingMPV"/>
+			<fixr:fieldRef id="106" name="MPVClassID"/>
+			<fixr:annotation>
+				<fixr:documentation>Variable number of entries; NumInGroup is implicit.</fixr:documentation>
+			</fixr:annotation>
+		</fixr:group>
+	</fixr:components>
+	<fixr:actors>
+		<fixr:actor name="trader">
+			<fixr:group id="5000" name="Users" numInGroupId="5000" numInGroupName="NoUsers">
+				<fixr:fieldRef id="117" name="Username"/>
 			</fixr:group>
-		</fixr:components>
-		<fixr:actors>
-			<fixr:actor name="trader">
-				<fixr:group id="5000" name="Users" numInGroupId="5000" numInGroupName="NoUsers">
-					<fixr:fieldRef id="117" name="Username"/>
-				</fixr:group>
-				<fixr:group id="5001" name="MarketMakers" numInGroupId="5001" numInGroupName="NoMarketMakers">
-					<fixr:fieldRef id="120" name="MMID"/>
-				</fixr:group>
-			</fixr:actor>
-			<fixr:actor name="gateway">
-				<fixr:fieldRef id="124" name="MIC"/>
-			</fixr:actor>
-			<fixr:flow name="TG" source="trader" destination="gateway">
-				<fixr:annotation>
-					<fixr:documentation>Trader to Gateway</fixr:documentation>
-				</fixr:annotation>
-			</fixr:flow>
-			<fixr:flow name="GT" source="gateway" destination="trader">
-				<fixr:annotation>
-					<fixr:documentation>Gateway to Trader</fixr:documentation>
-				</fixr:annotation>
-			</fixr:flow>
-			<fixr:flow name="REF" source="gateway" destination="trader">
-				<fixr:annotation>
-					<fixr:documentation>Reference Data</fixr:documentation>
-				</fixr:annotation>
-			</fixr:flow>
-		</fixr:actors>
-		<fixr:messages>
+			<fixr:group id="5001" name="MarketMakers" numInGroupId="5001" numInGroupName="NoMarketMakers">
+				<fixr:fieldRef id="120" name="MMID"/>
+			</fixr:group>
+		</fixr:actor>
+		<fixr:actor name="gateway">
+			<fixr:fieldRef id="124" name="MIC"/>
+		</fixr:actor>
+		<fixr:flow name="TG" source="trader" destination="gateway">
+			<fixr:annotation>
+				<fixr:documentation>Trader to Gateway</fixr:documentation>
+			</fixr:annotation>
+		</fixr:flow>
+		<fixr:flow name="GT" source="gateway" destination="trader">
+			<fixr:annotation>
+				<fixr:documentation>Gateway to Trader</fixr:documentation>
+			</fixr:annotation>
+		</fixr:flow>
+		<fixr:flow name="REF" source="gateway" destination="trader">
+			<fixr:annotation>
+				<fixr:documentation>Reference Data</fixr:documentation>
+			</fixr:annotation>
+		</fixr:flow>
+	</fixr:actors>
+	<fixr:messages>
 			<fixr:message id="2000" name="EquitiesSymbolReferenceData" flow="GT">
 				<fixr:structure>
 					<fixr:componentRef id="1000" name="MsgHeader">
@@ -957,5 +960,4 @@
 				</fixr:structure>
 			</fixr:message>
 		</fixr:messages>
-	</fixr:protocol>
 </fixr:repository>
