@@ -14,8 +14,12 @@ Specifications and source material for Orchestra are available in GitHub.
 
 [Orchestra schema and sample code](https://github.com/FIXTradingCommunity/fix-orchestra)
 
+## Updates
+
+Updated March 2019 to conform to Orchestra Release Candidate 4 schema.
+
 ## License
-© Copyright 2017 FIX Protocol Limited
+© Copyright 2017-2019 FIX Protocol Limited
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

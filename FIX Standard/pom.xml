@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>io.fixprotocol.orchestrations</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.2.0-RC3-SNAPSHOT</version>
+		<version>1.3.0-RC4</version>
 	</parent>
 	<artifactId>fix-standard</artifactId>
 	<description>Generates humanly readable documentation of FIX standard versions</description>
