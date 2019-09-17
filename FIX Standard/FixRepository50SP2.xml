@@ -23903,7 +23903,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="89" name="Signature" type="data" added="FIX.2.7" deprecated="FIXT.1.1" abbrName="Signature" lengthId="90" lengthName="SecureDataLen">
+		<fixr:field id="89" name="Signature" type="data" added="FIX.2.7" deprecated="FIXT.1.1" abbrName="Signature" lengthId="90">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Electronic signature
@@ -23917,7 +23917,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="91" name="SecureData" type="data" added="FIX.2.7" deprecated="FIXT.1.1" abbrName="SecureData" lengthId="90" lengthName="SecureDataLen">
+		<fixr:field id="91" name="SecureData" type="data" added="FIX.2.7" deprecated="FIXT.1.1" abbrName="SecureData" lengthId="90">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Actual encrypted data stream
@@ -23945,7 +23945,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="96" name="RawData" type="data" added="FIX.2.7" abbrName="RawData" lengthId="95" lengthName="RawDataLength">
+		<fixr:field id="96" name="RawData" type="data" added="FIX.2.7" abbrName="RawData" lengthId="95">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Unformatted raw data, can include bitmaps, word processor documents, etc.
@@ -24634,7 +24634,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="213" name="XmlData" type="data" added="FIX.4.2" abbrName="XmlData" lengthId="212" lengthName="XmlDataLen">
+		<fixr:field id="213" name="XmlData" type="data" added="FIX.4.2" abbrName="XmlData" lengthId="212">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Actual XML data stream (e.g. FIXML). See approriate XML reference (e.g. FIXML). Note: may contain embedded SOH characters.
@@ -25684,7 +25684,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="349" name="EncodedIssuer" type="data" added="FIX.4.2" abbrName="EncIssr" lengthId="348" lengthName="EncodedIssuerLen">
+		<fixr:field id="349" name="EncodedIssuer" type="data" added="FIX.4.2" abbrName="EncIssr" lengthId="348">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encoded (non-ASCII characters) representation of the Issuer field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the Issuer field.
@@ -25698,7 +25698,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="351" name="EncodedSecurityDesc" type="data" added="FIX.4.2" abbrName="EncSecDesc" lengthId="350" lengthName="EncodedSecurityDescLen">
+		<fixr:field id="351" name="EncodedSecurityDesc" type="data" added="FIX.4.2" abbrName="EncSecDesc" lengthId="350">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encoded (non-ASCII characters) representation of the SecurityDesc (107) field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the SecurityDesc field.
@@ -25712,7 +25712,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="353" name="EncodedListExecInst" type="data" added="FIX.4.2" abbrName="EncListExecInst" lengthId="352" lengthName="EncodedListExecInstLen">
+		<fixr:field id="353" name="EncodedListExecInst" type="data" added="FIX.4.2" abbrName="EncListExecInst" lengthId="352">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encoded (non-ASCII characters) representation of the ListExecInst (69) field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the ListExecInst field.
@@ -25726,7 +25726,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="355" name="EncodedText" type="data" added="FIX.4.2" abbrName="EncTxt" lengthId="354" lengthName="EncodedTextLen">
+		<fixr:field id="355" name="EncodedText" type="data" added="FIX.4.2" abbrName="EncTxt" lengthId="354">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encoded (non-ASCII characters) representation of the Text (58) field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the Text field.
@@ -25740,7 +25740,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="357" name="EncodedSubject" type="data" added="FIX.4.2" abbrName="EncSubject" lengthId="356" lengthName="EncodedSubjectLen">
+		<fixr:field id="357" name="EncodedSubject" type="data" added="FIX.4.2" abbrName="EncSubject" lengthId="356">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encoded (non-ASCII characters) representation of the Subject (147) field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the Subject field.
@@ -25754,7 +25754,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="359" name="EncodedHeadline" type="data" added="FIX.4.2" abbrName="EncHeadline" lengthId="358" lengthName="EncodedHeadlineLen">
+		<fixr:field id="359" name="EncodedHeadline" type="data" added="FIX.4.2" abbrName="EncHeadline" lengthId="358">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encoded (non-ASCII characters) representation of the Headline (148) field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the Headline field.
@@ -25768,7 +25768,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="361" name="EncodedAllocText" type="data" added="FIX.4.2" abbrName="EncAllocText" lengthId="360" lengthName="EncodedAllocTextLen">
+		<fixr:field id="361" name="EncodedAllocText" type="data" added="FIX.4.2" abbrName="EncAllocText" lengthId="360">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encoded (non-ASCII characters) representation of the AllocText (161) field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the AllocText field.
@@ -25782,7 +25782,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="363" name="EncodedUnderlyingIssuer" type="data" added="FIX.4.2" abbrName="EncUndIssr" lengthId="362" lengthName="EncodedUnderlyingIssuerLen">
+		<fixr:field id="363" name="EncodedUnderlyingIssuer" type="data" added="FIX.4.2" abbrName="EncUndIssr" lengthId="362">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encoded (non-ASCII characters) representation of the UnderlyingIssuer (306) field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the UnderlyingIssuer field.
@@ -25796,7 +25796,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="365" name="EncodedUnderlyingSecurityDesc" type="data" added="FIX.4.2" abbrName="EncUndSecDesc" lengthId="364" lengthName="EncodedUnderlyingSecurityDescLen">
+		<fixr:field id="365" name="EncodedUnderlyingSecurityDesc" type="data" added="FIX.4.2" abbrName="EncUndSecDesc" lengthId="364">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encoded (non-ASCII characters) representation of the UnderlyingSecurityDesc (307) field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the UnderlyingSecurityeDesc field.
@@ -26355,7 +26355,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="446" name="EncodedListStatusText" type="data" added="FIX.4.2" abbrName="EncListStatText" lengthId="445" lengthName="EncodedListStatusTextLen">
+		<fixr:field id="446" name="EncodedListStatusText" type="data" added="FIX.4.2" abbrName="EncListStatText" lengthId="445">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encoded (non-ASCII characters) representation of the ListStatusText (444) field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the ListStatusText field.
@@ -27618,7 +27618,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="619" name="EncodedLegIssuer" type="data" added="FIX.4.3" abbrName="EncLegIssr" lengthId="618" lengthName="EncodedLegIssuerLen">
+		<fixr:field id="619" name="EncodedLegIssuer" type="data" added="FIX.4.3" abbrName="EncLegIssr" lengthId="618">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Multileg instrument's individual security's EncodedIssuer.
@@ -27642,7 +27642,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="622" name="EncodedLegSecurityDesc" type="data" added="FIX.4.3" abbrName="EncLegSecDesc" lengthId="621" lengthName="EncodedLegSecurityDescLen">
+		<fixr:field id="622" name="EncodedLegSecurityDesc" type="data" added="FIX.4.3" abbrName="EncLegSecDesc" lengthId="621">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Multileg instrument's individual security's EncodedSecurityDesc.
@@ -31636,7 +31636,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="1185" name="SecurityXML" type="XMLData" added="FIX.5.0" addedEP="49" abbrName="SecXML" lengthId="1184" lengthName="SecurityXMLLen">
+		<fixr:field id="1185" name="SecurityXML" type="XMLData" added="FIX.5.0" addedEP="49" abbrName="SecXML" lengthId="1184">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Actual XML data stream describing a security, normally FpML.
@@ -32205,7 +32205,7 @@
 				<fixr:documentation purpose="SYNOPSIS"/>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="1278" name="DerivativeEncodedIssuer" type="data" added="FIX.5.0" addedEP="52" abbrName="EncIssr" lengthId="1277" lengthName="DerivativeEncodedIssuerLen">
+		<fixr:field id="1278" name="DerivativeEncodedIssuer" type="data" added="FIX.5.0" addedEP="52" abbrName="EncIssr" lengthId="1277">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS"/>
 			</fixr:annotation>
@@ -32220,7 +32220,7 @@
 				<fixr:documentation purpose="SYNOPSIS"/>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="1281" name="DerivativeEncodedSecurityDesc" type="data" added="FIX.5.0" addedEP="52" abbrName="EncSecDesc" lengthId="1280" lengthName="DerivativeEncodedSecurityDescLen">
+		<fixr:field id="1281" name="DerivativeEncodedSecurityDesc" type="data" added="FIX.5.0" addedEP="52" abbrName="EncSecDesc" lengthId="1280">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS"/>
 			</fixr:annotation>
@@ -32232,7 +32232,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="1283" name="DerivativeSecurityXML" type="data" added="FIX.5.0" addedEP="52" abbrName="SecXML" lengthId="1282" lengthName="DerivativeSecurityXMLLen">
+		<fixr:field id="1283" name="DerivativeSecurityXML" type="data" added="FIX.5.0" addedEP="52" abbrName="SecXML" lengthId="1282">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Refer to definition of SecurityXML(1185)
@@ -32585,7 +32585,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="1398" name="EncodedMktSegmDesc" type="data" added="FIX.5.0" addedEP="53" abbrName="EncodedMktSegmDesc" lengthId="1397" lengthName="EncodedMktSegmDescLen">
+		<fixr:field id="1398" name="EncodedMktSegmDesc" type="data" added="FIX.5.0" addedEP="53" abbrName="EncodedMktSegmDesc" lengthId="1397">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encoded (non-ASCII characters) representation of the MarketSegmDesc(1396) field in the encoded format specified via the MessageEncoding(347) field. If used, the ASCII (English) representation should also be specified in the MarketSegmDesc field.
@@ -32775,7 +32775,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="1402" name="EncryptedPassword" type="data" added="FIX.5.0" addedEP="56" abbrName="EncPwd" lengthId="1401" lengthName="EncryptedPasswordLen">
+		<fixr:field id="1402" name="EncryptedPassword" type="data" added="FIX.5.0" addedEP="56" abbrName="EncPwd" lengthId="1401">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encrypted password - encrypted via the method specified in the field EncryptedPasswordMethod(1400)
@@ -32789,7 +32789,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="1404" name="EncryptedNewPassword" type="data" added="FIX.5.0" addedEP="56" abbrName="EncNewPwd" lengthId="1403" lengthName="EncryptedNewPasswordLen">
+		<fixr:field id="1404" name="EncryptedNewPassword" type="data" added="FIX.5.0" addedEP="56" abbrName="EncNewPwd" lengthId="1403">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encrypted new password - encrypted via the method specified in the field EncryptedPasswordMethod(1400)
@@ -33509,7 +33509,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="1469" name="EncodedSecurityListDesc" type="data" added="FIX.5.0SP1" addedEP="87" lengthId="1468" lengthName="EncodedSecurityListDescLen">
+		<fixr:field id="1469" name="EncodedSecurityListDesc" type="data" added="FIX.5.0SP1" addedEP="87" lengthId="1468">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Encoded (non-ASCII characters) representation of the SecurityListDesc (1467) field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the SecurityListDesc field.
