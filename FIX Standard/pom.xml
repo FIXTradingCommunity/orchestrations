@@ -1,19 +1,23 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>io.fixprotocol.orchestrations</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.3.0-RC4</version>
+		<version>1.4.1-RC5-SNAPSHOT</version>
 	</parent>
 	<artifactId>fix-standard</artifactId>
 	<description>Generates humanly readable documentation of FIX standard versions</description>
 	<name>${project.groupId}:${project.artifactId}</name>
+	<properties>
+	<doc.directory>${project.build.directory}/classes/doc</doc.directory>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>io.fixprotocol.orchestra</groupId>
 			<artifactId>docgen</artifactId>
-			<version>${docgen.version}</version>
+			<version>${orchestra.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -24,79 +28,73 @@
 				<version>1.6.0</version>
 				<executions>
 					<execution>
-						<phase>prepare-package</phase>
+						<phase>generate-resources</phase>
 						<goals>
 							<goal>java</goal>
 						</goals>
 						<id>fix42</id>
+						<configuration>
+							<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
+							<arguments>
+								<argument>${project.basedir}/FixRepository42.xml</argument>
+								<argument>${doc.directory}/fix42</argument>
+							</arguments>
+						</configuration>
 					</execution>
-				</executions>
-				<configuration>
-					<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
-					<arguments>
-						<argument>${project.basedir}/FixRepository42.xml</argument>
-						<argument>${project.build.directory}/doc/fix42</argument>
-					</arguments>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.6.0</version>
-				<executions>
 					<execution>
-						<phase>prepare-package</phase>
+						<phase>generate-resources</phase>
 						<goals>
 							<goal>java</goal>
 						</goals>
 						<id>fix44</id>
+						<configuration>
+							<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
+							<arguments>
+								<argument>${project.basedir}/FixRepository44.xml</argument>
+								<argument>${doc.directory}/fix44</argument>
+							</arguments>
+						</configuration>
 					</execution>
-				</executions>
-				<configuration>
-					<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
-					<arguments>
-						<argument>${project.basedir}/FixRepository44.xml</argument>
-						<argument>${project.build.directory}/doc/fix44</argument>
-					</arguments>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.6.0</version>
-				<executions>
 					<execution>
-						<phase>prepare-package</phase>
+						<phase>generate-resources</phase>
 						<goals>
 							<goal>java</goal>
 						</goals>
 						<id>fix50sp2</id>
+						<configuration>
+							<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
+							<arguments>
+								<argument>${project.basedir}/FixRepository50SP2.xml</argument>
+								<argument>${doc.directory}/fix50sp2</argument>
+							</arguments>
+						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
-					<arguments>
-						<argument>${project.basedir}/FixRepository50SP2.xml</argument>
-						<argument>${project.build.directory}/doc/fix50sp2</argument>
-					</arguments>
-				</configuration>
 			</plugin>
-			<plugin>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.0.2</version>
-				<executions>
-					<execution>
-						<id>default-jar</id>
-						<phase>package</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<classesDirectory>${project.build.directory}/doc</classesDirectory>
-				</configuration>
-			</plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/classes</outputDirectory>
+              <resources>          
+                <resource>
+                  <directory>${project.basedir}</directory>
+                  <includes>
+                  <include>Fix*.xml</include>
+                  </includes>
+                </resource>
+              </resources>              
+            </configuration>            
+          </execution>
+        </executions>
+      </plugin>
 		</plugins>
 	</build>
 </project>

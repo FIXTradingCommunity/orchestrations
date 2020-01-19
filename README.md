@@ -16,10 +16,10 @@ Specifications and source material for Orchestra are available in GitHub.
 
 ## Updates
 
-Updated March 2019 to conform to Orchestra Release Candidate 4 schema.
+Updated January 2020 to conform to Orchestra version 1.0 Release Candidate 5 schema.
 
 ## License
-© Copyright 2017-2019 FIX Protocol Limited
+© Copyright 2017-2020 FIX Protocol Limited
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
