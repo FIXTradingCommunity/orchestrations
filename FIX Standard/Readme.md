@@ -9,3 +9,13 @@ These Orchestra files are snapshots of versions of the FIX protocol that are sti
 These files were translated from FIX Repository 2010 Edition into the Orchestra schema. Since the old Repository format only described message structures, these translations are limited to that content. Future orchestrations will contain workflow as well.
 
 Orchestra files for incremental updates to the FIX standard, called extension packs, will be published periodically through the [FIX Trading Community](https://www.fixtrading.org/) website.
+
+This resource is available through Maven central repository as
+
+```xml
+<dependency>
+  <groupId>io.fixprotocol.orchestrations</groupId>
+  <artifactId>fix-standard</artifactId>
+  <version>1.4.1-RC5-SNAPSHOT</version>
+</dependency>
+```
