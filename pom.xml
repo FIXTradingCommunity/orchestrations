@@ -5,10 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.fixprotocol.orchestrations</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.4.1-RC5-SNAPSHOT</version>
+	<version>1.5.0</version>
 	<packaging>pom</packaging>
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>Parent project for a catalog of Orchestra implementations</description>
+	<url>https://github.com/FIXTradingCommunity/orchestrations</url>
 	<inceptionYear>2017</inceptionYear>
 	<prerequisites>
 		<maven>3.3.1</maven>
@@ -58,7 +59,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<orchestra.version>1.4.1-RC5-SNAPSHOT</orchestra.version>
+		<orchestra.version>1.5.0</orchestra.version>
 	</properties>
 
 	<build>

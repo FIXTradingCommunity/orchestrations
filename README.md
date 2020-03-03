@@ -16,7 +16,7 @@ Specifications and source material for Orchestra are available in GitHub.
 
 ## Updates
 
-Updated January 2020 to conform to Orchestra version 1.0 Release Candidate 5 schema.
+Updatedto conform to Orchestra version 1.0 Draft Standard schema.
 
 ## License
 © Copyright 2017-2020 FIX Protocol Limited
