@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>io.fixprotocol.orchestrations</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.5.0</version>
+		<version>1.5.1</version>
 	</parent>
 	<artifactId>fix-standard</artifactId>
 	<description>Generates humanly readable documentation of FIX standard versions</description>
 	<name>${project.groupId}:${project.artifactId}</name>
 	<properties>
-	<doc.directory>${project.build.directory}/classes/doc</doc.directory>
+		<doc.directory>${project.build.directory}/classes/doc</doc.directory>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -60,41 +60,42 @@
 						<goals>
 							<goal>java</goal>
 						</goals>
-						<id>fix50sp2</id>
+						<id>fixlatest</id>
 						<configuration>
 							<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
 							<arguments>
-								<argument>${project.basedir}/FixRepository50SP2.xml</argument>
-								<argument>${doc.directory}/fix50sp2</argument>
+								<argument>${project.basedir}/OrchestraEP255.xml</argument>
+								<argument>${doc.directory}/fixlatest</argument>
 							</arguments>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-      <plugin>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>3.1.0</version>
-        <executions>
-          <execution>
-            <id>copy-resources</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.build.directory}/classes</outputDirectory>
-              <resources>          
-                <resource>
-                  <directory>${project.basedir}</directory>
-                  <includes>
-                  <include>Fix*.xml</include>
-                  </includes>
-                </resource>
-              </resources>              
-            </configuration>            
-          </execution>
-        </executions>
-      </plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/classes</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.basedir}</directory>
+									<includes>
+										<include>Fix*.xml</include>
+										<include>Orchestra*.xml</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>

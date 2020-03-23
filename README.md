@@ -1,4 +1,5 @@
 # orchestrations
+
 ## Service offerings expressed with Orchestra
 
 Orchestra is a standard developed by the [FIX Trading Community](http://www.fixtradingcommunity.org/). It was conceived to provide machine readable rules of engagement for counterparties. Machine readable rules avoid ambiguities and gaps prevalent in narrative specifications and may be directly processed by users to generate code, configurations, test cases, and so forth.
@@ -16,7 +17,7 @@ Specifications and source material for Orchestra are available in GitHub.
 
 ## Updates
 
-Updatedto conform to Orchestra version 1.0 Draft Standard schema.
+Updated to conform to Orchestra version 1.0 Draft Standard schema.
 
 ## License
 © Copyright 2017-2020 FIX Protocol Limited
