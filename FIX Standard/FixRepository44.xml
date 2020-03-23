@@ -7103,7 +7103,7 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="OrderCancel" id="434002" value="2" added="FIX.4.2">
+			<fixr:code name="OrderCancelReplaceRequest" id="434002" value="2" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
          Order Cancel/Replace Request
