@@ -64,7 +64,7 @@
 						<configuration>
 							<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
 							<arguments>
-								<argument>${project.basedir}/OrchestraEP255.xml</argument>
+								<argument>${project.basedir}/OrchestraFIXLatest.xml</argument>
 								<argument>${doc.directory}/fixlatest</argument>
 							</arguments>
 						</configuration>
