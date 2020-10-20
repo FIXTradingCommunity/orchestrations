@@ -10749,7 +10749,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:group>
-		<fixr:group added="FIX.4.2" id="2042" name="QuotEntryGrp">
+		<fixr:group added="FIX.4.2" id="2043" name="QuotEntryGrp">
 			<fixr:numInGroup id="295"/>
 			<fixr:fieldRef id="299" added="FIX.4.2">
 				<fixr:annotation>
