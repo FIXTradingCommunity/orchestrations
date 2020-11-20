@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.fixprotocol.orchestrations</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.5.1</version>
+	<version>1.5.2</version>
 	<packaging>pom</packaging>
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>Parent project for a catalog of Orchestra implementations</description>
@@ -59,7 +59,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<orchestra.version>1.6.5</orchestra.version>
+		<orchestra.version>1.6.8</orchestra.version>
 	</properties>
 
 	<build>

@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>io.fixprotocol.orchestrations</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.5.1</version>
+		<version>1.5.2</version>
 	</parent>
 	<artifactId>fix-standard</artifactId>
 	<description>Generates humanly readable documentation of FIX standard versions</description>
