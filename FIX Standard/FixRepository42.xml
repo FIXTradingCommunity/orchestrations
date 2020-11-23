@@ -10749,7 +10749,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:group>
-		<fixr:group added="FIX.4.2" id="2043" name="QuotEntryGrp">
+		<fixr:group added="FIX.4.2" id="2042" name="QuoteEntryAckGrp">
 			<fixr:numInGroup id="295"/>
 			<fixr:fieldRef id="299" added="FIX.4.2">
 				<fixr:annotation>
@@ -10892,6 +10892,154 @@
          The number of quotes for this Symbol (QuoteSet) that follow in this message.
       </fixr:documentation>
 			</fixr:annotation>
+		</fixr:group>
+		<fixr:group added="FIX.4.2" id="2043" name="QuoteEntryGrp">
+			<fixr:numInGroup id="295"/>
+			<fixr:fieldRef id="299" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Uniquely identifies the quote as part of a QuoteSet.
+         First field in repeating group. Required if NoQuoteEntries &gt; 0.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="55" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation/>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="65" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation/>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="48" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation/>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="22" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation/>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="167" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Must be specified if a Future or Option. If a Future: Symbol, SecurityType, and MaturityMonthYear are required. If an Option: Symbol, SecurityType, MaturityMonthYear, PutOrCall, and StrikePrice are required.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="200" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="205" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Can be used in conjunction with MaturityMonthYear to specify a particular maturity date.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="201" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         For Options.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="202" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         For Options.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="206" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         For Options.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="231" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         For Fixed Income, Convertible Bonds, Derivatives, etc. Note: If used, quantities should be expressed in the "nominal" (e.g. contracts vs. shares) amount.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="223" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         For Fixed Income.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="207" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Can be used to identify the security.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="106" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation/>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="348" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Must be set if EncodedIssuer field is specified and must immediately precede it.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="349" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Encoded (non-ASCII characters) representation of the Issuer field in the encoded format specified via the MessageEncoding field.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="107" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation/>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="350" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Must be set if EncodedSecurityDesc field is specified and must immediately precede it.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="351" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Encoded (non-ASCII characters) representation of the SecurityDesc field in the encoded format specified via the MessageEncoding field.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="132" added="FIX.4.2"/>
+			<fixr:fieldRef id="133" added="FIX.4.2"/>
+			<fixr:fieldRef id="134" added="FIX.4.2"/>
+			<fixr:fieldRef id="135" added="FIX.4.2"/>
+			<fixr:fieldRef id="62" added="FIX.4.2"/>
+			<fixr:fieldRef id="188" added="FIX.4.2"/>
+			<fixr:fieldRef id="190" added="FIX.4.2"/>
+			<fixr:fieldRef id="189" added="FIX.4.2"/>
+			<fixr:fieldRef id="191" added="FIX.4.2"/>
+			<fixr:fieldRef id="60" added="FIX.4.2"/>
+			<fixr:fieldRef id="336" added="FIX.4.2"/>
+			<fixr:fieldRef id="64" added="FIX.4.2"/>
+			<fixr:fieldRef id="40" added="FIX.4.2"/>
+			<fixr:fieldRef id="193" added="FIX.4.2"/>
+			<fixr:fieldRef id="192" added="FIX.4.2"/>
+			<fixr:fieldRef id="15" added="FIX.4.2"/>
 		</fixr:group>
 		<fixr:group added="FIX.4.2" id="1021" name="UnderlyingInstrument">
 			<fixr:numInGroup id="146"/>
