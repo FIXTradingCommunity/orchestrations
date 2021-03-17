@@ -1,18 +1,22 @@
 # FIX Standards
 
-These Orchestra files are snapshots of versions of the FIX protocol that are still supported. 
+## FIX Latest
 
-* FIX 4.2
-* FIX 4.4
-* FIX Latest
+The FIX Latest file represents the current FIX application layer standard. Orchestra files for incremental updates to the FIX standard, called extension packs, will be published periodically as FIX Latest. Extension pack files including gap analysis documents are available at [FIX Extension Packs](https://www.fixtrading.org/extension-packs/).
 
-Orchestra files for incremental updates to the FIX standard, called extension packs, will be published periodically as FIX Latest. Extension pack files including gap analysis documents are available at [FIX Extension Packs](https://www.fixtrading.org/extension-packs/).
+## Session Layer
 
-## Generation
+Two files are provided that represent the messages of the FIX session layer that are used with tag-value encoding. One represents the FIXT standard and the other represents the traditional FIX 4.4 session protocol.
+
+## Legacy Application Layer
+
+The FIX 4.2 and FIX 4.4 files represent those versions of the FIX standard. They are frozen; no substantive updates will be made.
+
+### Generation
 
 The FIX 4.2 and 4.4 files were translated from FIX Unified Repository 2010 Edition into the Orchestra schema. Since the old Repository format only described message structures, these translations are limited to that content, without scenarios or workflows. 
 
-### Translation Notes
+#### Translation Notes
 
 * In FIX 4.2, repeating groups were defined in-line in message definitions. They had no identities of their own. To translate them to Orchestra schema, where group ID and name are required, they were matched up with corresponding definitions in later versions of FIX by the containing message type and the group's NumInGroup tag. The ID and name of the matching group was then used, although no such identity actually existed in the FIX 4.2 Repository.
 * In a few cases, the same repeating group was defined in different messages in the FIX 4.2 Repository. In translating to Orchestra, the repeating groups were manually deduplicated.
@@ -32,6 +36,8 @@ This resource is available through Maven central repository as
 <dependency>
   <groupId>io.fixprotocol.orchestrations</groupId>
   <artifactId>fix-standard</artifactId>
-  <version>1.5.1</version>
+  <version>1.5.3</version>
 </dependency>
 ```
+
+The Maven build process validates each Orchestra file and generates documentation.

@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>io.fixprotocol.orchestrations</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.5.2</version>
+		<version>1.5.3</version>
 	</parent>
 	<artifactId>fix-standard</artifactId>
 	<description>Generates humanly readable documentation of FIX standard versions</description>
@@ -16,7 +16,12 @@
 	<dependencies>
 		<dependency>
 			<groupId>io.fixprotocol.orchestra</groupId>
-			<artifactId>docgen</artifactId>
+			<artifactId>repository-util</artifactId>
+			<version>${orchestra.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.fixprotocol.orchestra</groupId>
+			<artifactId>orchestra2doc</artifactId>
 			<version>${orchestra.version}</version>
 		</dependency>
 	</dependencies>
@@ -27,6 +32,20 @@
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.6.0</version>
 				<executions>
+					<execution>
+						<id>validateFixLatest</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>io.fixprotocol.orchestra.repository.RepositoryValidator</mainClass>
+							<classpathScope>compile</classpathScope>
+							<arguments>
+								<argument>${project.basedir}/OrchestraFIXLatest.xml</argument>
+							</arguments>
+						</configuration>
+					</execution>							
 					<execution>
 						<phase>generate-resources</phase>
 						<goals>
@@ -69,6 +88,34 @@
 							</arguments>
 						</configuration>
 					</execution>
+					<execution>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<id>fix44session</id>
+						<configuration>
+							<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
+							<arguments>
+								<argument>${project.basedir}/FIX44Session.xml</argument>
+								<argument>${doc.directory}/fix44session</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<id>fixtsession</id>
+						<configuration>
+							<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
+							<arguments>
+								<argument>${project.basedir}/fixsessionlayer.xml</argument>
+								<argument>${doc.directory}/fixtsession</argument>
+							</arguments>
+						</configuration>
+					</execution>									
 				</executions>
 			</plugin>
 			<plugin>

@@ -1,0 +1,2223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<fixr:repository xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:fixr="http://fixprotocol.io/2020/orchestra/repository" name="FIX4SESSION" version="FIX.4.4" specUrl="http://www.fixprotocol.org/specifications/fix4.4spec" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<fixr:metadata>
+		<dc:title>FIX4 Session Layer</dc:title>
+		<dc:publisher>FIX Trading Community</dc:publisher>
+		<dc:date>2019-05-16T10:11:49.185-05:00</dc:date>
+		<dc:format>Orchestra schema version 1.0 RC4</dc:format>
+	</fixr:metadata>
+	<fixr:categories>
+		<fixr:category name="Session" FIXMLFileName="session" componentType="Message" section="Session"/>
+	</fixr:categories>
+	<fixr:sections>
+		<fixr:section name="Session" displayOrder="0" FIXMLFileName="session">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Session level messages to establish and control a FIX session
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:section>
+	</fixr:sections>
+	<fixr:datatypes>
+		<fixr:datatype name="int" added="FIX.2.7" issue="SPEC-370" updated="FIX.5.0SP2" updatedEP="206">
+			<fixr:mappedDatatype standard="TagValue" base="int">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+Sequence of digits without commas or decimals and optional sign character (characters "-" and "0" -"9"). The sign character utilizes one byte (i.e. positive int is "99999" while negative int is "-99999"). Note that int values may contain leading zeros (e.g. "00023" = "23")
+      </fixr:documentation>
+					<fixr:documentation purpose="EXAMPLE">723 in field 21 would be mapped int as |21=723|. -723 in field 12 would be mapped int as |12=-723|.</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="true" base="xs:integer"/>
+			<fixr:mappedDatatype standard="ISO11404" base="integer"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">integer number</fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Length" baseType="int" added="FIX.4.3">
+			<fixr:mappedDatatype standard="TagValue" base="Length">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+Sequence of digits without commas or decimals. Value must be positive.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" base="xs:nonNegativeInteger"/>
+			<fixr:mappedDatatype standard="ISO11404" base="size"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+Length of field or message in bytes
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="TagNum" baseType="int" added="FIX.4.3" updated="FIX.5.0SP2" updatedEP="99">
+			<fixr:mappedDatatype standard="TagValue" base="TagNum">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+Sequence of digits without commas or decimals. Value must be positive.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" base="xs:nonNegativeInteger"/>
+			<fixr:mappedDatatype standard="ISO11404" base="ordinal"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         A field's tag number
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="SeqNum" baseType="int" added="FIX.4.3">
+			<fixr:mappedDatatype standard="TagValue" base="SeqNum">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+Sequence of digits without commas or decimals. Value must be positive and may not contain leading zeros.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" base="xs:positiveInteger"/>
+			<fixr:mappedDatatype standard="ISO11404" base="ordinal"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         A message sequence number
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="NumInGroup" baseType="int" added="FIX.4.3">
+			<fixr:mappedDatatype standard="TagValue" base="NumInGroup">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+Sequence of digits without commas or decimals. Value must be positive .
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="size"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         The number of entries in a repeating group
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="DayOfMonth" baseType="int" added="FIX.4.1">
+			<fixr:mappedDatatype standard="ISO11404" base="integer range 1..31"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Day number within a month (values 1 to 31)
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="float" added="FIX.2.7" updated="FIX.5.0SP2" updatedEP="206">
+			<fixr:mappedDatatype standard="TagValue" base="float">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+Sequence of digits with optional decimal point and sign character (characters "-", "0" - "9" and "."); the absence of the decimal point within the string will be interpreted as the float representation of an integer value. Note that float values may contain leading zeros (e.g. "00023.23" = "23.23") and may contain or omit trailing zeros after the decimal point (e.g. "23.0" = "23.0000" = "23" = "23.").
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" base="xs:decimal"/>
+			<fixr:mappedDatatype standard="ISO11404" base="real"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+ All float fields must accommodate up to fifteen significant digits. The number of decimal places used should be a factor of business/market needs and mutual agreement between counterparties.
+				 </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Qty" baseType="float" added="FIX.4.2">
+			<fixr:mappedDatatype standard="TagValue" base="float">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+Sequence of digits with optional decimal point and sign character (characters "-", "0" - "9" and "."); the absence of the decimal point within the string will be interpreted as the float representation of an integer value. Note that float values may contain leading zeros (e.g. "00023.23" = "23.23") and may contain or omit trailing zeros after the decimal point (e.g. "23.0" = "23.0000" = "23" = "23.").
+      </fixr:documentation>
+					<fixr:documentation purpose="EXAMPLE">Strk="47.50"</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" base="xs:decimal"/>
+			<fixr:mappedDatatype standard="ISO11404" base="Scaled radix=10"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+A price. Note the number of decimal places may vary. For certain asset classes prices may be negative values. For example, prices for options strategies can be negative under certain market conditions.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="PriceOffset" baseType="float" added="FIX.4.2">
+			<fixr:mappedDatatype standard="TagValue" base="float">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+Sequence of digits with optional decimal point and sign character (characters "-", "0" - "9" and "."); the absence of the decimal point within the string will be interpreted as the float representation of an integer value. Note that float values may contain leading zeros (e.g. "00023.23" = "23.23") and may contain or omit trailing zeros after the decimal point (e.g. "23.0" = "23.0000" = "23" = "23.").
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" base="xs:decimal"/>
+			<fixr:mappedDatatype standard="ISO11404" base="Scaled radix=10"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+A price offset, which can be mathematically added to a Price. Note the number of decimal places may vary and some fields such as LastForwardPoints may be negative.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Amt" baseType="float" added="FIX.4.2">
+			<fixr:mappedDatatype standard="TagValue" base="float">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+Sequence of digits with optional decimal point and sign character (characters "-", "0" - "9" and "."); the absence of the decimal point within the string will be interpreted as the float representation of an integer value. Note that float values may contain leading zeros (e.g. "00023.23" = "23.23") and may contain or omit trailing zeros after the decimal point (e.g. "23.0" = "23.0000" = "23" = "23.").
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" base="xs:decimal"/>
+			<fixr:mappedDatatype standard="ISO11404" base="Scaled radix=10"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Typically representing a Price times a Qty
+      </fixr:documentation>
+				<fixr:documentation purpose="EXAMPLE">Amt="6847.00"</fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Percentage" baseType="float" added="FIX.4.3">
+			<fixr:mappedDatatype standard="TagValue" base="float">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+Sequence of digits with optional decimal point and sign character (characters "-", "0" - "9" and "."); the absence of the decimal point within the string will be interpreted as the float representation of an integer value. Note that float values may contain leading zeros (e.g. "00023.23" = "23.23") and may contain or omit trailing zeros after the decimal point (e.g. "23.0" = "23.0000" = "23" = "23.").
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" base="xs:decimal"/>
+			<fixr:mappedDatatype standard="ISO11404" base="real"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         A percentage (e.g. 0.05 represents 5% and 0.9525 represents 95.25%). Note the number of decimal places may vary.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="char" added="FIX.2.7" updated="FIX.5.0SP2" updatedEP="206">
+			<fixr:mappedDatatype standard="TagValue" base="char">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Single character value, can include any alphanumeric character or punctuation except the delimiter. All char fields are case sensitive (i.e. m != M). By default ISO/IEC 8859-1 (Latin-1). By counterparty agreement, a different single-byte character set may be used.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="false" base="xs:string"/>
+			<fixr:mappedDatatype standard="ISO11404" base="character repertoire=8859-1">
+				<fixr:annotation>
+					<fixr:documentation>By counterparty agreement, a different repertoire may be used.</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Single character value, can include any alphanumeric character or punctuation except the delimiter. All char fields are case sensitive (i.e. m != M).
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Boolean" baseType="char" added="FIX.4.2">
+			<fixr:mappedDatatype standard="TagValue" base="Boolean">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         One of two values:
+         'Y' = True/Yes
+         'N' = False/No
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="false" base="xs:string" pattern="[YN]{1}">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         One of two values:
+         'Y' = True/Yes
+         'N' = False/No
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="boolean"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Boolean
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="String" added="FIX.4.2">
+			<fixr:mappedDatatype standard="TagValue" base="String">
+				<fixr:annotation>
+					<fixr:documentation>Alpha-numeric free-format strings can include any character except control characters.</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="true" base="xs:string">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case sensitive (i.e. morstatt != Morstatt).
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="characterstring repertoire=8859-1 (Latin-1)">
+				<fixr:annotation>
+					<fixr:documentation>By counterparty agreement, a different repertoire may be used.</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case sensitive (i.e. morstatt != Morstatt).
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="MultipleCharValue" baseType="String" added="FIX.4.4">
+			<fixr:mappedDatatype standard="TagValue" builtin="false" base="String" pattern="[A-Za-z0-9](\s[A-Za-z0-9])*">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         String containing one or more space delimited single character values (e.g. |18=2 A F| ).
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="false" base="xs:string" pattern="[A-Za-z0-9](\s[A-Za-z0-9])*">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         String containing one or more space delimited single character values (e.g. |18=2 A F| ).
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="set element=character repertoire=8859-1 (Latin-1)"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Set of character codes. Deprecated; new message designs should use repeating groups for multiple values instead.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="MultipleStringValue" baseType="String" added="FIX.4.2">
+			<fixr:mappedDatatype standard="TagValue" builtin="false" base="String" pattern=".+(\s.+)*">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         String containing one or more space delimited multiple character values (e.g. |277=AV AN A| ).
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="false" base="xs:string" pattern=".+(\s.+)*">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         String containing one or more space delimited multiple character values (e.g. |277=AV AN A| ).
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="set element=characterstring repertoire=8859-1 (Latin-1)"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Set of String codes. Deprecated; new message designs should use repeating groups for multiple values instead.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Country" baseType="String" added="FIX.4.4">
+			<fixr:mappedDatatype standard="TagValue" builtin="false" base="String">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         String representing a country using ISO 3166 Country code (2 character) values.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="false" base="xs:string" pattern=".{2}">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         String representing a country using ISO 3166 Country code (2 character) values.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="array element=character index-lowerbound=1 index-upperbound=2"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         External code set ISO 3166-1:2013 Codes for the representation of names of countries and their subdivisions - Part 1: Country codes
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Currency" baseType="String" added="FIX.4.2">
+			<fixr:mappedDatatype standard="TagValue" builtin="false" base="String">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         3-character code
+      </fixr:documentation>
+					<fixr:documentation purpose="EXAMPLE">StrkCcy="USD"</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="false" base="xs:string" pattern=".{3}">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         String representing a currency type using ISO 4217 Currency code (3 character) values.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         External code set ISO 4217:2015 Codes for the representation of currencies and funds
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Exchange" baseType="String" added="FIX.4.2">
+			<fixr:mappedDatatype standard="TagValue" builtin="false" base="String">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         4-character code
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="false" base="xs:string" pattern=".*">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         String representing a market or exchange using ISO 10383 Market Identifier Code (MIC) values.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="array element=character index-lowerbound=1 index-upperbound=4"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         External code set ISO 10383:2012 Securities and related financial instruments - Codes for exchanges and market identification (MIC)
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="MonthYear" baseType="String" added="FIX.4.1">
+			<fixr:mappedDatatype standard="TagValue" builtin="false" base="String">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         String representing month of a year. An optional day of the month can be appended or an optional week code.
+         Valid formats:
+         YYYYMM
+         YYYYMMDD
+         YYYYMMWW
+         Valid values:
+         YYYY = 0000-9999; MM = 01-12; DD = 01-31; WW = w1, w2, w3, w4, w5.
+      </fixr:documentation>
+					<fixr:documentation purpose="EXAMPLE">MonthYear="200303",  MonthYear="20030320", MonthYear="200303w2"</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="false" base="xs:string" pattern="\d{4}(0|1)\d([0-3wW]\d)?">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         String representing month of a year. An optional day of the month can be appended or an optional week code.
+         Valid formats:
+         YYYYMM
+         YYYYMMDD
+         YYYYMMWW
+         Valid values:
+         YYYY = 0000-9999; MM = 01-12; DD = 01-31; WW = w1, w2, w3, w4, w5.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         month and year of instrument maturity or expiration
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="UTCTimestamp" baseType="String" added="FIX.4.2" updated="FIX.5.0SP2" updatedEP="206">
+			<fixr:mappedDatatype standard="TagValue" base="UTCTimestamp">
+				<fixr:annotation>
+					<fixr:documentation>
+		representing time/date combination represented in UTC (Universal Time Coordinated) in either YYYYMMDD-HH:MM:SS (whole seconds) or YYYYMMDD-HH:MM:SS.sss* format, colons, dash, and period required. Valid values: YYYY = 0000-9999, MM = 01-12, DD = 01-31, HH = 00-23, MM = 0059, SS = 00-60 (60 only if UTC leap second), sss* fractions of seconds. The fractions of seconds may be empty when no fractions of seconds are conveyed (in such a case the period is not conveyed), it may include 3 digits to convey milliseconds, 6 digits to convey microseconds, 9 digits to convey nanoseconds, 12 digits to convey picoseconds; Other number of digits may be used with bilateral agreement.  Leap Seconds: Note that UTC includes corrections for leap seconds, which are inserted to account for slowing of the rotation of the earth. Leap second insertion is declared by the International Earth Rotation Service (IERS) and has, since 1972, only occurred on the night of Dec. 31 or Jun 30. The IERS considers March 31 and September 30 as secondary dates for leap second insertion, but has never utilized these dates. During a leap second insertion, a UTCTimestamp field may read "19981231-23:59:59", "19981231-23:59:60", "19990101-00:00:00". (see http://tycho.usno.navy.mil/leapsec.html) 
+	</fixr:documentation>
+					<fixr:documentation purpose="EXAMPLE">
+		TransactTime(60)="20011217-09:30:47.123" millisecond 
+TransactTime(60)="20011217-09:30:47.123456" microseconds 
+TransactTime(60)="20011217-09:30:47.123456789" nanoseconds 
+TransactTime(60)="20011217-09:30:47.123456789123" picoseconds
+		</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" base="xs:dateTime">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         string field representing date and time combination Universal Time Coordinated (UTC), also known as Greenwich Mean Time (GMT).
+         Its value space is described as the combination of date and time of day in the Chapter 5.4 of ISO 8601.
+         Valid values are in the format YYYY-MM-DDTHH:MM:SS.s where YYYY = 0000-9999 year, MM = 01-12 month, DD = 01-31 day, HH = 00-23 hour, MM = 00-59 minute, SS = 00-60 second (60 only if UTC leap second), and optionally one or more digits representing a decimal fraction of a second.
+         The punctuation of "-", ":" and the string value of "T" to separate the date and time are required. The "." is only required when sub-second time precision is specified.
+         Leap Seconds: Note that UTC includes corrections for leap seconds, which are inserted to account for slowing of the rotation of the earth. Leap second insertion is declared by the International Earth Rotation Service (IERS) and has, since 1972, only occurred on the night of Dec. 31 or Jun 30. The IERS considers March 31 and September 30 as secondary dates for leap second insertion, but has never utilized these dates. During a leap second insertion, a UTCTimestamp field may read "1998-12-31T23:59:59", "1998-12-31T23:59:60", "1999-01-01T00:00:00". (see http://tycho.usno.navy.mil/leapsec.html)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="time time-unit=millisecond or up to picosecond by bilateral agreement"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         UTC date/time
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="UTCTimeOnly" baseType="String" added="FIX.4.2" updated="FIX.5.0SP2" updatedEP="206">
+			<fixr:mappedDatatype standard="TagValue" base="UTCTimeOnly">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+					representing time-only represented in UTC (Universal Time Coordinated) in either HH:MM:SS (whole seconds) or HH:MM:SS.sss* (milliseconds) format, colons, and period required. This special-purpose field is paired with UTCDateOnly to form a proper UTCTimestamp for bandwidth-sensitive messages. Valid values: HH = 00-23, MM = 00-59, SS = 00-60 (60 only if UTC leap second), sss* fractions of seconds. The fractions of seconds may be empty when no fractions of seconds are conveyed (in such a case the period is not conveyed), it may include 3 digits to convey milliseconds, 6 digits to convey microseconds, 9 digits to convey nanoseconds, 12 digits to convey picoseconds; Other number of digits may be used with bilateral agreement. 
+					</fixr:documentation>
+					<fixr:documentation purpose="EXAMPLE">MDEntryTime(273)="13:20:00.123"milliseconds
+MDEntryTime(273)="13:20:00.123456" microseconds
+MDEntryTime(273)="13:20:00.123456789" nanoseconds
+MDEntryTime(273)="13:20:00.123456789123" picoseconds
+</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" base="xs:time">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         representing time-only in Universal Time Coordinated (UTC), also known as Greenwich Mean Time (GMT).
+         Its value space is described as the time of day in the Chapter 5.4 of ISO 8601.
+         Valid values are in the format HH:MM:SS.s where HH = 00-23 hours, MM = 00-59 minutes, SS = 00-60 seconds (60 only if UTC leap second), and optionally s (one or more digits representing a decimal fraction of a second).
+         The punctuation of ":" between hours minutes and seconds are required. The "." is only required when sub-second time precision is specified.
+         This special-purpose field is paired with UTCDateOnly to form a proper UTCTimestamp for bandwidth-sensitive messages.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="time time-unit=millisecond or up to picosecond by bilateral agreement"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">UTC time of day</fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="UTCDateOnly" baseType="String" added="FIX.4.4">
+			<fixr:mappedDatatype standard="TagValue" base="UTCDateOnly">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+          Date represented in UTC (Universal Time Coordinated) in YYYYMMDD format. 
+Valid values:
+YYYY = 0000-9999, MM = 01-12, DD = 01-31.
+      </fixr:documentation>
+					<fixr:documentation purpose="EXAMPLE">MDEntryDate="20030910"</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" base="xs:date">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+          representing Date represented in UTC (Universal Time Coordinated, also known as "GMT") in YYYY-MM-DD format specifed in ISO 8601. This special-purpose field is paired with UTCTimeOnly to form a proper UTCTimestamp for bandwidth-sensitive messages.
+         Valid values:
+         YYYY = 0000-9999, MM = 01-12, DD = 01-31.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="time time-unit=day"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         UTC date
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="LocalMktDate" baseType="String" added="FIX.4.2" updated="FIX.5.0SP2" updatedEP="206">
+			<fixr:mappedDatatype standard="TagValue" base="LocalMktDate">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Date of Local Market (as opposed to UTC) in YYYYMMDD format.
+Valid values:
+YYYY = 0000-9999, MM = 01-12, DD = 01-31.
+
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" base="xs:date">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         representing a Date of Local Market (as opposed to UTC) in YYYY-MM-DD format. 
+         Valid values:
+         YYYY = 0000-9999, MM = 01-12, DD = 01-31.
+      </fixr:documentation>
+					<fixr:documentation purpose="EXAMPLE">MaturityDate(541)="20150724"</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="time time-unit=day"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Local date
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="TZTimeOnly" baseType="String" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="206">
+			<fixr:mappedDatatype standard="TagValue" base="TZTimeOnly">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Time represented based on ISO 8601. This is the time with a UTC offset to allow identification of local time and time zone of that time. 
+Format is HH:MM[:SS][Z | [ + | - hh[:mm]]] where HH = 00-23 hours, MM = 00-59 minutes, SS = 00-59 seconds, hh = 01-12 offset hours, mm = 00-59 offset minutes. 
+      </fixr:documentation>
+					<fixr:documentation purpose="EXAMPLE">"07:39Z" is 07:39 UTC
+"02:39-05" is five hours behind UTC, thus Eastern Time
+"15:39+08" is eight hours ahead of UTC, Hong Kong/Singapore time
+"13:09+05:30" is 5.5 hours ahead of UTC, India time</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="true" base="xs:time">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         representing the time based on ISO 8601. This is the time with a Universal Time Coordinated(UTC) offset to allow identification of local time and timezone.
+         Its value space is described as the combination of date and time of day in the Chapter 5.4 of ISO 8601.
+         Valid values are in the format HH:MM[:SS][Z | [ + | - hh[:mm]]] where HH = 00-23 hours, MM = 00-59 minutes, SS = 00-59 seconds, hh = 01-12 offset hours, mm = 00-59 offset minutes.
+         The punctuation of ":" are required. The "Z" or "+" or "-" are optional to denote a time zone offset.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         string field representing the time represented based on ISO 8601. This is the time with a UTC offset to allow identification of local time and timezone of that time.
+         Format is HH:MM[:SS][Z | [ + | - hh[:mm]]] where HH = 00-23 hours, MM = 00-59 minutes, SS = 00-59 seconds, hh = 01-12 offset hours, mm = 00-59 offset minutes.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="TZTimestamp" baseType="String" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="206">
+			<fixr:mappedDatatype standard="TagValue" base="TZTimestamp">
+				<fixr:annotation>
+				<fixr:documentation>representing a time/date combination representing local time with an offset to UTC to allow identification of local time and time zone offset of that time. The representation is based on ISO 8601. Format is YYYYMMDD-HH:MM:SS.sss*[Z | [ + | - hh[:mm]]] where YYYY = 0000 to 9999, MM = 01-12, DD = 01-31 HH = 00-23 hours, MM = 00-59 minutes, SS = 00-59 seconds, hh = 01-12 offset hours, mm = 00-59 offset minutes, sss* fractions of seconds. The fractions of seconds may be empty when no fractions of seconds are conveyed (in such a case the period is not conveyed), it may include 3 digits to convey milliseconds, 6 digits to convey microseconds, 9 digits to convey nanoseconds, 12 digits to convey picoseconds; Other number of digits may be used with bilateral agreement</fixr:documentation>
+				<fixr:documentation purpose="EXAMPLE">Examples: "20060901-07:39Z" is 07:39 UTC on 1st of September 2006 "20060901-02:39-05" is five hours behind UTC, thus Eastern Time on 1st of September 2006 "20060901-15:39+08" is eight hours ahead of UTC, Hong Kong/Singapore time on 1st of September 2006 "20060901-13:09+05:30" is 5.5 hours ahead of UTC, India time on 1st of September 2006 Using decimal seconds: "20060901-13:09.123+05:30" milliseconds "20060901-13:09.123456+05:30" microseconds "20060901-13:09.123456789+05:30" nanoseconds "20060901-13:09.123456789123+05:30" picoseconds "20060901-13:09.123456789Z" nanoseconds UTC time zone</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="true" base="xs:dateTime">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         representing a date and time combination in local time with an optional offset to Univeral Time Coordinated (UTC). Its vaue space is described as the combination of date and time of day in the Chapter 5.4 of based on ISO 8601.
+         Valid values are in the fFormat is YYYY-MM-DD-THH:MM:SS.s*[Z | [ + | - hh[:mm]]] where YYYY = 0000 to 9999 year, MM = 01-12 month, DD = 01-31 day, HH = 00-23 hours, MM = 00-59 minutes, SS = 00-59 seconds, hh = 01-12 offset hours, mm = 00-59 offset minutes, and optionally sss (one or more digits representing a decimal fraction of a second), hh = 01-12 offset hours, mm = 00-59 offset minutes.
+         The punctuation of "-", ":" and the string value of "T" to separate the date and time are required. The "." is only required when sub-second time precision is specified. The "Z" or "+" or "-" are optional to denote an optional time zone offset.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         string field representing a time/date combination representing local time with an offset to UTC to allow identification of local time and timezone offset of that time. The representation is based on ISO 8601.
+         Format is YYYYMMDD-HH:MM:SS.sss*[Z | [ + | - hh[:mm]]] where YYYY = 0000 to 9999, MM = 01-12, DD = 01-31 HH = 00-23 hours, MM = 00-59 minutes, SS = 00-59 seconds, hh = 01-12 offset hours, mm = 00-59 offset minutes, sss* fractions of seconds. The fractions of seconds may be empty when no fractions of seconds are conveyed (in such a case the period is not conveyed), it may include 3 digits to convey milliseconds, 6 digits to convey microseconds, 9 digits to convey nanoseconds, 12 digits to convey picoseconds; Other number of digits may be used with bilateral agreement
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="data" baseType="String" added="FIX.2.7" updated="FIX.5.0SP2" updatedEP="208">
+			<fixr:mappedDatatype standard="TagValue" base="data">
+				<fixr:annotation>
+					<fixr:documentation>Data fields are always immediately preceded by a Length field. The length field should specify the number of bytes of the value of the data field (up to but not including the terminating SOH). Note that this may be different from the number of characters. If treated as a String of alternative encoding, then the encoding is specified by MessageEncoding header field.</fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="true" base="xs:base64Binary">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         In FIXML, all data type fields are using base64Binary encoding.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="octetstring"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+				Data datatype is a union of opaque data and character data in a different encoding. It is recommended that the latter case be distinguished by naming such a field as EncodedX, e.g. EncodedSecurityDesc.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Pattern" added="FIX.4.4">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Used to build on and provide some restrictions on what is allowed as valid values in fields that uses a base FIX data type and a pattern data type. The universe of allowable valid values for the field would then be the union of the base set of valid values and what is defined by the pattern data type. The pattern data type used by the field will retain its base FIX data type (e.g. String, int, char).
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Tenor" baseType="Pattern" added="FIX.4.4">
+			<fixr:mappedDatatype standard="TagValue" builtin="false" base="String">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         used to allow the expression of FX standard tenors in addition to the base valid enumerations defined for the field that uses this pattern data type. This pattern data type is defined as follows:
+         Dx = tenor expression for "days", e.g. "D5", where "x" is any integer &gt; 0
+         Mx = tenor expression for "months", e.g. "M3", where "x" is any integer &gt; 0
+         Wx = tenor expression for "weeks", e.g. "W13", where "x" is any integer &gt; 0
+         Yx = tenor expression for "years", e.g. "Y1", where "x" is any integer &gt; 0
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="false" base="xs:string" pattern="[DMWY](\d)+">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         used to allow the expression of FX standard tenors in addition to the base valid enumerations defined for the field that uses this pattern data type. This pattern data type is defined as follows:
+         Dx = tenor expression for "days", e.g. "D5", where "x" is any integer &gt; 0
+         Mx = tenor expression for "months", e.g. "M3", where "x" is any integer &gt; 0
+         Wx = tenor expression for "weeks", e.g. "W13", where "x" is any integer &gt; 0
+         Yx = tenor expression for "years", e.g. "Y1", where "x" is any integer &gt; 0
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" builtin="false" base="characterstring"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         used to allow the expression of FX standard tenors in addition to the base valid enumerations defined for the field that uses this pattern data type. This pattern data type is defined as follows:
+         Dx = tenor expression for "days", e.g. "D5", where "x" is any integer &gt; 0
+         Mx = tenor expression for "months", e.g. "M3", where "x" is any integer &gt; 0
+         Wx = tenor expression for "weeks", e.g. "W13", where "x" is any integer &gt; 0
+         Yx = tenor expression for "years", e.g. "Y1", where "x" is any integer &gt; 0
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Reserved100Plus" baseType="Pattern" added="FIX.4.4">
+			<fixr:mappedDatatype standard="TagValue" builtin="false" base="int" minInclusive="100">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Values "100" and above are reserved for bilaterally agreed upon user defined enumerations.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="false" base="xs:integer" minInclusive="100">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Values "100" and above are reserved for bilaterally agreed upon user defined enumerations.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="integer range minInclusive=100"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Values "100" and above are reserved for bilaterally agreed upon user defined enumerations.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Reserved1000Plus" baseType="Pattern" added="FIX.4.4">
+			<fixr:mappedDatatype standard="TagValue" builtin="false" base="int" minInclusive="1000">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Values "1000" and above are reserved for bilaterally agreed upon user defined enumerations.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="false" base="xs:integer" minInclusive="1000">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Values "1000" and above are reserved for bilaterally agreed upon user defined enumerations.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="integer range minInclusive=1000"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Values "1000" and above are reserved for bilaterally agreed upon user defined enumerations.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Reserved4000Plus" baseType="Pattern" added="FIX.4.4">
+			<fixr:mappedDatatype standard="TagValue" builtin="false" base="int" minInclusive="4000">
+				<fixr:annotation>
+				<fixr:documentation>
+         Values "4000" and above are reserved for bilaterally agreed upon user defined enumerations.
+         </fixr:documentation>
+      </fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" builtin="false" base="xs:integer" minInclusive="4000">
+				<fixr:annotation>
+				<fixr:documentation>
+         Values "4000" and above are reserved for bilaterally agreed upon user defined enumerations.
+			 </fixr:documentation>
+		  </fixr:annotation>			
+      </fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="ISO11404" base="integer range minInclusive=4000"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Values "4000" and above are reserved for bilaterally agreed upon user defined enumerations.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="XMLData" baseType="String" added="FIX.5.0">
+			<fixr:mappedDatatype standard="TagValue" builtin="false" base="String">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Contains an XML document raw data with no format or content restrictions. XMLData fields are always immediately preceded by a length field. The length field should specify the number of bytes of the value of the data field (up to but not including the terminating SOH).
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:mappedDatatype standard="XML" base="xs:string"/>
+			<fixr:mappedDatatype standard="ISO11404" base="characterstring repertoire=(value of XML encoding declaration)"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Contains an XML document raw data with no format or content restrictions. XMLData fields are always immediately preceded by a length field. The length field should specify the number of bytes of the value of the data field (up to but not including the terminating SOH).
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="Language" baseType="String" added="FIX.5.0SP1" addedEP="90">
+			<fixr:mappedDatatype standard="XML" builtin="true" base="xs:language"/>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Identifier for a national language - uses ISO 639-1 standard
+      </fixr:documentation>
+				<fixr:documentation purpose="EXAMPLE">en (English), es (spanish), etc.</fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+		<fixr:datatype name="LocalMktTime" baseType="String" added="FIX.5.0SP2" addedEP="161">
+			<fixr:mappedDatatype standard="XML" builtin="true" base="xs:time">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         string field representing the time local to a particular market center. Used where offset to UTC varies throughout the year and the defining market center is identified in a corresponding field.
+         Format is HH:MM:SS where HH = 00-23 hours, MM = 00-59 minutes, SS = 00-59 seconds. In general only the hour token is non-zero.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:mappedDatatype>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         string field representing the time local to a particular market center. Used where offset to UTC varies throughout the year and the defining market center is identified in a corresponding field.
+         Format is HH:MM:SS where HH = 00-23 hours, MM = 00-59 minutes, SS = 00-59 seconds. In general only the hour token is non-zero.
+      </fixr:documentation>
+				<fixr:documentation purpose="EXAMPLE">Example: 07:00:00</fixr:documentation>
+			</fixr:annotation>
+		</fixr:datatype>
+	</fixr:datatypes>
+	<fixr:codeSets>
+		<fixr:codeSet type="String" id="35" name="MsgTypeCodeSet">
+			<fixr:code value="0" added="FIX.2.7" id="35001" name="Heartbeat">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Heartbeat Message
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="1" added="FIX.2.7" id="35002" name="TestRequest">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         TestRequest Message
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="2" added="FIX.2.7" id="35003" name="ResendRequest">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         ResendRequest Message
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="3" added="FIX.2.7" id="35004" name="Reject">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Reject Message
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="4" added="FIX.2.7" id="35005" name="SequenceReset">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         SequenceReset Message
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="5" added="FIX.2.7" id="35006" name="Logout">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Logout Message
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="A" added="FIX.2.7" id="35011" name="Logon">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Logon Message
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="j" added="FIX.4.2" id="35043" name="BusinessMessageReject">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         BusinessMessageReject Message
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="n" added="FIX.4.3" id="35047" name="XMLNonFIX">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         XML message (e.g. non-FIX MsgType)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Defines message type ALWAYS THIRD FIELD IN MESSAGE. (Always unencrypted)
+         Note: A "U" as the first character in the MsgType field (i.e. U, U2, etc) indicates that the message format is privately defined between the sender and receiver.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:codeSet>
+		<fixr:codeSet type="Boolean" id="43" name="PossDupFlagCodeSet">
+			<fixr:code value="Y" added="FIX.2.7" id="43001" name="PossibleDuplicate">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Possible duplicate
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="N" added="FIX.2.7" id="43002" name="OriginalTransmission">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Original transmission
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Indicates possible retransmission of message with this sequence number
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:codeSet>
+		<fixr:codeSet type="Boolean" id="97" name="PossResendCodeSet">
+			<fixr:code value="Y" added="FIX.4.1" id="97001" name="PossibleResend">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Possible resend
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="N" added="FIX.4.1" id="97002" name="OriginalTransmission">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Original transmission
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Indicates that message may contain information that has been sent under another sequence number.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:codeSet>
+		<fixr:codeSet type="int" id="98" name="EncryptMethodCodeSet">
+			<fixr:code value="0" added="FIX.2.7" id="98001" name="None">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         None / other
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="1" added="FIX.2.7" id="98002" name="PKCS">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         PKCS (proprietary)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="2" added="FIX.2.7" id="98003" name="DES">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         DES (ECB mode)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="3" added="FIX.2.7" id="98004" name="PKCSDES">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         PKCS/DES (proprietary)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="4" added="FIX.3.0" id="98005" name="PGPDES">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         PGP/DES (defunct)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="5" added="FIX.4.0" id="98006" name="PGPDESMD5">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         PGP/DES-MD5 (see app note on FIX web site)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="6" added="FIX.4.0" id="98007" name="PEM">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         PEM/DES-MD5 (see app note on FIX web site)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Method of encryption
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:codeSet>
+		<fixr:codeSet type="Boolean" id="123" name="GapFillFlagCodeSet">
+			<fixr:code value="Y" added="FIX.4.0" id="123001" name="GapFillMessage">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Gap Fill message, MsgSeqNum field valid
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="N" added="FIX.4.0" id="123002" name="SequenceReset">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Sequence Reset, ignore MsgSeqNum
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Indicates that the Sequence Reset message is replacing administrative or application messages which will not be resent.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:codeSet>
+		<fixr:codeSet type="Boolean" id="141" name="ResetSeqNumFlagCodeSet">
+			<fixr:code value="Y" added="FIX.4.1" id="141001" name="Yes">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Yes, reset sequence numbers
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="N" added="FIX.4.1" id="141002" name="No">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         No
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Indicates that the both sides of the FIX session should reset sequence numbers.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:codeSet>
+		<fixr:codeSet type="String" id="347" name="MessageEncodingCodeSet">
+			<fixr:code value="ISO-2022-JP" added="FIX.4.2" id="347001" name="ISO2022JP">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         JIS
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="EUC-JP" added="FIX.4.2" id="347002" name="EUCJP">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         EUC
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="Shift_JIS" added="FIX.4.2" id="347003" name="ShiftJIS">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         for using SJIS
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="UTF-8" added="FIX.4.2" id="347004" name="UTF8">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Unicode
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Type of message encoding (non-ASCII (non-English) characters) used in a message’s "Encoded" fields.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:codeSet>
+		<fixr:codeSet type="int" id="373" name="SessionRejectReasonCodeSet">
+			<fixr:code value="0" added="FIX.4.2" id="373001" name="InvalidTagNumber">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Invalid tag number
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="1" added="FIX.4.2" id="373002" name="RequiredTagMissing">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Required tag missing
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="2" added="FIX.4.2" id="373003" name="TagNotDefinedForThisMessageType">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Tag not defined for this message type
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="3" added="FIX.4.2" id="373004" name="UndefinedTag">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Undefined Tag
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="4" added="FIX.4.2" id="373005" name="TagSpecifiedWithoutAValue">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Tag specified without a value
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="5" added="FIX.4.2" id="373006" name="ValueIsIncorrect">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Value is incorrect (out of range) for this tag
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="6" added="FIX.4.2" id="373007" name="IncorrectDataFormatForValue">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Incorrect data format for value
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="7" added="FIX.4.2" id="373008" name="DecryptionProblem">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Decryption problem
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="8" added="FIX.4.2" id="373009" name="SignatureProblem">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Signature problem
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="9" added="FIX.4.2" id="373010" name="CompIDProblem">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         CompID problem
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="10" added="FIX.4.2" id="373011" name="SendingTimeAccuracyProblem">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         SendingTime accuracy problem
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="11" added="FIX.4.2" id="373012" name="InvalidMsgType">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Invalid MsgType
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="12" added="FIX.4.3" id="373013" name="XMLValidationError">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         XML Validation error
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="13" added="FIX.4.3" id="373014" name="TagAppearsMoreThanOnce">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Tag appears more than once
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="14" added="FIX.4.3" id="373015" name="TagSpecifiedOutOfRequiredOrder">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Tag specified out of required order
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="15" added="FIX.4.3" id="373016" name="RepeatingGroupFieldsOutOfOrder">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Repeating group fields out of order
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="16" added="FIX.4.3" id="373017" name="IncorrectNumInGroupCountForRepeatingGroup">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Incorrect NumInGroup count for repeating group
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="17" added="FIX.4.3" id="373018" name="Non">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Non "data" value includes field delimiter (SOH character)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="99" added="FIX.4.4" id="373019" name="Other">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Other
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Code to identify reason for a session-level Reject message
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:codeSet>
+		<fixr:codeSet type="char" id="385" name="MsgDirectionCodeSet">
+			<fixr:code value="S" added="FIX.4.2" id="385001" name="Send">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Send
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="R" added="FIX.4.2" id="385002" name="Receive">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Receive
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Specifies the direction of the messsage
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:codeSet>
+		<fixr:codeSet type="Boolean" id="464" name="TestMessageIndicatorCodeSet">
+			<fixr:code value="Y" added="FIX.4.3" id="464001" name="True">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         True (Test)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code value="N" added="FIX.4.3" id="464002" name="Fales">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         False (Production)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Indicates whether or not this FIX Session is a "test" vs. "production" connection. Useful for preventing "accidents".
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:codeSet>
+	</fixr:codeSets>
+	<fixr:fields>
+		<fixr:field type="SeqNum" added="FIX.2.7" id="7" name="BeginSeqNo" abbrName="BeginSeqNo">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Message sequence number of first message in range to be resent
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.2.7" id="8" name="BeginString" abbrName="BeginString">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Identifies beginning of new message and protocol version. ALWAYS FIRST FIELD IN MESSAGE. (Always unencrypted)
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="Length" added="FIX.2.7" id="9" name="BodyLength" abbrName="BodyLength">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Message length, in bytes, forward to the CheckSum field. ALWAYS SECOND FIELD IN MESSAGE. (Always unencrypted)
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.2.7" id="10" name="CheckSum" abbrName="CheckSum">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Three byte, simple checksum (see Volume 2: "Checksum Calculation" for description). ALWAYS LAST FIELD IN MESSAGE; i.e. serves, with the trailing &lt;SOH&gt;, as the end-of-message delimiter. Always defined as three characters. (Always unencrypted)
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="SeqNum" added="FIX.2.7" id="16" name="EndSeqNo" abbrName="EndSeqNo">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Message sequence number of last message in range to be resent. If request is for a single message BeginSeqNo (7) = EndSeqNo. If request is for all messages subsequent to a particular message, EndSeqNo = "0" (representing infinity).
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="SeqNum" added="FIX.2.7" id="34" name="MsgSeqNum" abbrName="SeqNum">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Integer message sequence number
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="MsgTypeCodeSet" added="FIX.2.7" id="35" name="MsgType" abbrName="MsgTyp">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Defines message type ALWAYS THIRD FIELD IN MESSAGE. (Always unencrypted)
+         Note: A "U" as the first character in the MsgType field (i.e. U, U2, etc) indicates that the message format is privately defined between the sender and receiver.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="SeqNum" added="FIX.2.7" id="36" name="NewSeqNo" abbrName="NewSeqNo">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         New sequence number
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="PossDupFlagCodeSet" added="FIX.2.7" id="43" name="PossDupFlag" abbrName="PosDup">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Indicates possible retransmission of message with this sequence number
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="SeqNum" added="FIX.2.7" id="45" name="RefSeqNum" abbrName="RefSeqNum">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Reference message sequence number
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.2.7" id="49" name="SenderCompID" abbrName="SID">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Assigned value used to identify firm sending message.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.2.7" id="50" name="SenderSubID" abbrName="SSub">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Assigned value used to identify specific message originator (desk, trader, etc.)
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="UTCTimestamp" added="FIX.2.7" id="52" name="SendingTime" abbrName="Snt">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Time of message transmission (always expressed in UTC (Universal Time Coordinated, also known as "GMT")
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.2.7" id="56" name="TargetCompID" abbrName="TID">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Assigned value used to identify receiving firm.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.2.7" id="57" name="TargetSubID" abbrName="TSub">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Assigned value used to identify specific individual or unit intended to receive message. "ADMIN" reserved for administrative messages not intended for a specific user.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.2.7" id="58" name="Text" abbrName="Txt">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Free format text string
+         (Note: this field does not have a specified maximum length)
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="data" lengthId="1" added="FIX.2.7" id="89" name="Signature" abbrName="Signature">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Electronic signature
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="Length" added="FIX.2.7" id="90" name="SecureDataLen" abbrName="SecureDataLen">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Length of encrypted message
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="data" lengthId="1" added="FIX.2.7" id="91" name="SecureData" abbrName="SecureData">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Actual encrypted data stream
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="Length" added="FIX.2.7" id="93" name="SignatureLength" abbrName="SignatureLength">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Number of bytes in signature field.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="Length" added="FIX.2.7" id="95" name="RawDataLength" abbrName="RawDataLength">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Number of bytes in raw data field.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="data" lengthId="1" added="FIX.2.7" id="96" name="RawData" abbrName="RawData">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Unformatted raw data, can include bitmaps, word processor documents, etc.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="PossResendCodeSet" added="FIX.2.7" id="97" name="PossResend" abbrName="PosRsnd">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Indicates that message may contain information that has been sent under another sequence number.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="EncryptMethodCodeSet" added="FIX.2.7" id="98" name="EncryptMethod" abbrName="EncryptMethod">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Method of encryption
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="int" added="FIX.3.0" id="108" name="HeartBtInt" abbrName="HeartBtInt">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Heartbeat interval (seconds)
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.3.0" id="112" name="TestReqID" abbrName="TestReqID">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Identifier included in Test Request message to be returned in resulting Heartbeat
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.4.0" id="115" name="OnBehalfOfCompID" abbrName="OBID">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Assigned value used to identify firm originating message if the message was delivered by a third party i.e. the third party firm identifier would be delivered in the SenderCompID field and the firm originating the message in this field.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.4.0" id="116" name="OnBehalfOfSubID" abbrName="OBSub">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Assigned value used to identify specific message originator (i.e. trader) if the message was delivered by a third party
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="UTCTimestamp" added="FIX.4.0" id="122" name="OrigSendingTime" abbrName="OrigSnt">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Original time of message transmission (always expressed in UTC (Universal Time Coordinated, also known as "GMT") when transmitting orders as the result of a resend request.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="GapFillFlagCodeSet" added="FIX.4.0" id="123" name="GapFillFlag" abbrName="GapFillFlag">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Indicates that the Sequence Reset message is replacing administrative or application messages which will not be resent.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.4.0" id="128" name="DeliverToCompID" abbrName="D2ID">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Assigned value used to identify the firm targeted to receive the message if the message is delivered by a third party i.e. the third party firm identifier would be delivered in the TargetCompID (56) field and the ultimate receiver firm ID in this field.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.4.0" id="129" name="DeliverToSubID" abbrName="D2Sub">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Assigned value used to identify specific message recipient (i.e. trader) if the message is delivered by a third party
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="ResetSeqNumFlagCodeSet" added="FIX.4.1" id="141" name="ResetSeqNumFlag" abbrName="ResetSeqNumFlag">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Indicates that the both sides of the FIX session should reset sequence numbers.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.4.1" id="142" name="SenderLocationID" abbrName="SLoc">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Assigned value used to identify specific message originator’s location (i.e. geographic location and/or desk, trader)
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.4.1" id="143" name="TargetLocationID" abbrName="TLoc">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Assigned value used to identify specific message destination’s location (i.e. geographic location and/or desk, trader)
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.4.1" id="144" name="OnBehalfOfLocationID" abbrName="OBLoc">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Assigned value used to identify specific message originator’s location (i.e. geographic location and/or desk, trader) if the message was delivered by a third party
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.4.1" id="145" name="DeliverToLocationID" abbrName="D2Loc">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Assigned value used to identify specific message recipient’s location (i.e. geographic location and/or desk, trader) if the message was delivered by a third party
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="Length" added="FIX.4.2" id="212" name="XmlDataLen" abbrName="XmlDataLen">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Length of the XmlData data block.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="data" lengthId="1" added="FIX.4.2" id="213" name="XmlData" abbrName="XmlData">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Actual XML data stream (e.g. FIXML). See approriate XML reference (e.g. FIXML). Note: may contain embedded SOH characters.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="MessageEncodingCodeSet" added="FIX.4.2" id="347" name="MessageEncoding" abbrName="MsgEncd">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Type of message encoding (non-ASCII (non-English) characters) used in a message’s "Encoded" fields.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="Length" added="FIX.4.2" id="354" name="EncodedTextLen" abbrName="EncTxtLen">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Byte length of encoded (non-ASCII characters) EncodedText (355) field.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="data" lengthId="1" added="FIX.4.2" id="355" name="EncodedText" abbrName="EncTxt">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Encoded (non-ASCII characters) representation of the Text (58) field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the Text field.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="SeqNum" added="FIX.4.2" id="369" name="LastMsgSeqNumProcessed" abbrName="LastMsgSeqNumProced">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         The last MsgSeqNum (34) value received by the FIX engine and processed by downstream application, such as trading engine or order routing system. Can be specified on every message sent. Useful for detecting a backlog with a counterparty.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="int" added="FIX.4.2" id="371" name="RefTagID" abbrName="RefTagID">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         The tag number of the FIX field being referenced.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.4.2" id="372" name="RefMsgType" abbrName="RefMsgTyp">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         The MsgType (35) of the FIX message being referenced.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="SessionRejectReasonCodeSet" added="FIX.4.2" id="373" name="SessionRejectReason" abbrName="SessRejRsn">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Code to identify reason for a session-level Reject message
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="Length" added="FIX.4.2" id="383" name="MaxMessageSize" abbrName="MaxMsgSz">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Maximum number of bytes supported for a single message.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="NumInGroup" added="FIX.4.2" id="384" name="NoMsgTypes" abbrName="NoMsgTyps">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Number of MsgTypes (35) in repeating group.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="MsgDirectionCodeSet" added="FIX.4.2" id="385" name="MsgDirection" abbrName="MsgDirctn">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Specifies the direction of the messsage
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="TestMessageIndicatorCodeSet" added="FIX.4.3" id="464" name="TestMessageIndicator" abbrName="TestMsgInd">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Indicates whether or not this FIX Session is a "test" vs. "production" connection. Useful for preventing "accidents".
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.4.3" id="553" name="Username" abbrName="Username">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Userid or username.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="String" added="FIX.4.3" id="554" name="Password" abbrName="Password">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Password or passphrase.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+		<fixr:field type="SeqNum" added="FIX.4.4" id="789" name="NextExpectedMsgSeqNum" abbrName="NextExpectedMsgSeqNum">
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         Next expected MsgSeqNum value to be received.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:field>
+	</fixr:fields>
+	<fixr:components>
+		<fixr:component category="Session" added="FIX.4.0" id="1024" name="StandardHeader" abbrName="Hdr">
+			<fixr:fieldRef id="8" added="FIX.4.0" presence="required">
+				<fixr:annotation>
+					<fixr:documentation>
+         FIX.4.4 (Always unencrypted, must be first field in message)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="9" added="FIX.4.0" presence="required">
+				<fixr:annotation>
+					<fixr:documentation>
+         (Always unencrypted, must be second field in message)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="35" added="FIX.4.0" presence="required">
+				<fixr:annotation>
+					<fixr:documentation>
+         (Always unencrypted, must be third field in message)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="49" added="FIX.4.0" presence="required">
+				<fixr:annotation>
+					<fixr:documentation>
+         (Always unencrypted)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="56" added="FIX.4.0" presence="required">
+				<fixr:annotation>
+					<fixr:documentation>
+         (Always unencrypted)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="115" added="FIX.4.0">
+				<fixr:annotation>
+					<fixr:documentation>
+         Trading partner company ID used when sending messages via a third party (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="128" added="FIX.4.0">
+				<fixr:annotation>
+					<fixr:documentation>
+         Trading partner company ID used when sending messages via a third party (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="90" added="FIX.4.0">
+				<fixr:annotation>
+					<fixr:documentation>
+         Required to identify length of encrypted section of message. (Always unencrypted)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="91" added="FIX.4.0">
+				<fixr:annotation>
+					<fixr:documentation>
+         Required when message body is encrypted. Always immediately follows SecureDataLen field.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="34" added="FIX.4.0" presence="required">
+				<fixr:annotation>
+					<fixr:documentation>
+         (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="50" added="FIX.4.0">
+				<fixr:annotation>
+					<fixr:documentation>
+         (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="142" added="FIX.4.1">
+				<fixr:annotation>
+					<fixr:documentation>
+         Sender's LocationID (i.e. geographic location and/or desk) (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="57" added="FIX.4.0">
+				<fixr:annotation>
+					<fixr:documentation>
+         "ADMIN" reserved for administrative messages not intended for a specific user. (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="143" added="FIX.4.1">
+				<fixr:annotation>
+					<fixr:documentation>
+         Trading partner LocationID (i.e. geographic location and/or desk) (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="116" added="FIX.4.0">
+				<fixr:annotation>
+					<fixr:documentation>
+         Trading partner SubID used when delivering messages via a third party. (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="144" added="FIX.4.1">
+				<fixr:annotation>
+					<fixr:documentation>
+         Trading partner LocationID (i.e. geographic location and/or desk) used when delivering messages via a third party. (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="129" added="FIX.4.0">
+				<fixr:annotation>
+					<fixr:documentation>
+         Trading partner SubID used when delivering messages via a third party. (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="145" added="FIX.4.1">
+				<fixr:annotation>
+					<fixr:documentation>
+         Trading partner LocationID (i.e. geographic location and/or desk) used when delivering messages via a third party. (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="43" added="FIX.4.0">
+				<fixr:annotation>
+					<fixr:documentation>
+         Always required for retransmitted messages, whether prompted by the sending system or as the result of a resend request. (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="97" added="FIX.4.0">
+				<fixr:annotation>
+					<fixr:documentation>
+         Required when message may be duplicate of another message sent under a different sequence number. (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="52" added="FIX.4.0" presence="required">
+				<fixr:annotation>
+					<fixr:documentation>
+         (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="122" added="FIX.4.0">
+				<fixr:annotation>
+					<fixr:documentation>
+         Required for message resent as a result of a ResendRequest. If data is not available set to same value as SendingTime (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="212" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Required when specifying XmlData to identify the length of a XmlData message block. (Can be embedded within encrypted data section.)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="213" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Can contain a XML formatted message block (e.g. FIXML). Always immediately follows XmlDataLen field. (Can be embedded within encrypted data section.)
+         See Volume 1: FIXML Support
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="347" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Type of message encoding (non-ASCII characters) used in a message’s "Encoded" fields. Required if any "Encoding" fields are used.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="369" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         The last MsgSeqNum value received by the FIX engine and processed by downstream application, such as trading system or order routing system. Can be specified on every message sent. Useful for detecting a backlog with a counterparty.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:groupRef id="2085" added="FIX.4.4">
+				<fixr:annotation>
+					<fixr:documentation>
+         Number of repeating groups of historical "hop" information. Only applicable if OnBehalfOfCompID is used, however, its use is optional. Note that some market regulations or counterparties may require tracking of message hops.
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:groupRef>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         The standard FIX message header
+      </fixr:documentation>
+				<fixr:documentation purpose="ELABORATION"/>
+			</fixr:annotation>
+		</fixr:component>
+		<fixr:component category="Session" added="FIX.4.0" id="1025" name="StandardTrailer" abbrName="Trlr">
+			<fixr:fieldRef id="93" added="FIX.4.0">
+				<fixr:annotation>
+					<fixr:documentation>
+         Required when trailer contains signature. Note: Not to be included within SecureData field
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="89" added="FIX.4.0">
+				<fixr:annotation>
+					<fixr:documentation>
+         Note: Not to be included within SecureData field
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="10" added="FIX.4.0" presence="required">
+				<fixr:annotation>
+					<fixr:documentation>
+         (Always unencrypted, always last field in message)
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         The standard FIX message trailer
+      </fixr:documentation>
+				<fixr:documentation purpose="ELABORATION"/>
+			</fixr:annotation>
+		</fixr:component>
+	</fixr:components>
+	<fixr:groups>
+		<fixr:group category="Common" id="2098" name="MsgTypeGrp" abbrName="MsgTypeGrp" added="FIX.4.2">
+			<fixr:numInGroup id="384"/>
+			<fixr:fieldRef id="372" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Specifies a specific, supported MsgType. Required if NoMsgTypes is &gt; 0. Should be specified from the point of view of the sender of the Logon message
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="385" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Indicates direction (send vs. receive) of a supported MsgType. Required if NoMsgTypes is &gt; 0. Should be specified from the point of view of the sender of the Logon message
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:annotation>
+				<fixr:documentation>
+         Specifies the number of repeating RefMsgTypes specified
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:group>
+	</fixr:groups>
+	<fixr:messages>
+		<fixr:message msgType="0" category="Session" id="1" name="Heartbeat" abbrName="Heartbeat" added="FIX.2.7">
+			<fixr:structure>
+				<fixr:componentRef presence="required" id="1024" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation>
+         MsgType = 0
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:componentRef>
+				<fixr:fieldRef id="112" added="FIX.4.0">
+					<fixr:annotation>
+						<fixr:documentation purpose="SYNOPSIS">
+         Required when the heartbeat is the result of a Test Request message.
+         </fixr:documentation>
+						<fixr:documentation purpose="ELABORATION">
+         When either end of a FIX connection has not sent any data for [HeartBtInt] seconds, it will transmit a Heartbeat message. When either end of the connection has not received any data for (HeartBtInt + "some reasonable transmission time") seconds, it will transmit a test request message. If there is still no heartbeat message received after (HeartBtInt + "some reasonable transmission time") seconds then the connection should be considered lost and corrective action be initiated. If HeartBtInt is set to zero then no regular heartbeat messages will be generated. Note that a test request message can still be sent independent of the value of the HeartBtInt, which will force a Heartbeat message.
+Heartbeats issued as the result of Test Request must contain the TestReqID transmitted in the Test Request message. This is useful to verify that the Heartbeat is the result of the Test Request and not as the result of a regular timeout.
+     </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:componentRef presence="required" id="1025" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:componentRef>
+			</fixr:structure>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         The Heartbeat monitors the status of the communication link and identifies when the last of a string of messages was not received.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:message>
+		<fixr:message msgType="1" category="Session" id="2" name="TestRequest" abbrName="TestRequest" added="FIX.2.7">
+			<fixr:structure>
+				<fixr:componentRef presence="required" id="1024" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation>
+         MsgType = 1
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:componentRef>
+				<fixr:fieldRef id="112" added="FIX.4.0" presence="required">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:componentRef presence="required" id="1025" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:componentRef>
+			</fixr:structure>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+The test request message forces a heartbeat from the opposing application.
+</fixr:documentation>
+				<fixr:documentation purpose="ELABORATION">
+The test request message checks sequence numbers or verifies communication line status. The opposite application responds to the Test Request with a Heartbeat containing the TestReqID.
+The TestReqID verifies that the opposite application is generating the heartbeat as the result of Test Request and not a normal timeout. The opposite application includes the TestReqID in the resulting Heartbeat. Any string can be used as the TestReqID (one suggestion is to use a timestamp string).
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:message>
+		<fixr:message msgType="2" category="Session" id="3" name="ResendRequest" abbrName="ResendRequest" added="FIX.2.7">
+			<fixr:structure>
+				<fixr:componentRef presence="required" id="1024" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation>
+         MsgType = 2
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:componentRef>
+				<fixr:fieldRef id="7" added="FIX.2.7" presence="required">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="16" added="FIX.2.7" presence="required">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:componentRef presence="required" id="1025" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:componentRef>
+			</fixr:structure>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         The resend request is sent by the receiving application to initiate the retransmission of messages. This function is utilized if a sequence number gap is detected, if the receiving application lost a message, or as a function of the initialization process.
+      </fixr:documentation>
+				<fixr:documentation purpose="ELABORATION">
+The resend request can be used to request a single message, a range of messages or all messages subsequent to a particular message.
+
+Note: the sending application may wish to consider the message type when resending messages; e.g. if a new order is in the resend series and a significant time period has elapsed since its original inception, the sender may not wish to retransmit the order given the potential for changed market conditions. (The Sequence Reset-GapFill message is used to skip messages that a sender does not wish to resend.)
+
+Note: it is imperative that the receiving application process messages in sequence order, e.g. if message number 7 is missed and 8-9 received, the application should ignore 8 and 9 and ask for a resend of 7-9, or, preferably, 7-0 (0 represents infinity). This latter approach is strongly recommended to recover from out of sequence conditions as it allows for faster recovery in the presence of certain race conditions when both sides are simultaneously attempting to recover a gap.
+
+To request a single message: BeginSeqNo = EndSeqNo
+
+To request a range of messages: BeginSeqNo = first message of range, EndSeqNo = last message of range
+
+To request all messages subsequent to a particular message: BeginSeqNo = first message of range, EndSeqNo = 0 (represents infinity).
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:message>
+		<fixr:message msgType="3" category="Session" id="4" name="Reject" abbrName="Reject" added="FIX.2.7">
+			<fixr:structure>
+				<fixr:componentRef presence="required" id="1024" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation>
+         MsgType = 3
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:componentRef>
+				<fixr:fieldRef id="45" added="FIX.2.7" presence="required">
+					<fixr:annotation>
+						<fixr:documentation>
+         MsgSeqNum of rejected message
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="371" added="FIX.4.2">
+					<fixr:annotation>
+						<fixr:documentation>
+         The tag number of the FIX field being referenced.
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="372" added="FIX.4.2">
+					<fixr:annotation>
+						<fixr:documentation>
+         The MsgType of the FIX message being referenced.
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="373" added="FIX.4.2">
+					<fixr:annotation>
+						<fixr:documentation>
+         Code to identify reason for a session-level Reject message.
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="58" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation>
+         Where possible, message to explain reason for rejection
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="354" added="FIX.4.2">
+					<fixr:annotation>
+						<fixr:documentation>
+         Must be set if EncodedText field is specified and must immediately precede it.
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="355" added="FIX.4.2">
+					<fixr:annotation>
+						<fixr:documentation>
+         Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:componentRef presence="required" id="1025" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:componentRef>
+			</fixr:structure>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         The reject message should be issued when a message is received but cannot be properly processed due to a session-level rule violation.
+      </fixr:documentation>
+				<fixr:documentation purpose="ELABORATION">
+      An example of when a reject may be appropriate would be the receipt of a message with invalid basic data (e.g. MsgType=&amp;) which successfully passes de-encryption, CheckSum and BodyLength checks. As a rule, messages should be forwarded to the trading application for business level rejections whenever possible.
+
+Rejected messages should be logged and the incoming sequence number incremented.
+
+*Note: The receiving application should disregard any message that is garbled, cannot be parsed or fails a data integrity check. Processing of the next valid FIX message will cause detection of a sequence gap and a Resend Request will be generated. Logic should be included in the FIX engine to recognize the possible infinite resend loop, which may be encountered in this situation.*
+
+Generation and receipt of a Reject message indicates a serious error that may be the result of faulty logic in either the sending or receiving application.
+
+If the sending application chooses to retransmit the rejected message, it should be assigned a new sequence number and sent with PossResend=Y.
+
+**Whenever possible, it is strongly recommended that the cause of the failure be described in the Text field (e.g. INVALID DATA - FIELD 35).**
+
+If an application-level message received fulfills session-level rules, it should then be processed at a business message-level. If this processing detects a rule violation, a business-level reject should be issued. Many business-level messages have specific "reject" messages, which should be used. All others can be rejected at a business-level via the Business Message Reject message. See Volume 1: \"Business Message Reject\" message.
+
+Note that in the event a business message is received, fulfills session-level rules, however, the message cannot be communicated to the business-level processing system, a Business Message Reject with BusinessRejectReason = "Application not available at this time" should be issued.</fixr:documentation>
+			</fixr:annotation>
+		</fixr:message>
+		<fixr:message msgType="4" category="Session" id="5" name="SequenceReset" abbrName="SequenceReset" added="FIX.2.7">
+			<fixr:structure>
+				<fixr:componentRef presence="required" id="1024" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation>
+         MsgType = 4
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:componentRef>
+				<fixr:fieldRef id="123" added="FIX.4.0">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="36" added="FIX.2.7" presence="required">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:componentRef presence="required" id="1025" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:componentRef>
+			</fixr:structure>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         The Sequence Reset message has two modes: **Gap Fill mode** and **Reset mode**.
+      </fixr:documentation>
+				<fixr:documentation purpose="ELABORATION">
+### Gap Fill mode
+
+Gap Fill mode is used in response to a Resend Request when one or more messages must be skipped over for the following reasons:
+
+1.  During normal resend processing, the sending application may choose not to send a message (e.g. an aged order).
+
+2.  During normal resend processing, a number of administrative messages are skipped and not resent (such as Heart Beats, Test Requests).
+
+Gap Fill mode is indicated by GapFillFlag (tag 123) field = \"Y\".
+
+If the GapFillFlag field is present (and equal to \"Y\"), the MsgSeqNum should conform to standard message sequencing rules (i.e. the MsgSeqNum of the Sequence Reset GapFill mode message should represent the beginning MsgSeqNum in the GapFill range because the remote side is expecting that next message sequence number).
+
+### Reset mode
+
+Reset mode involves specifying an arbitrarily higher new sequence number to be expected by the receiver of the Sequence Reset-Reset message, and is used to reestablish a FIX session after an unrecoverable application failure.
+
+Reset mode is indicated by the GapFillFlag (tag 123) field = \"N\" or if the field is omitted.
+
+If the GapFillFlag field is not present (or set to N), it can be assumed that the purpose of the Sequence Reset message is to recover from an out-of-sequence condition. In Sequence Reset - Reset mode, the MsgSeqNum in the header should be ignored (i.e. the receipt of a Sequence Reset - Reset mode message with an out of sequence MsgSeqNum should not generate resend requests). ***Sequence Reset -- Reset should NOT be used as a normal response to a Resend Request (use Sequence Reset -- Gap Fill mode). The Sequence Reset -- Reset should ONLY be used to recover from a disaster situation which cannot be recovered via the use of Sequence Reset -- Gap Fill. Note that the use of Sequence Reset -- Reset may result in the possibility of lost messages.***
+
+### Rules for processing all Sequence Reset messages
+
+The sending application will initiate the Sequence Reset. **The message in all situations specifies NewSeqNo to reset to as the** **value of the *next* sequence number** to be expected by the message recipient **immediately following the messages and/or sequence numbers being skipped**.
+
+The Sequence Reset can only increase the sequence number. If a sequence reset is received attempting to decrease the next expected sequence number the message should be rejected and treated as a serious error. It is possible to have multiple Resend Requests issued in a row (i.e. 5 to 10 followed by 5 to 11). If sequence number 8, 10, and 11 represent application messages while the 5-7 and 9 represent administrative messages, the series of messages as result of the Resend Request may appear as Sequence Reset-GapFill mode with NewSeqNo of 8, message 8, Sequence Reset-GapFill with NewSeqNo of 10, and message 10. This could then followed by Sequence Reset-GapFill with NewSeqNo of 8, message 8, Sequence Reset-GapFill with NewSeqNo of 10, message 10, and message 11. One must be careful to ignore the duplicate Sequence Reset-GapFill mode which is attempting to lower the next expected sequence number. This can be detected by checking to see if its MsgSeqNum is less than expected. If so, the Sequence Reset-GapFill mode is a duplicate and should be discarded. 
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:message>
+		<fixr:message msgType="5" category="Session" id="6" name="Logout" abbrName="Logout" added="FIX.2.7">
+			<fixr:structure>
+				<fixr:componentRef presence="required" id="1024" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation>
+         MsgType = 5
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:componentRef>
+				<fixr:fieldRef id="58" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="354" added="FIX.4.2">
+					<fixr:annotation>
+						<fixr:documentation>
+         Must be set if EncodedText field is specified and must immediately precede it.
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="355" added="FIX.4.2">
+					<fixr:annotation>
+						<fixr:documentation>
+         Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:componentRef presence="required" id="1025" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:componentRef>
+			</fixr:structure>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         The logout message initiates or confirms the termination of a FIX session.
+      </fixr:documentation>
+				<fixr:documentation>
+Disconnection without the exchange of logout messages should be interpreted as an abnormal condition.
+
+Before actually closing the session, the logout initiator should wait for the opposite side to respond with a confirming logout message. This gives the remote end a chance to perform any Gap Fill operations that may be necessary. The session may be terminated if the remote side does not respond in an appropriate timeframe.
+
+After sending the Logout message, the logout initiator should not send any messages unless requested to do so by the logout acceptor via a ResendRequest.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:message>
+		<fixr:message msgType="A" category="Session" id="11" name="Logon" abbrName="Logon" added="FIX.2.7">
+			<fixr:structure>
+				<fixr:componentRef presence="required" id="1024" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation>
+         MsgType = A
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:componentRef>
+				<fixr:fieldRef id="98" added="FIX.2.7" presence="required">
+					<fixr:annotation>
+						<fixr:documentation>
+         (Always unencrypted)
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="108" added="FIX.3.0" presence="required">
+					<fixr:annotation>
+						<fixr:documentation>
+         Note same value used by both sides
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="95" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation>
+         Required for some authentication methods
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="96" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation>
+         Required for some authentication methods
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="141" added="FIX.4.1">
+					<fixr:annotation>
+						<fixr:documentation>
+         Indicates both sides of a FIX session should reset sequence numbers
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="789" added="FIX.4.4">
+					<fixr:annotation>
+						<fixr:documentation>
+         Optional, alternative via counterparty bi-lateral agreement message gap detection and recovery approach (see "Logon Message NextExpectedMsgSeqNum Processing" section)
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="383" added="FIX.4.2">
+					<fixr:annotation>
+						<fixr:documentation>
+         Can be used to specify the maximum number of bytes supported for messages received
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:groupRef id="2098" added="FIX.4.2">
+					<fixr:annotation>
+						<fixr:documentation>
+         Specifies the number of repeating RefMsgTypes specified
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:groupRef>
+				<fixr:fieldRef id="464" added="FIX.4.3">
+					<fixr:annotation>
+						<fixr:documentation>
+         Can be used to specify that this FIX session will be sending and receiving "test" vs. "production" messages.
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="553" added="FIX.4.3">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:fieldRef id="554" added="FIX.4.3">
+					<fixr:annotation>
+						<fixr:documentation>
+         Note: minimal security exists without transport-level encryption.
+      </fixr:documentation>
+					</fixr:annotation>
+				</fixr:fieldRef>
+				<fixr:componentRef presence="required" id="1025" added="FIX.2.7">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:componentRef>
+			</fixr:structure>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+         The logon message authenticates a user establishing a connection to a remote system. The logon message must be the first message sent by the application requesting to initiate a FIX session.
+
+The HeartBtInt (108) field is used to declare the timeout interval for generating heartbeats (same value used by both sides). The HeartBtInt value should be agreed upon by the two firms and specified by the Logon initiator and echoed back by the Logon acceptor.
+
+Upon receipt of a Logon message, the session acceptor will authenticate the party requesting connection and issue a Logon message as acknowledgment that the connection request has been accepted. The acknowledgment Logon can also be used by the initiator to validate that the connection was established with the correct party.
+
+The session acceptor must be prepared to immediately begin processing messages after receipt of the Logon. The session initiator can choose to begin transmission of FIX messages before receipt of the confirmation Logon, however it is recommended that normal message delivery wait until after the return Logon is received to accommodate encryption key negotiation.
+
+The confirmation Logon can be used for encryption key negotiation. If a session key is deemed to be weak, a stronger session key can be suggested by returning a Logon message with a new key. This is only valid for encryption protocols that allow for key negotiation. (See the FIX Web Site's Application notes for more information on a method for encryption and key passing.)
+
+The Logon message can be used to specify the MaxMessageSize supported (e.g. can be used to control fragmentation rules for very large messages which support fragmentation). It can also be used to specify the MsgTypes supported for both sending and receiving.
+      </fixr:documentation>
+			</fixr:annotation>
+		</fixr:message>
+		<fixr:message msgType="n" category="Session" id="47" name="XMLnonFIX" abbrName="XMLnonFIX" added="FIX.4.3">
+			<fixr:structure>
+				<fixr:componentRef presence="required" id="1024" added="FIX.4.3">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:componentRef>
+				<fixr:componentRef presence="required" id="1025" added="FIX.4.3">
+					<fixr:annotation>
+						<fixr:documentation/>
+					</fixr:annotation>
+				</fixr:componentRef>
+			</fixr:structure>
+			<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS"/>
+			</fixr:annotation>
+		</fixr:message>
+	</fixr:messages>
+</fixr:repository>
