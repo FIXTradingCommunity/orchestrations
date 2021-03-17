@@ -11024,22 +11024,88 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
-			<fixr:fieldRef id="132" added="FIX.4.2"/>
-			<fixr:fieldRef id="133" added="FIX.4.2"/>
+			<fixr:fieldRef id="132" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         If F/X quote, should be the "all-in" rate (spot rate adjusted for forward points). Note that either BidPx, OfferPx or both must be specified.
+			</fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="133" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         If F/X quote, should be the "all-in" rate (spot rate adjusted for forward points). Note that either BidPx, OfferPx or both must be specified.
+			</fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
 			<fixr:fieldRef id="134" added="FIX.4.2"/>
 			<fixr:fieldRef id="135" added="FIX.4.2"/>
 			<fixr:fieldRef id="62" added="FIX.4.2"/>
-			<fixr:fieldRef id="188" added="FIX.4.2"/>
-			<fixr:fieldRef id="190" added="FIX.4.2"/>
-			<fixr:fieldRef id="189" added="FIX.4.2"/>
-			<fixr:fieldRef id="191" added="FIX.4.2"/>
+			<fixr:fieldRef id="188" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         May be applicable for F/X quotes
+			</fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="190" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         May be applicable for F/X quotes
+			</fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="189" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         May be applicable for F/X quotes
+			</fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="191" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         May be applicable for F/X quotes
+			</fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
 			<fixr:fieldRef id="60" added="FIX.4.2"/>
 			<fixr:fieldRef id="336" added="FIX.4.2"/>
-			<fixr:fieldRef id="64" added="FIX.4.2"/>
-			<fixr:fieldRef id="40" added="FIX.4.2"/>
-			<fixr:fieldRef id="193" added="FIX.4.2"/>
-			<fixr:fieldRef id="192" added="FIX.4.2"/>
-			<fixr:fieldRef id="15" added="FIX.4.2"/>
+			<fixr:fieldRef id="64" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Can be used with forex quotes to specify a specific "value date"
+			</fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="40" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Can be used to specify the type of order the quote is for
+			</fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="193" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+			</fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="192" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+			</fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
+			<fixr:fieldRef id="15" added="FIX.4.2">
+				<fixr:annotation>
+					<fixr:documentation>
+         Can be used to specify the currency of the quoted price.
+			</fixr:documentation>
+				</fixr:annotation>
+			</fixr:fieldRef>
 		</fixr:group>
 		<fixr:group added="FIX.4.2" id="1021" name="UnderlyingInstrument">
 			<fixr:numInGroup id="146"/>
