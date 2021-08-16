@@ -5213,7 +5213,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:datatype>
-		<fixr:datatype name="MultipleStringValue" baseType="String" added="FIX.4.2">
+		<fixr:datatype name="MultipleValueString" baseType="String" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          String field containing one or more space delimited multiple character values.

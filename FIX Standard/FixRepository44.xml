@@ -13945,7 +13945,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:datatype>
-		<fixr:datatype name="MultipleStringValue" baseType="String" added="FIX.4.2">
+		<fixr:datatype name="MultipleValueString" baseType="String" added="FIX.4.2">
 			<fixr:mappedDatatype standard="XML" base="xs:string" builtin="0" pattern=".+(\s.+)*">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
@@ -14102,20 +14102,6 @@
          string field represening a Date of Local Market (as oppose to UTC) in YYYYMMDD format. This is the "normal" date field used by the FIX Protocol.
          Valid values:
          YYYY = 0000-9999, MM = 01-12, DD = 01-31.
-      </fixr:documentation>
-			</fixr:annotation>
-		</fixr:datatype>
-		<fixr:datatype name="MultipleCharValue" baseType="String" added="FIX.4.4">
-			<fixr:mappedDatatype standard="XML" base="xs:string" builtin="0" pattern="[A-Za-z0-9](\s[A-Za-z0-9])*">
-				<fixr:annotation>
-					<fixr:documentation purpose="SYNOPSIS">
-         string field containing one or more space delimited single character values (e.g. |18=2 A F| ).
-      </fixr:documentation>
-				</fixr:annotation>
-			</fixr:mappedDatatype>
-			<fixr:annotation>
-				<fixr:documentation purpose="SYNOPSIS">
-         string field containing one or more space delimited single character values (e.g. |18=2 A F| ).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:datatype>
