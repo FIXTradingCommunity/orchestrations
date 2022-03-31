@@ -17933,7 +17933,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="538" name="NestedPartyRole" type="int" added="FIX.4.3" abbrName="R">
+		<fixr:field id="538" name="NestedPartyRole" type="PartyRoleCodeSet" added="FIX.4.3" abbrName="R">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyRole value within a nested repeating group.
@@ -19550,7 +19550,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="759" name="Nested2PartyRole" type="int" added="FIX.4.4" abbrName="R">
+		<fixr:field id="759" name="Nested2PartyRole" type="PartyRoleCodeSet" added="FIX.4.4" abbrName="R">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyRole value within a "second instance" Nested repeating group.
@@ -19739,7 +19739,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="784" name="SettlPartyRole" type="int" added="FIX.4.4" abbrName="R">
+		<fixr:field id="784" name="SettlPartyRole" type="PartyRoleCodeSet" added="FIX.4.4" abbrName="R">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyRole value within a settlement parties component.
@@ -20913,7 +20913,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="951" name="Nested3PartyRole" type="int" added="FIX.4.4" abbrName="R">
+		<fixr:field id="951" name="Nested3PartyRole" type="PartyRoleCodeSet" added="FIX.4.4" abbrName="R">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyRole value within a "third instance" Nested repeating group.
