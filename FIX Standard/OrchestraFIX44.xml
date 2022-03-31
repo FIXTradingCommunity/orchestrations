@@ -26525,6 +26525,11 @@
 					<fixr:documentation/>
 				</fixr:annotation>
 			</fixr:fieldRef>
+			<fixr:fieldRef id="586" added="FIX.4.4">
+				<fixr:annotation>
+					<fixr:documentation/>
+				</fixr:annotation>
+			</fixr:fieldRef>
 			<fixr:groupRef id="1012" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation/>
