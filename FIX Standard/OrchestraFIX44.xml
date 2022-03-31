@@ -2423,7 +2423,14 @@
 			<fixr:code name="UnsupportedOrderCharacteristic" id="103012" value="11" added="FIX.4.3">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Unsupported order characteristic12 = Surveillence Option
+         Unsupported order characteristic
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code name="SurveillanceOption" id="103013" value="12" added="FIX.4.4">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Surveillance Option
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
