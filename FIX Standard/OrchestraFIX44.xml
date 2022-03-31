@@ -20469,7 +20469,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="888" name="UnderlyingStipType" type="String" added="FIX.4.4" abbrName="Typ">
+		<fixr:field id="888" name="UnderlyingStipType" type="StipulationTypeCodeSet" added="FIX.4.4" abbrName="Typ">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Type of stipulation.
