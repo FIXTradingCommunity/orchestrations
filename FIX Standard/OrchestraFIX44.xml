@@ -18838,7 +18838,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="661" name="AllocAcctIDSource" type="int" added="FIX.4.4" abbrName="ActIDSrc">
+		<fixr:field id="661" name="AllocAcctIDSource" type="AcctIDSourceCodeSet" added="FIX.4.4" abbrName="ActIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Used to identify the source of the AllocAccount (79) code.
@@ -18935,7 +18935,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="674" name="LegAllocAcctIDSource" type="String" added="FIX.4.4" abbrName="AllocAcctIDSrc">
+		<fixr:field id="674" name="LegAllocAcctIDSource" type="AcctIDSourceCodeSet" added="FIX.4.4" abbrName="AllocAcctIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          The source of the LegAllocAccount (67)
