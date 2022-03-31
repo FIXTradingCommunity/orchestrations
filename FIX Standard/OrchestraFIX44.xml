@@ -16270,7 +16270,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="305" name="UnderlyingSecurityIDSource" type="String" added="FIX.4.2" abbrName="Src">
+		<fixr:field id="305" name="UnderlyingSecurityIDSource" type="SecurityIDSourceCodeSet" added="FIX.4.2" abbrName="Src">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Underlying security’s SecurityIDSource.
@@ -17336,7 +17336,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="456" name="SecurityAltIDSource" type="String" added="FIX.4.3" abbrName="AltIDSrc">
+		<fixr:field id="456" name="SecurityAltIDSource" type="SecurityIDSourceCodeSet" added="FIX.4.3" abbrName="AltIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Identifies class or source of the SecurityAltID (455) value. Required if SecurityAltID is specified.
@@ -17359,7 +17359,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="459" name="UnderlyingSecurityAltIDSource" type="String" added="FIX.4.3" abbrName="AltIDSrc">
+		<fixr:field id="459" name="UnderlyingSecurityAltIDSource" type="SecurityIDSourceCodeSet" added="FIX.4.3" abbrName="AltIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Identifies class or source of the UnderlyingSecurityAltID (458) value. Required if UnderlyingSecurityAltID is specified.
@@ -18411,7 +18411,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="603" name="LegSecurityIDSource" type="String" added="FIX.4.3" abbrName="Src">
+		<fixr:field id="603" name="LegSecurityIDSource" type="SecurityIDSourceCodeSet" added="FIX.4.3" abbrName="Src">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Multileg instrument's individual security’s SecurityIDSource.
@@ -18435,7 +18435,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="606" name="LegSecurityAltIDSource" type="String" added="FIX.4.3" abbrName="SecAltIDSrc">
+		<fixr:field id="606" name="LegSecurityAltIDSource" type="SecurityIDSourceCodeSet" added="FIX.4.3" abbrName="SecAltIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Multileg instrument's individual security’s SecurityAltIDSource.
@@ -19566,7 +19566,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="761" name="BenchmarkSecurityIDSource" type="String" added="FIX.4.4" abbrName="SecIDSrc">
+		<fixr:field id="761" name="BenchmarkSecurityIDSource" type="SecurityIDSourceCodeSet" added="FIX.4.4" abbrName="SecIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Identifies class or source of the BenchmarkSecurityID (699) value. Required if BenchmarkSecurityID is specified.
