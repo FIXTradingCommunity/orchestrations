@@ -40669,7 +40669,7 @@
 				<fixr:fieldRef id="774" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Required for ConfirmStatus = 1 (rejected)
+         Conditionally required for AffirmStatus = 2 (Confirm rejected)
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
