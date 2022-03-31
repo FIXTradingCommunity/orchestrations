@@ -2762,7 +2762,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
-		<fixr:codeSet name="MiscFeeTypeCodeSet" id="139" type="char">
+		<fixr:codeSet name="MiscFeeTypeCodeSet" id="139" type="String">
 			<fixr:code name="Regulatory" id="139001" value="1" added="FIX.4.0">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
