@@ -17835,7 +17835,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="525" name="NestedPartyIDSource" type="char" added="FIX.4.3" abbrName="Src">
+		<fixr:field id="525" name="NestedPartyIDSource" type="PartyIDSourceCodeSet" added="FIX.4.3" abbrName="Src">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyIDSource value within a nested repeating group.
@@ -19542,7 +19542,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="758" name="Nested2PartyIDSource" type="char" added="FIX.4.4" abbrName="Src">
+		<fixr:field id="758" name="Nested2PartyIDSource" type="PartyIDSourceCodeSet" added="FIX.4.4" abbrName="Src">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyIDSource value within a "second instance" Nested repeating group.
@@ -19731,7 +19731,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="783" name="SettlPartyIDSource" type="char" added="FIX.4.4" abbrName="Src">
+		<fixr:field id="783" name="SettlPartyIDSource" type="PartyIDSourceCodeSet" added="FIX.4.4" abbrName="Src">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyIDSource value within a settlement parties component.
@@ -20905,7 +20905,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="950" name="Nested3PartyIDSource" type="char" added="FIX.4.4" abbrName="Src">
+		<fixr:field id="950" name="Nested3PartyIDSource" type="PartyIDSourceCodeSet" added="FIX.4.4" abbrName="Src">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyIDSource value within a "third instance" Nested repeating group.
