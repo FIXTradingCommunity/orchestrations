@@ -19687,7 +19687,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="776" name="IndividualAllocRejCode" type="int" added="FIX.4.4" abbrName="IndAllocRejCode">
+		<fixr:field id="776" name="IndividualAllocRejCode" type="AllocRejCodeCodeSet" added="FIX.4.4" abbrName="IndAllocRejCode">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Identified reason for rejecting an individual AllocAccount (79) detail.
