@@ -2434,28 +2434,28 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="IncorrectQuantity" id="103013" value="13" added="FIX.4.4">
+			<fixr:code name="IncorrectQuantity" id="103014" value="13" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
          Incorrect quantity
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="IncorrectAllocatedQuantity" id="103014" value="14" added="FIX.4.4">
+			<fixr:code name="IncorrectAllocatedQuantity" id="103015" value="14" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
          Incorrect allocated quantity
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="UnknownAccount" id="103015" value="15" added="FIX.4.4">
+			<fixr:code name="UnknownAccount" id="103016" value="15" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
          Unknown account(s)
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="Other" id="103016" value="99" added="FIX.4.4">
+			<fixr:code name="Other" id="103100" value="99" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
          Other
