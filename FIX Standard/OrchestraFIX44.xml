@@ -19762,7 +19762,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="786" name="SettlPartySubIDType" type="PartyIDSourceCodeSet" added="FIX.4.4" abbrName="Typ">
+		<fixr:field id="786" name="SettlPartySubIDType" type="PartySubIDSourceCodeSet" added="FIX.4.4" abbrName="Typ">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Type of SettlPartySubID (785) value.
@@ -19897,7 +19897,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="805" name="NestedPartySubIDType" type="PartyIDSourceCodeSet" added="FIX.4.4" abbrName="Typ">
+		<fixr:field id="805" name="NestedPartySubIDType" type="PartySubIDSourceCodeSet" added="FIX.4.4" abbrName="Typ">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Type of NestedPartySubID (545) value.
@@ -19912,7 +19912,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="807" name="Nested2PartySubIDType" type="PartyIDSourceCodeSet" added="FIX.4.4" abbrName="Typ">
+		<fixr:field id="807" name="Nested2PartySubIDType" type="PartySubIDSourceCodeSet" added="FIX.4.4" abbrName="Typ">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Type of Nested2PartySubID (760) value. Second instance of &lt;NestedParties&gt;.
@@ -20943,7 +20943,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="954" name="Nested3PartySubIDType" type="PartyIDSourceCodeSet" added="FIX.4.4" abbrName="Typ">
+		<fixr:field id="954" name="Nested3PartySubIDType" type="PartySubIDSourceCodeSet" added="FIX.4.4" abbrName="Typ">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartySubIDType value within a "third instance" Nested repeating group.
