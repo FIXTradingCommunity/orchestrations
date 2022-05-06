@@ -405,12 +405,12 @@ Sequence of digits with optional decimal point and sign character (characters "-
 			<fixr:mappedDatatype standard="TagValue" base="UTCTimestamp">
 				<fixr:annotation>
 					<fixr:documentation>
-		representing time/date combination represented in UTC (Universal Time Coordinated) in either YYYYMMDD-HH:MM:SS (whole seconds) or YYYYMMDD-HH:MM:SS.sss* format, colons, dash, and period required. Valid values: YYYY = 0000-9999, MM = 01-12, DD = 01-31, HH = 00-23, MM = 0059, SS = 00-60 (60 only if UTC leap second), sss* fractions of seconds. The fractions of seconds may be empty when no fractions of seconds are conveyed (in such a case the period is not conveyed), it may include 3 digits to convey milliseconds, 6 digits to convey microseconds, 9 digits to convey nanoseconds, 12 digits to convey picoseconds; Other number of digits may be used with bilateral agreement.  Leap Seconds: Note that UTC includes corrections for leap seconds, which are inserted to account for slowing of the rotation of the earth. Leap second insertion is declared by the International Earth Rotation Service (IERS) and has, since 1972, only occurred on the night of Dec. 31 or Jun 30. The IERS considers March 31 and September 30 as secondary dates for leap second insertion, but has never utilized these dates. During a leap second insertion, a UTCTimestamp field may read "19981231-23:59:59", "19981231-23:59:60", "19990101-00:00:00". (see http://tycho.usno.navy.mil/leapsec.html) 
+		representing time/date combination represented in UTC (Universal Time Coordinated) in either YYYYMMDD-HH:MM:SS (whole seconds) or YYYYMMDD-HH:MM:SS.sss* format, colons, dash, and period required. Valid values: YYYY = 0000-9999, MM = 01-12, DD = 01-31, HH = 00-23, MM = 0059, SS = 00-60 (60 only if UTC leap second), sss* fractions of seconds. The fractions of seconds may be empty when no fractions of seconds are conveyed (in such a case the period is not conveyed), it may include 3 digits to convey milliseconds, 6 digits to convey microseconds, 9 digits to convey nanoseconds, 12 digits to convey picoseconds; Other number of digits may be used with bilateral agreement.  Leap Seconds: Note that UTC includes corrections for leap seconds, which are inserted to account for slowing of the rotation of the earth. Leap second insertion is declared by the International Earth Rotation Service (IERS) and has, since 1972, only occurred on the night of Dec. 31 or Jun 30. The IERS considers March 31 and September 30 as secondary dates for leap second insertion, but has never utilized these dates. During a leap second insertion, a UTCTimestamp field may read "19981231-23:59:59", "19981231-23:59:60", "19990101-00:00:00". (see http://tycho.usno.navy.mil/leapsec.html)
 	</fixr:documentation>
 					<fixr:documentation purpose="EXAMPLE">
-		TransactTime(60)="20011217-09:30:47.123" millisecond 
-TransactTime(60)="20011217-09:30:47.123456" microseconds 
-TransactTime(60)="20011217-09:30:47.123456789" nanoseconds 
+		TransactTime(60)="20011217-09:30:47.123" millisecond
+TransactTime(60)="20011217-09:30:47.123456" microseconds
+TransactTime(60)="20011217-09:30:47.123456789" nanoseconds
 TransactTime(60)="20011217-09:30:47.123456789123" picoseconds
 		</fixr:documentation>
 				</fixr:annotation>
@@ -437,7 +437,7 @@ TransactTime(60)="20011217-09:30:47.123456789123" picoseconds
 			<fixr:mappedDatatype standard="TagValue" base="UTCTimeOnly">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-					representing time-only represented in UTC (Universal Time Coordinated) in either HH:MM:SS (whole seconds) or HH:MM:SS.sss* (milliseconds) format, colons, and period required. This special-purpose field is paired with UTCDateOnly to form a proper UTCTimestamp for bandwidth-sensitive messages. Valid values: HH = 00-23, MM = 00-59, SS = 00-60 (60 only if UTC leap second), sss* fractions of seconds. The fractions of seconds may be empty when no fractions of seconds are conveyed (in such a case the period is not conveyed), it may include 3 digits to convey milliseconds, 6 digits to convey microseconds, 9 digits to convey nanoseconds, 12 digits to convey picoseconds; Other number of digits may be used with bilateral agreement. 
+					representing time-only represented in UTC (Universal Time Coordinated) in either HH:MM:SS (whole seconds) or HH:MM:SS.sss* (milliseconds) format, colons, and period required. This special-purpose field is paired with UTCDateOnly to form a proper UTCTimestamp for bandwidth-sensitive messages. Valid values: HH = 00-23, MM = 00-59, SS = 00-60 (60 only if UTC leap second), sss* fractions of seconds. The fractions of seconds may be empty when no fractions of seconds are conveyed (in such a case the period is not conveyed), it may include 3 digits to convey milliseconds, 6 digits to convey microseconds, 9 digits to convey nanoseconds, 12 digits to convey picoseconds; Other number of digits may be used with bilateral agreement.
 					</fixr:documentation>
 					<fixr:documentation purpose="EXAMPLE">MDEntryTime(273)="13:20:00.123"milliseconds
 MDEntryTime(273)="13:20:00.123456" microseconds
@@ -466,7 +466,7 @@ MDEntryTime(273)="13:20:00.123456789123" picoseconds
 			<fixr:mappedDatatype standard="TagValue" base="UTCDateOnly">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-          Date represented in UTC (Universal Time Coordinated) in YYYYMMDD format. 
+          Date represented in UTC (Universal Time Coordinated) in YYYYMMDD format.
 Valid values:
 YYYY = 0000-9999, MM = 01-12, DD = 01-31.
       </fixr:documentation>
@@ -503,7 +503,7 @@ YYYY = 0000-9999, MM = 01-12, DD = 01-31.
 			<fixr:mappedDatatype standard="XML" base="xs:date">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         representing a Date of Local Market (as opposed to UTC) in YYYY-MM-DD format. 
+         representing a Date of Local Market (as opposed to UTC) in YYYY-MM-DD format.
          Valid values:
          YYYY = 0000-9999, MM = 01-12, DD = 01-31.
       </fixr:documentation>
@@ -521,8 +521,8 @@ YYYY = 0000-9999, MM = 01-12, DD = 01-31.
 			<fixr:mappedDatatype standard="TagValue" base="TZTimeOnly">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Time represented based on ISO 8601. This is the time with a UTC offset to allow identification of local time and time zone of that time. 
-Format is HH:MM[:SS][Z | [ + | - hh[:mm]]] where HH = 00-23 hours, MM = 00-59 minutes, SS = 00-59 seconds, hh = 01-12 offset hours, mm = 00-59 offset minutes. 
+         Time represented based on ISO 8601. This is the time with a UTC offset to allow identification of local time and time zone of that time.
+Format is HH:MM[:SS][Z | [ + | - hh[:mm]]] where HH = 00-23 hours, MM = 00-59 minutes, SS = 00-59 seconds, hh = 01-12 offset hours, mm = 00-59 offset minutes.
       </fixr:documentation>
 					<fixr:documentation purpose="EXAMPLE">"07:39Z" is 07:39 UTC
 "02:39-05" is five hours behind UTC, thus Eastern Time
@@ -688,7 +688,7 @@ Format is HH:MM[:SS][Z | [ + | - hh[:mm]]] where HH = 00-23 hours, MM = 00-59 mi
 				<fixr:documentation>
          Values "4000" and above are reserved for bilaterally agreed upon user defined enumerations.
 			 </fixr:documentation>
-		  </fixr:annotation>			
+		  </fixr:annotation>
       </fixr:mappedDatatype>
 			<fixr:mappedDatatype standard="ISO11404" base="integer range minInclusive=4000"/>
 			<fixr:annotation>
@@ -1537,6 +1537,37 @@ Format is HH:MM[:SS][Z | [ + | - hh[:mm]]] where HH = 00-23 hours, MM = 00-59 mi
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
+    <fixr:field added="FIX.4.3" id="627" name="NoHops" type="NumInGroup" abbrName="NoHops">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Number of HopCompID entries in repeating group.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="628" name="HopCompID" type="String" abbrName="ID">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Assigned value used to identify the third party firm which delivered a specific message either from the firm which originated the message or from another third party (if multiple "hops" are performed). It is recommended that this value be the SenderCompID (49) of the third party.
+         Applicable when messages are communicated/re-distributed via third parties which function as service bureaus or "hubs". Only applicable if OnBehalfOfCompID (115) is being used.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="629" name="HopSendingTime" type="UTCTimestamp" abbrName="Snt">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Time that HopCompID (628) sent the message. It is recommended that this value be the SendingTime (52) of the message sent by the third party.
+         Applicable when messages are communicated/re-distributed via third parties which function as service bureaus or "hubs". Only applicable if OnBehalfOfCompID (115) is being used.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="630" name="HopRefID" type="SeqNum" abbrName="Ref">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Reference identifier assigned by HopCompID (628) associated with the message sent. It is recommended that this value be the MsgSeqNum (34) of the message sent by the third party.
+         Applicable when messages are communicated/re-distributed via third parties which function as service bureaus or "hubs". Only applicable if OnBehalfOfCompID (115) is being used.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
 		<fixr:field type="SeqNum" added="FIX.4.4" id="789" name="NextExpectedMsgSeqNum" abbrName="NextExpectedMsgSeqNum">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
@@ -1775,6 +1806,32 @@ Format is HH:MM[:SS][Z | [ + | - hh[:mm]]] where HH = 00-23 hours, MM = 00-59 mi
 		</fixr:component>
 	</fixr:components>
 	<fixr:groups>
+    <fixr:group id="2085" added="FIX.4.4" name="HopGrp" category="Session" abbrName="Hop">
+      <fixr:numInGroup id="627">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:numInGroup>
+      <fixr:fieldRef id="628" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="629" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="630" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS"/>
+        <fixr:documentation purpose="ELABORATION"/>
+      </fixr:annotation>
+    </fixr:group>
 		<fixr:group category="Common" id="2098" name="MsgTypeGrp" abbrName="MsgTypeGrp" added="FIX.4.2">
 			<fixr:numInGroup id="384"/>
 			<fixr:fieldRef id="372" added="FIX.4.2">
@@ -2045,7 +2102,7 @@ If the GapFillFlag field is not present (or set to N), it can be assumed that th
 
 The sending application will initiate the Sequence Reset. **The message in all situations specifies NewSeqNo to reset to as the** **value of the *next* sequence number** to be expected by the message recipient **immediately following the messages and/or sequence numbers being skipped**.
 
-The Sequence Reset can only increase the sequence number. If a sequence reset is received attempting to decrease the next expected sequence number the message should be rejected and treated as a serious error. It is possible to have multiple Resend Requests issued in a row (i.e. 5 to 10 followed by 5 to 11). If sequence number 8, 10, and 11 represent application messages while the 5-7 and 9 represent administrative messages, the series of messages as result of the Resend Request may appear as Sequence Reset-GapFill mode with NewSeqNo of 8, message 8, Sequence Reset-GapFill with NewSeqNo of 10, and message 10. This could then followed by Sequence Reset-GapFill with NewSeqNo of 8, message 8, Sequence Reset-GapFill with NewSeqNo of 10, message 10, and message 11. One must be careful to ignore the duplicate Sequence Reset-GapFill mode which is attempting to lower the next expected sequence number. This can be detected by checking to see if its MsgSeqNum is less than expected. If so, the Sequence Reset-GapFill mode is a duplicate and should be discarded. 
+The Sequence Reset can only increase the sequence number. If a sequence reset is received attempting to decrease the next expected sequence number the message should be rejected and treated as a serious error. It is possible to have multiple Resend Requests issued in a row (i.e. 5 to 10 followed by 5 to 11). If sequence number 8, 10, and 11 represent application messages while the 5-7 and 9 represent administrative messages, the series of messages as result of the Resend Request may appear as Sequence Reset-GapFill mode with NewSeqNo of 8, message 8, Sequence Reset-GapFill with NewSeqNo of 10, and message 10. This could then followed by Sequence Reset-GapFill with NewSeqNo of 8, message 8, Sequence Reset-GapFill with NewSeqNo of 10, message 10, and message 11. One must be careful to ignore the duplicate Sequence Reset-GapFill mode which is attempting to lower the next expected sequence number. This can be detected by checking to see if its MsgSeqNum is less than expected. If so, the Sequence Reset-GapFill mode is a duplicate and should be discarded.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:message>
