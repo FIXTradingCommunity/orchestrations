@@ -2423,32 +2423,39 @@
 			<fixr:code name="UnsupportedOrderCharacteristic" id="103012" value="11" added="FIX.4.3">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Unsupported order characteristic12 = Surveillence Option
+         Unsupported order characteristic
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="IncorrectQuantity" id="103013" value="13" added="FIX.4.4">
+			<fixr:code name="SurveillanceOption" id="103013" value="12" added="FIX.4.4">
+				<fixr:annotation>
+					<fixr:documentation purpose="SYNOPSIS">
+         Surveillance Option
+      </fixr:documentation>
+				</fixr:annotation>
+			</fixr:code>
+			<fixr:code name="IncorrectQuantity" id="103014" value="13" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
          Incorrect quantity
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="IncorrectAllocatedQuantity" id="103014" value="14" added="FIX.4.4">
+			<fixr:code name="IncorrectAllocatedQuantity" id="103015" value="14" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
          Incorrect allocated quantity
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="UnknownAccount" id="103015" value="15" added="FIX.4.4">
+			<fixr:code name="UnknownAccount" id="103016" value="15" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
          Unknown account(s)
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="Other" id="103016" value="99" added="FIX.4.4">
+			<fixr:code name="Other" id="103100" value="99" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
          Other
@@ -2755,7 +2762,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
-		<fixr:codeSet name="MiscFeeTypeCodeSet" id="139" type="char">
+		<fixr:codeSet name="MiscFeeTypeCodeSet" id="139" type="String">
 			<fixr:code name="Regulatory" id="139001" value="1" added="FIX.4.0">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
@@ -8971,7 +8978,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
-		<fixr:codeSet name="MassCancelRejectReasonCodeSet" id="532" type="char">
+		<fixr:codeSet name="MassCancelRejectReasonCodeSet" id="532" type="int">
 			<fixr:code name="MassCancelNotSupported" id="532001" value="0" added="FIX.4.3">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
@@ -16270,7 +16277,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="305" name="UnderlyingSecurityIDSource" type="String" added="FIX.4.2" abbrName="Src">
+		<fixr:field id="305" name="UnderlyingSecurityIDSource" type="SecurityIDSourceCodeSet" added="FIX.4.2" abbrName="Src">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Underlying security’s SecurityIDSource.
@@ -17336,7 +17343,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="456" name="SecurityAltIDSource" type="String" added="FIX.4.3" abbrName="AltIDSrc">
+		<fixr:field id="456" name="SecurityAltIDSource" type="SecurityIDSourceCodeSet" added="FIX.4.3" abbrName="AltIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Identifies class or source of the SecurityAltID (455) value. Required if SecurityAltID is specified.
@@ -17359,7 +17366,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="459" name="UnderlyingSecurityAltIDSource" type="String" added="FIX.4.3" abbrName="AltIDSrc">
+		<fixr:field id="459" name="UnderlyingSecurityAltIDSource" type="SecurityIDSourceCodeSet" added="FIX.4.3" abbrName="AltIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Identifies class or source of the UnderlyingSecurityAltID (458) value. Required if UnderlyingSecurityAltID is specified.
@@ -17835,7 +17842,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="525" name="NestedPartyIDSource" type="char" added="FIX.4.3" abbrName="Src">
+		<fixr:field id="525" name="NestedPartyIDSource" type="PartyIDSourceCodeSet" added="FIX.4.3" abbrName="Src">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyIDSource value within a nested repeating group.
@@ -17933,7 +17940,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="538" name="NestedPartyRole" type="int" added="FIX.4.3" abbrName="R">
+		<fixr:field id="538" name="NestedPartyRole" type="PartyRoleCodeSet" added="FIX.4.3" abbrName="R">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyRole value within a nested repeating group.
@@ -18411,7 +18418,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="603" name="LegSecurityIDSource" type="String" added="FIX.4.3" abbrName="Src">
+		<fixr:field id="603" name="LegSecurityIDSource" type="SecurityIDSourceCodeSet" added="FIX.4.3" abbrName="Src">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Multileg instrument's individual security’s SecurityIDSource.
@@ -18435,7 +18442,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="606" name="LegSecurityAltIDSource" type="String" added="FIX.4.3" abbrName="SecAltIDSrc">
+		<fixr:field id="606" name="LegSecurityAltIDSource" type="SecurityIDSourceCodeSet" added="FIX.4.3" abbrName="SecAltIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Multileg instrument's individual security’s SecurityAltIDSource.
@@ -18838,7 +18845,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="661" name="AllocAcctIDSource" type="int" added="FIX.4.4" abbrName="ActIDSrc">
+		<fixr:field id="661" name="AllocAcctIDSource" type="AcctIDSourceCodeSet" added="FIX.4.4" abbrName="ActIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Used to identify the source of the AllocAccount (79) code.
@@ -18935,7 +18942,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="674" name="LegAllocAcctIDSource" type="String" added="FIX.4.4" abbrName="AllocAcctIDSrc">
+		<fixr:field id="674" name="LegAllocAcctIDSource" type="AcctIDSourceCodeSet" added="FIX.4.4" abbrName="AllocAcctIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          The source of the LegAllocAccount (67)
@@ -19542,7 +19549,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="758" name="Nested2PartyIDSource" type="char" added="FIX.4.4" abbrName="Src">
+		<fixr:field id="758" name="Nested2PartyIDSource" type="PartyIDSourceCodeSet" added="FIX.4.4" abbrName="Src">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyIDSource value within a "second instance" Nested repeating group.
@@ -19550,7 +19557,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="759" name="Nested2PartyRole" type="int" added="FIX.4.4" abbrName="R">
+		<fixr:field id="759" name="Nested2PartyRole" type="PartyRoleCodeSet" added="FIX.4.4" abbrName="R">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyRole value within a "second instance" Nested repeating group.
@@ -19566,7 +19573,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="761" name="BenchmarkSecurityIDSource" type="String" added="FIX.4.4" abbrName="SecIDSrc">
+		<fixr:field id="761" name="BenchmarkSecurityIDSource" type="SecurityIDSourceCodeSet" added="FIX.4.4" abbrName="SecIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Identifies class or source of the BenchmarkSecurityID (699) value. Required if BenchmarkSecurityID is specified.
@@ -19680,7 +19687,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="776" name="IndividualAllocRejCode" type="int" added="FIX.4.4" abbrName="IndAllocRejCode">
+		<fixr:field id="776" name="IndividualAllocRejCode" type="AllocRejCodeCodeSet" added="FIX.4.4" abbrName="IndAllocRejCode">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Identified reason for rejecting an individual AllocAccount (79) detail.
@@ -19731,7 +19738,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="783" name="SettlPartyIDSource" type="char" added="FIX.4.4" abbrName="Src">
+		<fixr:field id="783" name="SettlPartyIDSource" type="PartyIDSourceCodeSet" added="FIX.4.4" abbrName="Src">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyIDSource value within a settlement parties component.
@@ -19739,7 +19746,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="784" name="SettlPartyRole" type="int" added="FIX.4.4" abbrName="R">
+		<fixr:field id="784" name="SettlPartyRole" type="PartyRoleCodeSet" added="FIX.4.4" abbrName="R">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyRole value within a settlement parties component.
@@ -19755,7 +19762,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="786" name="SettlPartySubIDType" type="int" added="FIX.4.4" abbrName="Typ">
+		<fixr:field id="786" name="SettlPartySubIDType" type="PartySubIDTypeCodeSet" added="FIX.4.4" abbrName="Typ">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Type of SettlPartySubID (785) value.
@@ -19890,7 +19897,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="805" name="NestedPartySubIDType" type="int" added="FIX.4.4" abbrName="Typ">
+		<fixr:field id="805" name="NestedPartySubIDType" type="PartySubIDTypeCodeSet" added="FIX.4.4" abbrName="Typ">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Type of NestedPartySubID (545) value.
@@ -19905,7 +19912,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="807" name="Nested2PartySubIDType" type="int" added="FIX.4.4" abbrName="Typ">
+		<fixr:field id="807" name="Nested2PartySubIDType" type="PartySubIDTypeCodeSet" added="FIX.4.4" abbrName="Typ">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Type of Nested2PartySubID (760) value. Second instance of &lt;NestedParties&gt;.
@@ -20462,7 +20469,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="888" name="UnderlyingStipType" type="String" added="FIX.4.4" abbrName="Typ">
+		<fixr:field id="888" name="UnderlyingStipType" type="StipulationTypeCodeSet" added="FIX.4.4" abbrName="Typ">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Type of stipulation.
@@ -20905,7 +20912,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="950" name="Nested3PartyIDSource" type="char" added="FIX.4.4" abbrName="Src">
+		<fixr:field id="950" name="Nested3PartyIDSource" type="PartyIDSourceCodeSet" added="FIX.4.4" abbrName="Src">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyIDSource value within a "third instance" Nested repeating group.
@@ -20913,7 +20920,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="951" name="Nested3PartyRole" type="int" added="FIX.4.4" abbrName="R">
+		<fixr:field id="951" name="Nested3PartyRole" type="PartyRoleCodeSet" added="FIX.4.4" abbrName="R">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartyRole value within a "third instance" Nested repeating group.
@@ -20936,7 +20943,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="954" name="Nested3PartySubIDType" type="int" added="FIX.4.4" abbrName="Typ">
+		<fixr:field id="954" name="Nested3PartySubIDType" type="PartySubIDTypeCodeSet" added="FIX.4.4" abbrName="Typ">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PartySubIDType value within a "third instance" Nested repeating group.
@@ -26518,6 +26525,11 @@
 					<fixr:documentation/>
 				</fixr:annotation>
 			</fixr:fieldRef>
+			<fixr:fieldRef id="586" added="FIX.4.4">
+				<fixr:annotation>
+					<fixr:documentation/>
+				</fixr:annotation>
+			</fixr:fieldRef>
 			<fixr:groupRef id="1012" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation/>
@@ -26780,6 +26792,11 @@
 					<fixr:documentation/>
 				</fixr:annotation>
 			</fixr:groupRef>
+			<fixr:fieldRef id="635" added="FIX.4.4">
+				<fixr:annotation>
+					<fixr:documentation/>
+				</fixr:annotation>
+			</fixr:fieldRef>
 			<fixr:fieldRef id="578" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation/>
@@ -40669,7 +40686,7 @@
 				<fixr:fieldRef id="774" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Required for ConfirmStatus = 1 (rejected)
+         Conditionally required for AffirmStatus = 2 (Confirm rejected)
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>

@@ -5213,7 +5213,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:datatype>
-		<fixr:datatype name="MultipleStringValue" baseType="String" added="FIX.4.2">
+		<fixr:datatype name="MultipleValueString" baseType="String" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          String field containing one or more space delimited multiple character values.
@@ -5286,20 +5286,6 @@
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          int field representing a day during a particular monthy (values 1 to 31).
-      </fixr:documentation>
-			</fixr:annotation>
-		</fixr:datatype>
-		<fixr:datatype name="Length" baseType="int" added="FIX.4.3">
-			<fixr:mappedDatatype standard="XML" base="xs:nonNegativeInteger" builtin="0">
-				<fixr:annotation>
-					<fixr:documentation purpose="SYNOPSIS">
-         int field representing the length in bytes. Value must be positive.
-      </fixr:documentation>
-				</fixr:annotation>
-			</fixr:mappedDatatype>
-			<fixr:annotation>
-				<fixr:documentation purpose="SYNOPSIS">
-         int field representing the length in bytes. Value must be positive.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:datatype>
@@ -5948,7 +5934,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="90" name="SecureDataLen" type="Length" added="FIX.2.7">
+		<fixr:field id="90" name="SecureDataLen" type="int" added="FIX.2.7">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Length of encrypted message
@@ -5969,7 +5955,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="93" name="SignatureLength" type="Length" added="FIX.2.7">
+		<fixr:field id="93" name="SignatureLength" type="int" added="FIX.2.7">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Number of bytes in signature field.
@@ -5983,7 +5969,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="95" name="RawDataLength" type="Length" added="FIX.2.7">
+		<fixr:field id="95" name="RawDataLength" type="int" added="FIX.2.7">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Number of bytes in raw data field.
@@ -6805,7 +6791,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="212" name="XmlDataLen" type="Length" added="FIX.4.2">
+		<fixr:field id="212" name="XmlDataLen" type="int" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Length of the XmlData data block.
@@ -7493,7 +7479,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="348" name="EncodedIssuerLen" type="Length" added="FIX.4.2">
+		<fixr:field id="348" name="EncodedIssuerLen" type="int" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Byte length of encoded (non-ASCII characters) EncodedIssuer field.
@@ -7507,7 +7493,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="350" name="EncodedSecurityDescLen" type="Length" added="FIX.4.2">
+		<fixr:field id="350" name="EncodedSecurityDescLen" type="int" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Byte length of encoded (non-ASCII characters) EncodedSecurityDesc field.
@@ -7521,7 +7507,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="352" name="EncodedListExecInstLen" type="Length" added="FIX.4.2">
+		<fixr:field id="352" name="EncodedListExecInstLen" type="int" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Byte length of encoded (non-ASCII characters) EncodedListExecInst field.
@@ -7535,7 +7521,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="354" name="EncodedTextLen" type="Length" added="FIX.4.2">
+		<fixr:field id="354" name="EncodedTextLen" type="int" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Byte length of encoded (non-ASCII characters) EncodedText field.
@@ -7549,7 +7535,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="356" name="EncodedSubjectLen" type="Length" added="FIX.4.2">
+		<fixr:field id="356" name="EncodedSubjectLen" type="int" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Byte length of encoded (non-ASCII characters) EncodedSubject field.
@@ -7563,7 +7549,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="358" name="EncodedHeadlineLen" type="Length" added="FIX.4.2">
+		<fixr:field id="358" name="EncodedHeadlineLen" type="int" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Byte length of encoded (non-ASCII characters) EncodedHeadline field.
@@ -7577,7 +7563,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="360" name="EncodedAllocTextLen" type="Length" added="FIX.4.2">
+		<fixr:field id="360" name="EncodedAllocTextLen" type="int" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Byte length of encoded (non-ASCII characters) EncodedAllocText field.
@@ -7591,7 +7577,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="362" name="EncodedUnderlyingIssuerLen" type="Length" added="FIX.4.2">
+		<fixr:field id="362" name="EncodedUnderlyingIssuerLen" type="int" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Byte length of encoded (non-ASCII characters) EncodedUnderlyingIssuer field.
@@ -7605,7 +7591,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="364" name="EncodedUnderlyingSecurityDescLen" type="Length" added="FIX.4.2">
+		<fixr:field id="364" name="EncodedUnderlyingSecurityDescLen" type="int" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Byte length of encoded (non-ASCII characters) EncodedUnderlyingSecurityDesc field.
@@ -8174,7 +8160,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="445" name="EncodedListStatusTextLen" type="Length" added="FIX.4.2">
+		<fixr:field id="445" name="EncodedListStatusTextLen" type="int" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Byte length of encoded (non-ASCII characters) EncodedListStatusText field.
