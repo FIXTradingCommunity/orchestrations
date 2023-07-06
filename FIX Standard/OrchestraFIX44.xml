@@ -217,7 +217,7 @@
 			<fixr:code name="PercentOfVolume" id="18014" value="D" added="FIX.2.7">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Percent of volume "(indicates that the sender does not want to be all of the volume on the floor vs. a specific percentage)"
+         Percent of volume "(indicates that the sender does not want to be all the volume on the floor vs. a specific percentage)"
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -2262,14 +2262,14 @@
 			<fixr:code name="PGPDESMD5" id="98006" value="5" added="FIX.4.0">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         PGP/DES-MD5 (see app note on FIX web site)
+         PGP/DES-MD5 (see app note on FIX website)
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
 			<fixr:code name="PEM" id="98007" value="6" added="FIX.4.0">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         PEM/DES-MD5 (see app note on FIX web site)
+         PEM/DES-MD5 (see app note on FIX website)
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -3018,7 +3018,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies whether or not SettlCurrFxRate (55) should be multiplied or divided
+         Specifies whether SettlCurrFxRate (55) should be multiplied or divided
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -3947,7 +3947,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not details should be communicated to BrokerOfCredit (i.e. step-in broker).
+         Indicates whether details should be communicated to BrokerOfCredit (i.e. step-in broker).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -4704,7 +4704,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies whether or not book entries should be aggregated.
+         Specifies whether book entries should be aggregated.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -5664,7 +5664,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not message is being sent as a result of a subscription request or not.
+         Indicates whether message is being sent as a result of a subscription request or not.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -5895,7 +5895,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not the halt was due to Common Stock trading being halted.
+         Indicates whether the halt was due to Common Stock trading being halted.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -5916,7 +5916,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not the halt was due to the Related Security being halted.
+         Indicates whether the halt was due to the Related Security being halted.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -6260,7 +6260,7 @@
 			<fixr:code name="WasSolicited" id="377001" value="Y" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Was solcitied
+         Was solicited
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -6273,7 +6273,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not the order was solicited.
+         Indicates whether the order was solicited.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -6379,7 +6379,7 @@
 			<fixr:code name="UnknownID" id="380002" value="1" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Unkown ID
+         Unknown ID
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -6448,7 +6448,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies the direction of the messsage
+         Specifies the direction of the message
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -6637,7 +6637,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not to exchange for phsyical.
+         Indicates whether to exchange for physical.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -7668,7 +7668,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not this FIX Session is a "test" vs. "production" connection. Useful for preventing "accidents".
+         Indicates whether this FIX Session is a "test" vs. "production" connection. Useful for preventing "accidents".
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -7696,7 +7696,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies which direction to round For CIV – indicates whether or not the quantity of shares/units is to be rounded and in which direction where CashOrdQty (52) or (for CIV only) OrderPercent (56) are specified on an order.
+         Specifies which direction to round For CIV – indicates whether the quantity of shares/units is to be rounded and in which direction where CashOrdQty (52) or (for CIV only) OrderPercent (56) are specified on an order.
          The default is for rounding to be at the discretion of the executing broker or fund manager.
          e.g. for an order specifying CashOrdQty or OrderPercent if the calculated number of shares/units was 325.76 and RoundingModulus (469) was 0 – "round down" would give 320 units, "round up" would give 330 units and "round to nearest" would give 320 units.
       </fixr:documentation>
@@ -7826,7 +7826,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         For CIV – A one character code identifying whether Cancellation rights/Cooling off period applies
+         For CIV – A one character code identifying whether Cancellation rights/Cooling-off period applies
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -8262,7 +8262,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         For CIV - a code identifying the type of tax exempt account in which purchased shares/units are to be held
+         For CIV - a code identifying the type of tax-exempt account in which purchased shares/units are to be held
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -8347,7 +8347,7 @@
 			<fixr:code name="NoRegDetails" id="507004" value="4" added="FIX.4.3">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Invalid/unacceptable No Reg Detls
+         Invalid/unacceptable No Reg Details
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -8828,7 +8828,7 @@
 			<fixr:code name="ForeignEntity" id="529007" value="7" added="FIX.4.3">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Foreign Entity (of foreign governmnet or regulatory jurisdiction)
+         Foreign Entity (of foreign government or regulatory jurisdiction)
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -9911,7 +9911,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not automatic booking can occur.
+         Indicates whether automatic booking can occur.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -10304,7 +10304,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Used to identify the source of the Account (1) code. This is especially useful if the account is a new account that the Respondent may not have setup yet in their system.
+         Used to identify the source of the Account (1) code. This is especially useful if the account is a new account that the Respondent may not have set up yet in their system.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -12306,7 +12306,7 @@
 			<fixr:code name="MoreAggressive" id="838001" value="1" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         More aggressive – on a buy order round the price up round up to the nearest tick, on a sell round down to the nearest tick
+         More aggressive – on a buy order round the price up to the nearest tick, on a sell round down to the nearest tick
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -12375,7 +12375,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Describes whether discretionay price is static or floats
+         Describes whether discretionary price is static or floats
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -12446,7 +12446,7 @@
 			<fixr:code name="MoreAggressive" id="844001" value="1" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         More aggressive – on a buy order round the price up round up to the nearest tick, on a sell round down to the nearest tick
+         More aggressive – on a buy order round the price up to the nearest tick, on a sell round down to the nearest tick
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -12516,7 +12516,7 @@
 			<fixr:code name="MininizeMarketImpact" id="847003" value="3" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Mininize market impact
+         Minimize market impact
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -12608,7 +12608,7 @@
 			<fixr:code name="QualifiedServiceRepresentative" id="853005" value="4" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Qualifed Service Representative (QSR) or Automatic Giveup (AGU) Contra Side Sold Short
+         Qualified Service Representative (QSR) or Automatic Giveup (AGU) Contra Side Sold Short
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -13816,7 +13816,7 @@
 		<fixr:datatype name="DayOfMonth" baseType="int" added="FIX.4.1">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         int field representing a day during a particular monthy (values 1 to 31).
+         int field representing a day during a particular month (values 1 to 31).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:datatype>
@@ -13942,13 +13942,13 @@
 			<fixr:mappedDatatype standard="XML" base="xs:string" builtin="1">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case sensitive (i.e. morstatt != Morstatt).
+         Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case-sensitive (i.e. morstatt != Morstatt).
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:mappedDatatype>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case sensitive (i.e. morstatt != Morstatt).
+         Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case-sensitive (i.e. morstatt != Morstatt).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:datatype>
@@ -14098,7 +14098,7 @@
 			<fixr:mappedDatatype standard="XML" base="xs:date" builtin="0">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         string field represening a Date of Local Market (as oppose to UTC) in YYYY-MM-DD format per the ISO 8601 standard. This is the "normal" date field used by the FIX Protocol.
+         string field representing a Date of Local Market (as opposed to UTC) in YYYY-MM-DD format per the ISO 8601 standard. This is the "normal" date field used by the FIX Protocol.
          Valid values:
          YYYY = 0000-9999, MM = 01-12, DD = 01-31.
       </fixr:documentation>
@@ -14106,7 +14106,7 @@
 			</fixr:mappedDatatype>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         string field represening a Date of Local Market (as oppose to UTC) in YYYYMMDD format. This is the "normal" date field used by the FIX Protocol.
+         string field representing a Date of Local Market (as opposed to UTC) in YYYYMMDD format. This is the "normal" date field used by the FIX Protocol.
          Valid values:
          YYYY = 0000-9999, MM = 01-12, DD = 01-31.
       </fixr:documentation>
@@ -14186,7 +14186,7 @@
 		<fixr:section name="PostTrade" displayOrder="3" FIXMLFileName="posttrade">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Post trade messages including trade reporting, allocation, collateral, confirmation, position mantemenance, registration instruction, and settlement instructions
+         Post trade messages including trade reporting, allocation, collateral, confirmation, position maintenance, registration instruction, and settlement instructions
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:section>
@@ -15248,7 +15248,7 @@
 		<fixr:field id="156" name="SettlCurrFxRateCalc" type="SettlCurrFxRateCalcCodeSet" added="FIX.4.1" abbrName="SettlCurrFxRtCalc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies whether or not SettlCurrFxRate (55) should be multiplied or divided
+         Specifies whether SettlCurrFxRate (55) should be multiplied or divided
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -15393,14 +15393,14 @@
 		<fixr:field id="192" name="OrderQty2" type="Qty" added="FIX.4.1" abbrName="Qty2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         OrderQty (38) of the future part of a F/X swap order.
+         OrderQty (38) of the future part of an F/X swap order.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
 		<fixr:field id="193" name="SettlDate2" type="LocalMktDate" added="FIX.4.1" abbrName="SettlDt2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         SettDate (64) of the future part of a F/X swap order.
+         SettDate (64) of the future part of an F/X swap order.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -15505,7 +15505,7 @@
 		<fixr:field id="208" name="NotifyBrokerOfCredit" type="NotifyBrokerOfCreditCodeSet" added="FIX.4.1" abbrName="NotifyBrkrOfCredit">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not details should be communicated to BrokerOfCredit (i.e. step-in broker).
+         Indicates whether details should be communicated to BrokerOfCredit (i.e. step-in broker).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -15660,7 +15660,7 @@
 		<fixr:field id="228" name="Factor" type="float" added="FIX.4.2" abbrName="Fctr">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         For Fixed Income: Amorization Factor for deriving Current face from Original face for ABS or MBS securities, note the fraction may be greater than, equal to or less than . In TIPS securities this is the Inflation index.
+         For Fixed Income: Amortization Factor for deriving Current face from Original face for ABS or MBS securities, note the fraction may be greater than, equal to or less than . In TIPS securities this is the Inflation index.
          Qty * Factor * Price = Gross Trade Amount
          For Derivatives: Contract Value Factor by which price must be adjusted to determine the true nominal value of one futures/options contract.
          (Qty * Price) * Factor = Nominal Value
@@ -15671,7 +15671,7 @@
 		<fixr:field id="229" name="TradeOriginationDate" type="LocalMktDate" added="FIX.4.2" abbrName="OrignDt">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Used with Fixed Income for Muncipal New Issue Market. Agreement in principal between counter-parties prior to actual trade date.
+         Used with Fixed Income for Municipal New Issue Market. Agreement in principal between counter-parties prior to actual trade date.
          (Note tag # was reserved in FIX 4.1, added in FIX 4.3)
          (prior to FIX 4.4 field was of type UTCDate)
       </fixr:documentation>
@@ -15690,7 +15690,7 @@
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Specifies the ratio or multiply factor to convert from "nominal" units (e.g. contracts) to total units (e.g. shares) (e.g. 1.0, 100, 1000, etc). Applicable For Fixed Income, Convertible Bonds, Derivatives, etc.
-         In general quantities for all calsses should be expressed in the basic unit of the instrument, e.g. shares for equities, norminal or par amount for bonds, currency for foreign exchange. When quantity is expressed in contracts, e.g. financing transactions and bond trade reporting, ContractMutliplier should contain the number of units in one contract and can be omitted if the multiplier is the default amount for the instrument, i.e. 1,000 par of bonds, 1,000,000 par for financing transactions.
+         In general quantities for all classes should be expressed in the basic unit of the instrument, e.g. shares for equities, nominal or par amount for bonds, currency for foreign exchange. When quantity is expressed in contracts, e.g. financing transactions and bond trade reporting, ContractMutliplier should contain the number of units in one contract and can be omitted if the multiplier is the default amount for the instrument, i.e. 1,000 par of bonds, 1,000,000 par for financing transactions.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -15754,7 +15754,7 @@
 		<fixr:field id="238" name="Concession" type="Amt" added="FIX.4.2" abbrName="Concession">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Provides the reduction in price for the secondary market in Muncipals.
+         Provides the reduction in price for the secondary market in Municipals.
          (Note tag # was reserved in FIX 4.1, added in FIX 4.3)
       </fixr:documentation>
 			</fixr:annotation>
@@ -16002,7 +16002,7 @@
 		<fixr:field id="266" name="AggregatedBook" type="AggregatedBookCodeSet" added="FIX.4.2" abbrName="AggBook">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies whether or not book entries should be aggregated.
+         Specifies whether book entries should be aggregated.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -16447,7 +16447,7 @@
 		<fixr:field id="325" name="UnsolicitedIndicator" type="UnsolicitedIndicatorCodeSet" added="FIX.4.2" abbrName="Unsol">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not message is being sent as a result of a subscription request or not.
+         Indicates whether message is being sent as a result of a subscription request or not.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -16468,14 +16468,14 @@
 		<fixr:field id="328" name="InViewOfCommon" type="InViewOfCommonCodeSet" added="FIX.4.2" abbrName="InViewOfCmn">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not the halt was due to Common Stock trading being halted.
+         Indicates whether the halt was due to Common Stock trading being halted.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
 		<fixr:field id="329" name="DueToRelated" type="DueToRelatedCodeSet" added="FIX.4.2" abbrName="DueToReltd">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not the halt was due to the Related Security being halted.
+         Indicates whether the halt was due to the Related Security being halted.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -16731,7 +16731,7 @@
 		<fixr:field id="365" name="EncodedUnderlyingSecurityDesc" type="data" added="FIX.4.2" abbrName="EncUndSecDesc" lengthId="364">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Encoded (non-ASCII characters) representation of the UnderlyingSecurityDesc (307) field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the UnderlyingSecurityeDesc field.
+         Encoded (non-ASCII characters) representation of the UnderlyingSecurityDesc (307) field in the encoded format specified via the MessageEncoding (347) field. If used, the ASCII (English) representation should also be specified in the UnderlyingSecurityDesc field.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -16808,7 +16808,7 @@
 		<fixr:field id="377" name="SolicitedFlag" type="SolicitedFlagCodeSet" added="FIX.4.2" abbrName="SolFlag">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not the order was solicited.
+         Indicates whether the order was solicited.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -16864,7 +16864,7 @@
 		<fixr:field id="385" name="MsgDirection" type="MsgDirectionCodeSet" added="FIX.4.2" abbrName="MsgDirctn">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies the direction of the messsage
+         Specifies the direction of the message
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -16973,9 +16973,9 @@
 				<fixr:documentation purpose="SYNOPSIS">
          BidDescriptor value. Usage depends upon BidDescriptorTyp (399).
          If BidDescriptorType = 1
-         Industrials etc - Free text
+         Industrials etc. - Free text
          If BidDescriptorType =2
-         "FR" etc - ISO Country Codes
+         "FR" etc. - ISO Country Codes
          If BidDescriptorType =3
          FT00, FT250, STOX - Free text
       </fixr:documentation>
@@ -17054,7 +17054,7 @@
 		<fixr:field id="411" name="ExchangeForPhysical" type="ExchangeForPhysicalCodeSet" added="FIX.4.2" abbrName="EFP">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not to exchange for phsyical.
+         Indicates whether to exchange for physical.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -17245,14 +17245,14 @@
 		<fixr:field id="438" name="ContraTradeTime" type="UTCTimestamp" added="FIX.4.2" abbrName="CntraTrdTm" baseCategory="SingleGeneralOrderHandling" baseCategoryAbbrName="TrdTm">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Identifes the time of the trade with the ContraBroker (375). (always expressed in UTC (Universal Time Coordinated, also known as "GMT")
+         Identifies the time of the trade with the ContraBroker (375). (always expressed in UTC (Universal Time Coordinated, also known as "GMT")
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
 		<fixr:field id="441" name="LiquidityNumSecurities" type="int" added="FIX.4.2" abbrName="LqdtyNumSecurities">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Number of Securites between LiquidityPctLow (402) and LiquidityPctHigh (403) in Currency.
+         Number of Securities between LiquidityPctLow (402) and LiquidityPctHigh (403) in Currency.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -17409,7 +17409,7 @@
 		<fixr:field id="464" name="TestMessageIndicator" type="TestMessageIndicatorCodeSet" added="FIX.4.3" abbrName="TestMsgInd">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not this FIX Session is a "test" vs. "production" connection. Useful for preventing "accidents".
+         Indicates whether this FIX Session is a "test" vs. "production" connection. Useful for preventing "accidents".
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -17430,7 +17430,7 @@
 		<fixr:field id="468" name="RoundingDirection" type="RoundingDirectionCodeSet" added="FIX.4.3" abbrName="RndDir">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies which direction to round For CIV – indicates whether or not the quantity of shares/units is to be rounded and in which direction where CashOrdQty (52) or (for CIV only) OrderPercent (56) are specified on an order.
+         Specifies which direction to round For CIV – indicates whether the quantity of shares/units is to be rounded and in which direction where CashOrdQty (52) or (for CIV only) OrderPercent (56) are specified on an order.
          The default is for rounding to be at the discretion of the executing broker or fund manager.
          e.g. for an order specifying CashOrdQty or OrderPercent if the calculated number of shares/units was 325.76 and RoundingModulus (469) was 0 – "round down" would give 320 units, "round up" would give 330 units and "round to nearest" would give 320 units.
       </fixr:documentation>
@@ -17509,21 +17509,21 @@
 		<fixr:field id="478" name="CashDistribCurr" type="Currency" added="FIX.4.3" abbrName="CshDistribCurr">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies currency to be use for Cash Distributions– see "Appendix 6-A; Valid Currency Codes".
+         Specifies currency to be used for Cash Distributions– see "Appendix 6-A; Valid Currency Codes".
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
 		<fixr:field id="479" name="CommCurrency" type="Currency" added="FIX.4.3" abbrName="Ccy">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies currency to be use for Commission (2) if the Commission currency is different from the Deal Currency - see "Appendix 6-A; Valid Currency Codes".
+         Specifies currency to be used for Commission (2) if the Commission currency is different from the Deal Currency - see "Appendix 6-A; Valid Currency Codes".
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
 		<fixr:field id="480" name="CancellationRights" type="CancellationRightsCodeSet" added="FIX.4.3" abbrName="CxllationRights">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         For CIV – A one character code identifying whether Cancellation rights/Cooling off period applies
+         For CIV – A one character code identifying whether Cancellation rights/Cooling-off period applies
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -17580,7 +17580,7 @@
 		<fixr:field id="488" name="CardHolderName" type="String" added="FIX.4.3" abbrName="CardHolderName">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         The name of the payment card holder as specified on the card being used for payment.
+         The name of the payment cardholder as specified on the card being used for payment.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -17631,7 +17631,7 @@
 		<fixr:field id="495" name="TaxAdvantageType" type="TaxAdvantageTypeCodeSet" added="FIX.4.3" abbrName="TaxAdvantageTyp">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         For CIV - a code identifying the type of tax exempt account in which purchased shares/units are to be held
+         For CIV - a code identifying the type of tax-exempt account in which purchased shares/units are to be held
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -17773,7 +17773,7 @@
 		<fixr:field id="515" name="ExecValuationPoint" type="UTCTimestamp" added="FIX.4.3" abbrName="ExecValuationPoint">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         For CIV - a date and time stamp to indicate the fund valuation point with respect to which a order was priced by the fund manager.
+         For CIV - a date and time stamp to indicate the fund valuation point with respect to which an order was priced by the fund manager.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -18312,7 +18312,7 @@
 		<fixr:field id="589" name="DayBookingInst" type="DayBookingInstCodeSet" added="FIX.4.3" abbrName="DayBkngInst">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not automatic booking can occur.
+         Indicates whether automatic booking can occur.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -18707,7 +18707,7 @@
 		<fixr:field id="640" name="Price2" type="Price" added="FIX.4.3" abbrName="Px2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Price of the future part of a F/X swap order.
+         Price of the future part of an F/X swap order.
          See Price (44) for description.
       </fixr:documentation>
 			</fixr:annotation>
@@ -18715,21 +18715,21 @@
 		<fixr:field id="641" name="LastForwardPoints2" type="PriceOffset" added="FIX.4.3" abbrName="LastFwdPnts2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         F/X forward points of the future part of a F/X swap order added to LastSpotRate (94). May be a negative value.
+         F/X forward points of the future part of an F/X swap order added to LastSpotRate (94). May be a negative value.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
 		<fixr:field id="642" name="BidForwardPoints2" type="PriceOffset" added="FIX.4.3" abbrName="BidFwdPnts2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Bid F/X forward points of the future portion of a F/X swap quote added to spot rate. May be a negative value.
+         Bid F/X forward points of the future portion of an F/X swap quote added to spot rate. May be a negative value.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
 		<fixr:field id="643" name="OfferForwardPoints2" type="PriceOffset" added="FIX.4.3" abbrName="OfrFwdPnts2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Offer F/X forward points of the future portion of a F/X swap quote added to spot rate. May be a negative value.
+         Offer F/X forward points of the future portion of an F/X swap quote added to spot rate. May be a negative value.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -18841,7 +18841,7 @@
 		<fixr:field id="660" name="AcctIDSource" type="AcctIDSourceCodeSet" added="FIX.4.4" abbrName="AcctIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Used to identify the source of the Account (1) code. This is especially useful if the account is a new account that the Respondent may not have setup yet in their system.
+         Used to identify the source of the Account (1) code. This is especially useful if the account is a new account that the Respondent may not have set up yet in their system.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -19523,7 +19523,7 @@
 		<fixr:field id="754" name="AutoAcceptIndicator" type="Boolean" added="FIX.4.4" abbrName="AutoAcceptInd">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Identifies whether or not an allocation has been automatically accepted on behalf of the Carry Firm by the Clearing House.
+         Identifies whether an allocation has been automatically accepted on behalf of the Carry Firm by the Clearing House.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -19639,7 +19639,7 @@
 		<fixr:field id="769" name="TrdRegTimestamp" type="UTCTimestamp" added="FIX.4.4" abbrName="TS">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Traded / Regulatory timestamp value. Use to store time information required by government regulators or self regulatory organizations (such as an exchange or clearing house).
+         Traded / Regulatory timestamp value. Use to store time information required by government regulators or self-regulatory organizations (such as an exchange or clearing house).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -19843,7 +19843,7 @@
 		<fixr:field id="797" name="CopyMsgIndicator" type="Boolean" added="FIX.4.4" abbrName="CopyMsgInd">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not this message is a drop copy of another message.
+         Indicates whether this message is a drop copy of another message.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -20142,7 +20142,7 @@
 		<fixr:field id="841" name="DiscretionMoveType" type="DiscretionMoveTypeCodeSet" added="FIX.4.4" abbrName="MoveTyp">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Describes whether discretionay price is static or floats
+         Describes whether discretionary price is static or floats
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -20199,7 +20199,7 @@
 		<fixr:field id="849" name="ParticipationRate" type="Percentage" added="FIX.4.4" abbrName="ParticipationRt">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         For a TargetStrategy=Participate order specifies the target particpation rate. For other order types this is a volume limit (i.e. do not be more than this percent of the market volume)
+         For a TargetStrategy=Participate order specifies the target participation rate. For other order types this is a volume limit (i.e. do not be more than this percent of the market volume)
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -20638,7 +20638,7 @@
 		<fixr:field id="911" name="TotNumReports" type="int" added="FIX.4.4" abbrName="TotNumRpts">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Total number or reports returned in response to a request
+         Total number of reports returned in response to a request
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -20792,7 +20792,7 @@
 		<fixr:field id="933" name="NetworkRequestID" type="String" added="FIX.4.4" abbrName="NtwkReqID">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Unique identifier for a network resquest.
+         Unique identifier for a network request.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -20856,7 +20856,7 @@
 		<fixr:field id="942" name="LegStrikeCurrency" type="Currency" added="FIX.4.4" abbrName="StrkCcy">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Currency in which the strike price of a instrument leg of a multileg instrument is denominated
+         Currency in which the strike price of an instrument leg of a multileg instrument is denominated
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -22406,7 +22406,7 @@
 			<fixr:fieldRef id="213" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation>
-         Can contain a XML formatted message block (e.g. FIXML). Always immediately follows XmlDataLen field. (Can be embedded within encrypted data section.)
+         Can contain an XML formatted message block (e.g. FIXML). Always immediately follows XmlDataLen field. (Can be embedded within encrypted data section.)
          See Volume 1: FIXML Support
       </fixr:documentation>
 				</fixr:annotation>
@@ -22533,7 +22533,7 @@
 			</fixr:groupRef>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         The NestedParties component block is identical to the Parties Block. It is used in other component blocks and repeating groups when nesting will take place resulting in multiple occurrences of the Parties block within a single FIX message.. Use of NestedParties under these conditions avoids multiple references to the Parties block within the same message which is not allowed in FIX tag/value syntax.
+         The NestedParties component block is identical to the Parties Block. It is used in other component blocks and repeating groups when nesting will take place resulting in multiple occurrences of the Parties block within a single FIX message. Use of NestedParties under these conditions avoids multiple references to the Parties block within the same message which is not allowed in FIX tag/value syntax.
       </fixr:documentation>
 				<fixr:documentation purpose="ELABORATION"/>
 			</fixr:annotation>
@@ -22576,7 +22576,7 @@
 			</fixr:groupRef>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         The Parties component block is used to identify and convey information on the entities both central and peripheral to the financial transaction represented by the FIX message containing the Parties Block. The Parties block allows many different types of entites to be expressed through use of the PartyRole field and identifies the source of the PartyID through the the PartyIDSource.
+         The Parties component block is used to identify and convey information on the entities both central and peripheral to the financial transaction represented by the FIX message containing the Parties Block. The Parties block allows many different types of entites to be expressed through use of the PartyRole field and identifies the source of the PartyID through the PartyIDSource.
       </fixr:documentation>
 				<fixr:documentation purpose="ELABORATION"/>
 			</fixr:annotation>
@@ -22745,7 +22745,7 @@
 			</fixr:fieldRef>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         The TrdRegTimestamps component block is used to express timestamps for an order or trade that are required by regulatory agencies These timesteamps are used to identify the timeframes for when an order or trade is received on the floor, received and executed by the broker, etc.
+         The TrdRegTimestamps component block is used to express timestamps for an order or trade that are required by regulatory agencies. These timestamps are used to identify the timeframes for when an order or trade is received on the floor, received and executed by the broker, etc.
       </fixr:documentation>
 				<fixr:documentation purpose="ELABORATION"/>
 			</fixr:annotation>
@@ -22813,7 +22813,7 @@
 			</fixr:groupRef>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         The NestedParties2 component block is identical to the Parties Block. It is used in other component blocks and repeating groups when nesting will take place resulting in multiple occurrences of the Parties block within a single FIX message.. Use of NestedParties2 under these conditions avoids multiple references to the Parties block within the same message which is not allowed in FIX tag/value syntax.
+         The NestedParties2 component block is identical to the Parties Block. It is used in other component blocks and repeating groups when nesting will take place resulting in multiple occurrences of the Parties block within a single FIX message. Use of NestedParties2 under these conditions avoids multiple references to the Parties block within the same message which is not allowed in FIX tag/value syntax.
       </fixr:documentation>
 				<fixr:documentation purpose="ELABORATION"/>
 			</fixr:annotation>
@@ -22856,7 +22856,7 @@
 			</fixr:groupRef>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         The NestedParties3 component block is identical to the Parties Block. It is used in other component blocks and repeating groups when nesting will take place resulting in multiple occurrences of the Parties block within a single FIX message.. Use of NestedParties3 under these conditions avoids multiple references to the Parties block within the same message which is not allowed in FIX tag/value syntax.
+         The NestedParties3 component block is identical to the Parties Block. It is used in other component blocks and repeating groups when nesting will take place resulting in multiple occurrences of the Parties block within a single FIX message. Use of NestedParties3 under these conditions avoids multiple references to the Parties block within the same message which is not allowed in FIX tag/value syntax.
       </fixr:documentation>
 				<fixr:documentation purpose="ELABORATION"/>
 			</fixr:annotation>
@@ -28186,7 +28186,7 @@
 				<fixr:fieldRef id="584" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Required if responding to a Order Mass Status Request. Echo back the value provided by the requester.
+         Required if responding to an Order Mass Status Request. Echo back the value provided by the requester.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -28469,7 +28469,7 @@
 				<fixr:fieldRef id="849" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Mandatory for a TargetStrategy=Participate order and specifies the target particpation rate.
+         Mandatory for a TargetStrategy=Participate order and specifies the target participation rate.
          For other order types optionally specifies a volume limit (i.e. do not be more than this percent of the market volume)
       </fixr:documentation>
 					</fixr:annotation>
@@ -28878,21 +28878,21 @@
 				<fixr:fieldRef id="193" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="192" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="641" added="FIX.4.3">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the forward points (added to LastSpotRate) for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the forward points (added to LastSpotRate) for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -29052,7 +29052,7 @@
 				<fixr:fieldRef id="11" presence="required" added="FIX.2.7">
 					<fixr:annotation>
 						<fixr:documentation>
-         Unique order id assigned by institution or by the intermediary with closest association with the investor. to the cancel request or to the replacement order.
+         Unique order id assigned by institution or by the intermediary with the closest association with the investor. to the cancel request or to the replacement order.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -29494,7 +29494,7 @@
 				<fixr:fieldRef id="11" presence="required" added="FIX.2.7">
 					<fixr:annotation>
 						<fixr:documentation>
-         Unique identifier of the order as assigned by institution or by the intermediary (CIV term, not a hub/service bureau) with closest association with the investor.
+         Unique identifier of the order as assigned by institution or by the intermediary (CIV term, not a hub/service bureau) with the closest association with the investor.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -29867,21 +29867,21 @@
 				<fixr:fieldRef id="193" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="192" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="640" added="FIX.4.3">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the price for the future portion of a F/X swap which is also a limit order. For F/X orders, should be the "all-in" rate (spot rate adjusted for forward points).
+         Can be used with OrdType = "Forex - Swap" to specify the price for the future portion of an F/X swap which is also a limit order. For F/X orders, should be the "all-in" rate (spot rate adjusted for forward points).
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -30272,7 +30272,7 @@
 			</fixr:structure>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         The order cancel request message requests the cancellation of all of the remaining quantity of an existing order.
+         The order cancel request message requests the cancellation of all the remaining quantity of an existing order.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:message>
@@ -30319,7 +30319,7 @@
 				<fixr:fieldRef id="11" presence="required" added="FIX.2.7">
 					<fixr:annotation>
 						<fixr:documentation>
-         Unique identifier of replacement order as assigned by institution or by the intermediary with closest association with the investor.. Note that this identifier will be used in ClOrdID field of the Cancel Reject message if the replacement request is rejected.
+         Unique identifier of replacement order as assigned by institution or by the intermediary with the closest association with the investor. Note that this identifier will be used in ClOrdID field of the Cancel Reject message if the replacement request is rejected.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -30691,21 +30691,21 @@
 				<fixr:fieldRef id="193" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="192" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="640" added="FIX.4.3">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the price for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the price for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -31863,7 +31863,7 @@
 			</fixr:structure>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         In some markets it is the practice to request quotes from brokers prior to placement of an order. The quote request message is used for this purpose. This message is commonly referred to as an Request For Quote (RFQ)
+         In some markets it is the practice to request quotes from brokers prior to placement of an order. The quote request message is used for this purpose. This message is commonly referred to as a Request For Quote (RFQ)
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:message>
@@ -31982,14 +31982,14 @@
 				<fixr:fieldRef id="193" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="192" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -32157,14 +32157,14 @@
 				<fixr:fieldRef id="642" added="FIX.4.3">
 					<fixr:annotation>
 						<fixr:documentation>
-         Bid F/X forward points of the future portion of a F/X swap quote added to spot rate. May be a negative value
+         Bid F/X forward points of the future portion of an F/X swap quote added to spot rate. May be a negative value
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="643" added="FIX.4.3">
 					<fixr:annotation>
 						<fixr:documentation>
-         Offer F/X forward points of the future portion of a F/X swap quote added to spot rate. May be a negative value
+         Offer F/X forward points of the future portion of an F/X swap quote added to spot rate. May be a negative value
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -32374,7 +32374,7 @@
 				<fixr:fieldRef id="263" presence="required" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         SubcriptionRequestType indicates to the other party what type of response is expected. A snapshot request only asks for current information. A subscribe request asks for updates as the status changes. Unsubscribe will cancel any future update messages from the counter party.
+         SubcriptionRequestType indicates to the other party what type of response is expected. A snapshot request only asks for current information. A subscribe request asks for updates as the status changes. Unsubscribe will cancel any future update messages from the counterparty.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -33238,7 +33238,7 @@
 				<fixr:fieldRef id="263" presence="required" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         SubcriptionRequestType indicates to the other party what type of response is expected. A snapshot request only asks for current information. A subscribe request asks for updates as the status changes. Unsubscribe will cancel any future update messages from the counter party.)
+         SubcriptionRequestType indicates to the other party what type of response is expected. A snapshot request only asks for current information. A subscribe request asks for updates as the status changes. Unsubscribe will cancel any future update messages from the counterparty.)
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -34370,7 +34370,7 @@
 			</fixr:structure>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         The order mass cancel request message requests the cancellation of all of the remaining quantity of a group of orders matching criteria specified within the request. NOTE: This message can only be used to cancel order messages (reduce the full quantity).
+         The order mass cancel request message requests the cancellation of all the remaining quantity of a group of orders matching criteria specified within the request. NOTE: This message can only be used to cancel order messages (reduce the full quantity).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:message>
@@ -35762,7 +35762,7 @@
 				<fixr:fieldRef id="11" presence="required" added="FIX.4.3">
 					<fixr:annotation>
 						<fixr:documentation>
-         Unique identifier of the order as assigned by institution or by the intermediary with closest association with the investor.
+         Unique identifier of the order as assigned by institution or by the intermediary with the closest association with the investor.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -36240,7 +36240,7 @@
 				<fixr:fieldRef id="11" presence="required" added="FIX.4.3">
 					<fixr:annotation>
 						<fixr:documentation>
-         Unique identifier of replacement order as assigned by institution or by the intermediary with closest association with the investor.. Note that this identifier will be used in ClOrdID field of the Cancel Reject message if the replacement request is rejected.
+         Unique identifier of replacement order as assigned by institution or by the intermediary with the closest association with the investor. Note that this identifier will be used in ClOrdID field of the Cancel Reject message if the replacement request is rejected.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -37252,7 +37252,7 @@
 				<fixr:groupRef id="1014" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Insert here here the set of "Position Amount Data" fields defined in "Common Components of Application Messages"
+         The set of "Position Amount Data" fields defined in "Common Components of Application Messages"
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:groupRef>
@@ -37654,14 +37654,14 @@
 				<fixr:fieldRef id="193" added="FIX.4.3">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="192" added="FIX.4.3">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -37855,14 +37855,14 @@
 				<fixr:fieldRef id="642" added="FIX.4.3">
 					<fixr:annotation>
 						<fixr:documentation>
-         Bid F/X forward points of the future portion of a F/X swap quote added to spot rate. May be a negative value
+         Bid F/X forward points of the future portion of an F/X swap quote added to spot rate. May be a negative value
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="643" added="FIX.4.3">
 					<fixr:annotation>
 						<fixr:documentation>
-         Offer F/X forward points of the future portion of a F/X swap quote added to spot rate. May be a negative value
+         Offer F/X forward points of the future portion of an F/X swap quote added to spot rate. May be a negative value
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -38083,14 +38083,14 @@
 				<fixr:fieldRef id="193" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="192" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -38194,7 +38194,7 @@
 					<fixr:annotation>
 						<fixr:documentation>
          The time when the quote will expire.
-         Required for FI when the QuoteRespType is 2 (Counter quote) to indicate to the Respondent when the counter offer is valid until.
+         Required for FI when the QuoteRespType is 2 (Counter quote) to indicate to the Respondent when the counteroffer is valid until.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -38261,14 +38261,14 @@
 				<fixr:fieldRef id="642" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Bid F/X forward points of the future portion of a F/X swap quote added to spot rate. May be a negative value
+         Bid F/X forward points of the future portion of an F/X swap quote added to spot rate. May be a negative value
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="643" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Offer F/X forward points of the future portion of a F/X swap quote added to spot rate. May be a negative value
+         Offer F/X forward points of the future portion of an F/X swap quote added to spot rate. May be a negative value
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -38372,7 +38372,7 @@
 			</fixr:structure>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         The Quote Response message is used to respond to a IOI message or Quote message.
+         The Quote Response message is used to respond to an IOI message or Quote message.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:message>
@@ -38423,7 +38423,7 @@
 				<fixr:fieldRef id="797" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Denotes whether or not this message represents copy confirmation (or status message)
+         Denotes whether this message represents copy confirmation (or status message)
          Absence of this field indicates message is not a drop copy.
       </fixr:documentation>
 					</fixr:annotation>
@@ -39140,7 +39140,7 @@
 				<fixr:groupRef id="1014" presence="required" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Insert here here the set of "Position Amount Data" fields defined in "Common Components of Application Messages"
+         The set of "Position Amount Data" fields defined in "Common Components of Application Messages"
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:groupRef>
@@ -39637,7 +39637,7 @@
 				<fixr:groupRef id="1014" presence="required" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Insert here here the set of "Position Amount Data" fields defined in "Common Components of Application Messages"
+         The set of "Position Amount Data" fields defined in "Common Components of Application Messages"
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:groupRef>
@@ -40949,7 +40949,7 @@
 				<fixr:groupRef id="1014" presence="required" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Insert here here the set of "Position Amount Data" fields defined in "Common Components of Application Messages"
+         The set of "Position Amount Data" fields defined in "Common Components of Application Messages"
          FMTM - Final Mark-to-Market for Assignment
       </fixr:documentation>
 					</fixr:annotation>
@@ -42659,7 +42659,7 @@
 				<fixr:fieldRef id="96" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used to hand structures etc to other API’s etc
+         Can be used to hand structures etc. to other APIs etc
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
