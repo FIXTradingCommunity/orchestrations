@@ -2,7 +2,7 @@
   xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:fixr="http://fixprotocol.io/2020/orchestra/repository"
   xmlns:functx="http://www.functx.com"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" name="FIX.Latest" version="FIX.Latest_EP272">
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" name="FIX Latest for Warrants" version="FIX.Latest_EP272">
   <fixr:metadata>
     <dc:title>Orchestra</dc:title>
     <dc:publisher>FIX Trading Community</dc:publisher>
