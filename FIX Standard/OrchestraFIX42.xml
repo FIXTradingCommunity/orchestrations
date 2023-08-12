@@ -690,7 +690,7 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="AllocationInstruction" id="35019" value="J" sort="18" added="FIX.2.7">
+			<fixr:code name="Allocation" id="35019" value="J" sort="18" added="FIX.2.7">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
          Allocation
@@ -725,7 +725,7 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="AllocationInstructionAck" id="35024" value="P" sort="23" added="FIX.2.7">
+			<fixr:code name="AllocationAck" id="35024" value="P" sort="23" added="FIX.2.7">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
          Allocation ACK
@@ -15695,7 +15695,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:message>
-		<fixr:message name="AllocationInstructionAck" id="24" msgType="P" category="Allocation" added="FIX.2.7">
+		<fixr:message name="AllocationAck" id="24" msgType="P" category="Allocation" added="FIX.2.7">
 			<fixr:structure>
 				<fixr:componentRef id="1001" presence="required" added="FIX.2.7">
 					<fixr:annotation>
