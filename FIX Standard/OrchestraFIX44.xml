@@ -7935,6 +7935,38 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
+		<fixr:codeSet name="TradeReportTransTypeCodeSet" id="487" type="int" added="FIX.4.3" updated="FIX.4.4">
+      <fixr:code name="New" id="487001" value="0" sort="1" added="FIX.4.3" updated="FIX.4.4">
+          <fixr:annotation>
+              <fixr:documentation purpose="SYNOPSIS">
+                  New</fixr:documentation>
+          </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Cancel" id="487002" value="1" sort="2" added="FIX.4.3" updated="FIX.4.4">
+          <fixr:annotation>
+              <fixr:documentation purpose="SYNOPSIS">
+                  Cancel</fixr:documentation>
+          </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Replace" id="487003" value="2" sort="3" added="FIX.4.3" updated="FIX.4.4">
+          <fixr:annotation>
+              <fixr:documentation purpose="SYNOPSIS">
+                  Replace</fixr:documentation>
+          </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Release" id="487004" value="3" sort="4" added="FIX.4.4">
+          <fixr:annotation>
+              <fixr:documentation purpose="SYNOPSIS">
+                  Release</fixr:documentation>
+          </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Reverse" id="487005" value="4" sort="5" added="FIX.4.4">
+          <fixr:annotation>
+              <fixr:documentation purpose="SYNOPSIS">
+                  Reverse</fixr:documentation>
+          </fixr:annotation>
+      </fixr:code>
+    </fixr:codeSet>
 		<fixr:codeSet name="PaymentMethodCodeSet" id="492" type="int">
 			<fixr:code name="CREST" id="492001" value="1" added="FIX.4.3">
 				<fixr:annotation>
@@ -17555,7 +17587,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="487" name="TradeReportTransType" type="int" added="FIX.4.3" abbrName="TransTyp">
+		<fixr:field id="487" name="TradeReportTransType" type="TradeReportTransTypeCodeSet" added="FIX.4.3" updated="FIX.Latest" updatedEP="282" abbrName="TransTyp">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Identifies Trade Report message transaction type
