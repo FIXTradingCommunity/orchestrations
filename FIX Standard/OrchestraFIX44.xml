@@ -11037,10 +11037,10 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="OutOfBand" id="725002" value="1" added="FIX.4.4">
+			<fixr:code name="OutOfBand" id="725002" value="1" added="FIX.4.4" updated="FIX.Latest" updatedEP="282">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Out-of-Band: pre-arranged out of band delivery mechanism (i.e. FTP, HTTP, NDM, etc) between counterparties. Details specified via ResponseDestination (726).
+         Out-of-Band: pre-arranged out of band delivery mechanism (i.e. FTP, HTTP, NDM, etc) between counterparties.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
