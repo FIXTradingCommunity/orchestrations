@@ -3018,7 +3018,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies whether or not SettlCurrFxRate (55) should be multiplied or divided
+         Specifies whether or not SettlCurrFxRate(155) should be multiplied or divided
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -3782,9 +3782,9 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates type of security. See also the Product (460) and CFICode (46) fields. It is recommended that CFICode be used instead of SecurityType for non-Fixed Income instruments.
+         Indicates type of security. See also the Product(460) and CFICode(461) fields. It is recommended that CFICode(461) be used instead of SecurityType(167) for non-Fixed Income instruments.
          Example values (grouped by Product field value) (Note: additional values may be used by mutual agreement of the counterparties):
-         * Identify the Issuer in the "Issuer" field(06)
+         * Identify the Issuer in the field Issuer(106)
          *** REPLACED values - See "Replaced Features and Supported Approach" ***
          NOTE: Additional values may be used by mutual agreement of the counterparties)
       </fixr:documentation>
@@ -3884,7 +3884,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Identifies the type of Allocation linkage when AllocLinkID (96) is used.
+         Identifies the type of Allocation linkage when AllocLinkID(196) is used.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -7647,7 +7647,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates the type of product the security is associated with. See also the CFICode (46) and SecurityType (67) fields.
+         Indicates the type of product the security is associated with. See also the CFICode(461) and SecurityType(167) fields.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -14283,10 +14283,10 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="11" name="ClOrdID" type="String" added="FIX.2.7" abbrName="ClOrdID" baseCategory="SingleGeneralOrderHandling" baseCategoryAbbrName="ID">
+		<fixr:field id="11" name="ClOrdID" type="String" added="FIX.2.7" updated="FIX.Latest" updatedEP="282" abbrName="ClOrdID" baseCategory="SingleGeneralOrderHandling" baseCategoryAbbrName="ID">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Unique identifier for Order as assigned by the buy-side (institution, broker, intermediary etc.) (identified by SenderCompID (49) or OnBehalfOfCompID (5) as appropriate). Uniqueness must be guaranteed within a single trading day. Firms, particularly those which electronically submit multi-day orders, trade globally or throughout market close periods, should ensure uniqueness across days, for example by embedding a date within the ClOrdID field.
+         Unique identifier for Order as assigned by the buy-side (institution, broker, intermediary etc.) (identified by SenderCompID(49) or OnBehalfOfCompID(115) as appropriate). Uniqueness must be guaranteed within a single trading day. Firms, particularly those which electronically submit multi-day orders, trade globally or throughout market close periods, should ensure uniqueness across days, for example by embedding a date within the ClOrdID(11) field.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -14646,10 +14646,10 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="65" name="SymbolSfx" type="String" added="FIX.2.7" abbrName="Sfx">
+		<fixr:field id="65" name="SymbolSfx" type="String" added="FIX.2.7" updated="FIX.Latest" updatedEP="282" abbrName="Sfx">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Additional information about the security (e.g. preferred, warrants, etc.). Note also see SecurityType (67).
+         Additional information about the security (e.g. preferred, warrants, etc.). Note also see SecurityType(167).
          Valid values:
          As defined in the NYSE Stock and bond Symbol Directory and in the AMEX Fitch Directory
          Fixed Income use:
@@ -15249,24 +15249,24 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="154" name="AllocNetMoney" type="Amt" added="FIX.4.1" abbrName="NetMny">
+		<fixr:field id="154" name="AllocNetMoney" type="Amt" added="FIX.4.1" updated="FIX.Latest" updatedEP="282" abbrName="NetMny">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         NetMoney (8) for a specific AllocAccount (79)
+         NetMoney(118) for a specific AllocAccount (79)
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="155" name="SettlCurrFxRate" type="float" added="FIX.4.1" abbrName="SettlCurrFxRt">
+		<fixr:field id="155" name="SettlCurrFxRate" type="float" added="FIX.4.1" updated="FIX.Latest" updatedEP="282" abbrName="SettlCurrFxRt">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Foreign exchange rate used to compute SettlCurrAmt (9) from Currency (5) to SettlCurrency (20)
+         Foreign exchange rate used to compute SettlCurrAmt(119) from Currency(15) to SettlCurrency(120)
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="156" name="SettlCurrFxRateCalc" type="SettlCurrFxRateCalcCodeSet" added="FIX.4.1" abbrName="SettlCurrFxRtCalc">
+		<fixr:field id="156" name="SettlCurrFxRateCalc" type="SettlCurrFxRateCalcCodeSet" added="FIX.4.1" updated="FIX.Latest" updatedEP="282" abbrName="SettlCurrFxRtCalc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies whether or not SettlCurrFxRate (55) should be multiplied or divided
+         Specifies whether or not SettlCurrFxRate(155) should be multiplied or divided
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -15334,12 +15334,12 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="167" name="SecurityType" type="SecurityTypeCodeSet" added="FIX.4.1" abbrName="SecTyp">
+		<fixr:field id="167" name="SecurityType" type="SecurityTypeCodeSet" added="FIX.4.1" updated="FIX.Latest" updatedEP="282" abbrName="SecTyp">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates type of security. See also the Product (460) and CFICode (46) fields. It is recommended that CFICode be used instead of SecurityType for non-Fixed Income instruments.
+         Indicates type of security. See also the Product(460) and CFICode(461) fields. It is recommended that CFICode(461) be used instead of SecurityType(167) for non-Fixed Income instruments.
          Example values (grouped by Product field value) (Note: additional values may be used by mutual agreement of the counterparties):
-         * Identify the Issuer in the "Issuer" field(06)
+         * Identify the Issuer in the field Issuer(106)
          *** REPLACED values - See "Replaced Features and Supported Approach" ***
          NOTE: Additional values may be used by mutual agreement of the counterparties)
       </fixr:documentation>
@@ -15429,10 +15429,10 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="195" name="LastForwardPoints" type="PriceOffset" added="FIX.4.1" abbrName="LastFwdPnts">
+		<fixr:field id="195" name="LastForwardPoints" type="PriceOffset" added="FIX.4.1" updated="FIX.Latest" updatedEP="282" abbrName="LastFwdPnts">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         F/X forward points added to LastSpotRate (94). May be a negative value.
+         F/X forward points added to LastSpotRate(194). May be a negative value.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -15443,10 +15443,10 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="197" name="AllocLinkType" type="AllocLinkTypeCodeSet" added="FIX.4.1" abbrName="LinkTyp">
+		<fixr:field id="197" name="AllocLinkType" type="AllocLinkTypeCodeSet" added="FIX.4.1" updated="FIX.Latest" updatedEP="282" abbrName="LinkTyp">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Identifies the type of Allocation linkage when AllocLinkID (96) is used.
+         Identifies the type of Allocation linkage when AllocLinkID(196) is used.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -15464,10 +15464,10 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="200" name="MaturityMonthYear" type="MonthYear" added="FIX.4.1" abbrName="MMY">
+		<fixr:field id="200" name="MaturityMonthYear" type="MonthYear" added="FIX.4.1" updated="FIX.Latest" updatedEP="282" abbrName="MMY">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Can be used with standardized derivatives vs. the MaturityDate (54) field. Month and Year of the maturity (used for standardized futures and options).
+         Can be used with standardized derivatives vs. the MaturityDate (541) field. Month and Year of the maturity (used for standardized futures and options).
          Format:
          YYYYMM (i.e. 199903)
          YYYYMMDD (20030323)
@@ -15497,10 +15497,10 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="206" name="OptAttribute" type="char" added="FIX.4.1" abbrName="OptAt">
+		<fixr:field id="206" name="OptAttribute" type="char" added="FIX.4.1" updated="FIX.Latest" updatedEP="282" abbrName="OptAt">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Can be used for SecurityType (67) =OPT to identify a particular security.
+         Can be used for SecurityType(167)=OPT to identify a particular security.
          Valid values vary by SecurityExchange:
          *** REPLACED values - See "Replaced Features and Supported Approach" ***
          For Exchange: MONEP (Paris)
@@ -15593,11 +15593,11 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="218" name="Spread" type="PriceOffset" added="FIX.4.2" abbrName="Spread">
+		<fixr:field id="218" name="Spread" type="PriceOffset" added="FIX.4.2" updated="FIX.Latest" updatedEP="282" abbrName="Spread">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          For Fixed Income. Either Swap Spread or Spread to Benchmark depending upon the order type.
-         Spread to Benchmark: Basis points relative to a benchmark. To be expressed as "count of basis points" (vs. an absolute value). E.g. High Grade Corporate Bonds may express price as basis points relative to benchmark (the BenchmarkCurveName (22) field). Note: Basis points can be negative.
+         Spread to Benchmark: Basis points relative to a benchmark. To be expressed as "count of basis points" (vs. an absolute value). E.g. High Grade Corporate Bonds may express price as basis points relative to benchmark (the BenchmarkCurveName(221) field). Note: Basis points can be negative.
          Swap Spread: Target spread for a swap.
       </fixr:documentation>
 			</fixr:annotation>
@@ -15777,12 +15777,12 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="239" name="RepoCollateralSecurityType" type="String" added="FIX.4.3" deprecated="FIX.4.4" abbrName="RepoCollSecTyp">
+		<fixr:field id="239" name="RepoCollateralSecurityType" type="String" added="FIX.4.3" deprecated="FIX.4.4" updated="FIX.Latest" updatedEP="282" abbrName="RepoCollSecTyp">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          *** DEPRECATED FIELD - See "Deprecated (Phased-out) Features and Supported Approach" ***
          Identifies the collateral used in the transaction.
-         Valid values: see SecurityType (67) field
+         Valid values: see SecurityType(167) field
          (Note tag # was reserved in FIX 4.1, added in FIX 4.3)
       </fixr:documentation>
 			</fixr:annotation>
@@ -16303,11 +16303,11 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="306" name="UnderlyingIssuer" type="String" added="FIX.4.2" abbrName="Issr">
+		<fixr:field id="306" name="UnderlyingIssuer" type="String" added="FIX.4.2" updated="FIX.Latest" updatedEP="282" abbrName="Issr">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Underlying security’s Issuer.
-         See Issuer (06) field for description
+         See Issuer(106) field for description
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -16335,11 +16335,11 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="310" name="UnderlyingSecurityType" type="String" added="FIX.4.2" abbrName="Typ">
+		<fixr:field id="310" name="UnderlyingSecurityType" type="String" added="FIX.4.2" updated="FIX.Latest" updatedEP="282" abbrName="Typ">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Underlying security’s SecurityType.
-         Valid values: see SecurityType (67) field
+         Valid values: see SecurityType(167) field
          (see below for details concerning this fields use in conjunction with SecurityType=REPO)
          The following applies when used in conjunction with SecurityType=REPO
          Represents the general or specific type of security that underlies a financing agreement
@@ -16419,11 +16419,11 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="318" name="UnderlyingCurrency" type="Currency" added="FIX.4.2" abbrName="Ccy">
+		<fixr:field id="318" name="UnderlyingCurrency" type="Currency" added="FIX.4.2" updated="FIX.Latest" updatedEP="282" abbrName="Ccy">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Underlying security’s Currency.
-         See Currency (5) field for description and valid values
+         See Currency(15) field for description and valid values
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -17393,18 +17393,18 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="460" name="Product" type="ProductCodeSet" added="FIX.4.3" abbrName="Prod">
+		<fixr:field id="460" name="Product" type="ProductCodeSet" added="FIX.4.3" updated="FIX.Latest" updatedEP="282" abbrName="Prod">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates the type of product the security is associated with. See also the CFICode (46) and SecurityType (67) fields.
+         Indicates the type of product the security is associated with. See also the CFICode(146) and SecurityType(167) fields.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="461" name="CFICode" type="String" added="FIX.4.3" abbrName="CFI">
+		<fixr:field id="461" name="CFICode" type="String" added="FIX.4.3" updated="FIX.Latest" updatedEP="282" abbrName="CFI">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates the type of security using ISO 0962 standard, Classification of Financial Instruments (CFI code) values. ISO 0962 is maintained by ANNA (Association of National Numbering Agencies) acting as Registration Authority. See "Appendix 6-B FIX Fields Based Upon Other Standards". See also the Product (460) and SecurityType (67) fields. It is recommended that CFICode be used instead of SecurityType (67) for non-Fixed Income instruments.
-         A subset of possible values applicable to FIX usage are identified in "Appendix 6-D CFICode Usage - ISO 0962 Classification of Financial Instruments (CFI code)"
+         Indicates the type of security using ISO 10962 standard, Classification of Financial Instruments (CFI code) values. ISO 10962 is maintained by ANNA (Association of National Numbering Agencies) acting as Registration Authority. See "Appendix 6-B FIX Fields Based Upon Other Standards". See also the Product(460) and SecurityType(167) fields. It is recommended that CFICode(461) be used instead of SecurityType(167) for non-Fixed Income instruments.
+         A subset of possible values applicable to FIX usage are identified in "Appendix 6-D CFICode Usage - ISO 10962 Classification of Financial Instruments (CFI code)"
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -17416,11 +17416,11 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="463" name="UnderlyingCFICode" type="String" added="FIX.4.3" abbrName="CFI">
+		<fixr:field id="463" name="UnderlyingCFICode" type="String" added="FIX.4.3" updated="FIX.Latest" updatedEP="282" abbrName="CFI">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Underlying security’s CFICode.
-         Valid values: see CFICode (46)field
+         Valid values: see CFICode(461) field
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -17739,10 +17739,10 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="508" name="RegistRefID" type="String" added="FIX.4.3" abbrName="RefID" baseCategory="RegistrationInstruction" baseCategoryAbbrName="RefID">
+		<fixr:field id="508" name="RegistRefID" type="String" added="FIX.4.3" updated="FIX.Latest" updatedEP="282" abbrName="RefID" baseCategory="RegistrationInstruction" baseCategoryAbbrName="RefID">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Reference identifier for the RegistID (53) with Cancel and Replace RegistTransType (54) transaction types.
+         Reference identifier for the RegistID(513) with Cancel and Replace RegistTransType(514) transaction types.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -17988,11 +17988,11 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="542" name="UnderlyingMaturityDate" type="LocalMktDate" added="FIX.4.3" abbrName="Mat">
+		<fixr:field id="542" name="UnderlyingMaturityDate" type="LocalMktDate" added="FIX.4.3" updated="FIX.Latest" updatedEP="282" abbrName="Mat">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Underlying security’s maturity date.
-         See MaturityDate (54) field for description
+         See MaturityDate(541) field for description
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -18476,19 +18476,19 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="608" name="LegCFICode" type="String" added="FIX.4.3" abbrName="CFI">
+		<fixr:field id="608" name="LegCFICode" type="String" added="FIX.4.3" updated="FIX.Latest" updatedEP="282" abbrName="CFI">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Multileg instrument's individual security’s CFICode.
-         See CFICode (46) field for description
+         See CFICode(461) field for description
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="609" name="LegSecurityType" type="String" added="FIX.4.3" abbrName="SecTyp">
+		<fixr:field id="609" name="LegSecurityType" type="String" added="FIX.4.3" updated="FIX.Latest" updatedEP="282" abbrName="SecTyp">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Multileg instrument's individual security’s SecurityType.
-         See SecurityType (67) field for description
+         See SecurityType(167) field for description
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -18500,11 +18500,11 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="611" name="LegMaturityDate" type="LocalMktDate" added="FIX.4.3" abbrName="Mat">
+		<fixr:field id="611" name="LegMaturityDate" type="LocalMktDate" added="FIX.4.3" updated="FIX.Latest" updatedEP="282" abbrName="Mat">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Multileg instrument's individual security’s MaturityDate.
-         See MaturityDate (54) field for description
+         See MaturityDate(541) field for description
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -18633,27 +18633,27 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="628" name="HopCompID" type="String" added="FIX.4.3" abbrName="ID">
+		<fixr:field id="628" name="HopCompID" type="String" added="FIX.4.3" updated="FIX.Latest" updatedEP="282" abbrName="ID">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Assigned value used to identify the third party firm which delivered a specific message either from the firm which originated the message or from another third party (if multiple "hops" are performed). It is recommended that this value be the SenderCompID (49) of the third party.
-         Applicable when messages are communicated/re-distributed via third parties which function as service bureaus or "hubs". Only applicable if OnBehalfOfCompID (5) is being used.
+         Applicable when messages are communicated/re-distributed via third parties which function as service bureaus or "hubs". Only applicable if OnBehalfOfCompID(115) is being used.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="629" name="HopSendingTime" type="UTCTimestamp" added="FIX.4.3" abbrName="Snt">
+		<fixr:field id="629" name="HopSendingTime" type="UTCTimestamp" added="FIX.4.3" updated="FIX.Latest" updatedEP="282" abbrName="Snt">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Time that HopCompID (628) sent the message. It is recommended that this value be the SendingTime (52) of the message sent by the third party.
-         Applicable when messages are communicated/re-distributed via third parties which function as service bureaus or "hubs". Only applicable if OnBehalfOfCompID (5) is being used.
+         Applicable when messages are communicated/re-distributed via third parties which function as service bureaus or "hubs". Only applicable if OnBehalfOfCompID(115) is being used.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="630" name="HopRefID" type="SeqNum" added="FIX.4.3" abbrName="Ref">
+		<fixr:field id="630" name="HopRefID" type="SeqNum" added="FIX.4.3" updated="FIX.Latest" updatedEP="282" abbrName="Ref">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Reference identifier assigned by HopCompID (628) associated with the message sent. It is recommended that this value be the MsgSeqNum (34) of the message sent by the third party.
-         Applicable when messages are communicated/re-distributed via third parties which function as service bureaus or "hubs". Only applicable if OnBehalfOfCompID (5) is being used.
+         Applicable when messages are communicated/re-distributed via third parties which function as service bureaus or "hubs". Only applicable if OnBehalfOfCompID(115) is being used.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -18730,10 +18730,10 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="641" name="LastForwardPoints2" type="PriceOffset" added="FIX.4.3" abbrName="LastFwdPnts2">
+		<fixr:field id="641" name="LastForwardPoints2" type="PriceOffset" added="FIX.4.3" updated="FIX.Latest" updatedEP="282" abbrName="LastFwdPnts2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         F/X forward points of the future part of a F/X swap order added to LastSpotRate (94). May be a negative value.
+         F/X forward points of the future part of a F/X swap order added to LastSpotRate(194). May be a negative value.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -18960,19 +18960,19 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="674" name="LegAllocAcctIDSource" type="AcctIDSourceCodeSet" added="FIX.4.4" abbrName="AllocAcctIDSrc">
+		<fixr:field id="674" name="LegAllocAcctIDSource" type="AcctIDSourceCodeSet" added="FIX.4.4" updated="FIX.Latest" updatedEP="282" abbrName="AllocAcctIDSrc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         The source of the LegAllocAccount (67)
-         See AllocAcctIDSource (66) for description and valid values.
+         The source of the LegAllocAccount(671)
+         See AllocAcctIDSource(660) for description and valid values.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="675" name="LegSettlCurrency" type="Currency" added="FIX.4.4" abbrName="SettlCcy">
+		<fixr:field id="675" name="LegSettlCurrency" type="Currency" added="FIX.4.4" updated="FIX.Latest" updatedEP="282" abbrName="SettlCcy">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Identifies settlement currency for the Leg.
-         See SettlCurrency (20) for description and valid values
+         See SettlCurrency(120) for description and valid values
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -18984,11 +18984,11 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="677" name="LegBenchmarkCurveName" type="String" added="FIX.4.4" abbrName="Name">
+		<fixr:field id="677" name="LegBenchmarkCurveName" type="String" added="FIX.4.4" updated="FIX.Latest" updatedEP="282" abbrName="Name">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Name of the Leg Benchmark Curve.
-         See BenchmarkCurveName (22) for description and valid values.
+         See BenchmarkCurveName(221) for description and valid values.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
