@@ -2588,7 +2588,7 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="LocalMarketSettleLocation" id="166005" value="ISO Country Code" added="FIX.4.1">
+			<fixr:code name="LocalMarketSettleLocation" id="166005" value="ISO Country Code" added="FIX.4.1" deprecated="FIX.Latest" deprecatedEP="282">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
          Local Market Settle Location
@@ -6466,10 +6466,10 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="166" name="SettlLocation" type="SettlLocationCodeSet" added="FIX.4.1">
+		<fixr:field id="166" name="SettlLocation" type="SettlLocationCodeSet" added="FIX.4.1" updated="FIX.Latest" updatedEP="282">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Identifies Settlement Depository or Country Code (ISITC spec)
+         Identifies Settlement Depository or Country Code (ISITC spec) using ISO 3166 (2 character) representing the country of settlement.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
