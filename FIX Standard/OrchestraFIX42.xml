@@ -2989,7 +2989,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether details should be communicated to BrokerOfCredit (i.e. step-in broker).
+         Indicates whether or not details should be communicated to BrokerOfCredit (i.e. step-in broker).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -3192,7 +3192,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies whether book entries should be aggregated.
+         Specifies whether or not book entries should be aggregated.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -3990,7 +3990,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether message is being sent as a result of a subscription request or not.
+         Indicates whether or not message is being sent as a result of a subscription request or not.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -4200,7 +4200,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether the halt was due to Common Stock trading being halted.
+         Indicates whether or not the halt was due to Common Stock trading being halted.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -4221,7 +4221,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether the halt was due to the Related Security being halted.
+         Indicates whether or not the halt was due to the Related Security being halted.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -4585,7 +4585,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether the order was solicited.
+         Indicates whether or not the order was solicited.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -4809,7 +4809,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether to exchange for physical.
+         Indicates whether or not to exchange for physical.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -6399,7 +6399,7 @@
 		<fixr:field id="156" name="SettlCurrFxRateCalc" type="char" added="FIX.4.1">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies whether SettlCurrFxRate should be multiplied or divided.
+         Specifies whether or not SettlCurrFxRate should be multiplied or divided.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -6765,7 +6765,7 @@
 		<fixr:field id="208" name="NotifyBrokerOfCredit" type="NotifyBrokerOfCreditCodeSet" added="FIX.4.1">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether details should be communicated to BrokerOfCredit (i.e. step-in broker).
+         Indicates whether or not details should be communicated to BrokerOfCredit (i.e. step-in broker).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -6893,7 +6893,7 @@
 		<fixr:field id="266" name="AggregatedBook" type="AggregatedBookCodeSet" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies whether book entries should be aggregated.
+         Specifies whether or not book entries should be aggregated.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -7319,7 +7319,7 @@
 		<fixr:field id="325" name="UnsolicitedIndicator" type="UnsolicitedIndicatorCodeSet" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether message is being sent as a result of a subscription request or not.
+         Indicates whether or not message is being sent as a result of a subscription request or not.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -7340,14 +7340,14 @@
 		<fixr:field id="328" name="InViewOfCommon" type="InViewOfCommonCodeSet" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether the halt was due to Common Stock trading being halted.
+         Indicates whether or not the halt was due to Common Stock trading being halted.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
 		<fixr:field id="329" name="DueToRelated" type="DueToRelatedCodeSet" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether the halt was due to the Related Security being halted.
+         Indicates whether or not the halt was due to the Related Security being halted.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -7685,7 +7685,7 @@
 		<fixr:field id="377" name="SolicitedFlag" type="SolicitedFlagCodeSet" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether the order was solicited.
+         Indicates whether or not the order was solicited.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -7923,7 +7923,7 @@
 		<fixr:field id="411" name="ExchangeForPhysical" type="ExchangeForPhysicalCodeSet" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether to exchange for physical.
+         Indicates whether or not to exchange for physical.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>

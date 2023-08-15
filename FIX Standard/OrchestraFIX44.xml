@@ -3018,7 +3018,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies whether SettlCurrFxRate (55) should be multiplied or divided
+         Specifies whether or not SettlCurrFxRate (55) should be multiplied or divided
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -3947,7 +3947,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether details should be communicated to BrokerOfCredit (i.e. step-in broker).
+         Indicates whether or not details should be communicated to BrokerOfCredit (i.e. step-in broker).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -4704,7 +4704,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies whether book entries should be aggregated.
+         Specifies whether or not book entries should be aggregated.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -5664,7 +5664,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether message is being sent as a result of a subscription request or not.
+         Indicates whether or not message is being sent as a result of a subscription request or not.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -5895,7 +5895,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether the halt was due to Common Stock trading being halted.
+         Indicates whether or not the halt was due to Common Stock trading being halted.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -5916,7 +5916,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether the halt was due to the Related Security being halted.
+         Indicates whether or not the halt was due to the Related Security being halted.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -6273,7 +6273,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether the order was solicited.
+         Indicates whether or not the order was solicited.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -6637,7 +6637,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether to exchange for physical.
+         Indicates whether or not to exchange for physical.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -7668,7 +7668,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether this FIX Session is a "test" vs. "production" connection. Useful for preventing "accidents".
+         Indicates whether or not this FIX Session is a "test" vs. "production" connection. Useful for preventing "accidents".
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -7696,7 +7696,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies which direction to round For CIV – indicates whether the quantity of shares/units is to be rounded and in which direction where CashOrdQty (52) or (for CIV only) OrderPercent (56) are specified on an order.
+         Specifies which direction to round For CIV – indicates whether or not the quantity of shares/units is to be rounded and in which direction where CashOrdQty (52) or (for CIV only) OrderPercent (56) are specified on an order.
          The default is for rounding to be at the discretion of the executing broker or fund manager.
          e.g. for an order specifying CashOrdQty or OrderPercent if the calculated number of shares/units was 325.76 and RoundingModulus (469) was 0 – "round down" would give 320 units, "round up" would give 330 units and "round to nearest" would give 320 units.
       </fixr:documentation>
@@ -9911,7 +9911,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether automatic booking can occur.
+         Indicates whether or not automatic booking can occur.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -15248,7 +15248,7 @@
 		<fixr:field id="156" name="SettlCurrFxRateCalc" type="SettlCurrFxRateCalcCodeSet" added="FIX.4.1" abbrName="SettlCurrFxRtCalc">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies whether SettlCurrFxRate (55) should be multiplied or divided
+         Specifies whether or not SettlCurrFxRate (55) should be multiplied or divided
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -15505,7 +15505,7 @@
 		<fixr:field id="208" name="NotifyBrokerOfCredit" type="NotifyBrokerOfCreditCodeSet" added="FIX.4.1" abbrName="NotifyBrkrOfCredit">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether details should be communicated to BrokerOfCredit (i.e. step-in broker).
+         Indicates whether or not details should be communicated to BrokerOfCredit (i.e. step-in broker).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -16002,7 +16002,7 @@
 		<fixr:field id="266" name="AggregatedBook" type="AggregatedBookCodeSet" added="FIX.4.2" abbrName="AggBook">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies whether book entries should be aggregated.
+         Specifies whether or not book entries should be aggregated.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -16447,7 +16447,7 @@
 		<fixr:field id="325" name="UnsolicitedIndicator" type="UnsolicitedIndicatorCodeSet" added="FIX.4.2" abbrName="Unsol">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether message is being sent as a result of a subscription request or not.
+         Indicates whether or not message is being sent as a result of a subscription request or not.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -16468,14 +16468,14 @@
 		<fixr:field id="328" name="InViewOfCommon" type="InViewOfCommonCodeSet" added="FIX.4.2" abbrName="InViewOfCmn">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether the halt was due to Common Stock trading being halted.
+         Indicates whether or not the halt was due to Common Stock trading being halted.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
 		<fixr:field id="329" name="DueToRelated" type="DueToRelatedCodeSet" added="FIX.4.2" abbrName="DueToReltd">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether the halt was due to the Related Security being halted.
+         Indicates whether or not the halt was due to the Related Security being halted.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -16808,7 +16808,7 @@
 		<fixr:field id="377" name="SolicitedFlag" type="SolicitedFlagCodeSet" added="FIX.4.2" abbrName="SolFlag">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether the order was solicited.
+         Indicates whether or not the order was solicited.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -17054,7 +17054,7 @@
 		<fixr:field id="411" name="ExchangeForPhysical" type="ExchangeForPhysicalCodeSet" added="FIX.4.2" abbrName="EFP">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether to exchange for physical.
+         Indicates whether or not to exchange for physical.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -17409,7 +17409,7 @@
 		<fixr:field id="464" name="TestMessageIndicator" type="TestMessageIndicatorCodeSet" added="FIX.4.3" abbrName="TestMsgInd">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether this FIX Session is a "test" vs. "production" connection. Useful for preventing "accidents".
+         Indicates whether or not this FIX Session is a "test" vs. "production" connection. Useful for preventing "accidents".
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -17430,7 +17430,7 @@
 		<fixr:field id="468" name="RoundingDirection" type="RoundingDirectionCodeSet" added="FIX.4.3" abbrName="RndDir">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies which direction to round For CIV – indicates whether the quantity of shares/units is to be rounded and in which direction where CashOrdQty (52) or (for CIV only) OrderPercent (56) are specified on an order.
+         Specifies which direction to round For CIV – indicates whether or not the quantity of shares/units is to be rounded and in which direction where CashOrdQty (52) or (for CIV only) OrderPercent (56) are specified on an order.
          The default is for rounding to be at the discretion of the executing broker or fund manager.
          e.g. for an order specifying CashOrdQty or OrderPercent if the calculated number of shares/units was 325.76 and RoundingModulus (469) was 0 – "round down" would give 320 units, "round up" would give 330 units and "round to nearest" would give 320 units.
       </fixr:documentation>
@@ -18312,7 +18312,7 @@
 		<fixr:field id="589" name="DayBookingInst" type="DayBookingInstCodeSet" added="FIX.4.3" abbrName="DayBkngInst">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether automatic booking can occur.
+         Indicates whether or not automatic booking can occur.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -19523,7 +19523,7 @@
 		<fixr:field id="754" name="AutoAcceptIndicator" type="Boolean" added="FIX.4.4" abbrName="AutoAcceptInd">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Identifies whether an allocation has been automatically accepted on behalf of the Carry Firm by the Clearing House.
+         Identifies whether or not an allocation has been automatically accepted on behalf of the Carry Firm by the Clearing House.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -19843,7 +19843,7 @@
 		<fixr:field id="797" name="CopyMsgIndicator" type="Boolean" added="FIX.4.4" abbrName="CopyMsgInd">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether this message is a drop copy of another message.
+         Indicates whether or not this message is a drop copy of another message.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -37252,7 +37252,7 @@
 				<fixr:groupRef id="1014" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         The set of "Position Amount Data" fields defined in "Common Components of Application Messages"
+         Insert here the set of "Position Amount Data" fields defined in "Common Components of Application Messages"
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:groupRef>
@@ -38423,7 +38423,7 @@
 				<fixr:fieldRef id="797" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Denotes whether this message represents copy confirmation (or status message)
+         Denotes whether or not this message represents copy confirmation (or status message)
          Absence of this field indicates message is not a drop copy.
       </fixr:documentation>
 					</fixr:annotation>
@@ -39140,7 +39140,7 @@
 				<fixr:groupRef id="1014" presence="required" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         The set of "Position Amount Data" fields defined in "Common Components of Application Messages"
+         Insert here the set of "Position Amount Data" fields defined in "Common Components of Application Messages"
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:groupRef>
@@ -39637,7 +39637,7 @@
 				<fixr:groupRef id="1014" presence="required" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         The set of "Position Amount Data" fields defined in "Common Components of Application Messages"
+         Insert here the set of "Position Amount Data" fields defined in "Common Components of Application Messages"
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:groupRef>
@@ -40949,7 +40949,7 @@
 				<fixr:groupRef id="1014" presence="required" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         The set of "Position Amount Data" fields defined in "Common Components of Application Messages"
+         Insert here the set of "Position Amount Data" fields defined in "Common Components of Application Messages"
          FMTM - Final Mark-to-Market for Assignment
       </fixr:documentation>
 					</fixr:annotation>
@@ -42659,7 +42659,7 @@
 				<fixr:fieldRef id="96" added="FIX.4.4">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used to hand structures etc. to other APIs etc
+         Can be used to hand structures etc. to other APIs etc.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
