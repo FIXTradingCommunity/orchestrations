@@ -1,0 +1,1974 @@
+<fixr:repository
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:fixr="http://fixprotocol.io/2020/orchestra/repository"
+  xmlns:functx="http://www.functx.com"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" name="FIX Latest for Futures" version="FIX.Latest_EP272">
+  <fixr:metadata>
+    <dc:title>Orchestra</dc:title>
+    <dc:publisher>FIX Trading Community</dc:publisher>
+    <dc:date>2022-08-03T16:56:18.094Z</dc:date>
+    <dc:format>Orchestra schema</dc:format>
+    <dc:contributor>playlist</dc:contributor>
+  </fixr:metadata>
+  <fixr:codeSets>
+    <fixr:codeSet name="SecurityIDSourceCodeSet" id="22" type="String" added="FIX.2.7" updated="FIX.5.0SP2" updatedEP="161">
+      <fixr:code name="CUSIP" id="22001" value="1" sort="1" added="FIX.2.7">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         CUSIP
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="SEDOL" id="22002" value="2" sort="2" added="FIX.2.7">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         SEDOL
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="QUIK" id="22003" value="3" sort="3" added="FIX.2.7">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         QUIK
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="ISINNumber" id="22004" value="4" sort="4" added="FIX.3.0" updated="FIX.5.0SP2" updatedEP="232">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         ISIN
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="ExchangeSymbol" id="22008" value="8" sort="8" added="FIX.4.2" updated="FIX.5.0SP2" updatedEP="119">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Exchange symbol
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Wertpapier" id="22011" value="B" sort="11" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Wertpapier
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Dutch" id="22012" value="C" sort="12" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Dutch
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Valoren" id="22013" value="D" sort="13" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Valoren
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Sicovam" id="22014" value="E" sort="14" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Sicovam
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Belgian" id="22015" value="F" sort="15" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Belgian
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Common" id="22016" value="G" sort="16" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         "Common" (Clearstream and Euroclear)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="ClearingHouse" id="22017" value="H" sort="17" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="119">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Clearing house / Clearing organization
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="MarketplaceAssignedIdentifier" id="22022" value="M" sort="22" added="FIX.5.0" addedEP="58">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Marketplace-assigned Identifier
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="CFTCCommodityCode" id="22025" value="Q" sort="25" added="FIX.5.0SP2" addedEP="140">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         CFTC commodity code
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="FinancialInstrumentGlobalIdentifier" id="22027" value="S" sort="27" added="FIX.5.0SP2" addedEP="158" updated="FIX.5.0SP2" updatedEP="202">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Financial Instrument Global Identifier
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         An Object Management Group (OMG) standard. Also referred to as FIGI. Formerly known as "Bloomberg Open Symbology BBGID".
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="FidessaInstrumentMnemonic" id="22030" value="V" sort="30" added="FIX.5.0SP2" addedEP="220">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Fidessa Instrument Mnemonic (FIM)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Identifies class or source of the SecurityID(48) value.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="SecurityTypeCodeSet" id="167" type="String" added="FIX.4.1">
+      <fixr:code name="Future" id="167036" value="FUT" group="Derivatives" sort="8" added="FIX.4.1" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Future
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="MultilegInstrument" id="167174" value="MLEG" group="Other" sort="1" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Multileg Instrument
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates type of security. Security type enumerations are grouped by Product(460) field value. NOTE: Additional values may be used by mutual agreement of the counterparties.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="ProductCodeSet" id="460" type="int" added="FIX.4.3">
+      <fixr:code name="OTHER" id="460012" value="12" sort="12" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         OTHER
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the type of product the security is associated with. See also the CFICode (461) and SecurityType (167) fields.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="UnitOfMeasureCodeSet" id="996" type="String" added="FIX.4.4" addedEP="5" updated="FIX.5.0SP2" updatedEP="122">
+      <fixr:code name="BillionCubicFeet" id="996001" value="Bcf" group="Fixed Magnitude UOM" sort="1" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Billion cubic feet
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="CubicMeters" id="996002" value="CBM" group="Fixed Magnitude UOM" sort="2" added="FIX.5.0SP2" addedEP="107" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Cubic Meters
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Gigajoules" id="996003" value="GJ" group="Fixed Magnitude UOM" sort="3" added="FIX.5.0SP2" addedEP="152" updated="FIX.5.0SP2" updatedEP="259">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         gigajoules
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="HeatRate" id="996004" value="kHR" group="Fixed Magnitude UOM" sort="4" added="FIX.5.0SP2" addedEP="243">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Heat rate
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         The number of BTUs required to produce one kilowatt hour of electricity, typically 3,412.14 BTUs per 1 kWh.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="KilowattHours" id="996005" value="kWh" group="Fixed Magnitude UOM" sort="5" added="FIX.5.0SP2" addedEP="137" updated="FIX.5.0SP2" updatedEP="243">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Kilowatt hours
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="MegaHeatRate" id="996006" value="MHR" group="Fixed Magnitude UOM" sort="6" added="FIX.5.0SP2" addedEP="243">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Mega heat rate
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         The number of million BTUs required to produce one megawatt hour of electricity, typically 3.41214 million BTUs per 1 MWh.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="OneMillionBTU" id="996007" value="MMBtu" group="Fixed Magnitude UOM" sort="7" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="243">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         One Million BTU
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="MegawattHours" id="996008" value="MWh" group="Fixed Magnitude UOM" sort="8" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="243">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Megawatt hours
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Therms" id="996009" value="thm" group="Fixed Magnitude UOM" sort="9" added="FIX.5.0SP2" addedEP="152" updated="FIX.5.0SP2" updatedEP="259">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         therms
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         Equal to 100,000 BTU
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="TonsOfCarbonDioxide" id="996010" value="tnCO2" group="Fixed Magnitude UOM" sort="10" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Tons of carbon dioxide
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="MillionBarrels" id="996011" value="MMbbl" group="Fixed Magnitude UOM" sort="99" added="FIX.4.4" deprecated="FIX.5.0SP1" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Million Barrels
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Allowances" id="996012" value="Alw" group="Variable Quantity UOM" sort="1" added="FIX.5.0SP1" addedEP="89" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Allowances
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Barrels" id="996013" value="Bbl" group="Variable Quantity UOM" sort="2" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Barrels
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         Equal to 42 US gallons
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="BoardFeet" id="996014" value="BDFT" group="Variable Quantity UOM" sort="3" added="FIX.5.0SP2" addedEP="122" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Board feet
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         Equal to 144 cubic inches
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Bushels" id="996015" value="Bu" group="Variable Quantity UOM" sort="4" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Bushels
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Currency" id="996016" value="Ccy" group="Variable Quantity UOM" sort="5" added="FIX.5.0SP2" addedEP="122" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Amount of currency
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="CoolingDegreeDay" id="996017" value="CDD" group="Variable Quantity UOM" sort="6" added="FIX.5.0SP2" addedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Cooling degree day
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="CertifiedEmissionsReduction" id="996018" value="CER" group="Variable Quantity UOM" sort="7" added="FIX.5.0SP2" addedEP="107" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Certified emissions reduction
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="CriticalPrecipDay" id="996019" value="CPD" group="Variable Quantity UOM" sort="8" added="FIX.5.0SP2" addedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Critical precipitation day
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="ClimateReserveTonnes" id="996020" value="CRT" group="Variable Quantity UOM" sort="9" added="FIX.5.0SP2" addedEP="114" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Climate reserve tonnes
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Hundredweight" id="996021" value="cwt" group="Variable Quantity UOM" sort="10" added="FIX.5.0SP2" addedEP="122" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Hundredweight(US)
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         Equal to 100 lbs
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Day" id="996022" value="day" group="Variable Quantity UOM" sort="11" added="FIX.5.0SP2" addedEP="122" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Days
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="DryMetricTons" id="996023" value="dt" group="Variable Quantity UOM" sort="12" added="FIX.5.0SP2" addedEP="122" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Dry metric tons
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="EnvAllwncCert" id="996024" value="EnvAllwnc" group="Variable Quantity UOM" sort="13" added="FIX.5.0SP2" addedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Environmental allowance certificates
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="EnvironmentalCredit" id="996025" value="EnvCrd" group="Variable Quantity UOM" sort="14" added="FIX.5.0SP2" addedEP="137" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Environmental credit
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="EnvironmentalOffset" id="996026" value="EnvOfst" group="Variable Quantity UOM" sort="15" added="FIX.5.0SP2" addedEP="137" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Environmental Offset
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Grams" id="996027" value="g" group="Variable Quantity UOM" sort="16" added="FIX.5.0SP2" addedEP="122" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Grams
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Gallons" id="996028" value="Gal" group="Variable Quantity UOM" sort="17" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Gallons
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="GrossTons" id="996029" value="GT" group="Variable Quantity UOM" sort="18" added="FIX.5.0SP2" addedEP="154" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Gross tons
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         Also known as long tons or imperial tons, equal to 2240 lbs
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="HeatingDegreeDay" id="996030" value="HDD" group="Variable Quantity UOM" sort="19" added="FIX.5.0SP2" addedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Heating degree day
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="IndexPoint" id="996031" value="IPNT" group="Variable Quantity UOM" sort="20" added="FIX.5.0SP2" addedEP="122" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Index point
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Kilograms" id="996032" value="kg" group="Variable Quantity UOM" sort="21" added="FIX.5.0SP2" addedEP="154" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Kilograms
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Kiloliters" id="996033" value="kL" group="Variable Quantity UOM" sort="22" added="FIX.5.0SP2" addedEP="152" updated="FIX.5.0SP2" updatedEP="259">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         kiloliters
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="KilowattYear" id="996034" value="kW-a" group="Variable Quantity UOM" sort="23" added="FIX.5.0SP2" addedEP="137" updated="FIX.5.0SP2" updatedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Kilowatt year (electrical capacity)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="KilowattDay" id="996035" value="kW-d" group="Variable Quantity UOM" sort="24" added="FIX.5.0SP2" addedEP="137" updated="FIX.5.0SP2" updatedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Kilowatt day (electrical capacity)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="KilowattHour" id="996036" value="kW-h" group="Variable Quantity UOM" sort="25" added="FIX.5.0SP2" addedEP="137" updated="FIX.5.0SP2" updatedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Kilowatt hour (electrical capacity)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="KilowattMonth" id="996037" value="kW-M" group="Variable Quantity UOM" sort="26" added="FIX.5.0SP2" addedEP="137" updated="FIX.5.0SP2" updatedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Kilowatt month (electrical capacity)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="KilowattMinute" id="996038" value="kW-min" group="Variable Quantity UOM" sort="27" added="FIX.5.0SP2" addedEP="137">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Kilowatt-Minute (electrical capacity)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Liters" id="996039" value="L" group="Variable Quantity UOM" sort="28" added="FIX.5.0SP2" addedEP="152" updated="FIX.5.0SP2" updatedEP="259">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         liters
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Pounds" id="996040" value="lbs" group="Variable Quantity UOM" sort="29" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         pounds
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="MegawattYear" id="996041" value="MW-a" group="Variable Quantity UOM" sort="30" added="FIX.5.0SP2" addedEP="137" updated="FIX.5.0SP2" updatedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Megawatt year (electrical capacity)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="MegawattDay" id="996042" value="MW-d" group="Variable Quantity UOM" sort="31" added="FIX.5.0SP2" addedEP="137" updated="FIX.5.0SP2" updatedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Megawatt day (electrical capacity)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="MegawattHour" id="996043" value="MW-h" group="Variable Quantity UOM" sort="32" added="FIX.5.0SP2" addedEP="137" updated="FIX.5.0SP2" updatedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Megawatt hour (electrical capacity)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="MegawattMonth" id="996044" value="MW-M" group="Variable Quantity UOM" sort="33" added="FIX.5.0SP2" addedEP="137" updated="FIX.5.0SP2" updatedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Megawatt month (electrical capacity)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="MegawattMinute" id="996045" value="MW-min" group="Variable Quantity UOM" sort="34" added="FIX.5.0SP2" addedEP="137" updated="FIX.5.0SP2" updatedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Megawatt minute (electrical capacity)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="TroyOunces" id="996046" value="oz_tr" group="Variable Quantity UOM" sort="35" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Troy ounces
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="PrincipalWithRelationToDebtInstrument" id="996047" value="PRINC" group="Variable Quantity UOM" sort="36" added="FIX.5.0SP2" addedEP="107" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Principal with relation to debt instrument
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="MetricTons" id="996048" value="t" group="Variable Quantity UOM" sort="37" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Metric tons
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         Also known as Tonnes, equal to 1000 kg
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Tons" id="996049" value="tn" group="Variable Quantity UOM" sort="38" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Tons (US)
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         Equal to 2000 lbs
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Are" id="996050" value="a" group="Variable Quantity UOM" sort="39" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Are
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Acre" id="996051" value="ac" group="Variable Quantity UOM" sort="40" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Acre
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Centiliter" id="996052" value="cL" group="Variable Quantity UOM" sort="41" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Centiliter
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Centimeter" id="996053" value="cM" group="Variable Quantity UOM" sort="42" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Centimeter
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="DieselGallonEquivalent" id="996054" value="DGE" group="Variable Quantity UOM" sort="43" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Diesel gallon equivalent
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Foot" id="996055" value="ft" group="Variable Quantity UOM" sort="44" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Foot
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="GBGallon" id="996056" value="Gal_gb" group="Variable Quantity UOM" sort="45" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         GB Gallon
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="GasolineGallonEquivalent" id="996057" value="GGE" group="Variable Quantity UOM" sort="46" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Gasonline gallon equivalent
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Hectare" id="996058" value="ha" group="Variable Quantity UOM" sort="47" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Hectare
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Inch" id="996059" value="in" group="Variable Quantity UOM" sort="48" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Inch
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Kilometer" id="996060" value="kM" group="Variable Quantity UOM" sort="49" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Kilometer
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Meter" id="996061" value="M" group="Variable Quantity UOM" sort="50" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Meter
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Mile" id="996062" value="mi" group="Variable Quantity UOM" sort="51" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Mile
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Milliliter" id="996063" value="mL" group="Variable Quantity UOM" sort="52" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Milliliter
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Millimeter" id="996064" value="mM" group="Variable Quantity UOM" sort="53" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Millimeter
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="USOunce" id="996065" value="oz" group="Variable Quantity UOM" sort="54" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         US ounce
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Piece" id="996066" value="pc" group="Variable Quantity UOM" sort="55" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Piece
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="USPint" id="996067" value="pt" group="Variable Quantity UOM" sort="56" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         US Pint
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="GBPint" id="996068" value="pt_gb" group="Variable Quantity UOM" sort="57" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         GB pint
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="USQuart" id="996069" value="qt" group="Variable Quantity UOM" sort="58" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         US Quart
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="GBQuart" id="996070" value="qt_gb" group="Variable Quantity UOM" sort="59" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         GB Quart
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="SquareCentimeter" id="996071" value="SqcM" group="Variable Quantity UOM" sort="60" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Square centimeter
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="SquareFoot" id="996072" value="Sqft" group="Variable Quantity UOM" sort="61" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Square foot
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="SquareInch" id="996073" value="Sqin" group="Variable Quantity UOM" sort="62" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Square inch
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="SquareKilometer" id="996074" value="SqkM" group="Variable Quantity UOM" sort="63" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Square kilometer
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="SquareMeter" id="996075" value="SqM" group="Variable Quantity UOM" sort="64" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Square meter
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="SquareMile" id="996076" value="Sqmi" group="Variable Quantity UOM" sort="65" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Square mile
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="SquareMillimeter" id="996077" value="SqmM" group="Variable Quantity UOM" sort="66" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Square millimeter
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="SquareYard" id="996078" value="Sqyd" group="Variable Quantity UOM" sort="67" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Square yard
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Yard" id="996079" value="yd" group="Variable Quantity UOM" sort="68" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Yard
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="USDollars" id="996080" value="USD" group="Variable Quantity UOM" sort="99" added="FIX.4.4" deprecated="FIX.5.0SP2" deprecatedEP="122" updated="FIX.5.0SP2" updatedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         US Dollars
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The unit of measure of the underlying commodity upon which the contract is based. Two groups of units of measure enumerations are supported.
+         Fixed Magnitude UOMs are primarily used in energy derivatives and specify a magnitude (such as, MM, Kilo, M, etc.) and the dimension (such as, watt hours, BTU's) to produce standard fixed measures (such as MWh - Megawatt-hours, MMBtu - One million BTUs).
+         The second group, Variable Quantity UOMs, specifies the dimension as a single unit without a magnitude (or more accurately a magnitude of one) and uses the UnitOfMeasureQty(1147) field to define the quantity of units per contract. Variable Quantity UOMs are used for both commodities (such as lbs of lean cattle, bushels of corn, ounces of gold) and financial futures.
+         Examples:
+         For lean cattle futures contracts, a UnitOfMeasure of 'lbs' with a UnitOfMeasureQty(1147) of 40,000, means each lean cattle futures contract represents 40,000 lbs of lean cattle.
+         For Eurodollars futures contracts, a UnitOfMeasure of Ccy with a UnitOfMeasureCurrency(1716) of USD and a UnitOfMeasureQty(1147) of 1,000,000, means a Eurodollar futures contract represents 1,000,000 USD.
+         For gold futures contracts, a UnitOfMeasure is oz_tr (Troy ounce) with a UnitOfMeasureQty(1147) of 1,000, means each gold futures contract represents 1,000 troy ounces of gold.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="SettlMethodCodeSet" id="1193" type="String" added="FIX.5.0" addedEP="52" updated="FIX.5.0SP2" updatedEP="169">
+      <fixr:code name="CashSettlementRequired" id="1193001" value="C" sort="1" added="FIX.5.0" addedEP="52">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Cash settlement required
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="PhysicalSettlementRequired" id="1193002" value="P" sort="2" added="FIX.5.0" addedEP="52">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Physical settlement required
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Election" id="1193003" value="E" sort="3" added="FIX.5.0SP2" addedEP="169">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Election at exercise
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         The settlement method will be elected at the time of contract exercise.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Settlement method for a contract or instrument. Additional values may be used with bilateral agreement.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="ContractMultiplierUnitCodeSet" id="1435" type="int" added="FIX.5.0SP1" addedEP="80">
+      <fixr:code name="Shares" id="1435001" value="0" sort="0" added="FIX.5.0SP1" addedEP="80">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Shares
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Hours" id="1435002" value="1" sort="1" added="FIX.5.0SP1" addedEP="80">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Hours
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Days" id="1435003" value="2" sort="2" added="FIX.5.0SP1" addedEP="80">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Days
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the type of multiplier being applied to the contract. Can be optionally used to further define what unit ContractMultiplier(tag 231) is expressed in.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="AssetClassCodeSet" id="1938" type="int" added="FIX.5.0SP2" addedEP="161">
+      <fixr:code name="InterestRate" id="1938001" value="1" sort="1" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Interest rate
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Currency" id="1938002" value="2" sort="2" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Currency
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Equity" id="1938004" value="4" sort="4" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Equity
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Commodity" id="1938005" value="5" sort="5" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Commodity
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Other" id="1938006" value="6" sort="6" added="FIX.5.0SP2" addedEP="179">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Other
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Debt" id="1938008" value="8" sort="8" added="FIX.5.0SP2" addedEP="192">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Debt
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Index" id="1938011" value="11" sort="11" added="FIX.5.0SP2" addedEP="254">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Index
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         A main index identified as a security type, for example under EU SFTR reporting.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The broad asset category for assessing risk exposure.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="AssetSubClassCodeSet" id="1939" type="int" added="FIX.5.0SP2" addedEP="161">
+      <fixr:code name="Freight" id="1939007" value="19" group="Commodity" sort="19" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Freight
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Fertilizer" id="1939008" value="41" group="Commodity" sort="41" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Fertilizer
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="IndustrialProduct" id="1939009" value="42" group="Commodity" sort="42" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Industrial product
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Inflation" id="1939010" value="43" group="Commodity" sort="43" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Inflation
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Paper" id="1939011" value="44" group="Commodity" sort="44" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Paper
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Polypropylene" id="1939012" value="45" group="Commodity" sort="45" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Polypropylene
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="OfficialEconomicStatistics" id="1939013" value="46" group="Commodity" sort="46" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Official economic statistics
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="FXMajors" id="1939021" value="40" group="Currency" sort="40" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         FX Majors
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Government" id="1939022" value="20" group="Debt" sort="20" added="FIX.5.0SP2" addedEP="192">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Government
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Corporate" id="1939024" value="22" group="Debt" sort="22" added="FIX.5.0SP2" addedEP="192">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Corporate
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Common" id="1939029" value="9" group="Equity" sort="9" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Common
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Preferred" id="1939030" value="10" group="Equity" sort="10" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Preferred
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="EquityIndex" id="1939031" value="11" group="Equity" sort="11" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Equity index
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="VolatilityIndex" id="1939036" value="37" group="Equity" sort="37" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Volatility index
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="SingleCurrency" id="1939041" value="1" group="Interest Rate" sort="1" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Single currency
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="CrossCurrency" id="1939042" value="2" group="Interest Rate" sort="2" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Cross currency
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="OtherC10" id="1939047" value="47" group="Other" sort="47" added="FIX.5.0SP2" addedEP="235" updated="FIX.5.0SP2" updatedEP="253">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Other C10
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         Defined under MiFID II (Directive 2014/65/EU) Section C(10) of Annex I and paraphrased in ESMA RTS 2 Annex III Section 10, "Other C10" is a financial instrument "which is not a 'Freight derivative', any of the following interest rate derivatives sub-asset classes: 'Inflation multi-currency swap or cross-currency swap', a 'Future/forward on inflation multi-currency swaps or cross-currency swaps', an 'Inflation single currency swap', a 'Future/forward on inflation single currency swap' and any of the following equity derivatives sub-asset classes: a 'Volatility index option', a 'Volatility index future/forward', a swap with parameter return variance, a swap with parameter return volatility, a portfolio swap with parameter return variance, a portfolio swap with parameter return volatility".
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Other" id="1939048" value="48" group="Other" sort="48" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Other
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         May be used with any AssetClass(1938) values.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The subcategory description of the asset class.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="AssetGroupCodeSet" id="2210" type="int" added="FIX.5.0SP2" addedEP="192">
+      <fixr:code name="Financials" id="2210001" value="1" sort="1" added="FIX.5.0SP2" addedEP="192">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Financials
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         A categorization which usually includes rates, foreign exchange, credit, bonds and equity products or assets.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Commodities" id="2210002" value="2" sort="2" added="FIX.5.0SP2" addedEP="192">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Commodities
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         A categorization which usually includes hard commodities such as agricultural, metals, freight, energy products or assets.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="AlternativeInvestments" id="2210003" value="3" sort="3" added="FIX.5.0SP2" addedEP="192">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Alternative investments
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         A categorization which usually includes weather, housing, and commodity indices products or assets.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the broad product or asset classification. May be used to provide grouping for the product taxonomy (Product(460), SecurityType(167), etc.) and/or the risk taxonomy (AssetClass(1938), AssetSubClass(1939), AssetType(1940), etc.).
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="SettlSubMethodCodeSet" id="2579" type="int" added="FIX.5.0SP2" addedEP="195">
+      <fixr:code name="Shares" id="2579001" value="1" sort="1" added="FIX.5.0SP2" addedEP="195">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Shares
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION"/>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Derivatives" id="2579002" value="2" sort="2" added="FIX.5.0SP2" addedEP="195">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Derivatives
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION"/>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="PaymentVsPayment" id="2579003" value="3" sort="3" added="FIX.5.0SP2" addedEP="195">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Payment vs payment
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION"/>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Notional" id="2579004" value="4" sort="4" added="FIX.5.0SP2" addedEP="195">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Notional
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION"/>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Cascade" id="2579005" value="5" sort="5" added="FIX.5.0SP2" addedEP="195">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Cascade
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION"/>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Repurchase" id="2579006" value="6" sort="6" added="FIX.5.0SP2" addedEP="195">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Repurchase
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION"/>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Other" id="2579007" value="99" sort="99" added="FIX.5.0SP2" addedEP="195">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Other
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION"/>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Specifies a suitable settlement sub-method for a given settlement method.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+  </fixr:codeSets>
+  <fixr:datatypes>
+    <fixr:datatype name="int" added="FIX.2.7" issue="SPEC-370" updated="FIX.Latest" updatedEP="271">
+      <fixr:mappedDatatype standard="XML" base="xs:integer" builtin="1"/>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Sequence of digits without commas or decimals and optional sign character (ASCII characters "-" and "0" - "9" ). The sign character utilizes one byte (i.e. positive int is "99999" while negative int is "-99999"). Note that int values may contain leading zeros (e.g. "00023" = "23").
+      </fixr:documentation>
+        <fixr:documentation purpose="EXAMPLE">723 in field 21 would be mapped as |21=723|.
+-723 in field 12 would be mapped as |12=-723|.</fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+    <fixr:datatype name="NumInGroup" baseType="int" added="FIX.4.3">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         int field representing the number of entries in a repeating group. Value must be positive.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+    <fixr:datatype name="float" added="FIX.2.7" updated="FIX.5.0SP2" updatedEP="206">
+      <fixr:mappedDatatype standard="XML" base="xs:decimal" builtin="1">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Sequence of digits with optional decimal point and sign character (ASCII characters "-", "0" - "9" and "."); the absence of the decimal point within the string will be interpreted as the float representation of an integer value. All float fields must accommodate up to fifteen significant digits. The number of decimal places used should be a factor of business/market needs and mutual agreement between counterparties. Note that float values may contain leading zeros (e.g. "00023.23" = "23.23") and may contain or omit trailing zeros after the decimal point (e.g. "23.0" = "23.0000" = "23" = "23."). Note that fields which are derived from float may contain negative values unless explicitly specified otherwise.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:mappedDatatype>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Sequence of digits with optional decimal point and sign character (ASCII characters "-", "0" - "9" and "."); the absence of the decimal point within the string will be interpreted as the float representation of an integer value. All float fields must accommodate up to fifteen significant digits. The number of decimal places used should be a factor of business/market needs and mutual agreement between counterparties. Note that float values may contain leading zeros (e.g. "00023.23" = "23.23") and may contain or omit trailing zeros after the decimal point (e.g. "23.0" = "23.0000" = "23" = "23."). Note that fields which are derived from float may contain negative values unless explicitly specified otherwise.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+    <fixr:datatype name="Qty" baseType="float" added="FIX.4.2">
+      <fixr:mappedDatatype standard="XML" base="xs:decimal" builtin="0">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         float field capable of storing either a whole number (no decimal places) of "shares" (securities denominated in whole units) or a decimal value containing decimal places for non-share quantity asset classes (securities denominated in fractional units).
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:mappedDatatype>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         float field capable of storing either a whole number (no decimal places) of "shares" (securities denominated in whole units) or a decimal value containing decimal places for non-share quantity asset classes (securities denominated in fractional units).
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+    <fixr:datatype name="Boolean" baseType="char" added="FIX.4.2">
+      <fixr:mappedDatatype standard="XML" base="xs:string" builtin="0" pattern="[YN]{1}">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         char field containing one of two values:
+         'Y' = True/Yes
+         'N' = False/No
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:mappedDatatype>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         char field containing one of two values:
+         'Y' = True/Yes
+         'N' = False/No
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+    <fixr:datatype name="String" added="FIX.4.2">
+      <fixr:mappedDatatype standard="XML" base="xs:string" builtin="1">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case sensitive (i.e. morstatt != Morstatt).
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:mappedDatatype>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case sensitive (i.e. morstatt != Morstatt).
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+    <fixr:datatype name="Currency" baseType="String" added="FIX.4.2">
+      <fixr:mappedDatatype standard="XML" base="xs:string" builtin="0" pattern=".{3}">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         string field representing a currency type using ISO 4217 Currency code (3 character) values (see Appendix 6-A).
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:mappedDatatype>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         string field representing a currency type using ISO 4217 Currency code (3 character) values (see Appendix 6-A).
+      </fixr:documentation>
+        <fixr:documentation purpose="EXAMPLE">StrkCcy="USD"</fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+    <fixr:datatype name="Exchange" baseType="String" added="FIX.4.2">
+      <fixr:mappedDatatype standard="XML" base="xs:string" builtin="0" pattern=".*">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         string field representing a market or exchange using ISO 10383 Market Identifier Code (MIC) values (see"Appendix 6-C).
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:mappedDatatype>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         string field representing a market or exchange using ISO 10383 Market Identifier Code (MIC) values (see"Appendix 6-C).
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+    <fixr:datatype name="MonthYear" baseType="String" added="FIX.4.1">
+      <fixr:mappedDatatype standard="XML" base="xs:string" builtin="0" pattern="\d{4}(0|1)\d([0-3wW]\d)?">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         string field representing month of a year. An optional day of the month can be appended or an optional week code.
+         Valid formats:
+         YYYYMM
+         YYYYMMDD
+         YYYYMMWW
+         Valid values:
+         YYYY = 0000-9999; MM = 01-12; DD = 01-31; WW = w1, w2, w3, w4, w5.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:mappedDatatype>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         string field representing month of a year. An optional day of the month can be appended or an optional week code.
+         Valid formats:
+         YYYYMM
+         YYYYMMDD
+         YYYYMMWW
+         Valid values:
+         YYYY = 0000-9999; MM = 01-12; DD = 01-31; WW = w1, w2, w3, w4, w5.
+      </fixr:documentation>
+        <fixr:documentation purpose="EXAMPLE">MonthYear="200303",  MonthYear="20030320", MonthYear="200303w2"</fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+    <fixr:datatype name="LocalMktDate" baseType="String" added="FIX.4.2" updated="FIX.5.0SP2" updatedEP="206">
+      <fixr:mappedDatatype standard="XML" base="xs:date" builtin="0">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         string field representing a Date of Local Market (as opposed to UTC) in YYYY-MM-DD format. This is the "normal" date field used by the FIX Protocol.
+         Valid values:
+         YYYY = 0000-9999, MM = 01-12, DD = 01-31.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:mappedDatatype>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         string field representing a Date of Local Market (as opposed to UTC) in YYYYMMDD format. This is the "normal" date field used by the FIX Protocol.
+         Valid values:
+         YYYY = 0000-9999, MM = 01-12, DD = 01-31
+      </fixr:documentation>
+        <fixr:documentation purpose="EXAMPLE">MaturityDate(541)="20150724"</fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+  </fixr:datatypes>
+  <fixr:sections></fixr:sections>
+  <fixr:fields latestEP="271">
+    <fixr:field added="FIX.2.7" id="22" name="SecurityIDSource" type="SecurityIDSourceCodeSet" updated="FIX.5.0SP2" updatedEP="161" abbrName="Src" unionDataType="Reserved100Plus">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Identifies class or source of the SecurityID(48) value.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.2.7" id="48" name="SecurityID" type="String" abbrName="ID" discriminatorId="22">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Security identifier value of SecurityIDSource (22) type (e.g. CUSIP, SEDOL, ISIN, etc). Requires SecurityIDSource.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.2.7" id="55" name="Symbol" type="String" abbrName="Sym">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Ticker symbol. Common, "human understood" representation of the security. SecurityID (48) value can be specified if no symbol exists (e.g. non-exchange traded Collective Investment Vehicles)
+         Use "[N/A]" for products which do not have a symbol.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.3.0" id="106" name="Issuer" type="String" abbrName="Issr">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Name of security issuer (e.g. International Business Machines, GNMA).
+         see also Volume 7: "PRODUCT: FIXED INCOME - Euro Issuer Values"
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.3.0" id="107" name="SecurityDesc" type="String" updated="FIX.5.0SP2" updatedEP="232" abbrName="Desc">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Can be used by the venue or one of the trading parties to provide a non-normative textual description for the financial instrument.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.1" id="167" name="SecurityType" type="SecurityTypeCodeSet" abbrName="SecTyp">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates type of security. Security type enumerations are grouped by Product(460) field value. NOTE: Additional values may be used by mutual agreement of the counterparties.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.1" id="200" name="MaturityMonthYear" type="MonthYear" updated="FIX.5.0SP1" updatedEP="95" abbrName="MMY">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Can be used with standardized derivatives vs. the MaturityDate (54) field. Month and Year of the maturity (used for standardized futures and options).
+         Format:
+         YYYYMM (e.g. 199903)
+         YYYYMMDD (e.g. 20030323)
+         YYYYMMwN (e.g. 200303w) for week
+         A specific date or can be appended to the MaturityMonthYear. For instance, if multiple standard products exist that mature in the same Year and Month, but actually mature at a different time, a value can be appended, such as "w" or "w2" to indicate week as opposed to week 2 expiration. Likewise, the date (0-3) can be appended to indicate a specific expiration (maturity date).
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.1" id="207" name="SecurityExchange" type="Exchange" abbrName="Exch">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Market used to help identify a security.
+         Valid values:
+         See "Appendix 6-C"
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.2" id="225" name="IssueDate" type="LocalMktDate" abbrName="Issued">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The date on which a bond or stock offering is issued. It may or may not be the same as the effective date ("Dated Date") or the date on which interest begins to accrue ("Interest Accrual Date")
+         (Note tag # was reserved in FIX 4.1, added in FIX 4.3)
+         (prior to FIX 4.4 field was of type UTCDate)
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.2" id="231" name="ContractMultiplier" type="float" updated="FIX.5.0SP2" updatedEP="204" abbrName="Mult">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Specifies the ratio or multiply factor to convert from "nominal" units (e.g. contracts) to total units (e.g. shares) (e.g. 1.0, 100, 1000, etc). Applicable For Fixed Income, Convertible Bonds, Derivatives, etc.
+      </fixr:documentation>
+        <fixr:documentation purpose="ELABORATION">
+         In general quantities for all classes should be expressed in the basic unit of the instrument, e.g. shares for equities, nominal or par amount for bonds, currency for foreign exchange. When quantity is expressed in contracts, e.g. financing transactions and bond trade reporting, ContractMultiplier(231) should contain the number of units in one contract and can be omitted if the multiplier is the default amount for the instrument, i.e. 1,000 par of bonds, 1,000,000 par for financing transactions.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="454" name="NoSecurityAltID" type="NumInGroup" abbrName="NoSecAltID">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Number of SecurityAltID (455) entries.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="455" name="SecurityAltID" type="String" abbrName="AltID" discriminatorId="456">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Alternate Security identifier value for this security of SecurityAltIDSource (456) type (e.g. CUSIP, SEDOL, ISIN, etc). Requires SecurityAltIDSource.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="456" name="SecurityAltIDSource" type="SecurityIDSourceCodeSet" updated="FIX.Latest" updatedEP="271" abbrName="AltIDSrc" unionDataType="Reserved100Plus">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Identifies class or source of the SecurityAltID(455) value.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="460" name="Product" type="ProductCodeSet" abbrName="Prod">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the type of product the security is associated with. See also the CFICode (461) and SecurityType (167) fields.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="461" name="CFICode" type="String" abbrName="CFI">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the type of security using ISO 10962 standard, Classification of Financial Instruments (CFI code) values. ISO 10962 is maintained by ANNA (Association of National Numbering Agencies) acting as Registration Authority. See "Appendix 6-B FIX Fields Based Upon Other Standards". See also the Product (460) and SecurityType (167) fields. It is recommended that CFICode be used instead of SecurityType (167) for non-Fixed Income instruments.
+         A subset of possible values applicable to FIX usage are identified in "Appendix 6-D CFICode Usage - ISO 10962 Classification of Financial Instruments (CFI code)"
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="541" name="MaturityDate" type="LocalMktDate" abbrName="MatDt">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Date of maturity.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.4" id="667" name="ContractSettlMonth" type="MonthYear" abbrName="CSetMo">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Specifies when the contract (i.e. MBS/TBA) will settle.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.4" id="762" name="SecuritySubType" type="String" updated="FIX.5.0SP2" updatedEP="254" abbrName="SubTyp">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Sub-type qualification/identification of the SecurityType. As an example for SecurityType(167)="REPO", the SecuritySubType="General Collateral" can be used to further specify the type of REPO.
+         If SecuritySubType is used, then SecurityType is required.
+         For SecurityType="MLEG" a name of the option or futures strategy name can be specified, such as "Calendar", "Vertical", "Butterfly".
+         For SecurityType(167)="OPT" the subclassification can be specified, such as "Asian".
+         For SecurityType(167)="SWAPTION" a value of "Straddle" is used to identify a straddle swaption.
+         In the context of EU SFTR reporting use the appropriate 4-character code noted in the regulations - "GENE" for general collateral or "SPEC" for specific collateral (without quote marks).
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.4" id="966" name="SettleOnOpenFlag" type="String" addedEP="4" abbrName="SettlOnOpenFlag">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicator to determine if instrument is settle on open
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.4" id="996" name="UnitOfMeasure" type="UnitOfMeasureCodeSet" addedEP="5" updated="FIX.5.0SP2" updatedEP="122" abbrName="UOM">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The unit of measure of the underlying commodity upon which the contract is based. Two groups of units of measure enumerations are supported.
+         Fixed Magnitude UOMs are primarily used in energy derivatives and specify a magnitude (such as, MM, Kilo, M, etc.) and the dimension (such as, watt hours, BTU's) to produce standard fixed measures (such as MWh - Megawatt-hours, MMBtu - One million BTUs).
+         The second group, Variable Quantity UOMs, specifies the dimension as a single unit without a magnitude (or more accurately a magnitude of one) and uses the UnitOfMeasureQty(1147) field to define the quantity of units per contract. Variable Quantity UOMs are used for both commodities (such as lbs of lean cattle, bushels of corn, ounces of gold) and financial futures.
+         Examples:
+         For lean cattle futures contracts, a UnitOfMeasure of 'lbs' with a UnitOfMeasureQty(1147) of 40,000, means each lean cattle futures contract represents 40,000 lbs of lean cattle.
+         For Eurodollars futures contracts, a UnitOfMeasure of Ccy with a UnitOfMeasureCurrency(1716) of USD and a UnitOfMeasureQty(1147) of 1,000,000, means a Eurodollar futures contract represents 1,000,000 USD.
+         For gold futures contracts, a UnitOfMeasure is oz_tr (Troy ounce) with a UnitOfMeasureQty(1147) of 1,000, means each gold futures contract represents 1,000 troy ounces of gold.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0" id="1147" name="UnitOfMeasureQty" type="Qty" addedEP="42" abbrName="UOMQty">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Used to indicate the quantity of the underlying commodity unit of measure on which the contract is based, such as, 2500 lbs of lean cattle, 1000 barrels of crude oil, 1000 bushels of corn, etc. UnitOfMeasureQty is required for UnitOfMeasure(996) Variable Quantity UOMs enumerations. Refer to the definition of UnitOfMeasure(996) for more information on the use of UnitOfMeasureQty.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0" id="1191" name="PriceUnitOfMeasure" type="UnitOfMeasureCodeSet" addedEP="52" abbrName="PxUOM">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Used to express the UOM of the price if different from the contract. In futures, this can be different for cross-rate products in which the price is quoted in units differently from the contract
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0" id="1192" name="PriceUnitOfMeasureQty" type="Qty" addedEP="52" abbrName="PxUOMQty">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Used to express the UOM Quantity of the price if different from the contract. In futures, this can be different for physically delivered products in which price is quoted in a unit size different from the contract, i.e. a Cattle Future contract has a UOMQty of 40,000 and a PriceUOMQty of 100.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0" id="1193" name="SettlMethod" type="SettlMethodCodeSet" addedEP="52" updated="FIX.5.0SP2" updatedEP="169" abbrName="SettlMeth">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Settlement method for a contract or instrument. Additional values may be used with bilateral agreement.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0" id="1244" name="FlexibleIndicator" type="Boolean" addedEP="52" abbrName="FlexInd">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Used to indicate a derivatives security that can be defined using flexible terms. The terms commonly permitted to be defined by market participants are expiration date and strike price. FlexibleIndicator is an alternative CFICode(461) Standard/Non-standard attribute.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP1" id="1435" name="ContractMultiplierUnit" type="ContractMultiplierUnitCodeSet" addedEP="80" abbrName="MultTyp">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the type of multiplier being applied to the contract. Can be optionally used to further define what unit ContractMultiplier(tag 231) is expressed in.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="1716" name="UnitOfMeasureCurrency" type="Currency" addedEP="122" abbrName="UOMCcy">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the currency of the unit of measure. Conditionally required when UnitOfMeasure(996) = Ccy
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="1717" name="PriceUnitOfMeasureCurrency" type="Currency" addedEP="122" abbrName="PxUOMCcy">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the currency of the price unit of measure. Conditionally required when PriceUnitOfMeasure(1191) = Ccy
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="1938" name="AssetClass" type="AssetClassCodeSet" addedEP="161" abbrName="AssetClss">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The broad asset category for assessing risk exposure.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="1939" name="AssetSubClass" type="AssetSubClassCodeSet" addedEP="161" abbrName="AssetSubClss" unionDataType="Reserved4000Plus">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The subcategory description of the asset class.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="1940" name="AssetType" type="String" addedEP="161" updated="FIX.5.0SP2" updatedEP="235" abbrName="AssetTyp">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Used to provide more specific description of the asset specified in AssetSubClass(1939).
+         See https://www.fixtrading.org/codelists/AssetType for code list of applicable values. ISO 4721 Currency Code values are to be used when specific currency as an asset type is to be expressed.
+         Other values may be used by mutual agreement of the counterparties.
+      </fixr:documentation>
+        <fixr:documentation purpose="ELABORATION">
+         In the context of MiFID II's this may indicate the value needed in ESMA RTS 2 Annex IV Table 2 Field 16, or ESMA RTS 23 Annex I Table 2 'Sub product' field.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="1976" name="NoSecondaryAssetClasses" type="NumInGroup" addedEP="161">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Number of secondary asset classes in the repeating group.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="1977" name="SecondaryAssetClass" type="AssetClassCodeSet" addedEP="161" abbrName="Clss">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The broad asset category for assessing risk exposure for a multi-asset trade.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="1978" name="SecondaryAssetSubClass" type="AssetSubClassCodeSet" addedEP="161" abbrName="SubClss" unionDataType="Reserved4000Plus">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         An indication of the general description of the asset class.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="1979" name="SecondaryAssetType" type="String" addedEP="161" updated="FIX.5.0SP2" updatedEP="235" abbrName="Typ">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Used to provide more specific description of the asset specified in SecondaryAssetSubClass(1978).
+         See https://www.fixtrading.org/codelists/AssetType for code list of applicable values. ISO 4721 Currency Code values are to be used when specific currency as an asset type is to be expressed.
+         Other values may be used by mutual agreement of the counterparties.
+      </fixr:documentation>
+        <fixr:documentation purpose="ELABORATION">
+         In the context of MiFID II's this may indicate the value needed in ESMA RTS 2 Annex IV Table 2 Field 16, or ESMA RTS 23 Annex I Table 2 'Sub product' field.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2304" name="NoAssetAttributes" type="NumInGroup" addedEP="169">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The number of asset attribute entries in the group.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2305" name="AssetAttributeType" type="String" addedEP="169" abbrName="Typ">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Specifies the name of the attribute.
+         See http://www.fixtradingcommunity.org/codelists#Asset_Attribute_Types for code list of applicable asset attribute types.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2306" name="AssetAttributeValue" type="String" addedEP="169" abbrName="Val">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Specifies the value of the asset attribute.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2307" name="AssetAttributeLimit" type="String" addedEP="169" abbrName="Lmt">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Limit or lower acceptable value of the attribute.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2210" name="AssetGroup" type="AssetGroupCodeSet" addedEP="192" abbrName="AssetGrp">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the broad product or asset classification. May be used to provide grouping for the product taxonomy (Product(460), SecurityType(167), etc.) and/or the risk taxonomy (AssetClass(1938), AssetSubClass(1939), AssetType(1940), etc.).
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2579" name="SettlSubMethod" type="SettlSubMethodCodeSet" addedEP="195" abbrName="SettlSubMeth" unionDataType="Reserved100Plus">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Specifies a suitable settlement sub-method for a given settlement method.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2714" name="FinancialInstrumentFullName" type="String" addedEP="232" updated="FIX.5.0SP2" updatedEP="236" abbrName="FullName">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The full normative name of the financial instrument.
+      </fixr:documentation>
+        <fixr:documentation purpose="ELABORATION">
+         In the context of ESMA reference data, this is used to provide the full name of the instrument as defined by the Derivatives Service Bureau (DSB).
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2735" name="AssetSubType" type="String" addedEP="235" abbrName="AsstSubTyp">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Used to provide a more specific description of the asset specified in AssetType(1940).
+         See https://www.fixtrading.org/codelists/AssetSubType for code list of applicable values.
+      </fixr:documentation>
+        <fixr:documentation purpose="ELABORATION">
+         In the context of MiFID II, ESMA RTS 23 Annex I Table 2, this may indicate the 'Further sub product' or equity 'Parameter' fields.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2737" name="FinancialInstrumentShortName" type="String" addedEP="235" abbrName="ShrtName">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Short name of the financial instrument. Uses ISO 18774 (FINS) values.
+      </fixr:documentation>
+        <fixr:documentation purpose="ELABORATION">
+         In the context of MiFID II this maps to ESMA RTS 23 Annex I Table 3 Field 7 and may be used in other RTS that requires a similar field.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2741" name="SecondaryAssetSubType" type="String" addedEP="235" abbrName="SubTyp">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Used to provide a more specific description of the asset specified in SecondaryAssetType(1979).
+         See https://www.fixtrading.org/codelists/AssetSubType for code list of applicable values.
+      </fixr:documentation>
+        <fixr:documentation purpose="ELABORATION">
+         In the context of MiFID II, ESMA RTS 23 Annex I Table 2, this may indicate the 'Further sub product' or equity 'Parameter' fields.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+  </fixr:fields>
+  <fixr:components latestEP="271">
+    <fixr:component name="Instrument" id="1003" category="Common" added="FIX.4.3" abbrName="Instrmt">
+      <fixr:fieldRef id="55" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         Common, "human understood" representation of the security. SecurityID value can be specified if no symbol exists (e.g. non-exchange traded Collective Investment Vehicles)
+         Use "[N/A]" for products which do not have a symbol.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="48" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         Takes precedence in identifying security to counterparty over SecurityAltID block. Requires SecurityIDSource if specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="22" added="FIX.4.3" updated="FIX.5.0SP2" updatedEP="161">
+        <fixr:annotation>
+          <fixr:documentation>
+         Conditionally required when SecurityID(48) is specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:groupRef id="2071" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation>
+         Number of alternate Security Identifiers
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:groupRef>
+      <fixr:fieldRef id="460" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         Indicates the type of product the security is associated with (high-level category)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="461" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         Indicates the type of security using ISO 10962 standard, Classification of Financial Instruments (CFI code) values. It is recommended that CFICode be used instead of SecurityType for non-Fixed Income instruments.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="167" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         It is recommended that CFICode be used instead of SecurityType for non-Fixed Income instruments.
+         Required for Fixed Income. Refer to Volume 7 - Fixed Income
+         Futures and Options should be specified using the CFICode[461] field instead of SecurityType[167] (Refer to Volume 7 - Recommendations and Guidelines for Futures and Options Markets.)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="762" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation>
+         Sub-type qualification/identification of the SecurityType (e.g. for SecurityType="MLEG"). If specified, SecurityType is required.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="200" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         Specifies the month and year of maturity. Applicable for standardized derivatives which are typically only referenced by month and year (e.g. S&amp;P futures). Note MaturityDate (a full date) can also be specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="541" added="FIX.4.3" updated="FIX.Latest" updatedEP="271">
+        <fixr:annotation>
+          <fixr:documentation>
+         Specifies date of maturity (a full date). Note that standardized derivatives which are typically only referenced by month and year (e.g. S&amp;P futures) may use MaturityMonthYear(200) and/or this field.
+         When using MaturityMonthYear(200), it is recommended that markets and sell sides report the MaturityDate(541) on all outbound messages as a means of data enrichment.
+         For NDFs this represents the fixing date of the contract.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="966" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation>
+         Indicator to determine if Instrument is Settle on Open.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="2210" added="FIX.5.0SP2" addedEP="192">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1938" added="FIX.5.0SP2" addedEP="161" updated="FIX.5.0SP2" updatedEP="235">
+        <fixr:annotation>
+          <fixr:documentation>
+         Required if AssetSubClass(1939) is specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1939" added="FIX.5.0SP2" addedEP="161" updated="FIX.5.0SP2" updatedEP="235">
+        <fixr:annotation>
+          <fixr:documentation>
+         Required if AssetType(1940) is specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1940" added="FIX.5.0SP2" addedEP="161" updated="FIX.5.0SP2" updatedEP="235">
+        <fixr:annotation>
+          <fixr:documentation>
+         Required if AssetSubType(2735) is specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="2735" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:groupRef id="2226" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:groupRef>
+      <fixr:groupRef id="2241" added="FIX.5.0SP2" addedEP="169">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:groupRef>
+      <fixr:fieldRef id="225" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         Date instrument was issued. For Fixed Income IOIs for new issues, specifies the issue date.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="231" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         For Fixed Income, Convertible Bonds, Derivatives, etc. Note: If used, quantities should be expressed in the "nominal" (e.g. contracts vs. shares) amount.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1435" added="FIX.5.0SP1" addedEP="80" updated="FIX.5.0SP2" updatedEP="179">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="996" added="FIX.4.4" updated="FIX.Latest" updatedEP="271">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1147" added="FIX.5.0">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1716" added="FIX.5.0SP2" addedEP="122">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1191" added="FIX.5.0">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1192" added="FIX.5.0">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1717" added="FIX.5.0SP2" addedEP="122">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1193" added="FIX.5.0" updated="FIX.5.0SP2" updatedEP="195">
+        <fixr:annotation>
+          <fixr:documentation>
+         Conditionally required if SettlSubMethod(2579) is specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="2579" added="FIX.5.0SP2" addedEP="195">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1244" added="FIX.5.0">
+        <fixr:annotation>
+          <fixr:documentation>
+         Used to indicate if a security has been defined as flexible according to "non-standard" means. Analog to CFICode Standard/Non-standard indicator
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="207" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         Can be used to identify the security.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="106" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="2737" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="2714" added="FIX.5.0SP2" addedEP="232">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="107" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="667" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation>
+         Must be present for MBS/TBA
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+    </fixr:component>
+  </fixr:components>
+  <fixr:groups latestEP="271">
+    <fixr:group id="2071" added="FIX.4.4" name="SecAltIDGrp" category="Common" abbrName="AID">
+      <fixr:numInGroup id="454">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:numInGroup>
+      <fixr:fieldRef id="455" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="456" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS"/>
+        <fixr:documentation purpose="ELABORATION"/>
+      </fixr:annotation>
+    </fixr:group>
+    <fixr:group id="2226" added="FIX.5.0SP2" addedEP="161" name="SecondaryAssetGrp" category="Common" abbrName="ScndryAsset">
+      <fixr:numInGroup id="1976">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:numInGroup>
+      <fixr:fieldRef id="1977" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation>
+         Required if NoSecondaryAssetClasses(1976) &gt; 0.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1978" added="FIX.5.0SP2" addedEP="161" updated="FIX.5.0SP2" updatedEP="235">
+        <fixr:annotation>
+          <fixr:documentation>
+         Required if SecondaryAssetType(1979) is specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1979" added="FIX.5.0SP2" addedEP="161" updated="FIX.5.0SP2" updatedEP="235">
+        <fixr:annotation>
+          <fixr:documentation>
+         Required if SecondaryAssetSubType(2741) is specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="2741" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         SecondaryAssetGrp is a repeating subcomponent of the Instrument component used to specify secondary assets of a multi-asset swap.
+      </fixr:documentation>
+        <fixr:documentation purpose="ELABORATION"/>
+      </fixr:annotation>
+    </fixr:group>
+    <fixr:group id="2241" added="FIX.5.0SP2" addedEP="169" name="AssetAttributeGrp" category="Common" abbrName="AssetAttrb">
+      <fixr:numInGroup id="2304">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:numInGroup>
+      <fixr:fieldRef id="2305" added="FIX.5.0SP2" addedEP="169">
+        <fixr:annotation>
+          <fixr:documentation>
+         Required if NoAssetAttributes(2304) &gt; 0.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="2306" added="FIX.5.0SP2" addedEP="169">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="2307" added="FIX.5.0SP2" addedEP="169">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The AssetAttributeGrp is a repeating subcomponent of the Instrument component used to detail attributes of the instrument asset.
+      </fixr:documentation>
+        <fixr:documentation purpose="ELABORATION"/>
+      </fixr:annotation>
+    </fixr:group>
+  </fixr:groups>
+  <fixr:messages latestEP="271"></fixr:messages>
+</fixr:repository>

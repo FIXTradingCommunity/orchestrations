@@ -45,7 +45,7 @@
 								<argument>${project.basedir}/OrchestraFIXLatest.xml</argument>
 							</arguments>
 						</configuration>
-					</execution>							
+					</execution>
 					<execution>
 						<phase>generate-resources</phase>
 						<goals>
@@ -55,7 +55,7 @@
 						<configuration>
 							<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
 							<arguments>
-								<argument>${project.basedir}/FixRepository42.xml</argument>
+								<argument>${project.basedir}/OrchestraFIX42.xml</argument>
 								<argument>${doc.directory}/fix42</argument>
 							</arguments>
 						</configuration>
@@ -69,7 +69,7 @@
 						<configuration>
 							<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
 							<arguments>
-								<argument>${project.basedir}/FixRepository44.xml</argument>
+								<argument>${project.basedir}/OrchestraFIX44.xml</argument>
 								<argument>${doc.directory}/fix44</argument>
 							</arguments>
 						</configuration>
@@ -115,7 +115,7 @@
 								<argument>${doc.directory}/fixtsession</argument>
 							</arguments>
 						</configuration>
-					</execution>									
+					</execution>
 				</executions>
 			</plugin>
 			<plugin>

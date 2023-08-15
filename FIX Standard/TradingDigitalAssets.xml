@@ -1,0 +1,1398 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<fixr:repository xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:fixr="http://fixprotocol.io/2020/orchestra/repository" name="Rules of Engagement for Digital Assets Version 1.0" version="1.0">
+    <fixr:metadata>
+        <dcterms:title>Trading Digital Assets</dcterms:title>
+        <dcterms:publisher>FIX Trading Community</dcterms:publisher>
+        <dcterms:rights>Copyright 2022, FIX Protocol, Limited</dcterms:rights>
+        <dcterms:date>2022-09-23</dcterms:date>
+    </fixr:metadata>
+    <fixr:datatypes>
+        <fixr:datatype name="Price" baseType="float" added="FIX.4.2">
+            <fixr:mappedDatatype standard="XML" builtin="false" base="xs:decimal">
+                <fixr:annotation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        float field representing a price. Note the number of decimal places may vary. For certain asset classes prices may be negative values. For example, prices for options strategies can be negative under certain market conditions. Refer to Volume 7: FIX Usage by Product for asset classes that support negative price values.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:mappedDatatype>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    float field representing a price. Note the number of decimal places may vary. For certain asset classes prices may be negative values. For example, prices for options strategies can be negative under certain market conditions. Refer to Volume 7: FIX Usage by Product for asset classes that support negative price values.</fixr:documentation>
+            </fixr:annotation>
+        </fixr:datatype>
+        <fixr:datatype name="String" added="FIX.4.2">
+            <fixr:mappedDatatype standard="XML" builtin="true" base="xs:string">
+                <fixr:annotation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case sensitive (i.e. morstatt != Morstatt).</fixr:documentation>
+                </fixr:annotation>
+            </fixr:mappedDatatype>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case sensitive (i.e. morstatt != Morstatt).</fixr:documentation>
+            </fixr:annotation>
+        </fixr:datatype>
+        <fixr:datatype name="Length" baseType="int" added="FIX.4.3">
+            <fixr:mappedDatatype standard="XML" builtin="false" base="xs:nonNegativeInteger">
+                <fixr:annotation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        int field representing the length in bytes. Value must be positive.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:mappedDatatype>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    int field representing the length in bytes. Value must be positive.</fixr:documentation>
+            </fixr:annotation>
+        </fixr:datatype>
+        <fixr:datatype name="Qty" baseType="float" added="FIX.4.2">
+            <fixr:mappedDatatype standard="XML" builtin="false" base="xs:decimal">
+                <fixr:annotation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        float field capable of storing either a whole number (no decimal places) of "shares" (securities denominated in whole units) or a decimal value containing decimal places for non-share quantity asset classes (securities denominated in fractional units).</fixr:documentation>
+                </fixr:annotation>
+            </fixr:mappedDatatype>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    float field capable of storing either a whole number (no decimal places) of "shares" (securities denominated in whole units) or a decimal value containing decimal places for non-share quantity asset classes (securities denominated in fractional units).</fixr:documentation>
+            </fixr:annotation>
+        </fixr:datatype>
+        <fixr:datatype name="Currency" baseType="String" added="FIX.4.2">
+            <fixr:mappedDatatype standard="XML" builtin="false" base="xs:string" pattern=".{3}">
+                <fixr:annotation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        string field representing a currency type using ISO 4217 Currency code (3 character) values (see Appendix 6-A).</fixr:documentation>
+                </fixr:annotation>
+            </fixr:mappedDatatype>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    string field representing a currency type using ISO 4217 Currency code (3 character) values (see Appendix 6-A).</fixr:documentation>
+            </fixr:annotation>
+        </fixr:datatype>
+        <fixr:datatype name="Exchange" baseType="String" added="FIX.4.2">
+            <fixr:mappedDatatype standard="XML" builtin="false" base="xs:string" pattern=".*">
+                <fixr:annotation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        string field representing a market or exchange using ISO 10383 Market Identifier Code (MIC) values (see"Appendix 6-C).</fixr:documentation>
+                </fixr:annotation>
+            </fixr:mappedDatatype>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    string field representing a market or exchange using ISO 10383 Market Identifier Code (MIC) values (see"Appendix 6-C).</fixr:documentation>
+            </fixr:annotation>
+        </fixr:datatype>
+        <fixr:datatype name="SeqNum" baseType="int" added="FIX.4.3">
+            <fixr:mappedDatatype standard="XML" builtin="false" base="xs:positiveInteger">
+                <fixr:annotation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        int field representing a message sequence number. Value must be positive.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:mappedDatatype>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    int field representing a message sequence number. Value must be positive.</fixr:documentation>
+            </fixr:annotation>
+        </fixr:datatype>
+        <fixr:datatype name="UTCTimestamp" baseType="String" added="FIX.4.2" updated="FIX.5.0SP2" updatedEP="256">
+            <fixr:mappedDatatype standard="XML" builtin="false" base="xs:dateTime">
+                <fixr:annotation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        string field representing date and time combination Universal Time Coordinated (UTC), also known as Greenwich Mean Time (GMT).</fixr:documentation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        Its value space is described as the combination of date and time of day in the Chapter 5.4 of ISO 8601.</fixr:documentation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        Valid values are in the format YYYY-MM-DDTHH:MM:SS.s where YYYY = 0000-9999 year, MM = 01-12 month, DD = 01-31 day, HH = 00-23 hour, MM = 00-59 minute, SS = 00-60 second (60 only if UTC leap second), and optionally one or more digits representing a decimal fraction of a second.</fixr:documentation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        The punctuation of "-", ":" and the string value of "T" to separate the date and time are required. The "." is only required when sub-second time precision is specified.</fixr:documentation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        Leap Seconds: Note that UTC includes corrections for leap seconds, which are inserted to account for slowing of the rotation of the earth. Leap second insertion is declared by the International Earth Rotation Service (IERS) and has, since 1972, only occurred on the night of Dec. 31 or Jun 30. The IERS considers March 31 and September 30 as secondary dates for leap second insertion, but has never utilized these dates. During a leap second insertion, a UTCTimestamp field may read "1998-12-31T23:59:59", "1998-12-31T23:59:60", "1999-01-01T00:00:00". (see http://tycho.usno.navy.mil/leapsec.html)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:mappedDatatype>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    string field representing time/date combination represented in UTC (Universal Time Coordinated, also known as "GMT") in either YYYYMMDD-HH:MM:SS (whole seconds) or YYYYMMDD-HH:MM:SS.sss* format, colons, dash, and period required.</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Valid values:</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    YYYY = 0000-9999, MM = 01-12, DD = 01-31, HH = 00-23, MM = 00-59, SS = 00-60 (60 only if UTC leap second), sss* fractions of seconds.</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    The fractions of seconds may be empty when no fractions of seconds are conveyed (in such a case the period is not conveyed), it may include 3 digits to convey milliseconds, 6 digits to convey microseconds, 9 digits to convey nanoseconds, 12 digits to convey picoseconds; Other number of digits may be used with bilateral agreement.</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Leap Seconds: Note that UTC includes corrections for leap seconds, which are inserted to account for slowing of the rotation of the earth. Leap second insertion is declared by the International Earth Rotation Service (IERS) and has, since 1972, only occurred on the night of Dec. 31 or Jun 30. The IERS considers March 31 and September 30 as secondary dates for leap second insertion, but has never utilized these dates. During a leap second insertion, a UTCTimestamp field may read "19981231-23:59:59", "19981231-23:59:60", "19990101-00:00:00". (see http://tycho.usno.navy.mil/leapsec.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:datatype>
+        <fixr:datatype name="LocalMktDate" baseType="String" added="FIX.4.2" updated="FIX.5.0SP2" updatedEP="206">
+            <fixr:mappedDatatype standard="XML" builtin="false" base="xs:date">
+                <fixr:annotation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        string field representing a Date of Local Market (as opposed to UTC) in YYYY-MM-DD format. This is the "normal" date field used by the FIX Protocol.</fixr:documentation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        Valid values:</fixr:documentation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        YYYY = 0000-9999, MM = 01-12, DD = 01-31.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:mappedDatatype>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    string field representing a Date of Local Market (as opposed to UTC) in YYYYMMDD format. This is the "normal" date field used by the FIX Protocol.</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Valid values:</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    YYYY = 0000-9999, MM = 01-12, DD = 01-31</fixr:documentation>
+            </fixr:annotation>
+        </fixr:datatype>
+        <fixr:datatype name="Amt" baseType="float" added="FIX.4.2">
+            <fixr:mappedDatatype standard="XML" builtin="false" base="xs:decimal">
+                <fixr:annotation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        float field typically representing a Price times a Qty</fixr:documentation>
+                </fixr:annotation>
+            </fixr:mappedDatatype>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    float field typically representing a Price times a Qty</fixr:documentation>
+            </fixr:annotation>
+        </fixr:datatype>
+        <fixr:datatype name="NumInGroup" baseType="int" added="FIX.4.3">
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    int field representing the number of entries in a repeating group. Value must be positive.</fixr:documentation>
+            </fixr:annotation>
+        </fixr:datatype>
+        <fixr:datatype name="int" added="FIX.2.7" updated="FIX.Latest" updatedEP="271">
+            <fixr:mappedDatatype standard="XML" builtin="true" base="xs:integer"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Sequence of digits without commas or decimals and optional sign character (ASCII characters "-" and "0" - "9" ). The sign character utilizes one byte (i.e. positive int is "99999" while negative int is "-99999"). Note that int values may contain leading zeros (e.g. "00023" = "23").</fixr:documentation>
+            </fixr:annotation>
+        </fixr:datatype>
+    </fixr:datatypes>
+    <fixr:codeSets>
+        <fixr:codeSet type="String" id="14661" name="CurrencyCodeSourceCodeSet">
+            <fixr:code value="1" id="34057" name="CUSIP"/>
+            <fixr:code value="2" id="28202" name="SEDOL"/>
+            <fixr:code value="4" id="39236" name="ISIN"/>
+            <fixr:code value="6" id="23606" name="ISO Currency Code (ISO 4217)"/>
+            <fixr:code value="S" id="17173" name="Financial Instrument Global Identifier (FIGI)"/>
+            <fixr:code value="Y" id="20875" name="Digital Token Identifier (ISO 24165)"/>
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">Used by CurrencyCodeSource(2897) and SettlCurrencyCodeSource(2899) in messages [NewOrderSingle(35=D)](#msg14), [ExecutionReport(35=8)](#msg9), [OrderCancelReplaceRequest(35=G)](#msg17).</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="int" added="FIX.2.7" id="102" name="CxlRejReasonCodeSet">
+            <fixr:code value="0" id="102001" name="Too late to cancel"/>
+            <fixr:code value="1" id="102002" name="Unknown order"/>
+            <fixr:code value="2" id="102003" name="Broker / Exchange Option"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Code to identify reason for cancel rejection.</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by CxlRejReason(102) in message [OrderCancelReject(35=9)](#msg10)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="char" added="FIX.4.2" id="434" name="CxlRejResponseToCodeSet">
+            <fixr:code value="1" id="434001" name="Order cancel request"/>
+            <fixr:code value="2" id="434002" name="Order cancel/replace request"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Identifies the type of request that a Cancel Reject is in response to.</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by CxlRejResponseTo(434) in message [OrderCancelReject(35=9)](#msg10)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="MultipleCharValue" added="FIX.2.7" id="18" name="ExecInstCodeSet">
+            <fixr:code value="G" id="18017" name="All or none (AON)"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Instructions for order handling on exchange trading floor. If more than one instruction is applicable to an order, this field can contain multiple instructions separated by space. *** SOME VALUES HAVE BEEN REPLACED - See "Replaced Features and Supported Approach" *** (see Volume : "Glossary" for value definitions)</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by ExecInst(18) in messages [NewOrderSingle(35=D)](#msg14), [OrderCancelReplaceRequest(35=G)](#msg17), [ExecutionReport(35=8)](#msg9)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="char" added="FIX.4.4" addedEP="26" id="1133" name="ExDestinationIDSourceCodeSet">
+            <fixr:code value="D" id="1133003" name="Proprietary / Custom code"/>
+            <fixr:code value="G" id="1133005" name="MIC (ISO 10383 - Market Identifier Code)"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    The ID source of ExDestination</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by ExDestinationIDSource(1133) in messages [NewOrderSingle(35=D)](#msg14), [ExecutionReport(35=8)](#msg9), [OrderCancelReplaceRequest(35=G)](#msg17), [OrderCancelReject(35=9)](#msg10), [OrderCancelRequest(35=F)](#msg16)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="char" added="FIX.4.1" updated="FIX.5.0SP2" updatedEP="131" id="150" name="ExecTypeCodeSet">
+            <fixr:code value="0" id="150001" name="New"/>
+            <fixr:code value="4" id="150003" name="Canceled"/>
+            <fixr:code value="5" id="150004" name="Replaced"/>
+            <fixr:code value="8" id="150007" name="Rejected"/>
+            <fixr:code value="B" id="150010" name="Calculated"/>
+            <fixr:code value="D" id="150012" name="Restated">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">ExecutionReport(35=8) message sent unsolicited by sellside, with ExecRestatementReason(378) set</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="I" id="150017" name="Order Status"/>
+            <fixr:code value="F" id="150014" name="Trade (partial fill or fill)"/>
+            <fixr:code value="G" id="150015" name="Trade Correct"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Describes the specific ExecutionRpt (e.g. Pending Cancel) while OrdStatus(39) will always identify the current order status (e.g. Partially Filled).</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by ExecType(150) in message [ExecutionReport(35=8)](#msg9)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="int" added="FIX.4.2" updated="FIX.5.0SP2" updatedEP="195" id="378" name="ExecRestatementReasonCodeSet">
+            <fixr:code value="0" id="378001" name="GT corporate action"/>
+            <fixr:code value="1" id="378002" name="GT renewal / restatement (no corporate action)"/>
+            <fixr:code value="2" id="378003" name="Verbal change"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    The reason for restatement when an ExecutionReport(35=8) or TradeCaptureReport(35=AE) message is sent with ExecType(150) = D (Restated) or used when communicating an unsolicited cancel.</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by ExecRestatementReason(378) in message [ExecutionReport(35=8)](#msg9)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="char" added="FIX.2.7" id="21" name="HandlInstCodeSet">
+            <fixr:code value="1" id="21001" name="Automated execution order, private, no Broker intervention"/>
+            <fixr:code value="2" id="21002" name="Automated execution order, public, Broker intervention OK"/>
+            <fixr:code value="3" id="21003" name="Manual order, best execution"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Instructions for order handling on Broker trading floor</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by HandlInst(21) in messages [NewOrderSingle(35=D)](#msg14), [OrderCancelReplaceRequest(35=G)](#msg17), [ExecutionReport(35=8)](#msg9)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="char" added="FIX.2.7" id="29" name="LastCapacityCodeSet">
+            <fixr:code value="1" id="29001" name="Agent"/>
+            <fixr:code value="2" id="29002" name="Cross as agent"/>
+            <fixr:code value="3" id="29003" name="Cross as principal"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Broker capacity in order execution</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by LastCapacity(29) in message [ExecutionReport(35=8)](#msg9)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="int" added="FIX.2.7" id="103" name="OrdRejReasonCodeSet">
+            <fixr:code value="0" id="103001" name="Broker / Exchange Option"/>
+            <fixr:code value="1" id="103002" name="Unknown symbol"/>
+            <fixr:code value="2" id="103003" name="Exchange Closed"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Code to identify reason for order rejection. Note: Values 3, 4, and 5 will be used when rejecting an order due to pre-allocation information errors.</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by OrdRejReason(103) in message [ExecutionReport(35=8)](#msg9)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="char" added="FIX.2.7" id="39" name="OrdStatusCodeSet">
+            <fixr:code value="0" id="39001" name="New"/>
+            <fixr:code value="1" id="39002" name="Partially filled"/>
+            <fixr:code value="2" id="39003" name="Filled"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Identifies current status of order. *** SOME VALUES HAVE BEEN REPLACED - See "Replaced Features and Supported Approach" *** (see Volume : "Glossary" for value definitions)</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by OrdStatus(39) in messages [ExecutionReport(35=8)](#msg9), [OrderCancelReject(35=9)](#msg10)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="char" added="FIX.2.7" id="40" name="OrdTypeCodeSet">
+            <fixr:code value="1" id="40001" name="Market"/>
+            <fixr:code value="2" id="40002" name="Limit"/>
+            <fixr:code value="3" id="40003" name="Stop/Stop Loss"/>
+            <fixr:code value="4" id="40004" name="Stop Limit"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Order type. *** SOME VALUES ARE NO LONGER USED - See "Deprecated (Phased-out) Features and Supported Approach" *** (see Volume : "Glossary" for value definitions)</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by OrdType(40) in messages [NewOrderSingle(35=D)](#msg14), [OrderCancelReplaceRequest(35=G)](#msg17), [ExecutionReport(35=8)](#msg9)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="char" added="FIX.4.3" id="447" name="PartyIDSourceCodeSet">
+            <fixr:code value="N" id="447023" name="Legal Entity Identifier (ISO 17442) LEI"/>
+            <fixr:code value="C" id="447014" name="Generally accepted market participant identifier"/>
+            <fixr:code value="D" id="447015" name="Proprietary / Custom code">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Custom ID schema used between counterparties, trading platforms and repositories.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Identifies class or source of the PartyID (448) value. Required if PartyID is specified. Note: applicable values depend upon PartyRole (452) specified.</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    See "Appendix 6-G - Use of &lt;Parties&gt; Component Block"</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by PartyIDSource(447) in group [Parties](#cmp1012)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="int" added="FIX.4.3" updated="FIX.5.0SP2" updatedEP="256" id="452" name="PartyRoleCodeSet">
+            <fixr:code value="1" id="452001" name="Executing Firm"/>
+            <fixr:code value="3" id="452003" name="Client ID"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Identifies the type or role of the PartyID (448) specified.</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by PartyRole(451) in group [Parties](#cmp1012)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="int" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="204" id="803" name="PartySubIDTypeCodeSet">
+            <fixr:code value="1" id="803001" name="Firm"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Type of PartySubID(523) value.</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by PartySubIDType(803) in group [PtysSubGrp](#cmp2077)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="int" added="FIX.4.2" updated="FIX.Latest" updatedEP="271" id="423" name="PriceTypeCodeSet">
+            <fixr:code value="2" id="423002" name="Per unit (i.e. per share or contract)">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Use for Cryptotokens (i.e. per token) representing other assets (ICOs).</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="3" id="423003" name="Fixed amount (absolute value)">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Use for Cryptocurrency with Price(44) in Currency(15) units.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Code to represent the price type.</fixr:documentation>
+                <fixr:documentation purpose="ELABORATION">
+                    </fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by PriceType(423) in messages [NewOrderSingle(35=D)](#msg14), [ExecutionReport(35=8)](#msg9), [OrderCancelReplaceRequest(35=G)](#msg17)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="String" added="FIX.2.7" updated="FIX.5.0SP2" updatedEP="161" id="22" name="SecurityIDSourceCodeSet">
+            <fixr:code value="1" id="22001" name="CUSIP"/>
+            <fixr:code value="2" id="22002" name="SEDOL"/>
+            <fixr:code value="4" id="22004" name="ISIN"/>
+            <fixr:code value="6" id="22006" name="ISO Currency Code (ISO 4217)"/>
+            <fixr:code value="S" id="22027" name="Financial Instrument Global Identifier (FIGI)"/>
+            <fixr:code value="Y" id="24603" name="Digital Token Identifier (ISO 24165)"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Identifies class or source of the SecurityID(48) value.</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by SecurityID(48) in component [Instrument](#cmp1003) and by SecurityAltID(455) in group [SecAltIDGrp](#cmp2071).</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="String" added="FIX.4.1" id="167" name="SecurityTypeCodeSet">
+            <fixr:code value="DIGITAL" id="11786" name="Digital Asset">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Asset that exists only in digital form or which is the digital representation of another asset (Source: ISO 24165 - Terms and Definitions).</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Indicates type of security. Security type enumerations are grouped by Product(460) field value. NOTE: Additional values may be used by mutual agreement of the counterparties.</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by SecurityType(167) in component [Instrument](#cmp1003)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="char" added="FIX.2.7" id="54" name="SideCodeSet">
+            <fixr:code value="1" id="54001" name="Buy"/>
+            <fixr:code value="2" id="54002" name="Sell"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Side of order (see Volume : "Glossary" for value definitions)</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by Side(54) in messages [NewOrderSingle(35=D)](#msg14), [ExecutionReport(35=8)](#msg9), [OrderCancelReplaceRequest(35=G)](#msg17), [OrderCancelRequest(35=F)](#msg16), [OrderStatusRequest(35=H)](#msg18)  </fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="char" added="FIX.2.7" updated="FIX.5.0SP2" updatedEP="253" id="59" name="TimeInForceCodeSet">
+            <fixr:code value="0" id="59001" name="Day (or session)"/>
+            <fixr:code value="1" id="59002" name="Good Till Cancel (GTC)"/>
+            <fixr:code value="3" id="59004" name="Immediate Or Cancel (IOC)"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Specifies how long the order remains in effect. Absence of this field is interpreted as DAY. NOTE not applicable to CIV Orders.</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by TimeInForce(59) in messages [NewOrderSingle(35=D)](#msg14), [OrderCancelReplaceRequest(35=G)](#msg17), [ExecutionReport(35=8)](#msg9)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+        <fixr:codeSet type="int" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="253" id="770" name="TrdRegTimestampTypeCodeSet">
+            <fixr:code value="1" id="770001" name="Execution Time"/>
+            <fixr:code value="2" id="770002" name="Time in"/>
+            <fixr:code value="3" id="770003" name="Time out"/>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Trading / Regulatory timestamp type.</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Note of applicability: Values are required in various regulatory environments: required for US futures markets to support computerized trade reconstruction, required by MiFID II / MiFIR for transaction reporting and publication, and required by FINRA for reporting to the Consolidated Audit Trail (CAT).</fixr:documentation>
+                <fixr:documentation contentType="text/markdown">Used by TrdRegTimestampType(770) in group [TrdRegTimestamps](#cmp1020)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:codeSet>
+    </fixr:codeSets>
+    <fixr:fields>
+        <fixr:field type="Price" id="6" name="AvgPx">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag6.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="8" name="BeginString">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag8.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Length" id="9" name="BodyLength">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag9.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="10" name="CheckSum">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag10.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="11" name="ClOrdID">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag11.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Qty" id="14" name="CumQty">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag14.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Currency" id="15" name="Currency">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag15.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="17" name="ExecID">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag17.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="ExecInstCodeSet" id="18" name="ExecInst">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds18) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag18.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="19" name="ExecRefID">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag19.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="HandlInstCodeSet" id="21" name="HandlInst">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds21) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag21.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="SecurityIDSourceCodeSet" id="22" name="SecurityIDSource">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds22) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag22.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="LastCapacityCodeSet" id="29" name="LastCapacity">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds29) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag29.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Exchange" id="30" name="LastMkt">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag30.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Price" id="31" name="LastPx">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag31.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Qty" id="32" name="LastQty">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag32.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="SeqNum" id="34" name="MsgSeqNum">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag34.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="35" name="MsgType">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag35.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="37" name="OrderID">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag37.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Qty" id="38" name="OrderQty">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag38.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="OrdStatusCodeSet" id="39" name="OrdStatus">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds39) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag39.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="OrdTypeCodeSet" id="40" name="OrdType">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds40) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag40.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="41" name="OrigClOrdID">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag41.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Price" id="44" name="Price">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag44.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="48" name="SecurityID">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag48.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="49" name="SenderCompID">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag49.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="UTCTimestamp" id="52" name="SendingTime">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag52.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="SideCodeSet" id="54" name="Side">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds54) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag54.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="55" name="Symbol">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag55.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="56" name="TargetCompID">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag56.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="58" name="Text">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag58.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="TimeInForceCodeSet" id="59" name="TimeInForce">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds59) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag59.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="UTCTimestamp" id="60" name="TransactTime">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag60.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="LocalMktDate" id="75" name="TradeDate">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag75.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Price" id="99" name="StopPx">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag99.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Exchange" id="100" name="ExDestination">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag100.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="CxlRejReasonCodeSet" id="102" name="CxlRejReason">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds102) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag102.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="OrdRejReasonCodeSet" id="103" name="OrdRejReason">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds103) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag103.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="106" name="Issuer">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag106.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="107" name="SecurityDesc">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag107.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Amt" id="119" name="SettlCurrAmt">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag119.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Currency" id="120" name="SettlCurrency">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag120.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="ExecTypeCodeSet" id="150" name="ExecType">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds150) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag150.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Qty" id="151" name="LeavesQty">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag151.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Qty" id="152" name="CashOrderQty">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag152.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="SecurityTypeCodeSet" id="167" name="SecurityType">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds167) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag157.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Exchange" id="207" name="SecurityExchange">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag207.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="ExecRestatementReasonCodeSet" id="378" name="ExecRestatementReason">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds378) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag378.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="PriceTypeCodeSet" id="423" name="PriceType">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds423) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag452.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="CxlRejResponseToCodeSet" id="434" name="CxlRejResponseTo">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds434) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag434.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="PartyIDSourceCodeSet" id="447" name="PartyIDSource">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds447) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag447.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="448" name="PartyID">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag448.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="PartyRoleCodeSet" id="452" name="PartyRole">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds452) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag452.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="NumInGroup" id="453" name="NoPartyIDs">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag453.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="NumInGroup" id="454" name="NoSecurityAltID">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag454.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="455" name="SecurityAltID">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag455.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="SecurityIDSourceCodeSet" id="456" name="SecurityAltIDSource">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds456) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag456.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="523" name="PartySubID">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag523.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="NumInGroup" id="768" name="NoTrdRegTimestamps">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag768.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="UTCTimestamp" id="769" name="TrdRegTimestamp">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag769.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="TrdRegTimestampTypeCodeSet" id="770" name="TrdRegTimestampType">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds770) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag770.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="String" id="790" name="OrdStatusReqID">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag790.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="NumInGroup" id="802" name="NoPartySubIDs">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag802.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="PartySubIDTypeCodeSet" id="803" name="PartySubIDType">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds803) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag847.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="Qty" id="1056" name="CalculatedCcyLastQty">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag1056.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="ExDestinationIDSourceCodeSet" id="1133" name="ExDestinationIDSource">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds1133) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag1133.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="CurrencyCodeSourceCodeSet" id="2897" name="CurrencyCodeSource">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds2897) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag2897.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="CurrencyCodeSourceCodeSet" id="2899" name="SettlCurrencyCodeSource">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Values](#cds2899) / [Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag2899.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+        <fixr:field type="int" id="2957" name="SymbolPositionNumber">
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[Online](https://fiximate.fixtrading.org/en/FIX.Latest/tag2957.html)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:field>
+    </fixr:fields>
+    <fixr:components>
+        <fixr:component id="1003" name="Instrument">
+            <fixr:fieldRef presence="required" id="55"/>
+            <fixr:fieldRef id="48"/>
+            <fixr:fieldRef id="22">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">See [code set](#cds22) for supported values.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:groupRef id="2071">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">See [group](#cmp2071) for details.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:groupRef>
+            <fixr:fieldRef id="167">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">See [code set](#cds167) for supported values.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:fieldRef id="207"/>
+            <fixr:fieldRef id="106"/>
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[See complete definition online (FIX Latest).](https://fiximate.fixtrading.org/en/FIX.Latest/cmp1003.html)
+
+Used in messages [NewOrderSingle(35=D)](#msg14), [ExecutionReport(35=8)](#msg9), [OrderCancelReplaceRequest(35=G)](#msg17), [OrderCancelRequest(35=F)](#msg16), [OrderStatusRequest(35=H)](#msg18)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:component>
+        <fixr:component id="1011" name="OrderQtyData">
+            <fixr:fieldRef id="38">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Used to specify order quantity in number of tokens.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:fieldRef id="152">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Used to specify the order quantity as a total amount of ccy1 currency.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[See complete definition online (FIX Latest).](https://fiximate.fixtrading.org/en/FIX.Latest/cmp1011.html)
+
+Used in messages [NewOrderSingle(35=D)](#msg14), [ExecutionReport(35=8)](#msg9), [OrderCancelReplaceRequest(35=G)](#msg17), [OrderCancelRequest(35=F)](#msg16)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:component>
+        <fixr:component id="1024" name="StandardHeader">
+            <fixr:fieldRef presence="required" id="8">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">FIXT.1.1 (Always unencrypted, must be first field in message)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:fieldRef presence="required" id="9">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">(Always unencrypted, must be second field in message)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:fieldRef presence="required" id="35">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">(Always unencrypted, must be third field in message)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:fieldRef presence="required" id="49">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">(Always unencrypted)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:fieldRef presence="required" id="56">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">(Always unencrypted)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:fieldRef presence="required" id="34">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">(Can be embedded within encrypted data section.)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:fieldRef presence="required" id="52">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">(Can be embedded within encrypted data section.)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">The standard FIX message header.</fixr:documentation>
+            </fixr:annotation>
+        </fixr:component>
+        <fixr:component id="1025" name="StandardTrailer">
+            <fixr:fieldRef presence="required" id="10">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">(Always unencrypted, always last field in message)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">The standard FIX message trailer.</fixr:documentation>
+            </fixr:annotation>
+        </fixr:component>
+    </fixr:components>
+    <fixr:groups>
+        <fixr:group id="1012" name="Parties">
+            <fixr:numInGroup id="453"/>
+            <fixr:fieldRef id="448"/>
+            <fixr:fieldRef id="447"/>
+            <fixr:fieldRef id="452">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">See [code set](#cds452) for supported values.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:groupRef id="2077">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">See [group](#cmp2077) for details.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:groupRef>
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[See complete definition online (FIX Latest).](https://fiximate.fixtrading.org/en/FIX.Latest/cmp1012.html)
+
+Used in messages [NewOrderSingle(35=D)](#msg14), [ExecutionReport(35=8)](#msg9), [OrderCancelReplaceRequest(35=G)](#msg17), [OrderCancelRequest(35=F)](#msg16), [OrderStatusRequest(35=H)](#msg18)
+
+The Parties component block is used to identify and convey information on the entities both central and peripheral to the financial transaction represented by the FIX message containing the Parties Block. The Parties block allows many different types of entities to be expressed through use of the PartyRole(452) field and identifies the source of the PartyID(448) through the the PartyIDSource(447).</fixr:documentation>
+            </fixr:annotation>
+        </fixr:group>
+        <fixr:group id="2077" name="PtysSubGrp">
+            <fixr:numInGroup id="802"/>
+            <fixr:fieldRef id="523"/>
+            <fixr:fieldRef id="803">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">See [code set](#cds803) for supported values.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[See complete definition online (FIX Latest).](https://fiximate.fixtrading.org/en/FIX.Latest/cmp2077.html)
+
+Used in group [Parties](#cmp1012)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:group>
+        <fixr:group id="2071" name="SecAltIDGrp">
+            <fixr:numInGroup id="454"/>
+            <fixr:fieldRef id="455"/>
+            <fixr:fieldRef id="456">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">See [code set](#cds456) for supported values.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:fieldRef id="2957"/>
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[See complete definition online (FIX Latest).](https://fiximate.fixtrading.org/en/FIX.Latest/cmp2071.html)
+
+Used in component [Instrument](#cmp1003)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:group>
+        <fixr:group id="1020" name="TrdRegTimestamps">
+            <fixr:numInGroup id="768"/>
+            <fixr:fieldRef id="769"/>
+            <fixr:fieldRef id="770">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">See [code set](#cds770) for supported values.</fixr:documentation>
+                </fixr:annotation>
+            </fixr:fieldRef>
+            <fixr:annotation>
+                <fixr:documentation contentType="text/markdown">[See complete definition online (FIX Latest).](https://fiximate.fixtrading.org/en/FIX.Latest/cmp1020.html)
+
+Used in messages [NewOrderSingle(35=D)](#msg14), [ExecutionReport(35=8)](#msg9), [OrderCancelReplaceRequest(35=G)](#msg17)</fixr:documentation>
+            </fixr:annotation>
+        </fixr:group>
+    </fixr:groups>
+    <fixr:messages>
+        <fixr:message msgType="D" category="SingleGeneralOrderHandling" id="14" name="NewOrderSingle" abbrName="Order" scenario="base" added="FIX.2.7">
+            <fixr:structure>
+                <fixr:componentRef presence="required" id="1024">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">MsgType = D See [component](#cmp1024) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef presence="required" id="11"/>
+                <fixr:groupRef id="1012">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [group](#cmp1012) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:groupRef>
+                <fixr:fieldRef id="21">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds21) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="18">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds18) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="100">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Can be used to identify the destination Cryptoexchange.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="1133">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds1133) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:componentRef presence="required" id="1003">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1003) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef presence="required" id="54">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds54) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef presence="required" id="60">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Time this order request was initiated/released by the trader, trading system, or intermediary.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:componentRef presence="required" id="1011">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1011) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef presence="required" id="40">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds40) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="423">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds423) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="44"/>
+                <fixr:fieldRef id="99">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Required for OrdType(40)=3 (Stop) or OrdType(40)=4  (Stop limit).</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="15"/>
+                <fixr:fieldRef id="2897">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds2897) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="59">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds59) for supported values. Absence of this field indicates Day order.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="120"/>
+                <fixr:fieldRef id="2899">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds2899) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="58"/>
+                <fixr:groupRef id="1020">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [group](#cmp1020) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:groupRef>
+                <fixr:componentRef presence="required" id="1025">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1025) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+            </fixr:structure>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    The new order message type is used by institutions wishing to electronically submit securities and forex orders to a broker for execution.</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    The New Order message type may also be used by institutions or retail intermediaries wishing to electronically submit Collective Investment Vehicle (CIV) orders to a broker or fund manager for execution.</fixr:documentation>
+            </fixr:annotation>
+        </fixr:message>
+        <fixr:message msgType="8" category="SingleGeneralOrderHandling" id="9" name="ExecutionReport" abbrName="ExecRpt" scenario="base" added="FIX.2.7">
+            <fixr:structure>
+                <fixr:componentRef presence="required" id="1024">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">MsgType = 8 See [component](#cmp1024) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef presence="required" id="37"/>
+                <fixr:fieldRef id="11"/>
+                <fixr:fieldRef id="41"/>
+                <fixr:groupRef id="1012">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [group](#cmp1012) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:groupRef>
+                <fixr:fieldRef presence="required" id="17"/>
+                <fixr:fieldRef id="19">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Required for Trade Cancel and Trade Correct ExecType(150) messages.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef presence="required" id="150"/>
+                <fixr:fieldRef presence="required" id="39"/>
+                <fixr:fieldRef id="103">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">For optional use with ExecType(150)=8 (Rejected)</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="378">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Required for ExecType(150)=D (Restated)</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:componentRef presence="required" id="1003">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1003) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef presence="required" id="54"/>
+                <fixr:componentRef id="1011">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1011) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef id="40">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds40) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="423">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds423) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="44">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Required if specified on the order.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="99">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Required if specified on the order.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="15"/>
+                <fixr:fieldRef id="2897">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds2897) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="59">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds59) for supported values. Absence of this field indicates Day order.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="18">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds18) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="32"/>
+                <fixr:fieldRef id="1056"/>
+                <fixr:fieldRef id="31"/>
+                <fixr:fieldRef id="30">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">If ExecType(150)=F (Trade), indicates the market where the trade was executed. If ExecType(150)=0 (New), indicates the market where the order was routed.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="29"/>
+                <fixr:fieldRef presence="required" id="151"/>
+                <fixr:fieldRef presence="required" id="14"/>
+                <fixr:fieldRef id="6">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Not required for markets where average price is not calculated by the market. Conditionally required otherwise.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="75">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Used when reporting other than current day trades.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="60"/>
+                <fixr:fieldRef id="119"/>
+                <fixr:fieldRef id="120"/>
+                <fixr:fieldRef id="2899">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds2899) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="21">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds21) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="58"/>
+                <fixr:groupRef id="1020">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [group](#cmp1020) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:groupRef>
+                <fixr:componentRef presence="required" id="1025">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1025) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+            </fixr:structure>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    The execution report message is used to:</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    1. confirm the receipt of an order</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    2. confirm changes to an existing order (i.e. accept cancel and replace requests)</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    3. relay order status information</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    4. relay fill information on working orders</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    5. relay fill information on tradeable or restricted tradeable quotes</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    6. reject orders</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    7. report post-trade fees calculations associated with a trade</fixr:documentation>
+            </fixr:annotation>
+        </fixr:message>
+        <fixr:message msgType="G" category="SingleGeneralOrderHandling" id="17" name="OrderCancelReplaceRequest" abbrName="OrdCxlRplcReq" scenario="base" added="FIX.2.7">
+            <fixr:structure>
+                <fixr:componentRef presence="required" id="1024">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">MsgType = G See [component](#cmp1024) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef id="37">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Unique identifier of most recent order as assigned by sell-side (broker, exchange, ECN).</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:groupRef id="1012">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [group](#cmp1012) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:groupRef>
+                <fixr:fieldRef id="41"/>
+                <fixr:fieldRef presence="required" id="11"/>
+                <fixr:fieldRef id="21">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds21) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="18"/>
+                <fixr:fieldRef id="100"/>
+                <fixr:fieldRef id="1133">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds1133) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:componentRef presence="required" id="1003">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1003) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef presence="required" id="54">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds54) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef presence="required" id="60"/>
+                <fixr:componentRef presence="required" id="1011">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1011) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef presence="required" id="40">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds40) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="423">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds423) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="44"/>
+                <fixr:fieldRef id="99">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Required for OrdType(40)=3(Stop) or OrdType(40) =4(Stop limit).</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="15"/>
+                <fixr:fieldRef id="2897">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds2897) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="59">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds59) for supported values. Absence of this field indicates Day order.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="120"/>
+                <fixr:fieldRef id="2899">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds2899) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="58"/>
+                <fixr:groupRef id="1020">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [group](#cmp1020) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:groupRef>
+                <fixr:componentRef presence="required" id="1025">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1025) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+            </fixr:structure>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    The order cancel/replace request is used to change the parameters of an existing order.</fixr:documentation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Do not use this message to cancel the remaining quantity of an outstanding order, use the Order Cancel Request message for this purpose.</fixr:documentation>
+            </fixr:annotation>
+        </fixr:message>
+        <fixr:message msgType="F" category="SingleGeneralOrderHandling" id="16" name="OrderCancelRequest" abbrName="OrdCxlReq" scenario="base" added="FIX.2.7">
+            <fixr:structure>
+                <fixr:componentRef presence="required" id="1024">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">MsgType = F See [component](#cmp1024) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef id="41"/>
+                <fixr:fieldRef id="37"/>
+                <fixr:fieldRef presence="required" id="11">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Unique ID of cancel request as assigned by the institution.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:groupRef id="1012">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [group](#cmp1012) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:groupRef>
+                <fixr:componentRef presence="required" id="1003">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1003) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef presence="required" id="54">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds54) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef presence="required" id="60">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Time this order request was initiated/released by the trader or trading system.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:componentRef presence="required" id="1011">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1011) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef id="58"/>
+                <fixr:componentRef presence="required" id="1025">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1025) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+            </fixr:structure>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    The order cancel request message requests the cancellation of all of the remaining quantity of an existing order. Note that the Order Cancel/Replace Request should be used to partially cancel (reduce) an order).</fixr:documentation>
+            </fixr:annotation>
+        </fixr:message>
+        <fixr:message msgType="9" category="SingleGeneralOrderHandling" id="10" name="OrderCancelReject" abbrName="OrdCxlRej" scenario="base" added="FIX.2.7">
+            <fixr:structure>
+                <fixr:componentRef presence="required" id="1024">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">MsgType = 9 See [component](#cmp1024) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef presence="required" id="37">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">If CxlRejReason(102)=1 (Unknown order), specify "NONE".</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="11"/>
+                <fixr:fieldRef id="41"/>
+                <fixr:fieldRef presence="required" id="39"/>
+                <fixr:fieldRef presence="required" id="60"/>
+                <fixr:fieldRef presence="required" id="434"/>
+                <fixr:fieldRef id="102"/>
+                <fixr:fieldRef id="58"/>
+                <fixr:componentRef presence="required" id="1025">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1025) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+            </fixr:structure>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    The order cancel reject message is issued by the broker upon receipt of a cancel request or cancel/replace request message which cannot be honored.</fixr:documentation>
+            </fixr:annotation>
+        </fixr:message>
+        <fixr:message msgType="H" category="SingleGeneralOrderHandling" id="18" name="OrderStatusRequest" abbrName="OrdStatReq" scenario="base" added="FIX.2.7">
+            <fixr:structure>
+                <fixr:componentRef presence="required" id="1024">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">MsgType = H See [component](#cmp1024) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef id="37">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Conditionally required if ClOrdID(11) is not provided. Either OrderID(37) or ClOrdID(11) must be provided.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:fieldRef id="11">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">The ClOrdID(11) of the order whose status is being requested. Conditionally required if the OrderID(37) is not provided. Either OrderID(37) or ClOrdID(11) must be provided.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:groupRef id="1012">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [group](#cmp1012) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:groupRef>
+                <fixr:fieldRef id="790">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">Optional, can be used to uniquely identify a specific OrderStatusRequest(35=H) message. Echoed back on ExecutionReport(35=8) if provided.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:componentRef presence="required" id="1003">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1003) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+                <fixr:fieldRef presence="required" id="54">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [code set](#cds54) for supported values.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:fieldRef>
+                <fixr:componentRef presence="required" id="1025">
+                    <fixr:annotation>
+                        <fixr:documentation contentType="text/markdown">See [component](#cmp1025) for details.</fixr:documentation>
+                    </fixr:annotation>
+                </fixr:componentRef>
+            </fixr:structure>
+            <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    The order status request message is used by the institution to generate an order status message back from the broker.</fixr:documentation>
+            </fixr:annotation>
+        </fixr:message>
+    </fixr:messages>
+    <fixr:annotation>
+        <fixr:documentation purpose="RULES" contentType="text/markdown">The following tables show the baseline recommended set of FIX fields used for sending order related FIX messages between trading counterparties when trading digital assets. The full set of fields for these messages and components can be found in the [online specification](https://www.fixtrading.org/online-specification/).</fixr:documentation>
+    </fixr:annotation>
+</fixr:repository>

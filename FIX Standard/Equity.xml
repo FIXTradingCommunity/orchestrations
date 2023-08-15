@@ -1,0 +1,635 @@
+<fixr:repository
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:fixr="http://fixprotocol.io/2020/orchestra/repository"
+  xmlns:functx="http://www.functx.com"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" name="FIX Latest for Equities" version="FIX.Latest_EP272">
+  <fixr:metadata>
+    <dc:title>Orchestra</dc:title>
+    <dc:publisher>FIX Trading Community</dc:publisher>
+    <dc:date>2022-08-03T15:51:00.401Z</dc:date>
+    <dc:format>Orchestra schema</dc:format>
+    <dc:contributor>playlist</dc:contributor>
+  </fixr:metadata>
+  <fixr:codeSets>
+    <fixr:codeSet name="SecurityIDSourceCodeSet" id="22" type="String" added="FIX.2.7" updated="FIX.5.0SP2" updatedEP="161">
+      <fixr:code name="CUSIP" id="22001" value="1" sort="1" added="FIX.2.7">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         CUSIP
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="SEDOL" id="22002" value="2" sort="2" added="FIX.2.7">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         SEDOL
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="QUIK" id="22003" value="3" sort="3" added="FIX.2.7">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         QUIK
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="ISINNumber" id="22004" value="4" sort="4" added="FIX.3.0" updated="FIX.5.0SP2" updatedEP="232">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         ISIN
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="RICCode" id="22005" value="5" sort="5" added="FIX.3.0" updated="FIX.5.0SP2" updatedEP="232">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         RIC
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="ExchangeSymbol" id="22008" value="8" sort="8" added="FIX.4.2" updated="FIX.5.0SP2" updatedEP="119">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Exchange symbol
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="ConsolidatedTapeAssociation" id="22009" value="9" sort="9" added="FIX.4.2">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Consolidated Tape Association (CTA) Symbol (SIAC CTS/CQS line format)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="BloombergSymbol" id="22010" value="A" sort="10" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Bloomberg Symbol
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Wertpapier" id="22011" value="B" sort="11" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Wertpapier
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Dutch" id="22012" value="C" sort="12" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Dutch
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Valoren" id="22013" value="D" sort="13" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Valoren
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Sicovam" id="22014" value="E" sort="14" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Sicovam
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Belgian" id="22015" value="F" sort="15" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Belgian
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Common" id="22016" value="G" sort="16" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         "Common" (Clearstream and Euroclear)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="ClearingHouse" id="22017" value="H" sort="17" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="119">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Clearing house / Clearing organization
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="MarketplaceAssignedIdentifier" id="22022" value="M" sort="22" added="FIX.5.0" addedEP="58">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Marketplace-assigned Identifier
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="FinancialInstrumentGlobalIdentifier" id="22027" value="S" sort="27" added="FIX.5.0SP2" addedEP="158" updated="FIX.5.0SP2" updatedEP="202">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Financial Instrument Global Identifier
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         An Object Management Group (OMG) standard. Also referred to as FIGI. Formerly known as "Bloomberg Open Symbology BBGID".
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="FidessaInstrumentMnemonic" id="22030" value="V" sort="30" added="FIX.5.0SP2" addedEP="220">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Fidessa Instrument Mnemonic (FIM)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="UniformSymbol" id="22032" value="X" sort="32" added="FIX.5.0SP2" addedEP="242">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Uniform Symbol (UMTF Symbol)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Identifies class or source of the SecurityID(48) value.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="SymbolSfxCodeSet" id="65" type="String" added="FIX.2.7">
+      <fixr:code name="WhenIssued" id="65002" value="WI" group="For Fixed Income" sort="2" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         "When Issued" for a security to be reissued under an old CUSIP or ISIN
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Additional information about the security (e.g. preferred, warrants, etc.). Note also see SecurityType (167).
+         As defined in the NYSE Stock and bond Symbol Directory and in the AMEX Fitch Directory.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="SecurityTypeCodeSet" id="167" type="String" added="FIX.4.1">
+      <fixr:code name="CommonStock" id="167062" value="CS" group="Equity" sort="0" added="FIX.4.1">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Common Stock
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="PreferredStock" id="167063" value="PS" group="Equity" sort="1" added="FIX.4.1">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Preferred Stock
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="DepositoryReceipts" id="167064" value="DR" group="Equity" sort="2" added="FIX.5.0SP2" addedEP="236">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Depository Receipts
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="ExchangeTradedFund" id="167181" value="ETF" group="Other" sort="11" added="FIX.Latest" addedEP="272">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Exchange Traded Fund
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates type of security. Security type enumerations are grouped by Product(460) field value. NOTE: Additional values may be used by mutual agreement of the counterparties.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="ProductCodeSet" id="460" type="int" added="FIX.4.3">
+      <fixr:code name="EQUITY" id="460005" value="5" sort="5" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         EQUITY
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the type of product the security is associated with. See also the CFICode (461) and SecurityType (167) fields.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="AssetClassCodeSet" id="1938" type="int" added="FIX.5.0SP2" addedEP="161">
+      <fixr:code name="Equity" id="1938004" value="4" sort="4" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Equity
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The broad asset category for assessing risk exposure.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="AssetSubClassCodeSet" id="1939" type="int" added="FIX.5.0SP2" addedEP="161">
+      <fixr:code name="Common" id="1939029" value="9" group="Equity" sort="9" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Common
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code name="Preferred" id="1939030" value="10" group="Equity" sort="10" added="FIX.5.0SP2" addedEP="161">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Preferred
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The subcategory description of the asset class.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+    <fixr:codeSet name="AssetGroupCodeSet" id="2210" type="int" added="FIX.5.0SP2" addedEP="192">
+      <fixr:code name="Financials" id="2210001" value="1" sort="1" added="FIX.5.0SP2" addedEP="192">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Financials
+      </fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">
+         A categorization which usually includes rates, foreign exchange, credit, bonds and equity products or assets.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the broad product or asset classification. May be used to provide grouping for the product taxonomy (Product(460), SecurityType(167), etc.) and/or the risk taxonomy (AssetClass(1938), AssetSubClass(1939), AssetType(1940), etc.).
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:codeSet>
+  </fixr:codeSets>
+  <fixr:datatypes>
+    <fixr:datatype name="int" added="FIX.2.7" issue="SPEC-370" updated="FIX.Latest" updatedEP="271">
+      <fixr:mappedDatatype standard="XML" base="xs:integer" builtin="1"/>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Sequence of digits without commas or decimals and optional sign character (ASCII characters "-" and "0" - "9" ). The sign character utilizes one byte (i.e. positive int is "99999" while negative int is "-99999"). Note that int values may contain leading zeros (e.g. "00023" = "23").
+      </fixr:documentation>
+        <fixr:documentation purpose="EXAMPLE">723 in field 21 would be mapped as |21=723|.
+-723 in field 12 would be mapped as |12=-723|.</fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+    <fixr:datatype name="NumInGroup" baseType="int" added="FIX.4.3">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         int field representing the number of entries in a repeating group. Value must be positive.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+    <fixr:datatype name="String" added="FIX.4.2">
+      <fixr:mappedDatatype standard="XML" base="xs:string" builtin="1">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case sensitive (i.e. morstatt != Morstatt).
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:mappedDatatype>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case sensitive (i.e. morstatt != Morstatt).
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+    <fixr:datatype name="LocalMktDate" baseType="String" added="FIX.4.2" updated="FIX.5.0SP2" updatedEP="206">
+      <fixr:mappedDatatype standard="XML" base="xs:date" builtin="0">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">
+         string field representing a Date of Local Market (as opposed to UTC) in YYYY-MM-DD format. This is the "normal" date field used by the FIX Protocol.
+         Valid values:
+         YYYY = 0000-9999, MM = 01-12, DD = 01-31.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:mappedDatatype>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         string field representing a Date of Local Market (as opposed to UTC) in YYYYMMDD format. This is the "normal" date field used by the FIX Protocol.
+         Valid values:
+         YYYY = 0000-9999, MM = 01-12, DD = 01-31
+      </fixr:documentation>
+        <fixr:documentation purpose="EXAMPLE">MaturityDate(541)="20150724"</fixr:documentation>
+      </fixr:annotation>
+    </fixr:datatype>
+  </fixr:datatypes>
+  <fixr:sections></fixr:sections>
+  <fixr:fields latestEP="271">
+    <fixr:field added="FIX.2.7" id="22" name="SecurityIDSource" type="SecurityIDSourceCodeSet" updated="FIX.5.0SP2" updatedEP="161" abbrName="Src" unionDataType="Reserved100Plus">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Identifies class or source of the SecurityID(48) value.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.2.7" id="48" name="SecurityID" type="String" abbrName="ID" discriminatorId="22">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Security identifier value of SecurityIDSource (22) type (e.g. CUSIP, SEDOL, ISIN, etc). Requires SecurityIDSource.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.2.7" id="55" name="Symbol" type="String" abbrName="Sym">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Ticker symbol. Common, "human understood" representation of the security. SecurityID (48) value can be specified if no symbol exists (e.g. non-exchange traded Collective Investment Vehicles)
+         Use "[N/A]" for products which do not have a symbol.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.2.7" id="65" name="SymbolSfx" type="SymbolSfxCodeSet" abbrName="Sfx">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Additional information about the security (e.g. preferred, warrants, etc.). Note also see SecurityType (167).
+         As defined in the NYSE Stock and bond Symbol Directory and in the AMEX Fitch Directory.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.3.0" id="106" name="Issuer" type="String" abbrName="Issr">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Name of security issuer (e.g. International Business Machines, GNMA).
+         see also Volume 7: "PRODUCT: FIXED INCOME - Euro Issuer Values"
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.3.0" id="107" name="SecurityDesc" type="String" updated="FIX.5.0SP2" updatedEP="232" abbrName="Desc">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Can be used by the venue or one of the trading parties to provide a non-normative textual description for the financial instrument.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.1" id="167" name="SecurityType" type="SecurityTypeCodeSet" abbrName="SecTyp">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates type of security. Security type enumerations are grouped by Product(460) field value. NOTE: Additional values may be used by mutual agreement of the counterparties.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.2" id="225" name="IssueDate" type="LocalMktDate" abbrName="Issued">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The date on which a bond or stock offering is issued. It may or may not be the same as the effective date ("Dated Date") or the date on which interest begins to accrue ("Interest Accrual Date")
+         (Note tag # was reserved in FIX 4.1, added in FIX 4.3)
+         (prior to FIX 4.4 field was of type UTCDate)
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="454" name="NoSecurityAltID" type="NumInGroup" abbrName="NoSecAltID">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Number of SecurityAltID (455) entries.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="455" name="SecurityAltID" type="String" abbrName="AltID" discriminatorId="456">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Alternate Security identifier value for this security of SecurityAltIDSource (456) type (e.g. CUSIP, SEDOL, ISIN, etc). Requires SecurityAltIDSource.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="456" name="SecurityAltIDSource" type="SecurityIDSourceCodeSet" updated="FIX.Latest" updatedEP="271" abbrName="AltIDSrc" unionDataType="Reserved100Plus">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Identifies class or source of the SecurityAltID(455) value.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="460" name="Product" type="ProductCodeSet" abbrName="Prod">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the type of product the security is associated with. See also the CFICode (461) and SecurityType (167) fields.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.4.3" id="461" name="CFICode" type="String" abbrName="CFI">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the type of security using ISO 10962 standard, Classification of Financial Instruments (CFI code) values. ISO 10962 is maintained by ANNA (Association of National Numbering Agencies) acting as Registration Authority. See "Appendix 6-B FIX Fields Based Upon Other Standards". See also the Product (460) and SecurityType (167) fields. It is recommended that CFICode be used instead of SecurityType (167) for non-Fixed Income instruments.
+         A subset of possible values applicable to FIX usage are identified in "Appendix 6-D CFICode Usage - ISO 10962 Classification of Financial Instruments (CFI code)"
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="1938" name="AssetClass" type="AssetClassCodeSet" addedEP="161" abbrName="AssetClss">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The broad asset category for assessing risk exposure.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="1939" name="AssetSubClass" type="AssetSubClassCodeSet" addedEP="161" abbrName="AssetSubClss" unionDataType="Reserved4000Plus">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The subcategory description of the asset class.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="1940" name="AssetType" type="String" addedEP="161" updated="FIX.5.0SP2" updatedEP="235" abbrName="AssetTyp">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Used to provide more specific description of the asset specified in AssetSubClass(1939).
+         See https://www.fixtrading.org/codelists/AssetType for code list of applicable values. ISO 4721 Currency Code values are to be used when specific currency as an asset type is to be expressed.
+         Other values may be used by mutual agreement of the counterparties.
+      </fixr:documentation>
+        <fixr:documentation purpose="ELABORATION">
+         In the context of MiFID II's this may indicate the value needed in ESMA RTS 2 Annex IV Table 2 Field 16, or ESMA RTS 23 Annex I Table 2 'Sub product' field.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2210" name="AssetGroup" type="AssetGroupCodeSet" addedEP="192" abbrName="AssetGrp">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Indicates the broad product or asset classification. May be used to provide grouping for the product taxonomy (Product(460), SecurityType(167), etc.) and/or the risk taxonomy (AssetClass(1938), AssetSubClass(1939), AssetType(1940), etc.).
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2714" name="FinancialInstrumentFullName" type="String" addedEP="232" updated="FIX.5.0SP2" updatedEP="236" abbrName="FullName">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         The full normative name of the financial instrument.
+      </fixr:documentation>
+        <fixr:documentation purpose="ELABORATION">
+         In the context of ESMA reference data, this is used to provide the full name of the instrument as defined by the Derivatives Service Bureau (DSB).
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2735" name="AssetSubType" type="String" addedEP="235" abbrName="AsstSubTyp">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Used to provide a more specific description of the asset specified in AssetType(1940).
+         See https://www.fixtrading.org/codelists/AssetSubType for code list of applicable values.
+      </fixr:documentation>
+        <fixr:documentation purpose="ELABORATION">
+         In the context of MiFID II, ESMA RTS 23 Annex I Table 2, this may indicate the 'Further sub product' or equity 'Parameter' fields.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+    <fixr:field added="FIX.5.0SP2" id="2737" name="FinancialInstrumentShortName" type="String" addedEP="235" abbrName="ShrtName">
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS">
+         Short name of the financial instrument. Uses ISO 18774 (FINS) values.
+      </fixr:documentation>
+        <fixr:documentation purpose="ELABORATION">
+         In the context of MiFID II this maps to ESMA RTS 23 Annex I Table 3 Field 7 and may be used in other RTS that requires a similar field.
+      </fixr:documentation>
+      </fixr:annotation>
+    </fixr:field>
+  </fixr:fields>
+  <fixr:components latestEP="271">
+    <fixr:component name="Instrument" id="1003" category="Common" added="FIX.4.3" abbrName="Instrmt">
+      <fixr:fieldRef id="55" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         Common, "human understood" representation of the security. SecurityID value can be specified if no symbol exists (e.g. non-exchange traded Collective Investment Vehicles)
+         Use "[N/A]" for products which do not have a symbol.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="65" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         Used in Fixed Income with a value of "WI" to indicate "When Issued" for a security to be reissued under an old CUSIP or ISIN or with a value of "CD" to indicate a EUCP with lump-sum interest rather than discount price.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="48" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         Takes precedence in identifying security to counterparty over SecurityAltID block. Requires SecurityIDSource if specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="22" added="FIX.4.3" updated="FIX.5.0SP2" updatedEP="161">
+        <fixr:annotation>
+          <fixr:documentation>
+         Conditionally required when SecurityID(48) is specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:groupRef id="2071" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation>
+         Number of alternate Security Identifiers
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:groupRef>
+      <fixr:fieldRef id="460" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         Indicates the type of product the security is associated with (high-level category)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="461" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         Indicates the type of security using ISO 10962 standard, Classification of Financial Instruments (CFI code) values. It is recommended that CFICode be used instead of SecurityType for non-Fixed Income instruments.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="167" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         It is recommended that CFICode be used instead of SecurityType for non-Fixed Income instruments.
+         Required for Fixed Income. Refer to Volume 7 - Fixed Income
+         Futures and Options should be specified using the CFICode[461] field instead of SecurityType[167] (Refer to Volume 7 - Recommendations and Guidelines for Futures and Options Markets.)
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="2210" added="FIX.5.0SP2" addedEP="192">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1938" added="FIX.5.0SP2" addedEP="161" updated="FIX.5.0SP2" updatedEP="235">
+        <fixr:annotation>
+          <fixr:documentation>
+         Required if AssetSubClass(1939) is specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1939" added="FIX.5.0SP2" addedEP="161" updated="FIX.5.0SP2" updatedEP="235">
+        <fixr:annotation>
+          <fixr:documentation>
+         Required if AssetType(1940) is specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="1940" added="FIX.5.0SP2" addedEP="161" updated="FIX.5.0SP2" updatedEP="235">
+        <fixr:annotation>
+          <fixr:documentation>
+         Required if AssetSubType(2735) is specified.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="2735" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="225" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation>
+         Date instrument was issued. For Fixed Income IOIs for new issues, specifies the issue date.
+      </fixr:documentation>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="106" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="2737" added="FIX.5.0SP2" addedEP="235">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="2714" added="FIX.5.0SP2" addedEP="232">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="107" added="FIX.4.3">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+    </fixr:component>
+  </fixr:components>
+  <fixr:groups latestEP="271">
+    <fixr:group id="2071" added="FIX.4.4" name="SecAltIDGrp" category="Common" abbrName="AID">
+      <fixr:numInGroup id="454">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:numInGroup>
+      <fixr:fieldRef id="455" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:fieldRef id="456" added="FIX.4.4">
+        <fixr:annotation>
+          <fixr:documentation/>
+        </fixr:annotation>
+      </fixr:fieldRef>
+      <fixr:annotation>
+        <fixr:documentation purpose="SYNOPSIS"/>
+        <fixr:documentation purpose="ELABORATION"/>
+      </fixr:annotation>
+    </fixr:group>
+  </fixr:groups>
+  <fixr:messages latestEP="271"></fixr:messages>
+</fixr:repository>
