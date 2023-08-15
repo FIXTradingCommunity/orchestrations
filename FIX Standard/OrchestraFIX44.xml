@@ -11072,7 +11072,7 @@
 			<fixr:code name="OutOfBand" id="725002" value="1" added="FIX.4.4" updated="FIX.Latest" updatedEP="282">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Out-of-Band: pre-arranged out of band delivery mechanism (i.e. FTP, HTTP, NDM, etc) between counterparties.
+         Out-of-Band: pre-arranged out of band delivery mechanism (i.e. FTP, HTTP, NDM, etc) between counterparties. Details specified via ResponseDestination (726).
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -19331,7 +19331,7 @@
 		<fixr:field id="725" name="ResponseTransportType" type="ResponseTransportTypeCodeSet" added="FIX.4.4" abbrName="RspTransportTyp">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Identifies how the response to the request should be transmitted
+         Identifies how the response to the request should be transmitted.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
