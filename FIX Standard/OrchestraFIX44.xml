@@ -15507,7 +15507,7 @@
          L = Long (a.k.a. "American")
          S = Short (a.k.a. "European")
          For Exchanges: DTB (Frankfurt), HKSE (Hong Kong), and SOFFEX (Zurich)
-         0-9 = single digit "version" number assigned by exchange following capital adjustments (0=current, =prior, 2=prior to , etc).
+         0-9 = single digit "version" number assigned by exchange following capital adjustments (0=current, 1=prior, 2=prior to 1, etc).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
