@@ -196,7 +196,7 @@
 			<fixr:code name="PercentOfVolume" id="18014" value="D" added="FIX.2.7">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Percent of volume (indicates that the sender does not want to be all of the volume on the floor vs. a specific percentage)
+         Percent of volume (indicates that the sender does not want to be all the volume on the floor vs. a specific percentage)
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -1877,14 +1877,14 @@
 			<fixr:code name="PGPDESMD5" id="98006" value="5" added="FIX.4.0">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         PGP/DES-MD5 (see app note on FIX web site)
+         PGP/DES-MD5 (see app note on FIX website)
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
 			<fixr:code name="PEM" id="98007" value="6" added="FIX.4.0">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         PEM/DES-MD5 (see app note on FIX web site)
+         PEM/DES-MD5 (see app note on FIX website)
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -4579,7 +4579,7 @@
 			<fixr:code name="WasSolicited" id="377002" value="Y" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Was solcitied
+         Was solicited
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -4649,7 +4649,7 @@
 			<fixr:code name="UnknownID" id="380002" value="1" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Unkown ID
+         Unknown ID
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
@@ -4704,7 +4704,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies the direction of the messsage.
+         Specifies the direction of the message.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -4809,7 +4809,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not to exchange for phsyical.
+         Indicates whether or not to exchange for physical.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -5138,7 +5138,7 @@
 			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Used to indicate what an Execution Report represents (e.g. used with multi-leg securiteis, such as option strategies, spreads, etc.).
+         Used to indicate what an Execution Report represents (e.g. used with multi-leg securities, such as option strategies, spreads, etc.).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -5209,7 +5209,7 @@
 		<fixr:datatype name="String" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case sensitive.
+         Alpha-numeric free format strings, can include any character or punctuation except the delimiter. All String fields are case-sensitive.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:datatype>
@@ -5285,7 +5285,7 @@
 		<fixr:datatype name="DayOfMonth" baseType="int" added="FIX.4.1">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         int field representing a day during a particular monthy (values 1 to 31).
+         int field representing a day during a particular month (values 1 to 31).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:datatype>
@@ -6651,14 +6651,14 @@
 		<fixr:field id="192" name="OrderQty2" type="Qty" added="FIX.4.1">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         OrderQty of the future part of a F/X swap order.
+         OrderQty of the future part of an F/X swap order.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
 		<fixr:field id="193" name="FutSettDate2" type="LocalMktDate" added="FIX.4.1">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         FutSettDate of the future part of a F/X swap order.
+         FutSettDate of the future part of an F/X swap order.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -6801,7 +6801,7 @@
 		<fixr:field id="213" name="XmlData" type="data" added="FIX.4.2" lengthId="212">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Actual XML data stream (e.g. FIXML). See approriate XML reference (e.g. FIXML). Note: may contain embedded SOH characters.
+         Actual XML data stream (e.g. FIXML). See appropriate XML reference (e.g. FIXML). Note: may contain embedded SOH characters.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -7741,7 +7741,7 @@
 		<fixr:field id="385" name="MsgDirection" type="MsgDirectionCodeSet" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Specifies the direction of the messsage.
+         Specifies the direction of the message.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -7923,7 +7923,7 @@
 		<fixr:field id="411" name="ExchangeForPhysical" type="ExchangeForPhysicalCodeSet" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Indicates whether or not to exchange for phsyical.
+         Indicates whether or not to exchange for physical.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -8114,7 +8114,7 @@
 		<fixr:field id="438" name="ContraTradeTime" type="UTCTimestamp" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Identifes the time of the trade with the ContraBroker. (always expressed in UTC (Universal Time Coordinated, also known as "GMT")
+         Identifies the time of the trade with the ContraBroker. (always expressed in UTC (Universal Time Coordinated, also known as "GMT")
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -8128,21 +8128,21 @@
 		<fixr:field id="440" name="ClearingAccount" type="String" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Supplemental accounting information forwared to clearing house/firm.
+         Supplemental accounting information forwarded to clearing house/firm.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
 		<fixr:field id="441" name="LiquidityNumSecurities" type="int" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Number of Securites between LiquidityPctLow and LiquidityPctHigh in Currency.
+         Number of Securities between LiquidityPctLow and LiquidityPctHigh in Currency.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
 		<fixr:field id="442" name="MultiLegReportingType" type="MultiLegReportingTypeCodeSet" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Used to indicate what an Execution Report represents (e.g. used with multi-leg securiteis, such as option strategies, spreads, etc.).
+         Used to indicate what an Execution Report represents (e.g. used with multi-leg securities, such as option strategies, spreads, etc.).
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
@@ -8341,7 +8341,7 @@
 			<fixr:fieldRef id="213" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation>
-         Can contain a XML formatted message block (e.g. FIXML). Always immediately follows XmlDataLen field. (Can be embedded within encrypted data section.)
+         Can contain an XML-formatted message block (e.g. FIXML). Always immediately follows XmlDataLen field. (Can be embedded within encrypted data section.)
          See Appendix M – FIXML Support
       </fixr:documentation>
 				</fixr:annotation>
@@ -8534,7 +8534,7 @@
 			<fixr:fieldRef id="200" added="FIX.4.1">
 				<fixr:annotation>
 					<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -8825,7 +8825,7 @@
 			<fixr:fieldRef id="200" added="FIX.4.1">
 				<fixr:annotation>
 					<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -9087,14 +9087,14 @@
 			<fixr:fieldRef id="193" added="FIX.4.1">
 				<fixr:annotation>
 					<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of an F/X swap.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="192" added="FIX.4.1">
 				<fixr:annotation>
 					<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of an F/X swap.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -9478,7 +9478,7 @@
 			</fixr:fieldRef>
 			<fixr:annotation>
 				<fixr:documentation>
-         Number of orders statused in this message, i.e. number of repeating groups to follow.
+         Number of orders statuses in this message, i.e. number of repeating groups to follow.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:group>
@@ -9522,7 +9522,7 @@
 			<fixr:fieldRef id="200" added="FIX.4.1">
 				<fixr:annotation>
 					<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -9639,7 +9639,7 @@
 			<fixr:fieldRef id="54" added="FIX.4.0">
 				<fixr:annotation>
 					<fixr:documentation>
-         If OrdType = "Forex - Swap", should be the side of the future portion of a F/X swap
+         If OrdType = "Forex - Swap", should be the side of the future portion of an F/X swap
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -9665,14 +9665,14 @@
 			<fixr:fieldRef id="193" added="FIX.4.1">
 				<fixr:annotation>
 					<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of an F/X swap.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="192" added="FIX.4.1">
 				<fixr:annotation>
 					<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of an F/X swap.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -9758,7 +9758,7 @@
 			<fixr:fieldRef id="200" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -10140,7 +10140,7 @@
 			<fixr:fieldRef id="200" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified. May not be changed.
+         Specifies the month and year of maturity. Required if MaturityDay is specified. May not be changed.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -10486,7 +10486,7 @@
 			<fixr:fieldRef id="200" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -10775,7 +10775,7 @@
 			<fixr:fieldRef id="200" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -10919,7 +10919,7 @@
 			<fixr:fieldRef id="200" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -11074,14 +11074,14 @@
 			<fixr:fieldRef id="193" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of an F/X swap.
 			</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="192" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of an F/X swap.
 			</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -11127,7 +11127,7 @@
 			<fixr:fieldRef id="313" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if UnderlyingMaturityDay is specified.
+         Specifies the month and year of maturity. Required if UnderlyingMaturityDay is specified.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -11419,7 +11419,7 @@
 			<fixr:fieldRef id="441" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation>
-         Number of Securites between LiquidityPctLow and LiquidityPctHigh in Currency
+         Number of Securities between LiquidityPctLow and LiquidityPctHigh in Currency
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -11659,7 +11659,7 @@
 			<fixr:fieldRef id="200" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -11838,7 +11838,7 @@
 			<fixr:fieldRef id="313" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if UnderlyingMaturityDay is specified.
+         Specifies the month and year of maturity. Required if UnderlyingMaturityDay is specified.
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
@@ -12238,7 +12238,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -12497,7 +12497,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -12829,7 +12829,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -13239,14 +13239,14 @@
 				<fixr:fieldRef id="193" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="192" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -13788,7 +13788,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -14053,14 +14053,14 @@
 				<fixr:fieldRef id="193" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="192" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -14181,7 +14181,7 @@
 				<fixr:fieldRef id="433" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         Controls when execution should be begin.
+         Controls when execution should begin.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -14318,7 +14318,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -14472,7 +14472,7 @@
 			</fixr:structure>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         The order cancel request message requests the cancellation of all of the remaining quantity of an existing order.
+         The order cancel request message requests the cancellation of all the remaining quantity of an existing order.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:message>
@@ -14623,7 +14623,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -14887,14 +14887,14 @@
 				<fixr:fieldRef id="193" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="192" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -15019,7 +15019,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -15216,7 +15216,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -15679,7 +15679,7 @@
 				<fixr:groupRef presence="required" added="FIX.2.7" id="2037">
 					<fixr:annotation>
 						<fixr:documentation>
-         Number of orders statused in this message, i.e. number of repeating groups to follow.
+         Number of orders statuses in this message, i.e. number of repeating groups to follow.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:groupRef>
@@ -15838,7 +15838,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -16089,7 +16089,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -16259,14 +16259,14 @@
 				<fixr:fieldRef id="193" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
 				<fixr:fieldRef id="192" added="FIX.4.1">
 					<fixr:annotation>
 						<fixr:documentation>
-         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.
+         Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of an F/X swap.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -16573,7 +16573,7 @@
 				<fixr:fieldRef id="263" presence="required" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         SubcriptionRequestType indicates to the other party what type of response is expected. A snapshot request only asks for current information. A subscribe request asks for updates as the status changes. Unsubscribe will cancel any future update messages from the counter party.
+         SubscriptionRequestType indicates to the other party what type of response is expected. A snapshot request only asks for current information. A subscribe request asks for updates as the status changes. Unsubscribe will cancel any future update messages from the counterparty.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -16666,7 +16666,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -16983,7 +16983,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -17226,7 +17226,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -17440,7 +17440,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -17630,7 +17630,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -17729,7 +17729,7 @@
 				<fixr:fieldRef id="263" presence="required" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         SubcriptionRequestType indicates to the other party what type of response is expected. A snapshot request only asks for current information. A subscribe request asks for updates as the status changes. Unsubscribe will cancel any future update messages from the counter party.)
+         SubscriptionRequestType indicates to the other party what type of response is expected. A snapshot request only asks for current information. A subscribe request asks for updates as the status changes. Unsubscribe will cancel any future update messages from the counterparty.)
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
@@ -17794,7 +17794,7 @@
 				<fixr:fieldRef id="200" added="FIX.4.2">
 					<fixr:annotation>
 						<fixr:documentation>
-         Specifiesthe month and year of maturity. Required if MaturityDay is specified.
+         Specifies the month and year of maturity. Required if MaturityDay is specified.
       </fixr:documentation>
 					</fixr:annotation>
 				</fixr:fieldRef>
