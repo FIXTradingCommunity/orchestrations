@@ -8379,7 +8379,7 @@
 			<fixr:code name="NoRegDetails" id="507004" value="4" added="FIX.4.3">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
-         Invalid/unacceptable No Reg Details
+         Invalid/unacceptable No Reg Dtls
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
