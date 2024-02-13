@@ -3,8 +3,8 @@
     <fixr:metadata>
         <dcterms:title>Trading Digital Assets</dcterms:title>
         <dcterms:publisher>FIX Trading Community</dcterms:publisher>
-        <dcterms:rights>Copyright 2022, FIX Protocol, Limited</dcterms:rights>
-        <dcterms:date>2022-09-23</dcterms:date>
+        <dcterms:rights>Copyright 2023, FIX Protocol, Limited</dcterms:rights>
+        <dcterms:date>2023-03-07</dcterms:date>
     </fixr:metadata>
     <fixr:datatypes>
         <fixr:datatype name="Price" baseType="float" added="FIX.4.2">
@@ -166,21 +166,59 @@
         </fixr:datatype>
     </fixr:datatypes>
     <fixr:codeSets>
-        <fixr:codeSet type="String" id="14661" name="CurrencyCodeSourceCodeSet">
-            <fixr:code value="1" id="34057" name="CUSIP"/>
-            <fixr:code value="2" id="28202" name="SEDOL"/>
-            <fixr:code value="4" id="39236" name="ISIN"/>
-            <fixr:code value="6" id="23606" name="ISO Currency Code (ISO 4217)"/>
-            <fixr:code value="S" id="17173" name="Financial Instrument Global Identifier (FIGI)"/>
-            <fixr:code value="Y" id="20875" name="Digital Token Identifier (ISO 24165)"/>
+        <fixr:codeSet type="String" added="FIX.Latest" addedEP="273" id="2897" name="CurrencyCodeSourceCodeSet">
+            <fixr:code value="1" id="2897001" name="CUSIP">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">CUSIP</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="2" id="2897002" name="SEDOL">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">SEDOL</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="4" id="2897003" name="ISINNumber">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">ISIN</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="6" id="2897004" name="ISOCurrencyCode">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">ISO Currency Code (ISO 4217)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="S" id="2897005" name="FinancialInstrumentGlobalIdentifier">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Financial Instrument Global Identifier (FIGI)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="Y" id="2897006" name="DigitalTokenIdentifier">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Digital Token Identifier (ISO 24165)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
+                <fixr:documentation purpose="SYNOPSIS">
+                    Identifies class or source of the Currency(15) value.</fixr:documentation>
                 <fixr:documentation contentType="text/markdown">Used by CurrencyCodeSource(2897) and SettlCurrencyCodeSource(2899) in messages [NewOrderSingle(35=D)](#msg14), [ExecutionReport(35=8)](#msg9), [OrderCancelReplaceRequest(35=G)](#msg17).</fixr:documentation>
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="int" added="FIX.2.7" id="102" name="CxlRejReasonCodeSet">
-            <fixr:code value="0" id="102001" name="Too late to cancel"/>
-            <fixr:code value="1" id="102002" name="Unknown order"/>
-            <fixr:code value="2" id="102003" name="Broker / Exchange Option"/>
+            <fixr:code value="0" id="102001" name="TooLateToCancel">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Too late to cancel</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="1" id="102002" name="UnknownOrder">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Unknown order</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="2" id="102003" name="BrokerCredit">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Broker / Exchange Option</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Code to identify reason for cancel rejection.</fixr:documentation>
@@ -188,8 +226,16 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="char" added="FIX.4.2" id="434" name="CxlRejResponseToCodeSet">
-            <fixr:code value="1" id="434001" name="Order cancel request"/>
-            <fixr:code value="2" id="434002" name="Order cancel/replace request"/>
+            <fixr:code value="1" id="434001" name="OrderCancelRequest">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Order cancel request</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="2" id="434002" name="OrderCancelReplaceRequest">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Order cancel/replace request</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Identifies the type of request that a Cancel Reject is in response to.</fixr:documentation>
@@ -197,7 +243,11 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="MultipleCharValue" added="FIX.2.7" id="18" name="ExecInstCodeSet">
-            <fixr:code value="G" id="18017" name="All or none (AON)"/>
+            <fixr:code value="G" id="18017" name="AllOrNone">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">All or none (AON)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Instructions for order handling on exchange trading floor. If more than one instruction is applicable to an order, this field can contain multiple instructions separated by space. *** SOME VALUES HAVE BEEN REPLACED - See "Replaced Features and Supported Approach" *** (see Volume : "Glossary" for value definitions)</fixr:documentation>
@@ -205,8 +255,16 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="char" added="FIX.4.4" addedEP="26" id="1133" name="ExDestinationIDSourceCodeSet">
-            <fixr:code value="D" id="1133003" name="Proprietary / Custom code"/>
-            <fixr:code value="G" id="1133005" name="MIC (ISO 10383 - Market Identifier Code)"/>
+            <fixr:code value="D" id="1133003" name="Proprietary">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Proprietary / Custom code</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="G" id="1133005" name="MIC">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">MIC (ISO 10383 - Market Identifier Code)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     The ID source of ExDestination</fixr:documentation>
@@ -214,19 +272,51 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="char" added="FIX.4.1" updated="FIX.5.0SP2" updatedEP="131" id="150" name="ExecTypeCodeSet">
-            <fixr:code value="0" id="150001" name="New"/>
-            <fixr:code value="4" id="150003" name="Canceled"/>
-            <fixr:code value="5" id="150004" name="Replaced"/>
-            <fixr:code value="8" id="150007" name="Rejected"/>
-            <fixr:code value="B" id="150010" name="Calculated"/>
-            <fixr:code value="D" id="150012" name="Restated">
+            <fixr:code value="0" id="150001" name="New">
                 <fixr:annotation>
-                    <fixr:documentation contentType="text/markdown">ExecutionReport(35=8) message sent unsolicited by sellside, with ExecRestatementReason(378) set</fixr:documentation>
+                    <fixr:documentation contentType="text/markdown">New</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
-            <fixr:code value="I" id="150017" name="Order Status"/>
-            <fixr:code value="F" id="150014" name="Trade (partial fill or fill)"/>
-            <fixr:code value="G" id="150015" name="Trade Correct"/>
+            <fixr:code value="4" id="150003" name="Canceled">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Canceled</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="5" id="150004" name="Replaced">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Replaced</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="8" id="150007" name="Rejected">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Rejected</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="B" id="150010" name="Calculated">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Calculated</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="D" id="150012" name="Restated">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Restated (ExecutionReport(35=8) message sent unsolicited by sellside, with ExecRestatementReason(378) set)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="I" id="150017" name="OrderStatus">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Order Status</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="F" id="150014" name="Trade">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Trade (partial fill or fill)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="G" id="150015" name="TradeCorrect">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Trade Correct</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Describes the specific ExecutionRpt (e.g. Pending Cancel) while OrdStatus(39) will always identify the current order status (e.g. Partially Filled).</fixr:documentation>
@@ -234,9 +324,21 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="int" added="FIX.4.2" updated="FIX.5.0SP2" updatedEP="195" id="378" name="ExecRestatementReasonCodeSet">
-            <fixr:code value="0" id="378001" name="GT corporate action"/>
-            <fixr:code value="1" id="378002" name="GT renewal / restatement (no corporate action)"/>
-            <fixr:code value="2" id="378003" name="Verbal change"/>
+            <fixr:code value="0" id="378001" name="GTCorporateAction">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">GT corporate action</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="1" id="378002" name="GTRenewal">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">GT renewal / restatement (no corporate action)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="2" id="378003" name="VerbalChange">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Verbal change</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     The reason for restatement when an ExecutionReport(35=8) or TradeCaptureReport(35=AE) message is sent with ExecType(150) = D (Restated) or used when communicating an unsolicited cancel.</fixr:documentation>
@@ -244,9 +346,21 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="char" added="FIX.2.7" id="21" name="HandlInstCodeSet">
-            <fixr:code value="1" id="21001" name="Automated execution order, private, no Broker intervention"/>
-            <fixr:code value="2" id="21002" name="Automated execution order, public, Broker intervention OK"/>
-            <fixr:code value="3" id="21003" name="Manual order, best execution"/>
+            <fixr:code value="1" id="21001" name="AutomatedExecutionNoIntervention">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Automated execution order, private, no Broker intervention</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="2" id="21002" name="AutomatedExecutionInterventionOK">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Automated execution order, public, Broker intervention OK</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="3" id="21003" name="ManualOrder">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Manual order, best execution</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Instructions for order handling on Broker trading floor</fixr:documentation>
@@ -254,9 +368,21 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="char" added="FIX.2.7" id="29" name="LastCapacityCodeSet">
-            <fixr:code value="1" id="29001" name="Agent"/>
-            <fixr:code value="2" id="29002" name="Cross as agent"/>
-            <fixr:code value="3" id="29003" name="Cross as principal"/>
+            <fixr:code value="1" id="29001" name="Agent">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Agent</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="2" id="29002" name="CrossAsAgent">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Cross as agent</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="3" id="29003" name="CrossAsPrincipal">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Cross as principal</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Broker capacity in order execution</fixr:documentation>
@@ -264,9 +390,21 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="int" added="FIX.2.7" id="103" name="OrdRejReasonCodeSet">
-            <fixr:code value="0" id="103001" name="Broker / Exchange Option"/>
-            <fixr:code value="1" id="103002" name="Unknown symbol"/>
-            <fixr:code value="2" id="103003" name="Exchange Closed"/>
+            <fixr:code value="0" id="103001" name="BrokerCredit">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Broker / Exchange Option</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="1" id="103002" name="UnknownSymbol">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Unknown symbol</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="2" id="103003" name="ExchangeClosed">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Exchange Closed</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Code to identify reason for order rejection. Note: Values 3, 4, and 5 will be used when rejecting an order due to pre-allocation information errors.</fixr:documentation>
@@ -274,9 +412,21 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="char" added="FIX.2.7" id="39" name="OrdStatusCodeSet">
-            <fixr:code value="0" id="39001" name="New"/>
-            <fixr:code value="1" id="39002" name="Partially filled"/>
-            <fixr:code value="2" id="39003" name="Filled"/>
+            <fixr:code value="0" id="39001" name="New">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">New</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="1" id="39002" name="PartiallyFilled">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Partially filled</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="2" id="39003" name="Filled">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Filled</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Identifies current status of order. *** SOME VALUES HAVE BEEN REPLACED - See "Replaced Features and Supported Approach" *** (see Volume : "Glossary" for value definitions)</fixr:documentation>
@@ -284,10 +434,26 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="char" added="FIX.2.7" id="40" name="OrdTypeCodeSet">
-            <fixr:code value="1" id="40001" name="Market"/>
-            <fixr:code value="2" id="40002" name="Limit"/>
-            <fixr:code value="3" id="40003" name="Stop/Stop Loss"/>
-            <fixr:code value="4" id="40004" name="Stop Limit"/>
+            <fixr:code value="1" id="40001" name="Market">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Market</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="2" id="40002" name="Limit">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Limit</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="3" id="40003" name="Stop">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Stop/Stop Loss</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="4" id="40004" name="StopLimit">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Stop Limit</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Order type. *** SOME VALUES ARE NO LONGER USED - See "Deprecated (Phased-out) Features and Supported Approach" *** (see Volume : "Glossary" for value definitions)</fixr:documentation>
@@ -295,11 +461,19 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="char" added="FIX.4.3" id="447" name="PartyIDSourceCodeSet">
-            <fixr:code value="N" id="447023" name="Legal Entity Identifier (ISO 17442) LEI"/>
-            <fixr:code value="C" id="447014" name="Generally accepted market participant identifier"/>
-            <fixr:code value="D" id="447015" name="Proprietary / Custom code">
+            <fixr:code value="N" id="447023" name="LegalEntityIdentifier">
                 <fixr:annotation>
-                    <fixr:documentation contentType="text/markdown">Custom ID schema used between counterparties, trading platforms and repositories.</fixr:documentation>
+                    <fixr:documentation contentType="text/markdown">Legal Entity Identifier (ISO 17442) LEI</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="C" id="447014" name="GeneralIdentifier">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Generally accepted market participant identifier (e.g. NASD mnemonic)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="D" id="447015" name="Proprietary">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Proprietary / Custom code. Custom ID schema used between counterparties, trading platforms and repositories.</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
             <fixr:annotation>
@@ -311,8 +485,16 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="int" added="FIX.4.3" updated="FIX.5.0SP2" updatedEP="256" id="452" name="PartyRoleCodeSet">
-            <fixr:code value="1" id="452001" name="Executing Firm"/>
-            <fixr:code value="3" id="452003" name="Client ID"/>
+            <fixr:code value="1" id="452001" name="ExecutingFirm">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Executing Firm</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="3" id="452003" name="ClientID">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Client ID</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Identifies the type or role of the PartyID (448) specified.</fixr:documentation>
@@ -320,7 +502,11 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="int" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="204" id="803" name="PartySubIDTypeCodeSet">
-            <fixr:code value="1" id="803001" name="Firm"/>
+            <fixr:code value="1" id="803001" name="Firm">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Firm</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Type of PartySubID(523) value.</fixr:documentation>
@@ -328,14 +514,14 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="int" added="FIX.4.2" updated="FIX.Latest" updatedEP="271" id="423" name="PriceTypeCodeSet">
-            <fixr:code value="2" id="423002" name="Per unit (i.e. per share or contract)">
+            <fixr:code value="2" id="423002" name="PerUnit">
                 <fixr:annotation>
-                    <fixr:documentation contentType="text/markdown">Use for Cryptotokens (i.e. per token) representing other assets (ICOs).</fixr:documentation>
+                    <fixr:documentation contentType="text/markdown">Per unit (i.e. per share or contract). Use for Cryptotokens (i.e. per token) representing other assets (ICOs).</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
-            <fixr:code value="3" id="423003" name="Fixed amount (absolute value)">
+            <fixr:code value="3" id="423003" name="FixedAmount">
                 <fixr:annotation>
-                    <fixr:documentation contentType="text/markdown">Use for Cryptocurrency with Price(44) in Currency(15) units.</fixr:documentation>
+                    <fixr:documentation contentType="text/markdown">Fixed amount (absolute value). Use for Cryptocurrency with Price(44) in Currency(15) units</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
             <fixr:annotation>
@@ -347,12 +533,36 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="String" added="FIX.2.7" updated="FIX.5.0SP2" updatedEP="161" id="22" name="SecurityIDSourceCodeSet">
-            <fixr:code value="1" id="22001" name="CUSIP"/>
-            <fixr:code value="2" id="22002" name="SEDOL"/>
-            <fixr:code value="4" id="22004" name="ISIN"/>
-            <fixr:code value="6" id="22006" name="ISO Currency Code (ISO 4217)"/>
-            <fixr:code value="S" id="22027" name="Financial Instrument Global Identifier (FIGI)"/>
-            <fixr:code value="Y" id="24603" name="Digital Token Identifier (ISO 24165)"/>
+            <fixr:code value="1" id="22001" name="CUSIP">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">CUSIP</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="2" id="22002" name="SEDOL">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">SEDOL</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="4" id="22004" name="ISINNumber">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">ISIN</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="6" id="22006" name="ISOCurrencyCode">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">ISO Currency Code (ISO 4217)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="S" id="22027" name="FinancialInstrumentGlobalIdentifier">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Financial Instrument Global Identifier (FIGI)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="Y" id="22033" name="DigitalTokenIdentifier">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Digital Token Identifier (ISO 24165)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Identifies class or source of the SecurityID(48) value.</fixr:documentation>
@@ -360,9 +570,9 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="String" added="FIX.4.1" id="167" name="SecurityTypeCodeSet">
-            <fixr:code value="DIGITAL" id="11786" name="Digital Asset">
+            <fixr:code value="DIGITAL" id="167182" name="DigitalAsset">
                 <fixr:annotation>
-                    <fixr:documentation contentType="text/markdown">Asset that exists only in digital form or which is the digital representation of another asset (Source: ISO 24165 - Terms and Definitions).</fixr:documentation>
+                    <fixr:documentation contentType="text/markdown">Digital Asset. Asset that exists only in digital form or which is the digital representation of another asset (Source: ISO 24165 - Terms and Definitions).</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
             <fixr:annotation>
@@ -372,8 +582,16 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="char" added="FIX.2.7" id="54" name="SideCodeSet">
-            <fixr:code value="1" id="54001" name="Buy"/>
-            <fixr:code value="2" id="54002" name="Sell"/>
+            <fixr:code value="1" id="54001" name="Buy">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Buy</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="2" id="54002" name="Sell">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Sell</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Side of order (see Volume : "Glossary" for value definitions)</fixr:documentation>
@@ -381,9 +599,21 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="char" added="FIX.2.7" updated="FIX.5.0SP2" updatedEP="253" id="59" name="TimeInForceCodeSet">
-            <fixr:code value="0" id="59001" name="Day (or session)"/>
-            <fixr:code value="1" id="59002" name="Good Till Cancel (GTC)"/>
-            <fixr:code value="3" id="59004" name="Immediate Or Cancel (IOC)"/>
+            <fixr:code value="0" id="59001" name="Day">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Day (or session)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="1" id="59002" name="GoodTillCancel">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Good Till Cancel (GTC)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="3" id="59004" name="ImmediateOrCancel">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Immediate Or Cancel (IOC)</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Specifies how long the order remains in effect. Absence of this field is interpreted as DAY. NOTE not applicable to CIV Orders.</fixr:documentation>
@@ -391,9 +621,21 @@
             </fixr:annotation>
         </fixr:codeSet>
         <fixr:codeSet type="int" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="253" id="770" name="TrdRegTimestampTypeCodeSet">
-            <fixr:code value="1" id="770001" name="Execution Time"/>
-            <fixr:code value="2" id="770002" name="Time in"/>
-            <fixr:code value="3" id="770003" name="Time out"/>
+            <fixr:code value="1" id="770001" name="ExecutionTime">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Execution Time</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="2" id="770002" name="TimeIn">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Time in</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+            <fixr:code value="3" id="770003" name="TimeOut">
+                <fixr:annotation>
+                    <fixr:documentation contentType="text/markdown">Time out</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
             <fixr:annotation>
                 <fixr:documentation purpose="SYNOPSIS">
                     Trading / Regulatory timestamp type.</fixr:documentation>
