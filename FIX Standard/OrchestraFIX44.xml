@@ -5627,7 +5627,7 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="ListOfSecurityTypesReturnedPerRequest" id="323003" value="3" sort="3" added="FIX.4.2" deprecated="FIX.5.0SP1">
+			<fixr:code name="ListOfSecurityTypesReturnedPerRequest" id="323003" value="3" sort="3" added="FIX.4.2">
 					<fixr:annotation>
 							<fixr:documentation purpose="SYNOPSIS">
 									List of security types returned per request</fixr:documentation>
