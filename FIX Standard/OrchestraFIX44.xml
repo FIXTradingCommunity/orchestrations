@@ -1922,6 +1922,30 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
+			<fixr:code name="Preliminary" id="71004" value="3" sort="4" added="FIX.4.1">
+		<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+						Preliminary (without MiscFees and NetMoney) (Removed/Replaced)</fixr:documentation>
+		</fixr:annotation>
+</fixr:code>
+<fixr:code name="Calculated" id="71005" value="4" sort="5" added="FIX.4.1">
+		<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+						Calculated (includes MiscFees and NetMoney) (Removed/Replaced)</fixr:documentation>
+		</fixr:annotation>
+</fixr:code>
+<fixr:code name="CalculatedWithoutPreliminary" id="71006" value="5" sort="6" added="FIX.4.2">
+		<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+						Calculated without Preliminary (sent unsolicited by broker, includes MiscFees and NetMoney) (Removed/Replaced)</fixr:documentation>
+		</fixr:annotation>
+</fixr:code>
+<fixr:code name="Reversal" id="71007" value="6" sort="7" added="FIX.4.4" addedEP="5">
+		<fixr:annotation>
+				<fixr:documentation purpose="SYNOPSIS">
+						Reversal</fixr:documentation>
+		</fixr:annotation>
+</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Identifies allocation transaction type
