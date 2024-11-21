@@ -10029,6 +10029,18 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
+			<fixr:code name="SellsideCalculatedUsingPreliminary" id="626003" value="3" sort="3" added="FIX.4.3" updated="FIX.5.0SP2" updatedEP="118" deprecated="FIX.4.2">
+					<fixr:annotation>
+							<fixr:documentation purpose="SYNOPSIS">
+									Sellside calculated using preliminary (includes MiscFees and NetMoney) (Replaced)</fixr:documentation>
+					</fixr:annotation>
+			</fixr:code>
+			<fixr:code name="SellsideCalculatedWithoutPreliminary" id="626004" value="4" sort="4" added="FIX.4.3" updated="FIX.5.0SP2" updatedEP="118" deprecated="FIX.4.2">
+					<fixr:annotation>
+							<fixr:documentation purpose="SYNOPSIS">
+									Sellside calculatedd without preliminary (sent unsolicited by sellside, includes MiscFees and NetMoney) (Replaced)</fixr:documentation>
+					</fixr:annotation>
+			</fixr:code>
 			<fixr:code name="ReadyToBook" id="626003" value="5" added="FIX.4.3">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
@@ -10036,6 +10048,11 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
+			<fixr:code name="BuysideReadyToBook" id="626006" value="6" sort="6" added="FIX.4.3" updated="FIX.5.0SP2" updatedEP="118" deprecated="FIX.4.2">
+					<fixr:annotation>
+							<fixr:documentation purpose="SYNOPSIS">
+									Buyside Ready-To-Book - combined set of orders (replaced)</fixr:documentation>
+					</fixr:annotation>
 			<fixr:code name="WarehouseInstruction" id="626004" value="7" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
