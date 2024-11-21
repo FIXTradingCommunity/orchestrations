@@ -10054,12 +10054,6 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="BuysideReadyToBook" id="626006" value="6" sort="6" added="FIX.4.3" updated="FIX.5.0SP2" updatedEP="118">
-					<fixr:annotation>
-							<fixr:documentation purpose="SYNOPSIS">
-									Buyside Ready-To-Book - combined set of orders (replaced)</fixr:documentation>
-					</fixr:annotation>
-			</fixr:code>
 			<fixr:code name="WarehouseInstruction" id="626004" value="7" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
