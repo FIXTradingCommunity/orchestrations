@@ -7647,7 +7647,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="372" name="RefMsgType" type="String" added="FIX.4.2">
+		<fixr:field id="372" name="RefMsgType" type="MsgTypeCodeSet" added="FIX.4.2">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          The MsgType of the FIX message being referenced.
