@@ -1922,6 +1922,24 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
+			<fixr:code name="Preliminary" id="71004" value="3" sort="4" added="FIX.4.1" deprecated="FIX.4.2">
+					<fixr:annotation>
+							<fixr:documentation purpose="SYNOPSIS">
+									Preliminary (without MiscFees and NetMoney) (Removed/Replaced)</fixr:documentation>
+					</fixr:annotation>
+			</fixr:code>
+			<fixr:code name="Calculated" id="71005" value="4" sort="5" added="FIX.4.1" deprecated="FIX.4.2">
+					<fixr:annotation>
+							<fixr:documentation purpose="SYNOPSIS">
+									Calculated (includes MiscFees and NetMoney) (Removed/Replaced)</fixr:documentation>
+					</fixr:annotation>
+			</fixr:code>
+			<fixr:code name="CalculatedWithoutPreliminary" id="71006" value="5" sort="6" added="FIX.4.2" deprecated="FIX.4.2">
+					<fixr:annotation>
+							<fixr:documentation purpose="SYNOPSIS">
+									Calculated without Preliminary (sent unsolicited by broker, includes MiscFees and NetMoney) (Removed/Replaced)</fixr:documentation>
+					</fixr:annotation>
+			</fixr:code>
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Identifies allocation transaction type
@@ -16788,7 +16806,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="372" name="RefMsgType" type="String" added="FIX.4.2" abbrName="RefMsgTyp">
+		<fixr:field id="372" name="RefMsgType" type="MsgTypeCodeSet" added="FIX.4.2" abbrName="RefMsgTyp">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          The MsgType (35) of the FIX message being referenced.
