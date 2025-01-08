@@ -4031,11 +4031,9 @@
                 <fixr:annotation>
                     <fixr:documentation purpose="SYNOPSIS">
                         Euribor</fixr:documentation>
-                    <fixr:documentation purpose="ELABORATION">
-                        Deprecated in FIX.5.0.SP2 EP132 with intended use of EURIBOR for the enumeration whch was added in EP132.</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
-            <fixr:code name="FutureSWAP" id="221004" value="FutureSWAP" sort="4" added="FIX.4.3" updted="FIX.Latest" updatedEP="294">
+            <fixr:code name="FutureSWAP" id="221004" value="FutureSWAP" sort="4" added="FIX.4.3" updated="FIX.Latest" updatedEP="294">
                 <fixr:annotation>
                     <fixr:documentation purpose="SYNOPSIS">
                         FutureSWAP</fixr:documentation>
@@ -23120,7 +23118,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="119" added="FIX.4.4" updated="FIX.Latest" updatedEP="294" deprecated="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation purpose="SYNOPSIS">(Deprecated) Replaced by AllocSettlCurrAmt.<fixr:documentation/>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="737" added="FIX.4.4">
@@ -23130,7 +23128,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="120" added="FIX.4.4" updated="FIX.Latest" updatedEP="294" deprecated="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation purpose="SYNOPSIS">(Deprecated) Replaced by AllocSettlCurrency.<fixr:documentation/>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="736" added="FIX.4.4">
