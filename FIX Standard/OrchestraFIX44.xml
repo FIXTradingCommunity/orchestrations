@@ -1922,24 +1922,6 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-           <fixr:code name="Preliminary" id="71004" value="3" sort="4" added="FIX.4.1" deprecated="FIX.4.4">
-                <fixr:annotation>
-                    <fixr:documentation purpose="SYNOPSIS">
-                        Preliminary (without MiscFees and NetMoney) (Removed/Replaced)</fixr:documentation>
-                </fixr:annotation>
-            </fixr:code>
-            <fixr:code name="Calculated" id="71005" value="4" sort="5" added="FIX.4.1" deprecated="FIX.4.4">
-                <fixr:annotation>
-                    <fixr:documentation purpose="SYNOPSIS">
-                        Calculated (includes MiscFees and NetMoney) (Removed/Replaced)</fixr:documentation>
-                </fixr:annotation>
-            </fixr:code>
-            <fixr:code name="CalculatedWithoutPreliminary" id="71006" value="5" sort="6" added="FIX.4.2" deprecated="FIX.4.4">
-                <fixr:annotation>
-                    <fixr:documentation purpose="SYNOPSIS">
-                        Calculated without Preliminary (sent unsolicited by broker, includes MiscFees and NetMoney) (Removed/Replaced)</fixr:documentation>
-                </fixr:annotation>
-            </fixr:code>			
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Identifies allocation transaction type
@@ -4032,73 +4014,79 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
-		<fixr:codeSet name="BenchmarkCurveNameCodeSet" id="221" type="String" added="FIX.4.2">
-            <fixr:code name="EONIA" id="221001" value="EONIA" sort="1" added="FIX.4.4" addedEP="-1">
+		<fixr:codeSet name="BenchmarkCurveNameCodeSet" id="221" type="String" added="FIX.4.2" updated="FIX.Latest" updatedEP="294">
+            <fixr:code name="EONIA" id="221001" value="EONIA" sort="1" added="FIX.4.4" addedEP="-1" updated="FIX.Latest" updatedEP="294">
                 <fixr:annotation>
                     <fixr:documentation purpose="SYNOPSIS">
                         EONIA</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
-            <fixr:code name="EUREPO" id="221002" value="EUREPO" sort="2" added="FIX.4.4" addedEP="-1">
+            <fixr:code name="EUREPO" id="221002" value="EUREPO" sort="2" added="FIX.4.4" addedEP="-1" updated="FIX.Latest" updatedEP="294">
                 <fixr:annotation>
                     <fixr:documentation purpose="SYNOPSIS">
                         EUREPO</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
-            <fixr:code name="Euribor" id="221003" value="Euribor" sort="3" added="FIX.4.3" updated="FIX.5.0SP2" updatedEP="132" deprecated="FIX.5.0SP2" deprecatedEP="132">
+            <fixr:code name="Euribor" id="221003" value="Euribor" sort="3" added="FIX.4.3" updated="FIX.Latest" updatedEP="294">
                 <fixr:annotation>
                     <fixr:documentation purpose="SYNOPSIS">
-                        EURIBOR (deprecated use enum EURIBOR instead)</fixr:documentation>
+                        Euribor</fixr:documentation>
                     <fixr:documentation purpose="ELABORATION">
-                        Deprecated use of EURIBOR for the enumeration.</fixr:documentation>
+                        Deprecated in FIX.5.0.SP2 EP132 with intended use of EURIBOR for the enumeration whch was added in EP132.</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
-            <fixr:code name="FutureSWAP" id="221004" value="FutureSWAP" sort="4" added="FIX.4.3">
+            <fixr:code name="FutureSWAP" id="221004" value="FutureSWAP" sort="4" added="FIX.4.3" updted="FIX.Latest" updatedEP="294">
                 <fixr:annotation>
                     <fixr:documentation purpose="SYNOPSIS">
                         FutureSWAP</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
-            <fixr:code name="LIBID" id="221005" value="LIBID" sort="5" added="FIX.4.3">
+            <fixr:code name="LIBID" id="221005" value="LIBID" sort="5" added="FIX.4.3" updated="FIX.Latest" updatedEP="294">
                 <fixr:annotation>
                     <fixr:documentation purpose="SYNOPSIS">
                         LIBID</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
-            <fixr:code name="LIBOR" id="221006" value="LIBOR" sort="6" added="FIX.4.3">
+            <fixr:code name="LIBOR" id="221006" value="LIBOR" sort="6" added="FIX.4.3" updated="FIX.Latest" updatedEP="294">
                 <fixr:annotation>
                     <fixr:documentation purpose="SYNOPSIS">
                         LIBOR (London Inter-Bank Offer)</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
-            <fixr:code name="MuniAAA" id="221007" value="MuniAAA" sort="7" added="FIX.4.3">
+            <fixr:code name="MuniAAA" id="221007" value="MuniAAA" sort="7" added="FIX.4.3" updated="FIX.Latest" updatedEP="294">
                 <fixr:annotation>
                     <fixr:documentation purpose="SYNOPSIS">
                         MuniAAA</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
-            <fixr:code name="OTHER" id="221008" value="OTHER" sort="8" added="FIX.4.3">
+            <fixr:code name="OTHER" id="221008" value="OTHER" sort="8" added="FIX.4.3" updated="FIX.Latest" updatedEP="294">
                 <fixr:annotation>
                     <fixr:documentation purpose="SYNOPSIS">
                         OTHER</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
-            <fixr:code name="Pfandbriefe" id="221009" value="Pfandbriefe" sort="9" added="FIX.4.3">
+            <fixr:code name="Pfandbriefe" id="221009" value="Pfandbriefe" sort="9" added="FIX.4.3" updated="FIX.Latest" updatedEP="294">
                 <fixr:annotation>
                     <fixr:documentation purpose="SYNOPSIS">
                         Pfandbriefe</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
-            <fixr:code name="SONIA" id="221010" value="SONIA" sort="10" added="FIX.4.4" addedEP="-1">
+            <fixr:code name="SONIA" id="221010" value="SONIA" sort="10" added="FIX.4.4" addedEP="-1" updated="FIX.Latest" updatedEP="294">
                 <fixr:annotation>
                     <fixr:documentation purpose="SYNOPSIS">
                         SONIA</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
-            <fixr:code name="SWAP" id="221011" value="SWAP" sort="11" added="FIX.4.3">
+            <fixr:code name="SWAP" id="221011" value="SWAP" sort="11" added="FIX.4.3" updated="FIX.Latest" updatedEP="294">
                 <fixr:annotation>
                     <fixr:documentation purpose="SYNOPSIS">
                         SWAP</fixr:documentation>
+                </fixr:annotation>
+            </fixr:code>
+			<fixr:code name="Treasury" id="221012" value="Treasury" sort="12" added="FIX.4.3" updated="FIX.Latest" updatedEP="294">
+                <fixr:annotation>
+                    <fixr:documentation purpose="SYNOPSIS">
+                        Treasury</fixr:documentation>
                 </fixr:annotation>
             </fixr:code>
         </fixr:codeSet>
@@ -5715,18 +5703,6 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-			<fixr:code name="ListOfSecurityTypesReturnedPerRequest" id="323003" value="3" sort="3" added="FIX.4.2" deprecated="FIX.4.4">
-                <fixr:annotation>
-                    <fixr:documentation purpose="SYNOPSIS">
-                        List of security types returned per request</fixr:documentation>
-                </fixr:annotation>
-            </fixr:code>
-            <fixr:code name="ListOfSecuritiesReturnedPerRequest" id="323004" value="4" sort="4" added="FIX.4.2" deprecated="FIX.4.4">
-                <fixr:annotation>
-                    <fixr:documentation purpose="SYNOPSIS">
-                        List of securities returned per request</fixr:documentation>
-                </fixr:annotation>
-            </fixr:code>
 			<fixr:code name="RejectSecurityProposal" id="323003" value="5" added="FIX.4.2">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
@@ -10111,18 +10087,6 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-           <fixr:code name="SellsideCalculatedUsingPreliminary" id="626003" value="3" sort="3" added="FIX.4.3" updated="FIX.5.0SP2" updatedEP="118" deprecated="FIX.4.4">
-                <fixr:annotation>
-                    <fixr:documentation purpose="SYNOPSIS">
-                        Sellside calculated using preliminary (includes MiscFees and NetMoney) (Replaced)</fixr:documentation>
-                </fixr:annotation>
-            </fixr:code>
-            <fixr:code name="SellsideCalculatedWithoutPreliminary" id="626004" value="4" sort="4" added="FIX.4.3" updated="FIX.5.0SP2" updatedEP="118" deprecated="FIX.4.4">
-                <fixr:annotation>
-                    <fixr:documentation purpose="SYNOPSIS">
-                        Sellside calculatedd without preliminary (sent unsolicited by sellside, includes MiscFees and NetMoney) (Replaced)</fixr:documentation>
-                </fixr:annotation>
-            </fixr:code>			
 			<fixr:code name="ReadyToBook" id="626003" value="5" added="FIX.4.3">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
@@ -10130,12 +10094,6 @@
       </fixr:documentation>
 				</fixr:annotation>
 			</fixr:code>
-            <fixr:code name="BuysideReadyToBook" id="626006" value="6" sort="6" added="FIX.4.3" updated="FIX.5.0SP2" updatedEP="118" deprecated="FIX.4.4">
-                <fixr:annotation>
-                    <fixr:documentation purpose="SYNOPSIS">
-                        Buyside Ready-To-Book - combined set of orders (replaced)</fixr:documentation>
-                </fixr:annotation>
-            </fixr:code>
 			<fixr:code name="WarehouseInstruction" id="626004" value="7" added="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation purpose="SYNOPSIS">
@@ -15728,7 +15686,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="221" name="BenchmarkCurveName" type="BenchmarkCurveNameCodeSet" added="FIX.4.2" abbrName="Name">
+		<fixr:field id="221" name="BenchmarkCurveName" type="BenchmarkCurveNameCodeSet" added="FIX.4.2" updated="FIX.Latest" updatedEP="294" abbrName="Name">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Name of benchmark curve.
@@ -16885,7 +16843,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="368" name="QuoteEntryRejectReason" type="QuoteRejectReasonCodeSet" added="FIX.4.2" abbrName="EntryRejRsn">
+		<fixr:field id="368" name="QuoteEntryRejectReason" type="QuoteRejectReasonCodeSet" added="FIX.4.2" updated="FIX.Latest" updatedEP="294" abbrName="EntryRejRsn">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Reason Quote Entry was rejected
@@ -16906,7 +16864,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="372" name="RefMsgType" type="MsgTypeCodeSet" added="FIX.4.2" abbrName="RefMsgTyp">
+		<fixr:field id="372" name="RefMsgType" type="MsgTypeCodeSet" added="FIX.4.2" updated="FIX.Latest" updatedEP="294" abbrName="RefMsgTyp">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          The MsgType (35) of the FIX message being referenced.
@@ -18264,7 +18222,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="564" name="LegPositionEffect" type="PositionEffectCodeSet" added="FIX.4.3" abbrName="PosEfct">
+		<fixr:field id="564" name="LegPositionEffect" type="PositionEffectCodeSet" added="FIX.4.3" updated="FIX.Latest" updatedEP="294" abbrName="PosEfct">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          PositionEffect for leg of a multileg
@@ -18431,7 +18389,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="587" name="LegSettlType" type="SettlTypeCodeSet" added="FIX.4.3" abbrName="SettlTyp">
+		<fixr:field id="587" name="LegSettlType" type="SettlTypeCodeSet" added="FIX.4.3" updated="FIX.Latest" updatedEP="294" abbrName="SettlTyp">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Refer to values for SettlType[63]
@@ -19102,7 +19060,7 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:field>
-		<fixr:field id="677" name="LegBenchmarkCurveName" type="BenchmarkCurveNameCodeSet" added="FIX.4.4" updated="FIX.Latest" updatedEP="282" abbrName="Name">
+		<fixr:field id="677" name="LegBenchmarkCurveName" type="BenchmarkCurveNameCodeSet" added="FIX.4.4" updated="FIX.Latest" updatedEP="294" abbrName="Name">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
          Name of the Leg Benchmark Curve.
@@ -23160,7 +23118,7 @@
 					<fixr:documentation/>
 				</fixr:annotation>
 			</fixr:fieldRef>
-			<fixr:fieldRef id="119" added="FIX.4.4" deprecated="FIX.4.4">
+			<fixr:fieldRef id="119" added="FIX.4.4" updated="FIX.Latest" updatedEP="294" deprecated="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation/>
 				</fixr:annotation>
@@ -23170,7 +23128,7 @@
 					<fixr:documentation/>
 				</fixr:annotation>
 			</fixr:fieldRef>
-			<fixr:fieldRef id="120" added="FIX.4.4" deprecated="FIX.4.4">
+			<fixr:fieldRef id="120" added="FIX.4.4" updated="FIX.Latest" updatedEP="294" deprecated="FIX.4.4">
 				<fixr:annotation>
 					<fixr:documentation/>
 				</fixr:annotation>
