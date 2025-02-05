@@ -7865,7 +7865,7 @@
 				<fixr:documentation purpose="SYNOPSIS">
          A code identifying the payment method for a (fractional) distribution.
          13 through 998 are reserved for future use
-         Values above 000 are available for use by private agreement among counterparties
+         Values above 1000 are available for use by private agreement among counterparties
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
@@ -8151,7 +8151,7 @@
 				<fixr:documentation purpose="SYNOPSIS">
          A code identifying the Settlement payment method.
          16 through 998 are reserved for future use
-         Values above 000 are available for use by private agreement among counterparties
+         Values above 1000 are available for use by private agreement among counterparties
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:codeSet>
