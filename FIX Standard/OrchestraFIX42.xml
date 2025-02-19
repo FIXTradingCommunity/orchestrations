@@ -5268,10 +5268,12 @@
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:datatype>
-		<fixr:datatype name="data" added="FIX.2.7">
+		<fixr:datatype name="data" added="FIX.2.7" updated="FIX.Latest" updatedEP="294">
 			<fixr:annotation>
 				<fixr:documentation purpose="SYNOPSIS">
-         Raw data with no format or content restrictions. Data fields are always immediately preceded by a length field. The length field should specify the number of bytes of the value of the data field (up to but not including the terminating SOH). Caution: the value of one of these fields may contain the delimiter (SOH) character. Note that the value specified for this field should be followed by the delimiter (SOH) character as all fields are terminated with an "SOH".
+string field containing opaque or non-ASCII data with no format or content restrictions. Data fields are always immediately preceded by a length field. The length field should specify the number of bytes of the value of the data field (up to but not including the terminating SOH). The number of bytes does not equal the number of characters when multibyte character sets are used.
+
+Caution: The value of these fields may contain the delimiter (SOH) character.  Note that the value specified for these fields must be followed by the delimiter (SOH) character as all tag-value fields are terminated with an SOH.
       </fixr:documentation>
 			</fixr:annotation>
 		</fixr:datatype>
