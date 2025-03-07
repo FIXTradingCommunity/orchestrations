@@ -22882,22 +22882,23 @@
 		<fixr:group id="2001" added="FIX.4.4" name="AffectedOrdGrp" category="SingleGeneralOrderHandling" abbrName="AffectOrd">
 			<fixr:numInGroup id="534">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Optional field used to indicate the number of order identifiers for orders affected by the Order Mass Cancel Request. Must be followed with OrigClOrdID as the next field</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="41" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoAffectedOrders &gt; 0
+Indicates the client order id of an order affected by the Order Mass Cancel Request.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="535" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Contains the OrderID assigned by the counterparty of an affected order. Not required as part of the repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="536" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Contains the SecondaryOrderID assigned by the counterparty of an affected order. Not required as part of the repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -22908,12 +22909,12 @@
 		<fixr:group id="2002" added="FIX.4.4" name="AllocAckGrp" category="Allocation" abbrName="AllocAck">
 			<fixr:numInGroup id="78">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Indicates number of allocation groups to follow.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="79" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoAllocs &gt; 0. Must be first field in repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="661" added="FIX.4.4">
@@ -22923,7 +22924,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="366" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used when performing "executed price" vs. "average price" allocations (e.g. Japan). AllocAccount plus AllocPrice form a unique Allocs entry. Used in lieu of AllocAvgPx.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="467" added="FIX.4.4">
@@ -22933,38 +22934,39 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="776" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoAllocs &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="161" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Free format text field related to this AllocAccount (can be used here to hold text relating to the rejection of this AllocAccount).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="360" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedAllocText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="361" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the AllocText field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
-				<fixr:documentation purpose="SYNOPSIS"/>
+				<fixr:documentation purpose="SYNOPSIS">This repeating group is optionally used for messages with AllocStatus = 2 (account level reject), AllocStatus = 0 (accepted), to provide details of the individual accounts that were accepted or rejected. In the case of a reject, the reasons for the rejection should be specified. This group should not be populated where AllocStatus has any other value.</fixr:documentation>
 				<fixr:documentation purpose="ELABORATION"/>
 			</fixr:annotation>
 		</fixr:group>
 		<fixr:group id="2003" added="FIX.4.4" name="AllocGrp" category="Allocation" abbrName="Alloc">
 			<fixr:numInGroup id="78">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Conditionally required except when AllocTransType = Cancel, or when AllocType = Ready-to-book or Warehouse instruction.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="79" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>May be the same value as BrokerOfCredit if ProcessCode is step-out or soft-dollar step-out and Institution does not wish to disclose individual account breakdowns to the ExecBroker. Required if NoAllocs &gt; 0. Must be first field in repeating group.
+Conditionally required except when for AllocTransType="Cancel", or when AllocType= "Ready-To-Book" or "Warehouse instruction".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="661" added="FIX.4.4">
@@ -22979,12 +22981,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="366" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used when performing "executed price" vs. "average price" allocations (e.g. Japan). AllocAccount plus AllocPrice form a unique Allocs entry. Used in lieu of AllocAvgPx.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="80" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Conditionally required except when for AllocTransType="Cancel", or when AllocType= "Ready-To-Book" or "Warehouse instruction".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="467" added="FIX.4.4">
@@ -22999,7 +23001,9 @@
 			</fixr:fieldRef>
 			<fixr:groupRef id="1008" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Nested Parties" (firm identification "nested" within additional repeating group) fields defined in "Common Components of Application Messages"
+Used for NestedPartyRole=BrokerOfCredit, ClientID, Settlement location (PSET), etc.
+Note: this field can be used for settlement location (PSET) information.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="208" added="FIX.4.4">
@@ -23014,72 +23018,75 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="161" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Free format text field related to this AllocAccount</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="360" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedAllocText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="361" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the AllocText field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1000" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "CommissionData" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="153" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>AvgPx for this AllocAccount. For F/X orders, should be the "all-in" rate (spot rate adjusted for forward points) for this allocation. For Fixed Income always express value as "percent of par".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="154" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>NetMoney for this AllocAccount
+((AllocQty * AllocAvgPx) - Commission - sum of MiscFeeAmt + AccruedInterestAmt) if a Sell
+((AllocQty * AllocAvgPx) + Commission + sum of MiscFeeAmt + AccruedInterestAmt) if a Buy</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="119" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Replaced by AllocSettlCurrAmt.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="737" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>AllocNetMoney in AllocSettlCurrency for this AllocAccount if AllocSettlCurrency is different from "overall" Currency.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="120" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Replaced by AllocSettlCurrency
+SettlCurrency for this AllocAccount if different from "overall" Currency. Required if SettlCurrAmt is specified.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="736" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>AllocSettlCurrency for this AllocAccount if different from "overall" Currency. Required if AllocSettlCurrAmt is specified.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="155" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Foreign exchange rate used to compute AllocSettlCurrAmt from Currency to AllocSettlCurrency.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="156" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Specifies whether the SettlCurrFxRate should be multiplied or divided.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="742" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Applicable for Convertible Bonds and fixed income.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="741" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Applicable for securities that pay interest in lump-sum at maturity.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="2035" added="FIX.4.4">
@@ -23094,12 +23101,14 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="780" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to indicate whether settlement instructions are provided on this message, and if not, how they are to be derived.
+Absence of this field implies use of default instructions.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1016" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "SettlInstructionsData" fields defined in "Common Components of Application Messages"
+Used to communicate settlement instructions for this AllocAccount detail. Required if AllocSettlInstType = 2 or 3.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:annotation>
@@ -23110,22 +23119,22 @@
 		<fixr:group id="2004" added="FIX.4.4" name="BidCompReqGrp" category="ProgramTrading" abbrName="CompReq">
 			<fixr:numInGroup id="420">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used if BidType="Disclosed".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="66" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoBidComponents &gt; 0. Must be first field in repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="54" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>When used in request for a "Disclosed" bid indicates that bid is required on assumption that SideValue1 is Buy or Sell. SideValue2 can be derived by inference.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="336" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Indicates off-exchange type activities for Detail.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="625" added="FIX.4.4">
@@ -23135,7 +23144,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="430" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Indicates Net or Gross for selling Detail.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="63" added="FIX.4.4">
@@ -23145,7 +23154,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="64" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Takes precedence over SettlType value and conditionally required/omitted for specific SettlType values.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="1" added="FIX.4.4">
@@ -23166,12 +23175,13 @@
 		<fixr:group id="2005" added="FIX.4.4" name="BidCompRspGrp" category="ProgramTrading" abbrName="CompRsp">
 			<fixr:numInGroup id="420">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of bid repeating groups.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1000" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "CommissionData" fields defined in "Common Components of Application Messages"
+First element of price. Required if NoBidComponents &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="66" added="FIX.4.4">
@@ -23181,17 +23191,17 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="421" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>ISO Country Code</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="54" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>When used in response to a "Disclosed" request indicates whether SideValue1 is Buy or Sell. SideValue2 can be derived by inference.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="44" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Second element of price.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="423" added="FIX.4.4">
@@ -23201,12 +23211,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="406" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>The difference between the value of a future and the value of the underlying equities after allowing for the discounted cash flows associated with the underlying stocks (E.g. Dividends etc).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="430" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Net/Gross</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="63" added="FIX.4.4">
@@ -23216,7 +23226,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="64" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Takes precedence over SettlType value and conditionally required/omitted for specific SettlType values.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="336" added="FIX.4.4">
@@ -23236,12 +23246,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="354" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="355" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -23252,12 +23262,12 @@
 		<fixr:group id="2006" added="FIX.4.4" name="BidDescReqGrp" category="ProgramTrading" abbrName="DescReq">
 			<fixr:numInGroup id="398">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used if BidType="Non Disclosed".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="399" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoBidDescriptors &gt; 0. Must be first field in repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="400" added="FIX.4.4">
@@ -23267,47 +23277,47 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="401" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Refers to the SideValue1 or SideValue2. These are used as opposed to Buy or Sell so that the basket can be quoted either way as Buy or Sell.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="404" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Value between LiquidityPctLow and LiquidityPctHigh in Currency.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="441" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of Securites between LiquidityPctLow and LiquidityPctHigh in Currency.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="402" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Liquidity indicator or lower limit if LiquidityNumSecurities &gt; 1</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="403" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Upper liquidity indicator if LiquidityNumSecurities &gt; 1</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="405" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Eg Used in EFP (Exchange For Physical) trades 12%</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="406" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used in EFP trades.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="407" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used in EFP trades,</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="408" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used in EFP trades.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -23318,12 +23328,12 @@
 		<fixr:group id="2007" added="FIX.4.4" name="ClrInstGrp" category="Common" abbrName="ClrInst">
 			<fixr:numInGroup id="576">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>** Nested Repeating Group follows **</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="577" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoClearingInstructions &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -23334,12 +23344,13 @@
 		<fixr:group id="2008" added="FIX.4.4" name="CollInqQualGrp" category="CollateralManagement" abbrName="Qual">
 			<fixr:numInGroup id="938">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of qualifiers to inquiry.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="896" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoCollInquiryQualifier &gt; 0
+Type of collateral inquiry.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -23350,27 +23361,28 @@
 		<fixr:group id="2009" added="FIX.4.4" name="CompIDReqGrp" category="Common" abbrName="CIDReq">
 			<fixr:numInGroup id="936">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to restrict updates/request to a list of specific CompID/SubID/LocationID/DeskID combinations.
+If not present request applies to all applicable available counterparties. EG Unless one sell side broker was a customer of another you would not expect to see information about other brokers, similarly one fund manager etc.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="930" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to restrict updates/request to specific CompID.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="931" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to restrict updates/request to specific SubID.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="283" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to restrict updates/request to specific LocationID.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="284" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to restrict updates/request to specific DeskID.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -23381,27 +23393,27 @@
 		<fixr:group id="2010" added="FIX.4.4" name="CompIDStatGrp" category="Common" abbrName="CIDStat">
 			<fixr:numInGroup id="936">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Specifies the number of repeating CompId’s.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="930" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>CompID that status is being report for. Required if NoCompIDs &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="931" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>SubID that status is being report for.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="283" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>LocationID that status is being report for.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="284" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>DeskID that status is being report for.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="928" added="FIX.4.4">
@@ -23411,7 +23423,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="929" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Additional Information, i.e. "National Holiday".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -23422,12 +23434,12 @@
 		<fixr:group id="2011" added="FIX.4.4" name="ContAmtGrp" category="Common" abbrName="ContAmt">
 			<fixr:numInGroup id="518">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of contract details in this message (number of repeating groups to follow).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="519" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be first field in the repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="520" added="FIX.4.4">
@@ -23448,12 +23460,12 @@
 		<fixr:group id="2012" added="FIX.4.4" name="ContraGrp" category="Common" abbrName="Contra">
 			<fixr:numInGroup id="382">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of ContraBrokers repeating group instances.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="375" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>First field in repeating group. Required if NoContraBrokers &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="337" added="FIX.4.4">
@@ -23484,12 +23496,13 @@
 		<fixr:group id="2013" added="FIX.4.4" name="CpctyConfGrp" category="Common" abbrName="Cpcty">
 			<fixr:numInGroup id="862">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Indicates number of repeating entries.
+** Nested Repeating Group follows **</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="528" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Specifies the capacity of the firm executing the order(s).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="529" added="FIX.4.4">
@@ -23499,7 +23512,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="863" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>The quantity that was executed under this capacity (e.g. quantity executed as agent, as principal etc.). Sum of OrderCapacityQty values must equal this message’s AllocQty.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -23510,12 +23523,12 @@
 		<fixr:group id="2014" added="FIX.4.4" name="ExecAllocGrp" category="Allocation" abbrName="AllExc">
 			<fixr:numInGroup id="124">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Indicates number of individual execution repeating group entries to follow. Absence of this field indicates that no individual execution entries are included. Primarily used to support step-outs.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="32" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Amount of quantity (e.g. number of shares) in individual execution. Required if NoExecs &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="17" added="FIX.4.4">
@@ -23530,17 +23543,17 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="31" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Price of individual execution. Required if NoExecs &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="669" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Last price expressed in percent-of-par. Conditionally required for Fixed Income trades when LastPx is expressed in Yield, Spread, Discount or any other price type.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="29" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to identify whether the trade was executed on an agency or principal basis.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -23551,12 +23564,12 @@
 		<fixr:group id="2015" added="FIX.4.4" name="ExecCollGrp" category="CollateralManagement" abbrName="CollExc">
 			<fixr:numInGroup id="124">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Executions for which collateral is required.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="17" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoExecs &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -23583,12 +23596,12 @@
 		<fixr:group id="2017" added="FIX.4.4" name="InstrmtGrp" category="Common" abbrName="Inst">
 			<fixr:numInGroup id="146">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Specifies the number of repeating symbols (instruments) specified.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1003" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:annotation>
@@ -23599,12 +23612,13 @@
 		<fixr:group id="2018" added="FIX.4.4" name="InstrmtLegExecGrp" category="Common" abbrName="Exec">
 			<fixr:numInGroup id="555">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of legs
+Identifies a Multi-leg Execution if present and non-zero.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1005" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be provided if Number of legs &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="687" added="FIX.4.4">
@@ -23614,7 +23628,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="690" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Instead of LegQty – requests that the sellside calculate LegQty based on opposite Leg.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="1007" added="FIX.4.4">
@@ -23624,27 +23638,28 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="564" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Provide if the PositionEffect for the leg is different from that specified for the overall multileg security.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="565" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Provide if the CoveredOrUncovered for the leg is different from that specified for the overall multileg security.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="1008" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Nested Parties" (firm identification "nested" within additional repeating group) fields defined in "Common Components of Application Messages".
+Used for NestedPartyRole=Leg Clearing Firm/Account, Leg Account/Account Type.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="654" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to identify a specific leg.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="566" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Provide only if a Price is required for a specific leg. Used for anchoring the overall multileg security price to a specific leg Price.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="587" added="FIX.4.4">
@@ -23654,12 +23669,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="588" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Takes precedence over LegSettlType value and conditionally required/omitted for specific LegSettlType values.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="637" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to report the execution price assigned to the leg of the multileg instrument.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -23670,12 +23685,13 @@
 		<fixr:group id="2019" added="FIX.4.4" name="InstrmtLegGrp" category="Common" abbrName="Leg">
 			<fixr:numInGroup id="555">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of legs.
+Identifies a Multi-leg Execution if present and non-zero.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1005" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be provided if Number of legs &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:annotation>
@@ -23686,17 +23702,18 @@
 		<fixr:group id="2020" added="FIX.4.4" name="InstrmtLegIOIGrp" category="Common" abbrName="IOI">
 			<fixr:numInGroup id="555">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for multileg IOIs.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1005" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for multileg IOIs.
+For Swaps one leg is Buy and other leg is Sell.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="682" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for multileg IOIs and for each leg.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="1007" added="FIX.4.4">
@@ -23712,12 +23729,13 @@
 		<fixr:group id="2021" added="FIX.4.4" name="InstrmtLegSecListGrp" category="Common" abbrName="SecL">
 			<fixr:numInGroup id="555">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of legs that make up the Security.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1005" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Instrument Legs" (leg symbology) fields defined in "Common Components of Application Messages"
+Required if NoLegs &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="690" added="FIX.4.4">
@@ -23732,12 +23750,14 @@
 			</fixr:fieldRef>
 			<fixr:groupRef id="1007" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "LegStipulations" (leg symbology) fields defined in "Common Components of Application Messages"
+Required if NoLegs &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:componentRef id="1006" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "LegBenchmarkCurveData" (leg symbology) fields defined in "Common Components of Application Messages"
+Required if NoLegs &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:annotation>
@@ -23748,12 +23768,12 @@
 		<fixr:group id="2022" added="FIX.4.4" name="InstrmtMDReqGrp" category="Common" abbrName="InstReq">
 			<fixr:numInGroup id="146">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of symbols (instruments) requested.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1003" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:groupRef id="2066" added="FIX.4.4">
@@ -23774,12 +23794,13 @@
 		<fixr:group id="2023" added="FIX.4.4" name="InstrmtStrkPxGrp" category="ProgramTrading" abbrName="StrkPX">
 			<fixr:numInGroup id="428">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of strike price entries.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1003" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages"
+Required if NoStrikes &gt; 0. Must be first field in repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:annotation>
@@ -23790,12 +23811,12 @@
 		<fixr:group id="2024" added="FIX.4.4" name="IOIQualGrp" category="Indication" abbrName="Qual">
 			<fixr:numInGroup id="199">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if any IOIQualifiers are specified. Indicates the number of repeating IOIQualifiers.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="104" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoIOIQualifiers &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -23806,12 +23827,13 @@
 		<fixr:group id="2025" added="FIX.4.4" name="LegOrdGrp" category="MultilegOrders" abbrName="Ord">
 			<fixr:numInGroup id="555">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of legs.
+Can be zero (e.g. standardized multileg instrument such as an Option strategy) – must be provided even if zero.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1005" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be provided if Number of legs &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="687" added="FIX.4.4">
@@ -23836,37 +23858,38 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="564" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Provide if the PositionEffect for the leg is different from that specified for the overall multileg security.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="565" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Provide if the CoveredOrUncovered for the leg is different from that specified for the overall multileg security.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="1008" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Nested Parties" (firm identification "nested" within additional repeating group) fields defined in "Common Components of Application Messages".
+Used for NestedPartyRole=Leg Clearing Firm/Account, Leg Account/Account Type.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="654" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to identify a specific leg.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="566" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Provide only if a price is required for a specific leg. Used for anchoring the overall multileg security price to a specific leg price.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="587" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Refer to values for SettlType (63).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="588" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Refer to values for SettlDate (64).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -23892,7 +23915,7 @@
 			</fixr:fieldRef>
 			<fixr:groupRef id="1009" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Nested Parties #2" (firm identification "second instance of nesting" within additional repeating group) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="673" added="FIX.4.4">
@@ -23918,12 +23941,13 @@
 		<fixr:group id="2027" added="FIX.4.4" name="LegQuotGrp" category="QuotationNegotiation" abbrName="Quot">
 			<fixr:numInGroup id="555">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for multileg quotes.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1005" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for multileg quotes.
+For Swaps one leg is Buy and other leg is Sell.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="687" added="FIX.4.4">
@@ -23958,7 +23982,7 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="686" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Code to represent type of price presented in LegBidPx and LegOfferPx. Required if LegBidPx or PegOfferPx is present.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="681" added="FIX.4.4">
@@ -23984,12 +24008,13 @@
 		<fixr:group id="2028" added="FIX.4.4" name="LegQuotStatGrp" category="QuotationNegotiation" abbrName="QuoteStat">
 			<fixr:numInGroup id="555">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for multileg quote status reports.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1005" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for multileg quote status reports.
+For Swaps one leg is Buy and other leg is Sell.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="687" added="FIX.4.4">
@@ -24030,22 +24055,22 @@
 		<fixr:group id="2029" added="FIX.4.4" name="LinesOfTextGrp" category="Common" abbrName="TxtLn">
 			<fixr:numInGroup id="33">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Specifies the number of repeating lines of text.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="58" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Repeating field, number of instances defined in LinesOfText.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="354" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="355" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -24056,12 +24081,12 @@
 		<fixr:group id="2030" added="FIX.4.4" name="ListOrdGrp" category="ProgramTrading" abbrName="Ord">
 			<fixr:numInGroup id="73">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of orders in this message (number of repeating groups to follow).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="11" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be the first field in the repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="526" added="FIX.4.4">
@@ -24071,7 +24096,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="67" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Order number within the list.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="583" added="FIX.4.4">
@@ -24086,7 +24111,7 @@
 			</fixr:fieldRef>
 			<fixr:groupRef id="1012" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Parties" (firm identification) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="229" added="FIX.4.4">
@@ -24126,7 +24151,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="70" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Use to assign an ID to the block of individual preallocations.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="591" added="FIX.4.4">
@@ -24146,7 +24171,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="64" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Takes precedence over SettlType value and conditionally required/omitted for specific SettlType values.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="544" added="FIX.4.4">
@@ -24166,7 +24191,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="18" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can contain multiple instructions, space delimited. If OrdType=P, exactly one of the following values (ExecInst = L, R, M, P, O, T, or W) must be specified.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="110" added="FIX.4.4">
@@ -24196,7 +24221,7 @@
 			</fixr:fieldRef>
 			<fixr:componentRef id="1003" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:groupRef id="2066" added="FIX.4.4">
@@ -24206,22 +24231,22 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="140" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Useful for verifying security identification.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="54" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Note: to indicate the side of SideValue1 or SideValue2, specify Side=Undisclosed and SideValueInd=either the SideValue1 or SideValue2 indicator.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="401" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Refers to the SideValue1 or SideValue2. These are used as opposed to Buy or Sell so that the basket can be quoted either way as Buy or Sell.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="114" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for short sell orders.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="60" added="FIX.4.4">
@@ -24231,7 +24256,7 @@
 			</fixr:fieldRef>
 			<fixr:groupRef id="1019" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Stipulations" (repeating group of Fixed Income stipulations) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="854" added="FIX.4.4">
@@ -24241,7 +24266,7 @@
 			</fixr:fieldRef>
 			<fixr:componentRef id="1011" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "OrderQtyData" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="40" added="FIX.4.4">
@@ -24266,12 +24291,12 @@
 			</fixr:fieldRef>
 			<fixr:componentRef id="1018" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "SpreadOrBenchmarkCurveData" (Fixed Income spread or benchmark curve) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:componentRef id="1022" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "YieldData" (yield-related) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="15" added="FIX.4.4">
@@ -24291,12 +24316,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="23" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for Previously Indicated Orders (OrdType=E).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="117" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for Previously Quoted Orders (OrdType=D).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="59" added="FIX.4.4">
@@ -24311,22 +24336,22 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="432" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Conditionally required if TimeInForce = GTD and ExpireTime is not specified.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="126" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Conditionally required if TimeInForce = GTD and ExpireDate is not specified.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="427" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>States whether executions are booked out or accumulated on a partially filled GT order.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1000" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "CommissionData" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="528" added="FIX.4.4">
@@ -24356,7 +24381,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="775" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Method for booking out this order. Used when notifying a broker that an order to be settled by that broker is to be booked out as an OTC derivative (e.g. CFD or similar). Absence of this field implies regular booking.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="58" added="FIX.4.4">
@@ -24366,27 +24391,27 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="354" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="355" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="193" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="192" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="640" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with OrdType = "Forex - Swap" to specify the price for the future portion of a F/X swap which is also a limit order. For F/X orders, should be the "all-in" rate (spot rate adjusted for forward points).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="77" added="FIX.4.4">
@@ -24406,32 +24431,33 @@
 			</fixr:fieldRef>
 			<fixr:componentRef id="1013" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "PegInstruction" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:componentRef id="1001" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "DiscretionInstruction" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="847" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>The target strategy of the order.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="848" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For further specification of the TargetStrategy.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="849" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Mandatory for a TargetStrategy=Participate order and specifies the target particpation rate.
+For other order types optionally specifies a volume limit (i.e. do not be more than this percent of the market volume).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="494" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Supplementary registration information for this Order within the List.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -24442,27 +24468,28 @@
 		<fixr:group id="2031" added="FIX.4.4" name="MDFullGrp" category="MarketData" abbrName="Full">
 			<fixr:numInGroup id="268">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of entries following.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="269" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be the first field in this repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="270" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Conditionally required if MDEntryType is not Imbalance(A) ), Trade Volume (B), or Open Interest(C); Conditionally required when MDEntryType = "auction clearing price".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="15" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used to specify the currency of the quoted price.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="271" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Conditionally required if MDEntryType = Bid(0), Offer(1), Trade(2) ), Trade Volume (B), or Open Interest(C).
+Conditionally required when MDEntryType = "auction clearing price".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="272" added="FIX.4.4">
@@ -24482,7 +24509,8 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="275" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Market posting quote / trade. 
+Valid values: See Volume 6: Appendix 6-C.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="336" added="FIX.4.4">
@@ -24497,12 +24525,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="276" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Space-delimited list of conditions describing a quote.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="277" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Space-delimited list of conditions describing a trade.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="282" added="FIX.4.4">
@@ -24522,32 +24550,32 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="286" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>>Used if MDEntryType = Opening Price(4), Closing Price(5), or Settlement Price(6).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="59" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use when this Bid or Offer represents an order.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="432" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use when this Bid or Offer represents an order. ExpireDate and ExpireTime cannot both be specified in one Market Data Entry.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="126" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use when this Bid or Offer represents an order. ExpireDate and ExpireTime cannot both be specified in one Market Data Entry.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="110" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use when this Bid or Offer represents an order.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="18" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can contain multiple instructions, space delimited.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="287" added="FIX.4.4">
@@ -24557,32 +24585,32 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="37" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use when this Bid, Offer, or Trade represents an order.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="299" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use when this Bid, Offer, or Trade represents a quote.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="288" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use in reporting Trades.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="289" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use in reporting Trades.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="346" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>In an Aggregated Book, used to show how many individual orders make up an MDEntry.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="290" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Display position of a bid or offer, numbered from most competitive to least competitive, per market side, beginning with 1.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="546" added="FIX.4.4">
@@ -24597,17 +24625,17 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="58" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Text to describe the Market Data Entry. Part of repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="354" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="355" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -24618,37 +24646,38 @@
 		<fixr:group id="2032" added="FIX.4.4" name="MDIncGrp" category="MarketData" abbrName="Inc">
 			<fixr:numInGroup id="268">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of entries following.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="279" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be first field in this repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="285" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>If MDUpdateAction = Delete(2), can be used to specify a reason for the deletion.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="269" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Conditionally required if MDUpdateAction = New(0). Cannot be changed.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="278" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>If specified, must be unique among currently active entries if MDUpdateAction = New (0), must be the same as a previous MDEntryID if MDUpdateAction = Delete (2), and must be the same as a previous MDEntryID if MDUpdateAction = Change (1) and MDEntryRefID is not specified, or must be unique among currently active entries if MDUpdateAction = Change(1) and MDEntryRefID is specified.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="280" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>If MDUpdateAction = New(0), for the first Market Data Entry in a message, either this field or a Symbol must be specified. If MDUpdateAction = Change(1), this must refer to a previous MDEntryID.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1003" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages"
+Either Symbol (the instrument component block) or MDEntryRefID must be specified if MDUpdateAction = New(0) for the first Market Data Entry in a message. For subsequent Market Data Entries where MDUpdateAction = New(0), the default is the instrument used in the previous Market Data Entry if neither Symbol nor MDEntryRefID are specified, or in the case of options and futures, the previous instrument with changes specified in MaturityMonthYear, MaturityDay, StrikePrice, OptAttribute, and SecurityExchange. May not be changed.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:groupRef id="2066" added="FIX.4.4">
@@ -24673,17 +24702,19 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="270" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Conditionally required when MDUpdateAction = New(0) and MDEntryType is not Imbalance(A) ), Trade Volume (B), or Open Interest (C).
+Conditionally required when MDEntryType = "auction clearing price".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="15" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used to specify the currency of the quoted price.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="271" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Conditionally required when MDUpdateAction = New(0) andMDEntryType = Bid(0), Offer(1), Trade(2) ), Trade Volume(B), or Open Interest(C).
+Conditionally required when MDEntryType = "auction clearing price".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="272" added="FIX.4.4">
@@ -24703,7 +24734,8 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="275" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Market posting quote / trade. 
+Valid values: See Volume 6: Appendix 6-C</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="336" added="FIX.4.4">
@@ -24718,12 +24750,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="276" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Space-delimited list of conditions describing a quote.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="277" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Space-delimited list of conditions describing a trade.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="282" added="FIX.4.4">
@@ -24743,32 +24775,32 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="286" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used if MDEntryType = Opening Price(4), Closing Price(5), or Settlement Price(6).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="59" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use when this Bid or Offer represents an order.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="432" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use when this Bid or Offer represents an order. ExpireDate and ExpireTime cannot both be specified in one Market Data Entry.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="126" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use when this Bid or Offer represents an order. ExpireDate and ExpireTime cannot both be specified in one Market Data Entry.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="110" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use when this Bid or Offer represents an order.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="18" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can contain multiple instructions, space delimited.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="287" added="FIX.4.4">
@@ -24778,32 +24810,32 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="37" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use when this Bid, Offer, or Trade represents an order.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="299" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use when this Bid, Offer, or Trade represents a quote.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="288" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use in reporting Trades.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="289" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use in reporting Trades.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="346" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>In an Aggregated Book, used to show how many individual orders make up an MDEntry.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="290" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Display position of a bid or offer, numbered from most competitive to least competitive, per market side, beginning with 1.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="546" added="FIX.4.4">
@@ -24823,17 +24855,17 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="58" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Text to describe the Market Data Entry. Part of repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="354" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="355" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -24844,12 +24876,12 @@
 		<fixr:group id="2033" added="FIX.4.4" name="MDReqGrp" category="MarketData" abbrName="Req">
 			<fixr:numInGroup id="267">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of MDEntryType fields requested.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="269" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be the first field in this repeating group. This is a list of all the types of Market Data Entries that the firm requesting the Market Data is interested in receiving.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -24865,7 +24897,7 @@
 			</fixr:numInGroup>
 			<fixr:fieldRef id="817" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Alternative Market Data Source</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -24876,12 +24908,13 @@
 		<fixr:group id="2035" added="FIX.4.4" name="MiscFeesGrp" category="Common" abbrName="MiscFees">
 			<fixr:numInGroup id="136">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if any miscellaneous fees are reported. Indicates number of repeating entries. Repeating group.
+** Nested Repeating Group follows **</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="137" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoMiscFees &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="138" added="FIX.4.4">
@@ -24891,7 +24924,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="139" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoMiscFees &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="891" added="FIX.4.4">
@@ -24907,12 +24940,13 @@
 		<fixr:group id="2036" added="FIX.4.4" name="OrdAllocGrp" category="Common" abbrName="OrdAlloc">
 			<fixr:numInGroup id="73">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Indicates number of orders to be combined for allocation. If order(s) were manually delivered set to 1 (one).Required when AllocNoOrdersType = 1.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="11" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Order ID assigned by client if order(s) were electronically delivered and executed. If order(s) were manually delivered this field should contain string "MANUAL".Note where an order has undergone one or more cancel/replaces, this should be the ClOrdID of the most recent version of the order
+Required when NoOrders &gt; 0 and must be the first repeating field in the group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="37" added="FIX.4.4">
@@ -24922,7 +24956,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="198" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used to provide order id used by exchange or executing system.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="526" added="FIX.4.4">
@@ -24932,12 +24966,13 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="66" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for List Orders.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="1009" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "NestedParties2" fields defined in "Common Components of Application Messages"
+This is used to identify the executing broker for step in/give in trades.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="38" added="FIX.4.4">
@@ -24947,12 +24982,13 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="799" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Average price for this order.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="800" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Quantity of this order that is being booked out by this message (will be equal to or less than this order's OrderQty)
+Note that the sum of the OrderBookingQty values in this repeating group must equal the total quantity being allocated (in Quantity (53) field).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -24963,7 +24999,7 @@
 		<fixr:group id="2037" added="FIX.4.4" name="OrdListStatGrp" category="ProgramTrading" abbrName="ListStat">
 			<fixr:numInGroup id="73">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of orders statused in this message, i.e. number of repeating groups to follow.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="11" presence="required" added="FIX.4.4">
@@ -24988,12 +25024,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="636" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For optional use with OrdStatus = 0 (New).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="151" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Quantity open for further execution. LeavesQty = OrderQty - CumQty.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="84" presence="required" added="FIX.4.4">
@@ -25008,7 +25044,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="103" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used if the order is rejected.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="58" added="FIX.4.4">
@@ -25018,12 +25054,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="354" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="355" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -25039,7 +25075,8 @@
 			</fixr:numInGroup>
 			<fixr:componentRef id="1021" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Underlying Instrument" (underlying symbology) fields defined in "Common Components of Application Messages".
+Required if NoUnderlyings &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="732" presence="required" added="FIX.4.4">
@@ -25049,7 +25086,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="733" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Values = Final, Theoretical</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -25060,12 +25097,12 @@
 		<fixr:group id="2039" added="FIX.4.4" name="PreAllocGrp" category="Common" abbrName="PreAll">
 			<fixr:numInGroup id="78">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of repeating groups for pre-trade allocation.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="79" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoAllocs &gt; 0. Must be first field in repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="661" added="FIX.4.4">
@@ -25085,7 +25122,8 @@
 			</fixr:fieldRef>
 			<fixr:groupRef id="1008" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Nested Parties" (firm identification "nested" within additional repeating group) fields defined in "Common Components of Application Messages".
+Used for NestedPartyRole=Clearing Firm.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="80" added="FIX.4.4">
@@ -25101,12 +25139,12 @@
 		<fixr:group id="2040" added="FIX.4.4" name="PreAllocMlegGrp" category="Common" abbrName="PreAllocMleg">
 			<fixr:numInGroup id="78">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of repeating groups for pre-trade allocation.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="79" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoAllocs &gt; 0. Must be first field in repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="661" added="FIX.4.4">
@@ -25126,7 +25164,7 @@
 			</fixr:fieldRef>
 			<fixr:groupRef id="1010" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "NestedParties3" (firm identification "nested" within additional repeating group) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="80" added="FIX.4.4">
@@ -25142,17 +25180,18 @@
 		<fixr:group id="2041" added="FIX.4.4" name="QuotCxlEntriesGrp" category="QuotationNegotiation" abbrName="QuotCxlEntry">
 			<fixr:numInGroup id="295">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>The number of securities (instruments) whose quotes are to be canceled
+Not required when cancelling all quotes.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1003" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:componentRef id="1002" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "FinancingDetails" (symbology) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:groupRef id="2066" added="FIX.4.4">
@@ -25173,17 +25212,18 @@
 		<fixr:group id="2042" added="FIX.4.4" name="QuotEntryAckGrp" category="QuotationNegotiation" abbrName="QuotEntryAck">
 			<fixr:numInGroup id="295">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>The number of quotes for this Symbol (QuoteSet) that follow in this message.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="299" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Uniquely identifies the quote as part of a QuoteSet.
+First field in repeating group. Required if NoQuoteEntries &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1003" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:groupRef id="2019" added="FIX.4.4">
@@ -25193,12 +25233,12 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="132" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>If F/X quote, should be the "all-in" rate (spot rate adjusted for forward points). Note that either BidPx, OfferPx or both must be specified.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="133" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>If F/X quote, should be the "all-in" rate (spot rate adjusted for forward points). Note that either BidPx, OfferPx or both must be specified.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="134" added="FIX.4.4">
@@ -25218,22 +25258,22 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="188" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>May be applicable for F/X quotes.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="190" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>May be applicable for F/X quotes.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="189" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>May be applicable for F/X quotes.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="191" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>May be applicable for F/X quotes.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="631" added="FIX.4.4">
@@ -25273,42 +25313,42 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="64" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with forex quotes to specify a specific "value date".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="40" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used to specify the type of order the quote is for.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="193" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="192" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="642" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Bid F/X forward points of the future portion of a F/X swap quote added to spot rate. May be a negative value.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="643" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Offer F/X forward points of the future portion of a F/X swap quote added to spot rate. May be a negative value.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="15" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used to specify the currency of the quoted price.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="368" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Reason Quote Entry was rejected.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -25319,17 +25359,19 @@
 		<fixr:group id="2043" added="FIX.4.4" name="QuotEntryGrp" category="QuotationNegotiation" abbrName="QuotEntry">
 			<fixr:numInGroup id="295">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>The number of quotes for this Symbol (instrument) (QuoteSet) that follow in this message.
+** Nested Repeating Group follows **</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="299" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Uniquely identifies the quote as part of a QuoteSet.
+Must be used if NoQuoteEntries(295) is used.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1003" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:groupRef id="2019" added="FIX.4.4">
@@ -25339,12 +25381,12 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="132" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>If F/X quote, should be the "all-in" rate (spot rate adjusted for forward points). Note that either BidPx, OfferPx or both must be specified.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="133" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>If F/X quote, should be the "all-in" rate (spot rate adjusted for forward points). Note that either BidPx, OfferPx or both must be specified.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="134" added="FIX.4.4">
@@ -25364,22 +25406,22 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="188" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>May be applicable for F/X quotes.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="190" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>May be applicable for F/X quotes.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="189" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>May be applicable for F/X quotes.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="191" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>May be applicable for F/X quotes.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="631" added="FIX.4.4">
@@ -25419,37 +25461,37 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="64" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with forex quotes to specify a specific "value date".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="40" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used to specify the type of order the quote is for.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="193" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="192" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="642" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Bid F/X forward points of the future portion of a F/X swap quote added to spot rate. May be a negative value.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="643" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Offer F/X forward points of the future portion of a F/X swap quote added to spot rate. May be a negative value.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="15" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used to specify the currency of the quoted price.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -25465,7 +25507,7 @@
 			</fixr:numInGroup>
 			<fixr:fieldRef id="695" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoQuoteQualifiers &gt; 1.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -25476,17 +25518,17 @@
 		<fixr:group id="2045" added="FIX.4.4" name="QuotReqGrp" category="QuotationNegotiation" abbrName="QuotReq">
 			<fixr:numInGroup id="146">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of related symbols (instruments) in Request.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1003" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:componentRef id="1002" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "FinancingDetails" (symbology) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:groupRef id="2066" added="FIX.4.4">
@@ -25496,17 +25538,17 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="140" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Useful for verifying security identification.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="303" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Indicates the type of Quote Request (e.g. Manual vs. Automatic) being generated.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="537" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Type of quote being requested from counterparty or market (e.g. Indicative, Firm, or Restricted Tradeable) Valid values used by FX in the request: 0 = Indicative, 1 = Tradeable; Absence implies a request for an indicative quote.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="336" added="FIX.4.4">
@@ -25526,17 +25568,20 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="54" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>If OrdType = "Forex - Swap", should be the side of the future portion of a F/X swap. The absence of a side implies that a two-sided quote is being requested.
+For single instrument use. FX values, 1 = Buy, 2 = Sell; This is from the perspective of the Initiator. If absent then a two-sided quote is being requested for spot or forward.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="854" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Type of quantity specified in a quantity field.
+For FX, if used, should be "0".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1011" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for single instrument quoting.
+Required for Fixed Income if QuoteType is Tradeable.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="63" added="FIX.4.4">
@@ -25546,27 +25591,27 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="64" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used (e.g. with forex quotes) to specify the desired "value date".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="193" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="192" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="15" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used to specify the desired currency of the quoted price. May differ from the ‘normal’ trading currency of the instrument being quote requested.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="1019" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Stipulations" (repeating group of Fixed Income stipulations) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="1" added="FIX.4.4">
@@ -25596,32 +25641,32 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="692" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Initiator can specify the price type the quote needs to be quoted at. If not specified, the Respondent has option to specify how quote is quoted.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="40" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used to specify the type of order the quote request is for.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="62" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used by the quote initiator to indicate the period of time the resulting Quote must be valid until.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="126" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>The time when Quote Request will expire.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="60" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Time transaction was entered.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1018" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "SpreadOrBenchmarkCurveData" (Fixed Income spread or benchmark curve) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="423" added="FIX.4.4">
@@ -25631,17 +25676,17 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="44" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Quoted or target price.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="640" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with OrdType = "Forex - Swap" to specify the Quoted or target price for the future portion of a F/X swap.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1022" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "YieldData" (yield-related) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:groupRef id="1012" added="FIX.4.4">
@@ -25657,12 +25702,13 @@
 		<fixr:group id="2046" added="FIX.4.4" name="QuotReqLegsGrp" category="QuotationNegotiation" abbrName="Leg">
 			<fixr:numInGroup id="555">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for multileg quotes.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1005" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for multileg quotes.
+For Swaps one leg is Buy and other leg is Sell.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="687" added="FIX.4.4">
@@ -25708,17 +25754,17 @@
 		<fixr:group id="2047" added="FIX.4.4" name="QuotReqRjctGrp" category="QuotationNegotiation" abbrName="QuotReqRej">
 			<fixr:numInGroup id="146">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of related symbols (instruments) in Request.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1003" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:componentRef id="1002" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "FinancingDetails" (symbology) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:groupRef id="2066" added="FIX.4.4">
@@ -25728,17 +25774,17 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="140" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Useful for verifying security identification.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="303" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Indicates the type of Quote Request (e.g. Manual vs. Automatic) being generated.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="537" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Type of quote being requested from counterparty or market (e.g. Indicative, Firm, or Restricted Tradeable).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="336" added="FIX.4.4">
@@ -25758,7 +25804,8 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="54" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>If OrdType = "Forex - Swap", should be the side of the future portion of a F/X swap. The absence of a side implies that a two-sided quote is being requested.
+Required if specified in Quote Request message.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="854" added="FIX.4.4">
@@ -25768,7 +25815,8 @@
 			</fixr:fieldRef>
 			<fixr:componentRef id="1011" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "OrderQytData" fields defined in "Common Components of Application Messages"
+Required if component is specified in Quote Request message.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="63" added="FIX.4.4">
@@ -25778,27 +25826,27 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="64" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used (e.g. with forex quotes) to specify the desired "value date".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="193" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with OrdType = "Forex - Swap" to specify the "value date" for the future portion of a F/X swap.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="192" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with OrdType = "Forex - Swap" to specify the order quantity for the future portion of a F/X swap.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="15" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used to specify the desired currency of the quoted price. May differ from the ‘normal’ trading currency of the instrument being quote requested.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="1019" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Stipulations" (repeating group of Fixed Income stipulations) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="1" added="FIX.4.4">
@@ -25828,27 +25876,27 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="692" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Initiator can specify the price type the quote needs to be quoted at. If not specified, the Respondent has option to specify how quote is quoted.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="40" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used to specify the type of order the quote request is for.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="126" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>The time when Quote Request will expire.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="60" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Time transaction was entered.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1018" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "SpreadOrBenchmarkCurveData" (Fixed Income spread or benchmark curve) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="423" added="FIX.4.4">
@@ -25858,22 +25906,22 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="44" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Quoted or target price.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="640" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used with OrdType = "Forex - Swap" to specify the Quoted or target price for the future portion of a F/X swap.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1022" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "YieldData" (yield-related) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:groupRef id="1012" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Parties" (firm identification) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:annotation>
@@ -25884,27 +25932,29 @@
 		<fixr:group id="2048" added="FIX.4.4" name="QuotSetAckGrp" category="QuotationNegotiation" abbrName="QuotSetAck">
 			<fixr:numInGroup id="296">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>The number of sets of quotes in the message.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="302" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>First field in repeating group. Required if NoQuoteSets &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1021" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "UnderlyingInstrument" (underlying symbology) fields defined in "Common Components of Application Messages"
+Required if NoQuoteSets &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="304" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Total number of quotes for the quote set across all messages. Should be the sum of all NoQuoteEntries in each message that has repeating quotes that are part of the same quote set.
+Required if NoQuoteEntries &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="893" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Indicates whether this is the last fragment in a sequence of message fragments. Only required where message has been fragmented.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="2042" added="FIX.4.4">
@@ -25920,17 +25970,18 @@
 		<fixr:group id="2049" added="FIX.4.4" name="QuotSetGrp" category="QuotationNegotiation" abbrName="QuotSet">
 			<fixr:numInGroup id="296">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>The number of sets of quotes in the message</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="302" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Sequential number for the Quote Set. For a given QuoteID – assumed to start at 1.
+Must be the first field in the repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1021" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "UnderlyingInstrument" (underlying symbology) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="367" added="FIX.4.4">
@@ -25940,12 +25991,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="304" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Total number of quotes for the quote set across all messages. Should be the sum of all NoQuoteEntries in each message that has repeating quotes that are part of the same quote set.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="893" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Indicates whether this is the last fragment in a sequence of message fragments. Only required where message has been fragmented.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="2043" presence="required" added="FIX.4.4">
@@ -25961,12 +26012,13 @@
 		<fixr:group id="2050" added="FIX.4.4" name="RelSymDerivSecGrp" category="SecurityAndTradingSessionDefinitionOrStatus" abbrName="RelSym">
 			<fixr:numInGroup id="146">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Specifies the number of repeating symbols (instruments).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1003" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages"
+of the requested Security.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="15" added="FIX.4.4">
@@ -25981,7 +26033,7 @@
 			</fixr:fieldRef>
 			<fixr:componentRef id="1004" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "InstrumentExtension" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:groupRef id="2019" added="FIX.4.4">
@@ -26001,17 +26053,17 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="58" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Comment, instructions, or other identifying information.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="354" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="355" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -26022,12 +26074,12 @@
 		<fixr:group id="2051" added="FIX.4.4" name="RFQReqGrp" category="QuotationNegotiation" abbrName="RFQReq">
 			<fixr:numInGroup id="146">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of related symbols (instruments) in Request.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1003" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>nsert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:groupRef id="2066" added="FIX.4.4">
@@ -26042,17 +26094,17 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="140" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Useful for verifying security identification.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="303" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Indicates the type of Quote Request (e.g. Manual vs. Automatic) being generated.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="537" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Type of quote being requested from counterparty or market (e.g. Indicative, Firm, or Restricted Tradeable).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="336" added="FIX.4.4">
@@ -26073,12 +26125,12 @@
 		<fixr:group id="2052" added="FIX.4.4" name="RgstDistInstGrp" category="RegistrationInstruction" abbrName="RgDtlInst">
 			<fixr:numInGroup id="510">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of Distribution instructions in this message (number of repeating groups to follow).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="477" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be first field in the repeating group if NoDistribInsts &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="512" added="FIX.4.4">
@@ -26124,12 +26176,12 @@
 		<fixr:group id="2053" added="FIX.4.4" name="RgstDtlsGrp" category="RegistrationInstruction" abbrName="RgDtl">
 			<fixr:numInGroup id="473">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of registration details in this message (number of repeating groups to follow).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="509" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be first field in the repeating group/</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="511" added="FIX.4.4">
@@ -26149,7 +26201,8 @@
 			</fixr:fieldRef>
 			<fixr:groupRef id="1008" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Nested Parties" (firm identification "nested" within additional repeating group) fields defined in "Common Components of Application Messages".
+Used for NestedPartyRole=InvestorID.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="522" added="FIX.4.4">
@@ -26175,17 +26228,17 @@
 		<fixr:group id="2054" added="FIX.4.4" name="RoutingGrp" category="Common" abbrName="Rtg">
 			<fixr:numInGroup id="215">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if any RoutingType and RoutingIDs are specified. Indicates the number within repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="216" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Indicates type of RoutingID. Required if NoRoutingIDs is &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="217" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Identifies routing destination. Required if NoRoutingIDs is &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -26196,22 +26249,23 @@
 		<fixr:group id="2055" added="FIX.4.4" name="SecListGrp" category="SecurityAndTradingSessionDefinitionOrStatus" abbrName="SecL">
 			<fixr:numInGroup id="146">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Specifies the number of repeating symbols (instruments).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1003" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages"
+of the requested Security.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:componentRef id="1004" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "InstrumentExtension" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:componentRef id="1002" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "FinancingDetails" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:groupRef id="2066" added="FIX.4.4">
@@ -26226,7 +26280,7 @@
 			</fixr:fieldRef>
 			<fixr:groupRef id="1019" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Stipulations" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:groupRef id="2021" added="FIX.4.4">
@@ -26236,12 +26290,12 @@
 			</fixr:groupRef>
 			<fixr:componentRef id="1018" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "SpreadOrBenchmarkCurveData" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:componentRef id="1022" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "YieldData" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="561" added="FIX.4.4">
@@ -26271,17 +26325,17 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="58" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Comment, instructions, or other identifying information.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="354" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="355" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -26297,7 +26351,7 @@
 			</fixr:numInGroup>
 			<fixr:fieldRef id="167" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoSecurityTypes &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="762" added="FIX.4.4">
@@ -26323,112 +26377,118 @@
 		<fixr:group id="2057" added="FIX.4.4" name="SettlInstGrp" category="SettlementInstruction" abbrName="SetInst">
 			<fixr:numInGroup id="778">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required except where SettlInstMode is 5=Reject SSI request.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="162" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Unique ID for this settlement instruction.
+Required except where SettlInstMode is 5=Reject SSI request.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="163" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>New, Replace, Cancel or Restate
+Required except where SettlInstMode is 5=Reject SSI request.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="214" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required where SettlInstTransType is Cancel or Replace.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="1012" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Parties" (firm identification) fields defined in "Common Components of Application Messages".
+Used here for settlement location.
+Also used for executing broker for CIV settlement instructions.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="54" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used for SettleInstMode 1 if SSIs are being provided for a particular side.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="460" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used for SettleInstMode 1 if SSIs are being provided for a particular product.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="167" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>>Can be used for SettleInstMode 1 if SSIs are being provided for a particular security type (as alternative to CFICode).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="461" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used for SettleInstMode 1 if SSIs are being provided for a particular security type (as identified by CFI code).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="168" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Effective (start) date/time for this settlement instruction.
+Required except where SettlInstMode is 5=Reject SSI request.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="126" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Termination date/time for this settlement instruction.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="779" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Date/time this settlement instruction was last updated (or created if not updated since creation).
+Required except where SettlInstMode is 5=Reject SSI request.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:componentRef id="1016" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "SettlInstructionsData" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="492" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For use with CIV settlement instructions.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="476" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For use with CIV settlement instructions.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="488" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For use with CIV settlement instructions.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="489" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For use with CIV settlement instructions.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="503" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For use with CIV settlement instructions.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="490" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For use with CIV settlement instructions.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="491" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For use with CIV settlement instructions.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="504" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For use with CIV settlement instructions.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="505" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For use with CIV settlement instructions.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -26439,7 +26499,7 @@
 		<fixr:group id="2058" added="FIX.4.4" name="SideCrossOrdCxlGrp" category="CrossOrders" abbrName="SideCrossCxl">
 			<fixr:numInGroup id="552">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be 1 or 2.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="54" presence="required" added="FIX.4.4">
@@ -26454,7 +26514,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="11" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Unique identifier of the order as assigned by institution or by the intermediary with closest association with the investor.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="526" added="FIX.4.4">
@@ -26474,7 +26534,7 @@
 			</fixr:fieldRef>
 			<fixr:groupRef id="1012" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Parties" (firm identification) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="229" added="FIX.4.4">
@@ -26489,7 +26549,7 @@
 			</fixr:fieldRef>
 			<fixr:componentRef id="1011" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "OrderQtyData" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="376" added="FIX.4.4">
@@ -26504,12 +26564,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="354" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="355" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -26520,7 +26580,9 @@
 		<fixr:group id="2059" added="FIX.4.4" name="SideCrossOrdModGrp" category="CrossOrders" abbrName="SideCrossMod">
 			<fixr:numInGroup id="552">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be 1 or 2.
+1 or 2 if CrossType=1.
+2 otherwise.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="54" presence="required" added="FIX.4.4">
@@ -26530,7 +26592,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="11" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Unique identifier of the order as assigned by institution or by the intermediary with closest association with the investor.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="526" added="FIX.4.4">
@@ -26543,14 +26605,9 @@
 					<fixr:documentation/>
 				</fixr:annotation>
 			</fixr:fieldRef>
-			<fixr:fieldRef id="586" added="FIX.4.4">
-				<fixr:annotation>
-					<fixr:documentation/>
-				</fixr:annotation>
-			</fixr:fieldRef>
 			<fixr:groupRef id="1012" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Parties" (firm identification) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="229" added="FIX.4.4">
@@ -26595,7 +26652,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="70" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Use to assign an identifier to the block of preallocations.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="2039" added="FIX.4.4">
@@ -26610,12 +26667,12 @@
 			</fixr:fieldRef>
 			<fixr:componentRef id="1011" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "OrderQtyData" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:componentRef id="1000" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "CommissionData" fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="528" added="FIX.4.4">
@@ -26635,17 +26692,17 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="121" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Indicates that broker is requested to execute a Forex accommodation trade in conjunction with the security trade.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="120" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if ForexReq = Y.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="775" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Method for booking out this order. Used when notifying a broker that an order to be settled by that broker is to be booked out as an OTC derivative (e.g. CFD or similar). Absence of this field implies regular booking.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="58" added="FIX.4.4">
@@ -26655,22 +26712,22 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="354" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="355" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="77" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For use in derivatives omnibus accounting.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="203" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For use with derivatives, such as options.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="544" added="FIX.4.4">
@@ -26701,12 +26758,12 @@
 		<fixr:group id="2060" added="FIX.4.4" name="TrdAllocGrp" category="Common" abbrName="Alloc">
 			<fixr:numInGroup id="78">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of repeating groups for trade allocation.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="79" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoAllocs &gt; 0. Must be first field in repeating group.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="661" added="FIX.4.4">
@@ -26726,7 +26783,7 @@
 			</fixr:fieldRef>
 			<fixr:groupRef id="1009" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "NestedParties2" (firm identification "nested" within additional repeating group) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="80" added="FIX.4.4">
@@ -26742,7 +26799,7 @@
 		<fixr:group id="2061" added="FIX.4.4" name="TrdCapRptSideGrp" category="TradeCapture" abbrName="RptSide">
 			<fixr:numInGroup id="552">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of sides.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="54" presence="required" added="FIX.4.4">
@@ -26752,22 +26809,22 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="37" presence="required" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>OrderID should be conditionally required when Trade Capture Report is used for back office processing.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="198" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used to provide order id used by exchange or executing system.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="11" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for executions against electronically submitted orders which were assigned an ID by the institution or intermediary. Not required for orders manually entered by the broker or fund manager (for CIV orders).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="526" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can be used to provide secondary client order identifiers associated with this trade.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="66" added="FIX.4.4">
@@ -26777,12 +26834,12 @@
 			</fixr:fieldRef>
 			<fixr:groupRef id="1012" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Parties" (firm identification) fields defined in "Common Components of Application Messages".</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="1" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required for executions against electronically submitted orders which were assigned an account by the institution or intermediary.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="660" added="FIX.4.4">
@@ -26792,12 +26849,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="581" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Specifies type of account.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="81" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to specify Step-out trades.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="575" added="FIX.4.4">
@@ -26847,32 +26904,32 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="528" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>The capacity of the participant for this trade ( principal or agent for example).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="529" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Restrictions associated with the participant and their capacity for this trade.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="582" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>The customer capacity for this trade.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="40" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Order type from the order associated with the trade.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="18" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Execution Instruction from the order associated with the trade</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="483" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>A date and time stamp to indicate when this order was booked. For Equities, this is the time at which an order was received by an Exchange or Marketplace. For CIV, this is the time that a Fund Manager booked an order for execution at the next valuation point.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="336" added="FIX.4.4">
@@ -26892,7 +26949,8 @@
 			</fixr:fieldRef>
 			<fixr:componentRef id="1000" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "CommissionData" fields defined in "Common Components of Application Messages"
+Note: On a fill/partial fill messages, it represents value for that fill/partial fill, on ExecType=Calculated, it represents cumulative value for the order. Monetary commission values are expressed in the currency reflected by the Currency field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="381" added="FIX.4.4">
@@ -26927,17 +26985,17 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="920" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For repurchase agreements the accrued interest on termination.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="921" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For repurchase agreements the start (dirty) cash consideration.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="922" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For repurchase agreements the end (dirty) cash consideration.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="238" added="FIX.4.4">
@@ -26952,52 +27010,53 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="118" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Note: On a fill/partial fill messages, it represents value for that fill/partial fill, on ExecType=Calculated, it represents cumulative value for the order. Value expressed in the currency reflected by the Currency field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="119" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to report results of forex accommodation trade.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="120" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to report results of forex accommodation trade.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="155" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Foreign exchange rate used to compute SettlCurrAmt from Currency to SettlCurrency.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="156" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Specifies whether the SettlCurrFxRate should be multiplied or divided.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="77" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>For use in derivatives omnibus accounting.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="58" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>May be used by the executing market to record any execution Details that are particular to that market.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="354" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="355" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="752" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Default is a single security if not specified.
+Provided to support the scenario where a single leg instrument trades against an individual leg of a multileg instrument.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="2011" added="FIX.4.4">
@@ -27017,12 +27076,12 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="825" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to report any exchange rules that apply to this trade.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="826" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Identifies if the trade is to be allocated.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="591" added="FIX.4.4">
@@ -27032,7 +27091,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="70" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to assign an ID to the block of preallocations.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="2060" added="FIX.4.4">
@@ -27048,12 +27107,12 @@
 		<fixr:group id="2062" added="FIX.4.4" name="TrdCollGrp" category="Common" abbrName="TrdColl">
 			<fixr:numInGroup id="897">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Trades for which collateral is required.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="571" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoTrades &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="818" added="FIX.4.4">
@@ -27069,12 +27128,13 @@
 		<fixr:group id="2063" added="FIX.4.4" name="TrdInstrmtLegGrp" category="TradeCapture" abbrName="TrdLeg">
 			<fixr:numInGroup id="555">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of legs.
+Identifies a Multi-leg Execution if present and non-zero.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1005" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be provided if Number of legs &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="687" added="FIX.4.4">
@@ -27084,7 +27144,7 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="690" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Instead of LegQty – requests that the sellside calculate LegQty based on opposite Leg.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="1007" added="FIX.4.4">
@@ -27094,27 +27154,28 @@
 			</fixr:groupRef>
 			<fixr:fieldRef id="564" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Provide if the PositionEffect for the leg is different from that specified for the overall multileg security.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="565" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Provide if the CoveredOrUncovered for the leg is different from that specified for the overall multileg security.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:groupRef id="1008" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Nested Parties" (firm identification "nested" within additional repeating group) fields defined in "Common Components of Application Messages".
+Used for NestedPartyRole=Leg Clearing Firm/Account, Leg Account/Account Type.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:groupRef>
 			<fixr:fieldRef id="654" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to identify a specific leg.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="566" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Provide only if a Price is required for a specific leg. Used for anchoring the overall multileg security price to a specific leg Price.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="587" added="FIX.4.4">
@@ -27124,12 +27185,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="588" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Takes precedence over LegSettlmntTyp value and conditionally required/omitted for specific LegSettlType values.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="637" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used to report the execution price assigned to the leg of the multileg instrument.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -27140,12 +27201,12 @@
 		<fixr:group id="2064" added="FIX.4.4" name="TrdgSesGrp" category="Common" abbrName="TrdSes">
 			<fixr:numInGroup id="386">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Specifies the number of repeating TradingSessionIDs.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="336" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoTradingSessions is &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="625" added="FIX.4.4">
@@ -27161,17 +27222,18 @@
 		<fixr:group id="2065" added="FIX.4.4" name="UndInstrmtCollGrp" category="CollateralManagement" abbrName="UndColl">
 			<fixr:numInGroup id="711">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of legs that make up the Security.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1021" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Insert here the set of "Underlying Instrument" fields defined in "Common Components of Application Messages".
+Required if NoUnderlyings &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="944" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Required if NoUnderlyings &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -27182,12 +27244,12 @@
 		<fixr:group id="2066" added="FIX.4.4" name="UndInstrmtGrp" category="Common" abbrName="Undly">
 			<fixr:numInGroup id="711">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of underlyings.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1021" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be provided if Number of underlyings &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:annotation>
@@ -27198,22 +27260,22 @@
 		<fixr:group id="2067" added="FIX.4.4" name="UndInstrmtStrkPxGrp" category="ProgramTrading" abbrName="UndStrkPx">
 			<fixr:numInGroup id="711">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of underlyings.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:componentRef id="1021" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be provided if Number of underlyings &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:componentRef>
 			<fixr:fieldRef id="140" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Useful for verifying security identification.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="11" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Can use client order identifier or the symbol and side to uniquely identify the stock in the list.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="526" added="FIX.4.4">
@@ -27243,12 +27305,12 @@
 			</fixr:fieldRef>
 			<fixr:fieldRef id="354" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Must be set if EncodedText field is specified and must immediately precede it.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="355" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Encoded (non-ASCII characters) representation of the Text field in the encoded format specified via the MessageEncoding field.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
@@ -27259,17 +27321,18 @@
 		<fixr:group id="2069" added="FIX.4.4" name="TrdCapDtGrp" category="TradeCapture" abbrName="TrdCapDt">
 			<fixr:numInGroup id="580">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Number of date ranges provided (must be 1 or 2 if specified).</fixr:documentation>
 				</fixr:annotation>
 			</fixr:numInGroup>
 			<fixr:fieldRef id="75" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>Used when reporting other than current day trades.
+Conditionally required if NoDates &gt; 0.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:fieldRef id="60" added="FIX.4.4">
 				<fixr:annotation>
-					<fixr:documentation/>
+					<fixr:documentation>To request trades for a specific time.</fixr:documentation>
 				</fixr:annotation>
 			</fixr:fieldRef>
 			<fixr:annotation>
