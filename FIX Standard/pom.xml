@@ -111,7 +111,7 @@
 						<configuration>
 							<mainClass>io.fixprotocol.orchestra.docgen.DocGenerator</mainClass>
 							<arguments>
-								<argument>${project.basedir}/fixsessionlayer.xml</argument>
+								<argument>${project.basedir}/FIXTSession.xml</argument>
 								<argument>${doc.directory}/fixtsession</argument>
 							</arguments>
 						</configuration>
