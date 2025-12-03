@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <fixr:repository xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:fixr="http://fixprotocol.io/2020/orchestra/repository" name="FIX Reference Data Version 1.0" version="1.0">
-    <fixr:metadata/>
+  <fixr:metadata>
+    <dc:title>Orchestra</dc:title>
+    <dc:publisher>FIX Trading Community</dc:publisher>
+    <dc:date>2025-11-19T00:00:00.000Z</dc:date>
+    <dc:format>Orchestra schema</dc:format>
+    <dc:contributor>playlist</dc:contributor>
+  </fixr:metadata>
     <fixr:datatypes>
         <fixr:datatype name="String" added="FIX.4.2">
             <fixr:mappedDatatype standard="XML" builtin="true" base="xs:string">
