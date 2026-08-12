@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<fixr:repository xmlns:fixr="http://fixprotocol.io/2020/orchestra/repository" xmlns:fixml="http://fixprotocol.io/2022/orchestra/appinfo/fixml" name="FIX.Latest" version="FIX.Latest_EP307">
+<fixr:repository xmlns:fixr="http://fixprotocol.io/2020/orchestra/repository" xmlns:fixml="http://fixprotocol.io/2022/orchestra/appinfo/fixml" name="FIX.Latest" version="FIX.Latest_EP309">
   <fixr:metadata xmlns:dcterms="http://purl.org/dc/terms/">
     <dcterms:creator>FIX Protocol Ltd.</dcterms:creator>
-    <dcterms:description>FIX Latest as of Extension Pack 307</dcterms:description>
+    <dcterms:description>FIX Latest as of Extension Pack 309</dcterms:description>
     <dcterms:publisher>FIX Protocol Ltd.</dcterms:publisher>
     <dcterms:title>OrchestraFIXLatest</dcterms:title>
     <dcterms:rights>Copyright (c) FIX Protocol Ltd. All Rights Reserved.</dcterms:rights>
     <dcterms:format>application/xml</dcterms:format>
     <dcterms:conformsTo>Orchestra v1.0</dcterms:conformsTo>
-    <dcterms:created>2026-07-06</dcterms:created>
+    <dcterms:created>2026-07-31</dcterms:created>
     <dcterms:source>Orchid</dcterms:source>
   </fixr:metadata>
   <fixr:categories>
@@ -4151,10 +4151,11 @@ Clearing organizations can also send the AccountSummaryReport message to regulat
       </fixr:annotation>
     </fixr:codeSet>
     <fixr:codeSet id="102" name="CxlRejReasonCodeSet" type="int" added="FIX.2.7">
-      <fixr:code id="102001" name="TooLateToCancel" value="0" sort="1" added="FIX.2.7">
+      <fixr:code id="102001" name="TooLateToCancel" value="0" sort="1" added="FIX.2.7" updated="FIX.Latest" updatedEP="309">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Too late to cancel</fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">The order can no longer be cancelled or replaced with another order.</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
       <fixr:code id="102002" name="UnknownOrder" value="1" sort="2" added="FIX.2.7">
@@ -20339,13 +20340,25 @@ Clearing organizations can also send the AccountSummaryReport message to regulat
                         Redemption date</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="865027" name="TrdCntntnEfctvDt" value="27" sort="27" added="FIX.5.0SP2" addedEP="169">
+      <fixr:code id="865027" name="TrdCntntnEfctvDt" value="27" sort="26" added="FIX.5.0SP2" addedEP="169">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Trade continuation effective date</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="865028" name="Other" value="99" sort="99" added="FIX.4.4">
+      <fixr:code id="865029" name="FrontMonth" value="28" sort="27" added="FIX.Latest" addedEP="308">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">Front month</fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">The point in time the given instrument became or becomes the nearest one to expire.</fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code id="865030" name="LeadMonth" value="29" sort="28" added="FIX.Latest" addedEP="308">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">Lead month</fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">The point in time the given instrument became or becomes the lead month, i.e. the most active in terms of trading volume.</fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code id="865028" name="Other" value="99" sort="29" added="FIX.4.4">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Other</fixr:documentation>
@@ -20506,61 +20519,61 @@ Clearing organizations can also send the AccountSummaryReport message to regulat
                         Trade type eligibility details for security</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871025" name="InstrumentDenominator" value="25" sort="26" added="FIX.5.0" addedEP="52" updated="FIX.5.0SP2" updatedEP="138">
+      <fixr:code id="871025" name="InstrumentDenominator" value="25" sort="24" added="FIX.5.0" addedEP="52" updated="FIX.5.0SP2" updatedEP="138">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Instrument denominator</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871026" name="InstrumentNumerator" value="26" sort="27" added="FIX.5.0" addedEP="52" updated="FIX.5.0SP2" updatedEP="138">
+      <fixr:code id="871026" name="InstrumentNumerator" value="26" sort="25" added="FIX.5.0" addedEP="52" updated="FIX.5.0SP2" updatedEP="138">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Instrument numerator</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871027" name="InstrumentPricePrecision" value="27" sort="28" added="FIX.5.0" addedEP="52" updated="FIX.5.0SP2" updatedEP="138">
+      <fixr:code id="871027" name="InstrumentPricePrecision" value="27" sort="26" added="FIX.5.0" addedEP="52" updated="FIX.5.0SP2" updatedEP="138">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Instrument price precision</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871028" name="InstrumentStrikePrice" value="28" sort="29" added="FIX.5.0" addedEP="52" updated="FIX.5.0SP2" updatedEP="138">
+      <fixr:code id="871028" name="InstrumentStrikePrice" value="28" sort="27" added="FIX.5.0" addedEP="52" updated="FIX.5.0SP2" updatedEP="138">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Instrument strike price</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871029" name="TradeableIndicator" value="29" sort="30" added="FIX.5.0" addedEP="52" updated="FIX.5.0SP2" updatedEP="138">
+      <fixr:code id="871029" name="TradeableIndicator" value="29" sort="28" added="FIX.5.0" addedEP="52" updated="FIX.5.0SP2" updatedEP="138">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Tradeable indicator</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871030" name="InstrumentEligibleAnonOrders" value="30" sort="31" added="FIX.5.0SP2" addedEP="101">
+      <fixr:code id="871030" name="InstrumentEligibleAnonOrders" value="30" sort="29" added="FIX.5.0SP2" addedEP="101">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Instrument is eligible to accept anonymous orders</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871031" name="MinGuaranteedFillVolume" value="31" sort="32" added="FIX.5.0SP2" addedEP="101" updated="FIX.5.0SP2" updatedEP="138">
+      <fixr:code id="871031" name="MinGuaranteedFillVolume" value="31" sort="30" added="FIX.5.0SP2" addedEP="101" updated="FIX.5.0SP2" updatedEP="138">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Minimum guaranteed fill volume</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871032" name="MinGuaranteedFillStatus" value="32" sort="33" added="FIX.5.0SP2" addedEP="104" updated="FIX.5.0SP2" updatedEP="138">
+      <fixr:code id="871032" name="MinGuaranteedFillStatus" value="32" sort="31" added="FIX.5.0SP2" addedEP="104" updated="FIX.5.0SP2" updatedEP="138">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Minimum guaranteed fill status</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871033" name="TradeAtSettlementEligibility" value="33" sort="34" added="FIX.5.0SP2" addedEP="107" updated="FIX.5.0SP2" updatedEP="138">
+      <fixr:code id="871033" name="TradeAtSettlementEligibility" value="33" sort="32" added="FIX.5.0SP2" addedEP="107" updated="FIX.5.0SP2" updatedEP="138">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Trade at settlement (TAS) eligibility</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871034" name="TestInstrument" value="34" sort="35" added="FIX.5.0SP2" addedEP="130" updated="FIX.5.0SP2" updatedEP="138">
+      <fixr:code id="871034" name="TestInstrument" value="34" sort="33" added="FIX.5.0SP2" addedEP="130" updated="FIX.5.0SP2" updatedEP="138">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Test instrument</fixr:documentation>
@@ -20568,7 +20581,7 @@ Clearing organizations can also send the AccountSummaryReport message to regulat
                         Instrument that is tradable but has no effect on the positions, exchange turnover etc.</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871035" name="DummyInstrument" value="35" sort="36" added="FIX.5.0SP2" addedEP="130" updated="FIX.5.0SP2" updatedEP="138">
+      <fixr:code id="871035" name="DummyInstrument" value="35" sort="34" added="FIX.5.0SP2" addedEP="130" updated="FIX.5.0SP2" updatedEP="138">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Dummy instrument</fixr:documentation>
@@ -20576,19 +20589,19 @@ Clearing organizations can also send the AccountSummaryReport message to regulat
                         Instrument that is normally halted and is only activated for trading under very special conditions (e.g. temporarily assigned for newly listed instrument). Use of a dummy instrument generally applies to systems that are unable to add reference data for new instruments intraday.</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871036" name="NegativeSettlementPriceEligibility" value="36" sort="37" added="FIX.5.0SP2" addedEP="138">
+      <fixr:code id="871036" name="NegativeSettlementPriceEligibility" value="36" sort="35" added="FIX.5.0SP2" addedEP="138">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Negative settlement price eligibility</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871037" name="NegativeStrikePriceEligibility" value="37" sort="38" added="FIX.5.0SP2" addedEP="138">
+      <fixr:code id="871037" name="NegativeStrikePriceEligibility" value="37" sort="36" added="FIX.5.0SP2" addedEP="138">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Negative strike price eligibility</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871038" name="USStdContractInd" value="38" sort="39" added="FIX.5.0SP2" addedEP="193">
+      <fixr:code id="871038" name="USStdContractInd" value="38" sort="37" added="FIX.5.0SP2" addedEP="193">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         US standard contract indicator</fixr:documentation>
@@ -20596,25 +20609,37 @@ Clearing organizations can also send the AccountSummaryReport message to regulat
                         Indicates through InstrAttribValue(872) - values Y or N - whether the underlying asset in the trade references or is economically related to a contract listed in Appendix B of CFTC Part 43 regulation. See http://www.ecfr.gov/cgi-bin/text-idx?SID=4b2d1078ad68f6564a89d7ff6c52ec43&amp;node=17:2.0.1.1.3.0.1.8.2&amp;rgn=div or refer to Appendix B to Part 43 in the final rule at http://www.cftc.gov/ucm/groups/public/@lrfederalregister/documents/file/2013-12133a.pdf</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871039" name="AdmittedToTradingOnTradingVenue" value="39" sort="40" added="FIX.5.0SP2" addedEP="236">
+      <fixr:code id="871039" name="AdmittedToTradingOnTradingVenue" value="39" sort="38" added="FIX.5.0SP2" addedEP="236">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Admitted to trading on a trading venue</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871040" name="AverageDailyNotionalAmount" value="40" sort="41" added="FIX.5.0SP2" addedEP="238">
+      <fixr:code id="871040" name="AverageDailyNotionalAmount" value="40" sort="39" added="FIX.5.0SP2" addedEP="238">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Average daily notional amount</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871041" name="AverageDailyNumberTrades" value="41" sort="42" added="FIX.5.0SP2" addedEP="238">
+      <fixr:code id="871041" name="AverageDailyNumberTrades" value="41" sort="40" added="FIX.5.0SP2" addedEP="238">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Average daily number of trades</fixr:documentation>
         </fixr:annotation>
       </fixr:code>
-      <fixr:code id="871042" name="Text" value="99" sort="99" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="138">
+      <fixr:code id="871043" name="PrimaryIssuance" value="42" sort="41" added="FIX.Latest" addedEP="309">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">Primary issuance</fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">May be used for security issuance when instrument is subject to an IPO or ABO when existing shares are offered by the issuer from company's treasury holdings.</fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code id="871044" name="SecondaryIssuance" value="43" sort="42" added="FIX.Latest" addedEP="309">
+        <fixr:annotation>
+          <fixr:documentation purpose="SYNOPSIS">Secondary issuance</fixr:documentation>
+          <fixr:documentation purpose="ELABORATION">May be used for security issuance when instrument is subject to an ABO when existing shares are sold by shareholders off-exchange.</fixr:documentation>
+        </fixr:annotation>
+      </fixr:code>
+      <fixr:code id="871042" name="Text" value="99" sort="43" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="138">
         <fixr:annotation>
           <fixr:documentation purpose="SYNOPSIS">
                         Text</fixr:documentation>
@@ -41800,9 +41825,9 @@ The term "authorised reporter" represents the appropriate reporting firm under a
         <fixr:documentation purpose="SYNOPSIS">See "Appendix 6-C"</fixr:documentation>
       </fixr:annotation>
     </fixr:field>
-    <fixr:field id="102" name="CxlRejReason" abbrName="CxlRejRsn" type="CxlRejReasonCodeSet" unionDataType="Reserved100Plus" added="FIX.2.7">
+    <fixr:field id="102" name="CxlRejReason" abbrName="CxlRejRsn" type="CxlRejReasonCodeSet" unionDataType="Reserved100Plus" added="FIX.2.7" updated="FIX.Latest" updatedEP="309">
       <fixr:annotation>
-        <fixr:documentation purpose="SYNOPSIS">Code to identify reason for cancel rejection.</fixr:documentation>
+        <fixr:documentation purpose="SYNOPSIS">Code to identify reason for rejection of cancellation or modification.</fixr:documentation>
       </fixr:annotation>
     </fixr:field>
     <fixr:field id="103" name="OrdRejReason" abbrName="RejRsn" type="OrdRejReasonCodeSet" unionDataType="Reserved100Plus" added="FIX.2.7">
@@ -102409,16 +102434,14 @@ When RateSource(1446) = 3 (ISDA Settlement Rate Option) this contains the value 
                         Required if NoEvents(864) &gt; 0.</fixr:documentation>
         </fixr:annotation>
       </fixr:fieldRef>
-      <fixr:fieldRef id="866" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="161">
+      <fixr:fieldRef id="866" added="FIX.4.4" updated="FIX.Latest" updatedEP="308">
         <fixr:annotation>
-          <fixr:documentation>
-                        Conditionally required when EventTime(1145) is specified.</fixr:documentation>
+          <fixr:documentation>Can be used when only a date is required.</fixr:documentation>
         </fixr:annotation>
       </fixr:fieldRef>
-      <fixr:fieldRef id="1145" added="FIX.5.0" addedEP="-1" updated="FIX.5.0SP2" updatedEP="132">
+      <fixr:fieldRef id="1145" added="FIX.5.0" addedEP="-1" updated="FIX.Latest" updatedEP="308">
         <fixr:annotation>
-          <fixr:documentation>
-                        </fixr:documentation>
+          <fixr:documentation>Can be used when a date and time or only a time is required.</fixr:documentation>
         </fixr:annotation>
       </fixr:fieldRef>
       <fixr:fieldRef id="1827" added="FIX.5.0SP2" addedEP="132" updated="FIX.5.0SP2" updatedEP="161">
@@ -124792,6 +124815,7 @@ Required when TestOrderOffsetPeriod(3090) is specified.</fixr:documentation>
                             </fixr:documentation>
           </fixr:annotation>
         </fixr:componentRef>
+        <fixr:componentRef id="1004" added="FIX.Latest" addedEP="309" />
         <fixr:componentRef id="1002" added="FIX.4.4" updated="FIX.5.0SP2" updatedEP="188">
           <fixr:annotation>
             <fixr:documentation>
@@ -126967,6 +126991,7 @@ The ExecutionReport(35=8) message is the response to accept OrderCancelReplaceRe
                             Insert here the set of "Instrument" (symbology) fields defined in "Common Components of Application Messages"</fixr:documentation>
           </fixr:annotation>
         </fixr:componentRef>
+        <fixr:componentRef id="1004" added="FIX.Latest" addedEP="309" />
         <fixr:componentRef id="1002" added="FIX.4.4">
           <fixr:annotation>
             <fixr:documentation>
@@ -128220,6 +128245,7 @@ An immediate response to this message is required. It is recommended that an Exe
                             Must match original order</fixr:documentation>
           </fixr:annotation>
         </fixr:componentRef>
+        <fixr:componentRef id="1004" added="FIX.Latest" addedEP="309" />
         <fixr:componentRef id="1002" added="FIX.4.4">
           <fixr:annotation>
             <fixr:documentation>
