@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<fixr:repository xmlns:fixr="http://fixprotocol.io/2020/orchestra/repository" xmlns:fixml="http://fixprotocol.io/2022/orchestra/appinfo/fixml" name="FIX.Latest" version="FIX.Latest_EP309">
+<fixr:repository xmlns:fixr="http://fixprotocol.io/2020/orchestra/repository" xmlns:fixml="http://fixprotocol.io/2022/orchestra/appinfo/fixml" name="FIX.Latest" version="FIX.Latest_EP312">
   <fixr:metadata xmlns:dcterms="http://purl.org/dc/terms/">
     <dcterms:creator>FIX Protocol Ltd.</dcterms:creator>
-    <dcterms:description>FIX Latest as of Extension Pack 309</dcterms:description>
+    <dcterms:description>FIX Latest as of Extension Pack 312</dcterms:description>
     <dcterms:publisher>FIX Protocol Ltd.</dcterms:publisher>
     <dcterms:title>OrchestraFIXLatest</dcterms:title>
     <dcterms:rights>Copyright (c) FIX Protocol Ltd. All Rights Reserved.</dcterms:rights>
     <dcterms:format>application/xml</dcterms:format>
     <dcterms:conformsTo>Orchestra v1.0</dcterms:conformsTo>
-    <dcterms:created>2026-07-31</dcterms:created>
+    <dcterms:created>2026-09-08</dcterms:created>
     <dcterms:source>Orchid</dcterms:source>
   </fixr:metadata>
   <fixr:categories>
@@ -102758,17 +102758,16 @@ When RateSource(1446) = 3 (ISDA Settlement Rate Option) this contains the value 
         <fixr:documentation purpose="ELABORATION"></fixr:documentation>
       </fixr:annotation>
     </fixr:group>
-    <fixr:group id="2085" name="HopGrp" abbrName="Hop" added="FIX.4.4" addedEP="-1" updated="FIX.5.0SP1" updatedEP="95" category="Session">
+    <fixr:group id="2085" name="HopGrp" abbrName="Hop" added="FIX.4.3" updated="FIX.5.0SP1" updatedEP="95" category="Session">
       <fixr:numInGroup id="627" added="FIX.4.4" addedEP="-1">
         <fixr:annotation>
           <fixr:documentation>
                         </fixr:documentation>
         </fixr:annotation>
       </fixr:numInGroup>
-      <fixr:fieldRef id="628" added="FIX.4.4" addedEP="-1">
+      <fixr:fieldRef id="628" added="FIX.4.4" addedEP="-1" updated="FIX.Latest" updatedEP="312">
         <fixr:annotation>
-          <fixr:documentation>
-                        </fixr:documentation>
+          <fixr:documentation>Required if NoHops(627) &gt; 0.</fixr:documentation>
         </fixr:annotation>
       </fixr:fieldRef>
       <fixr:fieldRef id="629" added="FIX.4.4" addedEP="-1">
@@ -123905,6 +123904,7 @@ Required when TestOrderOffsetPeriod(3090) is specified.</fixr:documentation>
                             </fixr:documentation>
           </fixr:annotation>
         </fixr:fieldRef>
+        <fixr:fieldRef id="1744" added="FIX.5.0SP2" addedEP="124" />
         <fixr:componentRef id="1025" presence="required" added="FIX.2.7">
           <fixr:annotation>
             <fixr:documentation>
@@ -123932,6 +123932,7 @@ Required when TestOrderOffsetPeriod(3090) is specified.</fixr:documentation>
                             Session status at time of logout.</fixr:documentation>
           </fixr:annotation>
         </fixr:fieldRef>
+        <fixr:fieldRef id="789" added="FIX.5.0SP2" addedEP="124" />
         <fixr:fieldRef id="58" added="FIX.2.7">
           <fixr:annotation>
             <fixr:documentation>
@@ -126440,6 +126441,12 @@ The ExecutionReport(35=8) message is the response to accept OrderCancelReplaceRe
                             The default custom application version (dictionary) for FIX messages used in this session</fixr:documentation>
           </fixr:annotation>
         </fixr:fieldRef>
+        <fixr:fieldRef id="1600" added="FIX.5.0SP2" addedEP="113" />
+        <fixr:fieldRef id="1601" added="FIX.5.0SP2" addedEP="113" />
+        <fixr:fieldRef id="1602" added="FIX.5.0SP2" addedEP="113" />
+        <fixr:fieldRef id="1603" added="FIX.5.0SP2" addedEP="113" />
+        <fixr:fieldRef id="1604" added="FIX.5.0SP2" addedEP="113" />
+        <fixr:fieldRef id="1605" added="FIX.5.0SP2" addedEP="113" />
         <fixr:fieldRef id="58" added="FIX.5.0" addedEP="-1">
           <fixr:annotation>
             <fixr:documentation>
