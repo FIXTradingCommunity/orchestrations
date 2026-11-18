@@ -6102,7 +6102,7 @@
                     value="34"
                     sort="33"
                     added="FIX.Latest"
-                    addedEP="315">
+                    addedEP="313">
             <fixr:annotation>
                <fixr:documentation purpose="SYNOPSIS">Min/Max size limit exceeded or invalid</fixr:documentation>
                <fixr:documentation purpose="ELABORATION">Order's minimum or maximum size limit is exceeded or invalid. Size limits or validity may be determined by the instrument's prospectus or other factors. For example, ETF or bond trading sizes.</fixr:documentation>
@@ -19281,7 +19281,7 @@
                     value="132"
                     sort="129"
                     added="FIX.Latest"
-                    addedEP="315">
+                    addedEP="313">
             <fixr:annotation>
                <fixr:documentation purpose="SYNOPSIS">Underwriter</fixr:documentation>
             </fixr:annotation>
@@ -28452,7 +28452,7 @@
                     value="90"
                     sort="89"
                     added="FIX.Latest"
-                    addedEP="315">
+                    addedEP="313">
             <fixr:annotation>
                <fixr:documentation purpose="SYNOPSIS">Approval status</fixr:documentation>
                <fixr:documentation purpose="ELABORATION">Indicates the identified party has or has not approved. Context of approval is dependent on context of the workflow or implementation. The sub-ID value contains "Y" or "N".</fixr:documentation>
@@ -65721,13 +65721,13 @@
                     name="OrderSubStatusCodeSet"
                     type="int"
                     added="FIX.Latest"
-                    addedEP="315">
+                    addedEP="313">
          <fixr:code id="3168001"
                     name="PendingApproval"
                     value="0"
                     sort="0"
                     added="FIX.Latest"
-                    addedEP="315">
+                    addedEP="313">
             <fixr:annotation>
                <fixr:documentation purpose="SYNOPSIS">Pending approval</fixr:documentation>
             </fixr:annotation>
@@ -65737,7 +65737,7 @@
                     value="1"
                     sort="1"
                     added="FIX.Latest"
-                    addedEP="315">
+                    addedEP="313">
             <fixr:annotation>
                <fixr:documentation purpose="SYNOPSIS">Approved</fixr:documentation>
             </fixr:annotation>
@@ -65747,7 +65747,7 @@
                     value="2"
                     sort="2"
                     added="FIX.Latest"
-                    addedEP="315">
+                    addedEP="313">
             <fixr:annotation>
                <fixr:documentation purpose="SYNOPSIS">Preliminary price</fixr:documentation>
             </fixr:annotation>
@@ -65757,7 +65757,7 @@
                     value="3"
                     sort="3"
                     added="FIX.Latest"
-                    addedEP="315">
+                    addedEP="313">
             <fixr:annotation>
                <fixr:documentation purpose="SYNOPSIS">Calculated preliminary price</fixr:documentation>
             </fixr:annotation>
@@ -65767,7 +65767,7 @@
                     value="4"
                     sort="4"
                     added="FIX.Latest"
-                    addedEP="315">
+                    addedEP="313">
             <fixr:annotation>
                <fixr:documentation purpose="SYNOPSIS">Calculated final price</fixr:documentation>
             </fixr:annotation>
@@ -65777,7 +65777,7 @@
                     value="5"
                     sort="5"
                     added="FIX.Latest"
-                    addedEP="315">
+                    addedEP="313">
             <fixr:annotation>
                <fixr:documentation purpose="SYNOPSIS">Calculated final price with corrected NAV</fixr:documentation>
             </fixr:annotation>
@@ -131827,7 +131827,7 @@
                   added="FIX.Latest"
                   addedEP="305"
                   updated="FIX.Latest"
-                  updatedEP="315">
+                  updatedEP="313">
          <fixr:annotation>
             <fixr:documentation purpose="SYNOPSIS">Number of trading service entries.</fixr:documentation>
             <fixr:appinfo purpose="FIXML">
@@ -131892,7 +131892,7 @@
                   abbrName="SettlDt"
                   type="LocalMktDate"
                   added="FIX.Latest"
-                  addedEP="315">
+                  addedEP="313">
          <fixr:annotation>
             <fixr:documentation purpose="SYNOPSIS">Settlement date for the specified underlying instrument.</fixr:documentation>
             <fixr:documentation purpose="ELABORATION">Settlement date specified in the underlying level overrides the settlement date specified in the main level (i.e. order level). This accommodates, for example, trading of instruments such as ETFs where the underlying may need to be individually fulfilled by the broker.</fixr:documentation>
@@ -131903,7 +131903,7 @@
                   abbrName="OrdSubStat"
                   type="OrderSubStatusCodeSet"
                   added="FIX.Latest"
-                  addedEP="315">
+                  addedEP="313">
          <fixr:annotation>
             <fixr:documentation purpose="SYNOPSIS">Used to provide additional status granularity for the order. The sub-status is in relation to ExecType(150) and OrdStatus(39).</fixr:documentation>
          </fixr:annotation>
@@ -133308,7 +133308,7 @@
                <fixr:documentation>Specific to the &lt; UnderlyingInstrument &gt; Indicates order settlement period for the underlying deliverable component.</fixr:documentation>
             </fixr:annotation>
          </fixr:fieldRef>
-         <fixr:fieldRef id="3167" added="FIX.Latest" addedEP="315"/>
+         <fixr:fieldRef id="3167" added="FIX.Latest" addedEP="313"/>
          <fixr:fieldRef id="973" added="FIX.4.4" addedEP="-1">
             <fixr:annotation>
                <fixr:documentation>Specific to the &lt; UnderlyingInstrument &gt; Cash amount associated with the underlying component. Necessary for derivatives that deliver into more than one underlying instrument and one of the underlying's is a fixed cash value.</fixr:documentation>
@@ -159649,7 +159649,7 @@
                   <fixr:documentation>Describes the current state of a CHAIN of orders, same scope as OrderQty, CumQty, LeavesQty, and AvgPx</fixr:documentation>
                </fixr:annotation>
             </fixr:fieldRef>
-            <fixr:fieldRef id="3168" added="FIX.Latest" addedEP="315"/>
+            <fixr:fieldRef id="3168" added="FIX.Latest" addedEP="313"/>
             <fixr:fieldRef id="636" added="FIX.4.3">
                <fixr:annotation>
                   <fixr:documentation>For optional use with OrdStatus = 0 (New)</fixr:documentation>
